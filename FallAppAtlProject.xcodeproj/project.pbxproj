@@ -13,6 +13,14 @@
 		110E83652B5146A70000D6D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110E83632B5146A70000D6D9 /* Main.storyboard */; };
 		110E83672B5146A80000D6D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110E83662B5146A80000D6D9 /* Assets.xcassets */; };
 		110E836A2B5146A80000D6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110E83682B5146A80000D6D9 /* LaunchScreen.storyboard */; };
+		110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83732B514D9E0000D6D9 /* Network Manager.swift */; };
+		110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83752B514DAD0000D6D9 /* Network Helper.swift */; };
+		110E83792B514DC20000D6D9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 110E83782B514DC20000D6D9 /* Alamofire */; };
+		110E837C2B514DD20000D6D9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 110E837B2B514DD20000D6D9 /* SDWebImage */; };
+		110E837E2B514DD20000D6D9 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 110E837D2B514DD20000D6D9 /* SDWebImageMapKit */; };
+		110E83812B514DE30000D6D9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 110E83802B514DE30000D6D9 /* KeychainSwift */; };
+		110E83842B514DF50000D6D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 110E83832B514DF50000D6D9 /* SnapKit */; };
+		110E83862B514DF50000D6D9 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 110E83852B514DF50000D6D9 /* SnapKit-Dynamic */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,8 @@
 		110E83662B5146A80000D6D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		110E83692B5146A80000D6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		110E836B2B5146A80000D6D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		110E83732B514D9E0000D6D9 /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
+		110E83752B514DAD0000D6D9 /* Network Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +41,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110E837C2B514DD20000D6D9 /* SDWebImage in Frameworks */,
+				110E837E2B514DD20000D6D9 /* SDWebImageMapKit in Frameworks */,
+				110E83812B514DE30000D6D9 /* KeychainSwift in Frameworks */,
+				110E83792B514DC20000D6D9 /* Alamofire in Frameworks */,
+				110E83842B514DF50000D6D9 /* SnapKit in Frameworks */,
+				110E83862B514DF50000D6D9 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +72,7 @@
 		110E835C2B5146A70000D6D9 /* FallAppAtlProject */ = {
 			isa = PBXGroup;
 			children = (
+				110E83712B514D3E0000D6D9 /* NetworkManager */,
 				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
 				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
 				110E83612B5146A70000D6D9 /* ViewController.swift */,
@@ -65,6 +82,23 @@
 				110E836B2B5146A80000D6D9 /* Info.plist */,
 			);
 			path = FallAppAtlProject;
+			sourceTree = "<group>";
+		};
+		110E83712B514D3E0000D6D9 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				110E83722B514D4A0000D6D9 /* Core */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		110E83722B514D4A0000D6D9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				110E83732B514D9E0000D6D9 /* Network Manager.swift */,
+				110E83752B514DAD0000D6D9 /* Network Helper.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +117,14 @@
 			dependencies = (
 			);
 			name = FallAppAtlProject;
+			packageProductDependencies = (
+				110E83782B514DC20000D6D9 /* Alamofire */,
+				110E837B2B514DD20000D6D9 /* SDWebImage */,
+				110E837D2B514DD20000D6D9 /* SDWebImageMapKit */,
+				110E83802B514DE30000D6D9 /* KeychainSwift */,
+				110E83832B514DF50000D6D9 /* SnapKit */,
+				110E83852B514DF50000D6D9 /* SnapKit-Dynamic */,
+			);
 			productName = FallAppAtlProject;
 			productReference = 110E835A2B5146A70000D6D9 /* FallAppAtlProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +153,12 @@
 				Base,
 			);
 			mainGroup = 110E83512B5146A70000D6D9;
+			packageReferences = (
+				110E83772B514DC20000D6D9 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				110E837A2B514DD20000D6D9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				110E837F2B514DE30000D6D9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				110E83822B514DF50000D6D9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 110E835B2B5146A70000D6D9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */,
 				110E83622B5146A70000D6D9 /* ViewController.swift in Sources */,
+				110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
 				110E83602B5146A70000D6D9 /* SceneDelegate.swift in Sources */,
 			);
@@ -361,6 +411,74 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		110E83772B514DC20000D6D9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		110E837A2B514DD20000D6D9 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.18.10;
+			};
+		};
+		110E837F2B514DE30000D6D9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+		110E83822B514DF50000D6D9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		110E83782B514DC20000D6D9 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 110E83772B514DC20000D6D9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		110E837B2B514DD20000D6D9 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 110E837A2B514DD20000D6D9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		110E837D2B514DD20000D6D9 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 110E837A2B514DD20000D6D9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+		110E83802B514DE30000D6D9 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 110E837F2B514DE30000D6D9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		110E83832B514DF50000D6D9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 110E83822B514DF50000D6D9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		110E83852B514DF50000D6D9 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 110E83822B514DF50000D6D9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 110E83522B5146A70000D6D9 /* Project object */;
 }
