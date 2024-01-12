@@ -9,7 +9,10 @@ import Foundation
 import Alamofire
 
 class NetworkHelper {
-    static let headers: HTTPHeaders = ["Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwOWMwM2ZjODc3ZmY2ZjQyOTg4ZDBjNjAyMzhmYTczMCIsInN1YiI6IjY1NmFlZmY0NjUxN2Q2MDBjYzQxMTc0NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aztmmR3xws83nhTheWTgz69Jf-qtc5VR3GVPxTgDEu0"]
-    
     static let baseURL = "https://api.themoviedb.org/3/"
+    static let imagePath = "https://image.tmdb.org/t/p/original"
+    static let header: HTTPHeaders? = [
+        "accept": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NmY0MTg4ZGQzZGM3ZjIwNmFlYjhiZDI4Nzc0OTFkYiIsInN1YiI6IjY1NmFmMTI2ODgwNTUxMDEzYTQ3OTE1MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gm44lL1anWWkmtdAYM87ZlanKMQwdYrgb7KU-S7_e5M"]
 }
+

@@ -72,6 +72,9 @@
 		110E835C2B5146A70000D6D9 /* FallAppAtlProject */ = {
 			isa = PBXGroup;
 			children = (
+				110E838A2B5150900000D6D9 /* Models */,
+				110E83892B5150700000D6D9 /* Managers */,
+				110E83872B514F430000D6D9 /* Register Scene */,
 				110E83712B514D3E0000D6D9 /* NetworkManager */,
 				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
 				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
@@ -87,6 +90,7 @@
 		110E83712B514D3E0000D6D9 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				110E83882B514FFE0000D6D9 /* Endpoints */,
 				110E83722B514D4A0000D6D9 /* Core */,
 			);
 			path = NetworkManager;
@@ -99,6 +103,34 @@
 				110E83752B514DAD0000D6D9 /* Network Helper.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		110E83872B514F430000D6D9 /* Register Scene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Register Scene";
+			sourceTree = "<group>";
+		};
+		110E83882B514FFE0000D6D9 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		110E83892B5150700000D6D9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		110E838A2B5150900000D6D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
