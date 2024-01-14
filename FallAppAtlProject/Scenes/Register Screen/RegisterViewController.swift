@@ -71,17 +71,6 @@ class RegisterViewController: UIViewController {
     @objc private func didRegisterButtonTapped() {
       print("Register button has been tapped")
     }
-
-    private let registerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Are you excited? Create your user and begin your astrology journey"
-        label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor(named: "mainColor")
-        label.textAlignment = .center
-        label.backgroundColor = .clear
-        return label
-    }()
     
     private let googleButton: UIButton = {
         let button = UIButton()
@@ -149,7 +138,7 @@ class RegisterViewController: UIViewController {
         }
         
         emailField.snp.makeConstraints { make in
-            make.top.equalTo(image.snp.bottomMargin).offset(32)
+            make.top.equalTo(image.snp.bottomMargin).offset(44)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
@@ -164,12 +153,7 @@ class RegisterViewController: UIViewController {
         }
         
         stackView.snp.makeConstraints { make in
-            make.top.equalTo(registerButton.snp.bottomMargin).offset(20)
-            make.horizontalEdges.equalToSuperview().inset(24)
-        }
-        
-        registerLabel.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottomMargin).offset(40)
+            make.top.equalTo(registerButton.snp.bottomMargin).offset(32)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
     }
@@ -183,7 +167,6 @@ class RegisterViewController: UIViewController {
         view.addSubview(emailField)
         view.addSubview(passwordField)
         view.addSubview(registerButton)
-        view.addSubview(registerLabel)
         view.addSubview(stackView)
         
         makeConstraints()

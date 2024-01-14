@@ -76,7 +76,7 @@ class LoginViewController: UIViewController {
     private let loginLabel: UILabel = {
         let label = UILabel()
         label.text = "Not any account?"
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textColor = UIColor(named: "mainColor")
         label.textAlignment = .center
         label.backgroundColor = .clear
@@ -99,6 +99,17 @@ class LoginViewController: UIViewController {
         let controller = RegisterViewController()
        navigationController?.show(controller, sender: nil)
     }
+    
+    private let registerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Create your user and begin your astrology journey:"
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = UIColor(named: "mainColor")
+        label.textAlignment = .center
+        label.backgroundColor = .clear
+        return label
+    }()
     
     //MARK: -Life cycle
 
@@ -140,10 +151,14 @@ class LoginViewController: UIViewController {
             make.centerX.equalToSuperview()
         }
         
+        registerLabel.snp.makeConstraints { make in
+            make.top.equalTo(loginLabel.snp.bottomMargin).offset(20)
+            make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
         registerButton.snp.makeConstraints { make in
-            make.top.equalTo(loginLabel.snp.bottomMargin).offset(10)
+            make.top.equalTo(registerLabel.snp.bottomMargin).offset(20)
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(46)
         }
     }
     
@@ -158,6 +173,7 @@ class LoginViewController: UIViewController {
         view.addSubview(loginButton)
         view.addSubview(loginLabel)
         view.addSubview(registerButton)
+        view.addSubview(registerLabel)
         
         makeConstraints()
     }
