@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         button.titleLabel?.textAlignment = .center
         button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(didRegisterButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(didLoginButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -126,7 +126,7 @@ class LoginViewController: UIViewController {
         }
         
         passwordField.snp.makeConstraints { make in
-            make.top.equalTo(emailField.snp.bottomMargin).offset(16)
+            make.top.equalTo(emailField.snp.bottomMargin).offset(20)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         

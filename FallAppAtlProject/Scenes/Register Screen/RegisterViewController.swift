@@ -83,6 +83,57 @@ class RegisterViewController: UIViewController {
         return label
     }()
     
+    private let googleButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        button.layer.borderWidth = 1.0
+        button.setTitle("Google", for: .normal)
+        button.setTitleColor(UIColor(named: "mainColor"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.textAlignment = .center
+        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8) // Adjust the spacing between image and title
+        button.setImage(UIImage(named: "googleLogo"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(didGoogleButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func didGoogleButtonTapped() {
+      print("Google button has been tapped")
+    }
+    
+    private let facebookButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .clear
+        button.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        button.layer.borderWidth = 1.0
+        button.setTitle("Facebook", for: .normal)
+        button.setTitleColor(UIColor(named: "mainColor"), for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        button.titleLabel?.textAlignment = .center
+        button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8) // Adjust the spacing between image and title
+        button.setImage(UIImage(named: "facebookLogo"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.layer.cornerRadius = 12
+        button.addTarget(self, action: #selector(didFacebookButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc private func didFacebookButtonTapped() {
+      print("Google button has been tapped")
+    }
+
+    private lazy var stackView: UIStackView = {
+            let stackView = UIStackView(arrangedSubviews: [googleButton, facebookButton])
+            stackView.axis = .horizontal
+            stackView.alignment = .fill
+            stackView.distribution = .fillEqually
+            stackView.spacing = 16
+            return stackView
+        }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -103,7 +154,7 @@ class RegisterViewController: UIViewController {
         }
         
         passwordField.snp.makeConstraints { make in
-            make.top.equalTo(emailField.snp.bottomMargin).offset(16)
+            make.top.equalTo(emailField.snp.bottomMargin).offset(20)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
@@ -112,8 +163,13 @@ class RegisterViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
+        stackView.snp.makeConstraints { make in
+            make.top.equalTo(registerButton.snp.bottomMargin).offset(20)
+            make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
         registerLabel.snp.makeConstraints { make in
-            make.top.equalTo(registerButton.snp.bottomMargin).offset(60)
+            make.top.equalTo(stackView.snp.bottomMargin).offset(40)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
     }
@@ -128,6 +184,7 @@ class RegisterViewController: UIViewController {
         view.addSubview(passwordField)
         view.addSubview(registerButton)
         view.addSubview(registerLabel)
+        view.addSubview(stackView)
         
         makeConstraints()
     }
