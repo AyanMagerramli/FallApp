@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Asya_abstraction_with_tarot_astrology_and_magic_aeecb9e0-0a65-4468-998c-73ccd2b572a9 1.pdf",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
