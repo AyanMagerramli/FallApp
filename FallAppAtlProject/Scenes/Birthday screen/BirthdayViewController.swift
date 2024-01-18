@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class BirthdayViewController: UIViewController {
     
@@ -13,17 +14,39 @@ class BirthdayViewController: UIViewController {
     
     //MARK: - UI Elements
     
-    private lazy var continueButton: UIButton = {
-      let button = UIButton()
-        button.setTitle("Continue", for: .normal)
-        button.titleLabel?.textColor = .black
-        button.titleLabel?.font = .systemFont(ofSize: <#T##CGFloat#>)
-        button.backgroundColor = UIColor(named: "mainColor")
-        return button
-    }()
+    private lazy var continueButton = ReusableButton(title: "Continue")
 
+    //MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         
     }
+    
+    //MARK: - Setup UI
+    
+    private func setupUI() {
+        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.addSubview(continueButton)
+        didContinueButtonTapped()
+        makeConstraints()
+    }
+    
+    private func didContinueButtonTapped() {
+        continueButton.buttonTappedHandler = {
+            let vc = BirthCityViewController()
+            self.navigationController?.show(vc, sender: nil)
+        }
+    }
+    
+    //MARK: Setup constraints
+    
+    private func makeConstraints() {
+        continueButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(90)
+            make.centerX.equalToSuperview()
+        }
+    }
+    
 }

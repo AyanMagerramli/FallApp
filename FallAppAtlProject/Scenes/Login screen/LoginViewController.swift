@@ -70,7 +70,8 @@ class LoginViewController: UIViewController {
     }()
     
     @objc private func didLoginButtonTapped() {
-      print("Login button has been tapped")
+      let vc = BirthdayViewController()
+        self.navigationController?.show(vc, sender: nil)
     }
     
     private let loginLabel: UILabel = {
