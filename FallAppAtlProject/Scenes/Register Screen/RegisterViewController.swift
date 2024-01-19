@@ -73,7 +73,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        buttonActions()
     }
     
     private func buttonActions() {
@@ -142,6 +141,8 @@ class RegisterViewController: UIViewController {
         view.addSubview(passwordField)
         view.addSubview(registerButton)
         view.addSubview(stackView)
+        
+        buttonActions()
         
         makeConstraints()
     }

@@ -150,6 +150,7 @@ class LoginViewController: UIViewController {
         
         makeConstraints()
     }
+    
     private func buttonActions() {
         loginButton.buttonTappedHandler = {
             let vc = BirthdayViewController()
