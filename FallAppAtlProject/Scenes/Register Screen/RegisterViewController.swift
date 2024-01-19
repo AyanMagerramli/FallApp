@@ -26,14 +26,14 @@ class RegisterViewController: UIViewController {
     private let emailField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor(named: "mainColor")
         field.textAlignment = .left
         field.font = UIFont.systemFont(ofSize: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
-        field.layer.cornerRadius = 12
+        field.layer.cornerRadius = 24
         field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
         
         return field
@@ -42,78 +42,25 @@ class RegisterViewController: UIViewController {
     private let passwordField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor(named: "mainColor")
         field.textAlignment = .left
         field.font = UIFont.systemFont(ofSize: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
-        field.layer.cornerRadius = 12
+        field.layer.cornerRadius = 24
         field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
         
         return field
     }()
     
-    private let registerButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "mainColor")
-        button.tintColor = .black
-        button.setTitle("Register", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.titleLabel?.textAlignment = .center
-        button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(didRegisterButtonTapped), for: .touchUpInside)
-        return button
-    }()
+    private lazy var registerButton = ReusableButton(title: "Register")
     
-    @objc private func didRegisterButtonTapped() {
-      print("Register button has been tapped")
-    }
-    
-    private let googleButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .clear
-        button.layer.borderColor = UIColor(named: "mainColor")?.cgColor
-        button.layer.borderWidth = 1.0
-        button.setTitle("Google", for: .normal)
-        button.setTitleColor(UIColor(named: "mainColor"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.titleLabel?.textAlignment = .center
-        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8) // Adjust the spacing between image and title
-        button.setImage(UIImage(named: "googleLogo"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(didGoogleButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc private func didGoogleButtonTapped() {
-      print("Google button has been tapped")
-    }
-    
-    private let facebookButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .clear
-        button.layer.borderColor = UIColor(named: "mainColor")?.cgColor
-        button.layer.borderWidth = 1.0
-        button.setTitle("Facebook", for: .normal)
-        button.setTitleColor(UIColor(named: "mainColor"), for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.titleLabel?.textAlignment = .center
-        button.contentEdgeInsets = UIEdgeInsets(top: 4, left: 8, bottom: 4, right: 8) // Adjust the spacing between image and title
-        button.setImage(UIImage(named: "facebookLogo"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(didFacebookButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc private func didFacebookButtonTapped() {
-      print("Google button has been tapped")
-    }
+    private lazy var facebookButton = ReusableButton(title: "Facebook")
 
+    private lazy var googleButton = ReusableButton(title: "Google")
+    
     private lazy var stackView: UIStackView = {
             let stackView = UIStackView(arrangedSubviews: [googleButton, facebookButton])
             stackView.axis = .horizontal
@@ -126,6 +73,31 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        buttonActions()
+    }
+    
+    private func buttonActions() {
+        registerButton.buttonTappedHandler = {
+            print("Register button has been tapped")
+        }
+        
+        facebookButton.buttonTappedHandler = {
+            print("Google button has been tapped")
+        }
+        
+        facebookButton.setImage(UIImage(named: "facebookLogo"), for: .normal)
+        facebookButton.backgroundColor = .clear
+        facebookButton.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        facebookButton.layer.borderWidth = 1.0
+        facebookButton.imageView?.contentMode = .scaleAspectFit
+        facebookButton.setTitleColor(UIColor(named: "mainColor"), for: .normal)
+        
+        googleButton.setImage(UIImage(named: "googleLogo"), for: .normal)
+        googleButton.backgroundColor = .clear
+        googleButton.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        googleButton.layer.borderWidth = 1.0
+        googleButton.imageView?.contentMode = .scaleAspectFit
+        googleButton.setTitleColor(UIColor(named: "mainColor"), for: .normal)
     }
     
     //MARK: -Setup Constraints
@@ -140,11 +112,13 @@ class RegisterViewController: UIViewController {
         emailField.snp.makeConstraints { make in
             make.top.equalTo(image.snp.bottomMargin).offset(44)
             make.horizontalEdges.equalToSuperview().inset(24)
+            make.height.equalTo(48)
         }
         
         passwordField.snp.makeConstraints { make in
             make.top.equalTo(emailField.snp.bottomMargin).offset(20)
             make.horizontalEdges.equalToSuperview().inset(24)
+            make.height.equalTo(48)
         }
         
         registerButton.snp.makeConstraints { make in

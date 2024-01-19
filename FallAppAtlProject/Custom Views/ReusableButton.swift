@@ -53,7 +53,6 @@ class ReusableButton: UIButton {
     
     private func makeConstraints() {
         snp.makeConstraints { make in
-            make.width.equalTo(342)
             make.height.equalTo(48)
         }
     }

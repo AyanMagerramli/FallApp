@@ -27,14 +27,14 @@ class LoginViewController: UIViewController {
     private let emailField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor(named: "mainColor")
         field.textAlignment = .left
         field.font = UIFont.systemFont(ofSize: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
-        field.layer.cornerRadius = 12
+        field.layer.cornerRadius = 24
         field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
         
         return field
@@ -43,36 +43,20 @@ class LoginViewController: UIViewController {
     private let passwordField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor(named: "mainColor")
         field.textAlignment = .left
         field.font = UIFont.systemFont(ofSize: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
-        field.layer.cornerRadius = 12
+        field.layer.cornerRadius = 24
         field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
         
         return field
     }()
     
-    private let loginButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = UIColor(named: "mainColor")
-        button.tintColor = .black
-        button.setTitle("Login", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        button.titleLabel?.textAlignment = .center
-        button.layer.cornerRadius = 12
-        button.addTarget(self, action: #selector(didLoginButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc private func didLoginButtonTapped() {
-      let vc = BirthdayViewController()
-        self.navigationController?.show(vc, sender: nil)
-    }
+    private lazy var loginButton = ReusableButton(title: "Login")
     
     private let loginLabel: UILabel = {
         let label = UILabel()
@@ -84,22 +68,7 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    private let registerButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .clear
-        button.layer.cornerRadius = 12
-        button.setTitle("Register", for: .normal)
-        button.setTitleColor(UIColor(named: "mainColor"), for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.titleLabel?.textAlignment = .center
-        button.addTarget(self, action: #selector(didRegisterButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-   @objc private func didRegisterButtonTapped() {
-        let controller = RegisterViewController()
-       navigationController?.show(controller, sender: nil)
-    }
+   private lazy var registerButton = ReusableButton(title: "Register")
     
     private let registerLabel: UILabel = {
         let label = UILabel()
@@ -117,6 +86,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        buttonActions()
     }
     
     private func didUserLogin() {
@@ -135,11 +105,13 @@ class LoginViewController: UIViewController {
         emailField.snp.makeConstraints { make in
             make.top.equalTo(image.snp.bottomMargin).offset(16)
             make.horizontalEdges.equalToSuperview().inset(24)
+            make.height.equalTo(48)
         }
         
         passwordField.snp.makeConstraints { make in
             make.top.equalTo(emailField.snp.bottomMargin).offset(20)
             make.horizontalEdges.equalToSuperview().inset(24)
+            make.height.equalTo(48)
         }
         
         loginButton.snp.makeConstraints { make in
@@ -159,7 +131,7 @@ class LoginViewController: UIViewController {
         
         registerButton.snp.makeConstraints { make in
             make.top.equalTo(registerLabel.snp.bottomMargin).offset(20)
-            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(24)
         }
     }
     
@@ -177,6 +149,17 @@ class LoginViewController: UIViewController {
         view.addSubview(registerLabel)
         
         makeConstraints()
+    }
+    private func buttonActions() {
+        loginButton.buttonTappedHandler = {
+            let vc = BirthdayViewController()
+              self.navigationController?.show(vc, sender: nil)
+        }
+        
+        registerButton.buttonTappedHandler = {
+            let vc = RegisterViewController()
+            self.navigationController?.show(vc, sender: nil)
+        }
     }
 }
 
