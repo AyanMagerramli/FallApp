@@ -142,8 +142,6 @@ class BirthdayViewController: UIViewController {
         timePicker.frame.size = CGSize(width: 0, height: 300)
         timePicker.maximumDate = Date()
         timePicker.addTarget(self, action: #selector(timeValueChanged), for: .valueChanged)
-    
-        dateField.becomeFirstResponder()
         
         // Set up the toolbar with a "Done" button to dismiss the picker
         let toolbar = UIToolbar()
