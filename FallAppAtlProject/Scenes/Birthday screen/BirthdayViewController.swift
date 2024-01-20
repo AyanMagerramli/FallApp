@@ -12,6 +12,9 @@ class BirthdayViewController: UIViewController {
     
     //MARK: Properties
     
+    private var currentStep = 0
+    private var customTitleView: CustomTitleView?
+    
     //MARK: - UI Elements
     
     private lazy var titleLabel: UILabel = {
@@ -74,20 +77,29 @@ class BirthdayViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = UIColor(named: "backgroundColor")
+        
         view.addSubview(titleLabel)
         view.addSubview(continueButton)
         view.addSubview(dateField)
         view.addSubview(strokeView1)
         view.addSubview(birthTimeField)
         view.addSubview(strokeView2)
+        
         didContinueButtonTapped()
         makeConstraints()
         setupDatePicker()
         setupTimePicker()
+        
+        // Create and set the custom title view
+        customTitleView = CustomTitleView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
+        navigationItem.titleView = customTitleView
+        customTitleView?.backgroundColor = .white
     }
     
     private func didContinueButtonTapped() {
         continueButton.buttonTappedHandler = {
+            self.currentStep += 1
+            self.customTitleView?.updateStep(step: self.currentStep)
             let vc = BirthCityViewController()
             self.navigationController?.show(vc, sender: nil)
         }
