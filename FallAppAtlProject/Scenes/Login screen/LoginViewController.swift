@@ -31,7 +31,8 @@ class LoginViewController: UIViewController {
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor(named: "mainColor")
         field.textAlignment = .left
-        field.font = UIFont.systemFont(ofSize: 16)
+       // field.font = UIFont.systemFont(ofSize: 16)
+        field.font = UIFont(name: "Roboto-Bold", size: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
         field.layer.cornerRadius = 24
@@ -153,7 +154,7 @@ class LoginViewController: UIViewController {
     
     private func buttonActions() {
         loginButton.buttonTappedHandler = {
-            let vc = BirthdayViewController()
+            let vc = ParentViewController()
               self.navigationController?.show(vc, sender: nil)
         }
         

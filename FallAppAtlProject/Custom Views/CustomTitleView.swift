@@ -14,7 +14,7 @@ class CustomTitleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-    }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -36,7 +36,7 @@ class CustomTitleView: UIView {
         }
         
         for i in 0..<step {
-            stepViews[i].backgroundColor = UIColor.black
+            stepViews[i].backgroundColor = UIColor(named: "mainColor")
         }
     }
 }

@@ -8,12 +8,14 @@
 import UIKit
 import SnapKit
 
-class BirthCityViewController: UIViewController {
+class BirthCityViewController: UIViewController, ProgressUpdateable {
     
     // MARK: Properties
     
-        let cities = ["City1", "City2", "City3"]
-        let countries = ["Country1", "Country2", "Country3"]
+    var mainViewController: ParentViewController?
+    
+    let cities = ["City1", "City2", "City3"]
+    let countries = ["Country1", "Country2", "Country3"]
     
     // MARK: - UI Elements
     
@@ -22,6 +24,7 @@ class BirthCityViewController: UIViewController {
     private func buttonAction() {
         continueButton.buttonTappedHandler = {
             let vc = NameViewController()
+           // self.mainViewController?.add(childViewController: vc)
             self.navigationController?.show(vc, sender: nil)
         }
     }
@@ -78,9 +81,6 @@ class BirthCityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupCityPicker()
-        setupCountryPicker()
-        buttonAction()
     }
     
     // MARK: - Setup UI
@@ -96,6 +96,12 @@ class BirthCityViewController: UIViewController {
         view.addSubview(continueButton)
         
         makeConstraints()
+        
+        setupCityPicker()
+        setupCountryPicker()
+        buttonAction()
+        
+        updateProgressBar(value: progressValue)
     }
     
     // MARK: - Setup Constraints
@@ -132,5 +138,18 @@ class BirthCityViewController: UIViewController {
             make.height.equalTo(1)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
+    }
+    
+    // MARK: - Setup navigation bar
+    
+//    var mainViewController: ParentViewController? {
+//        return parent as? ParentViewController
+//    }
+    
+    var progressValue: Float = 0.50
+    
+    func updateProgressBar(value: Float) {
+        // Update progress bar
+        mainViewController?.updateProgressBar(value: Float(progressValue))
     }
 }

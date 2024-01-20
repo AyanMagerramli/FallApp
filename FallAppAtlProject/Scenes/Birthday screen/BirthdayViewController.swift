@@ -8,15 +8,14 @@
 import UIKit
 import SnapKit
 
-class BirthdayViewController: UIViewController {
+class BirthdayViewController: UIViewController, ProgressUpdateable {
     
     //MARK: Properties
     
-    private var currentStep = 0
-    private var customTitleView: CustomTitleView?
+    var mainViewController: ParentViewController?
     
     //MARK: - UI Elements
-    
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "What is your Date of Birth?"
@@ -70,7 +69,6 @@ class BirthdayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
     }
     
     //MARK: - Setup UI
@@ -90,18 +88,16 @@ class BirthdayViewController: UIViewController {
         setupDatePicker()
         setupTimePicker()
         
-        // Create and set the custom title view
-        customTitleView = CustomTitleView(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
-        navigationItem.titleView = customTitleView
-        customTitleView?.backgroundColor = .white
+        updateProgressBar(value: progressValue)
     }
     
     private func didContinueButtonTapped() {
         continueButton.buttonTappedHandler = {
-            self.currentStep += 1
-            self.customTitleView?.updateStep(step: self.currentStep)
             let vc = BirthCityViewController()
-            self.navigationController?.show(vc, sender: nil)
+            vc.mainViewController = self.mainViewController
+//            self.transition(from:self , to: vc, duration: 0, animations: nil)
+            self.mainViewController?.add(childViewController: vc)
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
@@ -208,5 +204,18 @@ class BirthdayViewController: UIViewController {
             make.height.equalTo(1)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
+    }
+    
+    // MARK: - Setup progress bar
+    
+//    var mainViewController: ParentViewController? {
+//        return parent as? ParentViewController
+//    }
+//    
+    var progressValue: Float = 0.25
+    
+    // Call this method when a step is completed
+    func updateProgressBar(value: Float) {
+        mainViewController?.updateProgressBar(value: Float(progressValue))
     }
 }
