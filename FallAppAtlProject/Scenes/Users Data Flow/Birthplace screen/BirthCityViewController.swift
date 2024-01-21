@@ -13,6 +13,7 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     // MARK: Properties
     
     var mainViewController: ParentViewController?
+    var builder: UserInfoBuilder?
     
     let cities = ["City1", "City2", "City3"]
     let countries = ["Country1", "Country2", "Country3"]
@@ -23,7 +24,13 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     
     private func buttonAction() {
         continueButton.buttonTappedHandler = {
+            if let birthCountry = self.countryPickerTextField.text,
+               let birthCity = self.cityPickerTextField.text {
+                self.builder?.birthCity = birthCity
+                self.builder?.birthCountry = birthCountry
+            }
             let vc = NameViewController()
+            vc.builder = self.builder
            // self.mainViewController?.add(childViewController: vc)
             self.navigationController?.show(vc, sender: nil)
         }

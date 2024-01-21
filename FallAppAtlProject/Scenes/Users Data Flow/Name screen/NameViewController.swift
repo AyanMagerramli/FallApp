@@ -12,6 +12,8 @@ class NameViewController: UIViewController {
     
     // MARK: Properties
     
+    var builder: UserInfoBuilder?
+    
     // MARK: - UI Components
     
     private lazy var continueButton = ReusableButton(title: "Continue")
@@ -66,7 +68,11 @@ class NameViewController: UIViewController {
     
     private func buttonAction() {
         continueButton.buttonTappedHandler = {
+            if let name = self.nameField.text {
+                self.builder?.name = name
+            }
             let vc = GenderViewController()
+            vc.builder = self.builder
             self.navigationController?.show(vc, sender: nil)
         }
     }

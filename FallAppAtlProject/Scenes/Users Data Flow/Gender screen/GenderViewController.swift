@@ -12,13 +12,15 @@ class GenderViewController: UIViewController {
     
     // MARK: Properties
     
+    var builder: UserInfoBuilder?
+    
     // MARK: - UI Components
     
     private lazy var completeButton = ReusableButton(title: "Complete")
     
     private func completeButtonAction() {
         completeButton.buttonTappedHandler = {
-            
+            //send all user datas from builder to api
         }
     }
     

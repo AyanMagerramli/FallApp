@@ -13,6 +13,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     //MARK: Properties
     
     var mainViewController: ParentViewController?
+    var builder: UserInfoBuilder?
     
     //MARK: - UI Elements
 
@@ -93,7 +94,13 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     
     private func didContinueButtonTapped() {
         continueButton.buttonTappedHandler = {
+            if let birthDate = self.dateField.text,
+               let birthTime = self.birthTimeField.text {
+                self.builder?.birthDate = birthDate
+                self.builder?.birthTime = birthTime
+            }
             let vc = BirthCityViewController()
+            vc.builder = self.builder
             vc.mainViewController = self.mainViewController
 //            self.transition(from:self , to: vc, duration: 0, animations: nil)
             self.mainViewController?.add(childViewController: vc)
@@ -216,6 +223,6 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     
     // Call this method when a step is completed
     func updateProgressBar(value: Float) {
-        mainViewController?.updateProgressBar(value: Float(progressValue))
+        mainViewController?.updateProgressBar(value: value)
     }
 }
