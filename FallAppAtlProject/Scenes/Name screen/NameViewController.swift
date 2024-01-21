@@ -21,7 +21,7 @@ class NameViewController: UIViewController {
         label.text = "How can we call You?"
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.robotoFont(ofType: .bold, size: 20)
         label.lineBreakMode = .byWordWrapping
         label.textColor = UIColor(named: "mainColor")
         return label
@@ -31,15 +31,15 @@ class NameViewController: UIViewController {
         let field = UITextField()
         field.backgroundColor = .clear
         field.borderStyle = .roundedRect
-        let attributedPlaceholder = NSAttributedString(string: " Your magic name", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: " Your magic name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         return field
     }()
     
     private lazy var strokeView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "mainColor")
+        view.backgroundColor = UIColor.theme(named: .main)
         return view
     }()
     
@@ -54,7 +54,7 @@ class NameViewController: UIViewController {
     //MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = UIColor.theme(named: .background)
         
         view.addSubview(titleLabel)
         view.addSubview(strokeView)

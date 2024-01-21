@@ -21,9 +21,9 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
         label.text = "What is your Date of Birth?"
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.robotoFont(ofType: .bold, size: 20)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = UIColor(named: "mainColor")
+        label.textColor = UIColor.theme(named: .main)
         return label
     }()
     
@@ -31,7 +31,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
         let field = UITextField()
         field.borderStyle = .roundedRect
         field.backgroundColor = .clear
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         field.inputView = datePicker
         field.text = formatDate(Date())
         return field
@@ -39,7 +39,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     
     private lazy var strokeView1: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "mainColor")
+        view.backgroundColor = UIColor.theme(named: .main)
         return view
     }()
     
@@ -52,7 +52,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
         let field = UITextField()
         field.borderStyle = .roundedRect
         field.backgroundColor = .clear
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         field.inputView = timePicker
         field.text = formatTime(Date())
         return field
@@ -60,7 +60,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     
     private lazy var strokeView2: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "mainColor")
+        view.backgroundColor = UIColor.theme(named: .main)
         return view
     }()
 
@@ -74,7 +74,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     //MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = UIColor.theme(named: .background)
         
         view.addSubview(titleLabel)
         view.addSubview(continueButton)

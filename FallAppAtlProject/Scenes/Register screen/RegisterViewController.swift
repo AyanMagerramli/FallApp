@@ -26,15 +26,15 @@ class RegisterViewController: UIViewController {
     private let emailField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "  Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         field.textAlignment = .left
-        field.font = UIFont.systemFont(ofSize: 16)
+        field.font = UIFont.robotoFont(ofType: .light, size: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
         field.layer.cornerRadius = 24
-        field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        field.layer.borderColor = UIColor.theme(named: .main).cgColor
         
         return field
     }()
@@ -42,15 +42,15 @@ class RegisterViewController: UIViewController {
     private let passwordField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "  Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         field.textAlignment = .left
-        field.font = UIFont.systemFont(ofSize: 16)
+        field.font = UIFont.robotoFont(ofType: .light, size: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
         field.layer.cornerRadius = 24
-        field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        field.layer.borderColor = UIColor.theme(named: .main).cgColor
         
         return field
     }()
@@ -86,17 +86,17 @@ class RegisterViewController: UIViewController {
         
         facebookButton.setImage(UIImage(named: "facebookLogo"), for: .normal)
         facebookButton.backgroundColor = .clear
-        facebookButton.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        facebookButton.layer.borderColor = UIColor.theme(named: .main).cgColor
         facebookButton.layer.borderWidth = 1.0
         facebookButton.imageView?.contentMode = .scaleAspectFit
-        facebookButton.setTitleColor(UIColor(named: "mainColor"), for: .normal)
+        facebookButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
         
         googleButton.setImage(UIImage(named: "googleLogo"), for: .normal)
         googleButton.backgroundColor = .clear
-        googleButton.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        googleButton.layer.borderColor = UIColor.theme(named: .main).cgColor
         googleButton.layer.borderWidth = 1.0
         googleButton.imageView?.contentMode = .scaleAspectFit
-        googleButton.setTitleColor(UIColor(named: "mainColor"), for: .normal)
+        googleButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
     }
     
     //MARK: -Setup Constraints
@@ -134,7 +134,7 @@ class RegisterViewController: UIViewController {
     //MARK: -Setup UI
     
     private func setupUI() {
-        self.view.backgroundColor = UIColor(named: "backgroundColor")
+        self.view.backgroundColor = UIColor.theme(named: .background)
         
         view.addSubview(image)
         view.addSubview(emailField)

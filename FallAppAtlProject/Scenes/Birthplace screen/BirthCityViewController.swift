@@ -34,21 +34,21 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
         label.text = "What is your Birthplace?"
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.robotoFont(ofType: .bold, size: 20)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = UIColor(named: "mainColor")
+        label.textColor = UIColor.theme(named: .main)
         return label
     }()
     
     private lazy var strokeView1: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "mainColor")
+        view.backgroundColor = UIColor.theme(named: .main)
         return view
     }()
     
     private lazy var strokeView2: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(named: "mainColor")
+        view.backgroundColor = UIColor.theme(named: .main)
         return view
     }()
     
@@ -59,9 +59,9 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
         let field = UITextField()
         field.backgroundColor = .clear
         field.borderStyle = .roundedRect
-        let attributedPlaceholder = NSAttributedString(string: "  City", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  City", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         return field
     }()
     
@@ -69,9 +69,9 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
         let field = UITextField()
         field.backgroundColor = .clear
         field.borderStyle = .roundedRect
-        let attributedPlaceholder = NSAttributedString(string: "  Country", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Country", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         return field
     }()
     
@@ -86,7 +86,7 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     // MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = UIColor.theme(named: .background)
         
         view.addSubview(titleLabel)
         view.addSubview(cityPickerTextField)

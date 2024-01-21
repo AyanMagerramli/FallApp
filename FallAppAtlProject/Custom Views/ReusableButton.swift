@@ -16,7 +16,7 @@ class ReusableButton: UIButton {
     
     // MARK: - Initialization
     
-    init(title: String, frame: CGRect = .init(x: 0, y: 0, width: 342, height: 48), font: UIFont = UIFont(name: "Roboto-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16), backgroundColor: UIColor = UIColor(named: "mainColor") ?? .systemBlue, cornerRadius: CGFloat = 24) {
+    init(title: String, frame: CGRect = .init(x: 0, y: 0, width: 342, height: 48), font: UIFont = UIFont.robotoFont(ofType: .medium, size: 16), backgroundColor: UIColor = UIColor.theme(named: .main), cornerRadius: CGFloat = 24) {
         super.init(frame: frame)
         setupButton(title: title, frame: frame, font: font, backgroundColor: backgroundColor, cornerRadius: cornerRadius)
         makeConstraints()
@@ -24,7 +24,7 @@ class ReusableButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupButton(title: "",frame: .zero, font: UIFont(name: "Roboto-Regular", size: 16) ?? UIFont.systemFont(ofSize: 16), backgroundColor: UIColor(named: "mainColor") ?? .systemBlue, cornerRadius: 24)
+        setupButton(title: "",frame: .zero, font: UIFont.robotoFont(ofType: .medium, size: 16), backgroundColor: UIColor.theme(named: .main), cornerRadius: 24)
         makeConstraints()
     }
     

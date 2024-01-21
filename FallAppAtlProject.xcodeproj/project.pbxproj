@@ -27,6 +27,10 @@
 		110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83912B5151300000D6D9 /* RegisterViewModel.swift */; };
 		110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83932B51514E0000D6D9 /* LoginViewController.swift */; };
 		110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83952B51515E0000D6D9 /* LoginViewModel.swift */; };
+		113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C952B5D1C2D0069CCC2 /* RobotoFont.swift */; };
+		113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C992B5D204B0069CCC2 /* FontExtension.swift */; };
+		113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */; };
+		113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */; };
 		115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C39672B5C63F8005843F0 /* ParentViewController.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
@@ -54,6 +58,10 @@
 		110E83912B5151300000D6D9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		110E83932B51514E0000D6D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		110E83952B51515E0000D6D9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		113F9C952B5D1C2D0069CCC2 /* RobotoFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotoFont.swift; sourceTree = "<group>"; };
+		113F9C992B5D204B0069CCC2 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
+		113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		115C39672B5C63F8005843F0 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -126,6 +134,7 @@
 		110E835C2B5146A70000D6D9 /* FallAppAtlProject */ = {
 			isa = PBXGroup;
 			children = (
+				113F9C972B5D20020069CCC2 /* Extensions */,
 				1106A5932B59CA7C00DF7450 /* Custom Views */,
 				119BB3092B53DD74006445FD /* TabBar setup */,
 				119BB3042B53DC7F006445FD /* Coordinator */,
@@ -228,6 +237,33 @@
 				110E83952B51515E0000D6D9 /* LoginViewModel.swift */,
 			);
 			path = "Login screen";
+			sourceTree = "<group>";
+		};
+		113F9C972B5D20020069CCC2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				113F9C9B2B5D22B00069CCC2 /* Colors */,
+				113F9C982B5D200B0069CCC2 /* Roboto Font */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		113F9C982B5D200B0069CCC2 /* Roboto Font */ = {
+			isa = PBXGroup;
+			children = (
+				113F9C952B5D1C2D0069CCC2 /* RobotoFont.swift */,
+				113F9C992B5D204B0069CCC2 /* FontExtension.swift */,
+			);
+			path = "Roboto Font";
+			sourceTree = "<group>";
+		};
+		113F9C9B2B5D22B00069CCC2 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */,
+				113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		115C39662B5C63B2005843F0 /* Container view */ = {
@@ -358,6 +394,7 @@
 			files = (
 				110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */,
 				1106A5982B59CEF900DF7450 /* BirthCityViewController.swift in Sources */,
+				113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */,
 				119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */,
 				115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */,
 				11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */,
@@ -365,6 +402,7 @@
 				110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */,
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
 				1106A5902B59C67000DF7450 /* BirthdayViewController.swift in Sources */,
+				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
@@ -375,6 +413,8 @@
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,
 				110E83602B5146A70000D6D9 /* SceneDelegate.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
+				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
+				113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

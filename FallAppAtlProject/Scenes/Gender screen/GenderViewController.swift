@@ -30,9 +30,9 @@ class GenderViewController: UIViewController {
         label.text = "Ayan, what is your Gender?"
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.robotoFont(ofType: .bold, size: 20)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = UIColor(named: "mainColor")
+        label.textColor = UIColor.theme(named: .main)
         return label
     }()
     
@@ -56,7 +56,7 @@ class GenderViewController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = UIColor.theme(named: .background)
         
         view.addSubview(titleLabel)
         view.addSubview(completeButton)
@@ -70,17 +70,17 @@ class GenderViewController: UIViewController {
     private func setupButtonsUI() {
         femaleButton.setImage(UIImage(named: "femaleLogo"), for: .normal)
         femaleButton.backgroundColor = .clear
-        femaleButton.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        femaleButton.layer.borderColor = UIColor.theme(named: .main).cgColor
         femaleButton.layer.borderWidth = 1.0
         femaleButton.imageView?.contentMode = .scaleAspectFit
-        femaleButton.setTitleColor(UIColor(named: "mainColor"), for: .normal)
+        femaleButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
         
         maleButton.setImage(UIImage(named: "maleLogo"), for: .normal)
         maleButton.backgroundColor = .clear
-        maleButton.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        maleButton.layer.borderColor = UIColor.theme(named: .main).cgColor
         maleButton.layer.borderWidth = 1.0
         maleButton.imageView?.contentMode = .scaleAspectFit
-        maleButton.setTitleColor(UIColor(named: "mainColor"), for: .normal)
+        maleButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
     }
     
     // MARK: - Make Constraints

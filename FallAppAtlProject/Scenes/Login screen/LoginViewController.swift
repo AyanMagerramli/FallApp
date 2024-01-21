@@ -27,16 +27,15 @@ class LoginViewController: UIViewController {
     private let emailField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "  Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         field.textAlignment = .left
-       // field.font = UIFont.systemFont(ofSize: 16)
-        field.font = UIFont(name: "Roboto-Bold", size: 16)
+        field.font = UIFont.robotoFont(ofType: .light, size: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
         field.layer.cornerRadius = 24
-        field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        field.layer.borderColor = UIColor.theme(named: .main).cgColor
         
         return field
     }()
@@ -44,15 +43,15 @@ class LoginViewController: UIViewController {
     private let passwordField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
-        let attributedPlaceholder = NSAttributedString(string: "  Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "mainColor") ?? .white])
+        let attributedPlaceholder = NSAttributedString(string: "  Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
-        field.textColor = UIColor(named: "mainColor")
+        field.textColor = UIColor.theme(named: .main)
         field.textAlignment = .left
-        field.font = UIFont.systemFont(ofSize: 16)
+        field.font = UIFont.robotoFont(ofType: .light, size: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
         field.layer.cornerRadius = 24
-        field.layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        field.layer.borderColor = UIColor.theme(named: .main).cgColor
         
         return field
     }()
@@ -62,8 +61,8 @@ class LoginViewController: UIViewController {
     private let loginLabel: UILabel = {
         let label = UILabel()
         label.text = "Not any account?"
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = UIColor(named: "mainColor")
+        label.font = UIFont.robotoFont(ofType: .bold, size: 20)
+        label.textColor = UIColor.theme(named: .main)
         label.textAlignment = .center
         label.backgroundColor = .clear
         return label
@@ -75,8 +74,8 @@ class LoginViewController: UIViewController {
         let label = UILabel()
         label.text = "Create your user and begin your astrology journey:"
         label.numberOfLines = 0
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor(named: "mainColor")
+        label.font = UIFont.robotoFont(ofType: .light, size: 16)
+        label.textColor = UIColor.theme(named: .main)
         label.textAlignment = .center
         label.backgroundColor = .clear
         return label
@@ -139,7 +138,7 @@ class LoginViewController: UIViewController {
     //MARK: - Setup UI
     
     private func setupUI() {
-        self.view.backgroundColor = UIColor(named: "backgroundColor")
+        self.view.backgroundColor = UIColor.theme(named: .background)
         
         view.addSubview(image)
         view.addSubview(emailField)
