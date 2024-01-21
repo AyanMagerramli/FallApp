@@ -77,6 +77,8 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     private func setupUI() {
         view.backgroundColor = UIColor.theme(named: .background)
         
+        customizeBackButton()
+        
         view.addSubview(titleLabel)
         view.addSubview(continueButton)
         view.addSubview(dateField)

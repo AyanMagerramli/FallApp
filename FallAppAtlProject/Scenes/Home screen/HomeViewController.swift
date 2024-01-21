@@ -55,6 +55,8 @@ class HomeViewController: UIViewController {
         
         view.addSubview(collectionView)
         
+       title = "Hello, there"
+        
         makeConstraints()
     }
     

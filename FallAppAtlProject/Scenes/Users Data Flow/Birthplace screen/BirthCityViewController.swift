@@ -95,6 +95,8 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     private func setupUI() {
         view.backgroundColor = UIColor.theme(named: .background)
         
+        customizeBackButton()
+        
         view.addSubview(titleLabel)
         view.addSubview(cityPickerTextField)
         view.addSubview(countryPickerTextField)

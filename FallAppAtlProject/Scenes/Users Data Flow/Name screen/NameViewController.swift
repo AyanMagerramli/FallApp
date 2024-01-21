@@ -58,6 +58,8 @@ class NameViewController: UIViewController {
     private func setupUI() {
         view.backgroundColor = UIColor.theme(named: .background)
         
+        customizeBackButton()
+        
         view.addSubview(titleLabel)
         view.addSubview(strokeView)
         view.addSubview(nameField)

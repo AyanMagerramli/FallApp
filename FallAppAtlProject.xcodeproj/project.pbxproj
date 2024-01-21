@@ -43,6 +43,7 @@
 		11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */; };
 		11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241902B5B2195000E2CEE /* NameViewController.swift */; };
 		11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241932B5B2859000E2CEE /* GenderViewController.swift */; };
+		11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable View.swift"; sourceTree = "<group>"; };
 		11A241902B5B2195000E2CEE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		11A241932B5B2859000E2CEE /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 		113F9C972B5D20020069CCC2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				11F9BF482B5D92EC00F913F7 /* View Controller */,
 				113F9C9B2B5D22B00069CCC2 /* Colors */,
 				113F9C982B5D200B0069CCC2 /* Roboto Font */,
 			);
@@ -359,6 +362,14 @@
 			path = "Gender screen";
 			sourceTree = "<group>";
 		};
+		11F9BF482B5D92EC00F913F7 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,6 +473,7 @@
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
+				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
 				11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */,
