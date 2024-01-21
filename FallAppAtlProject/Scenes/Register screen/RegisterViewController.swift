@@ -57,19 +57,6 @@ class RegisterViewController: UIViewController {
     
     private lazy var registerButton = ReusableButton(title: "Register")
     
-    private lazy var facebookButton = ReusableButton(title: "Facebook")
-
-    private lazy var googleButton = ReusableButton(title: "Google")
-    
-    private lazy var stackView: UIStackView = {
-            let stackView = UIStackView(arrangedSubviews: [googleButton, facebookButton])
-            stackView.axis = .horizontal
-            stackView.alignment = .fill
-            stackView.distribution = .fillEqually
-            stackView.spacing = 16
-            return stackView
-        }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -77,26 +64,9 @@ class RegisterViewController: UIViewController {
     
     private func buttonActions() {
         registerButton.buttonTappedHandler = {
-            print("Register button has been tapped")
+            let vc = OTPViewController()
+            self.navigationController?.show(vc, sender: nil)
         }
-        
-        facebookButton.buttonTappedHandler = {
-            print("Google button has been tapped")
-        }
-        
-        facebookButton.setImage(UIImage(named: "facebookLogo"), for: .normal)
-        facebookButton.backgroundColor = .clear
-        facebookButton.layer.borderColor = UIColor.theme(named: .main).cgColor
-        facebookButton.layer.borderWidth = 1.0
-        facebookButton.imageView?.contentMode = .scaleAspectFit
-        facebookButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
-        
-        googleButton.setImage(UIImage(named: "googleLogo"), for: .normal)
-        googleButton.backgroundColor = .clear
-        googleButton.layer.borderColor = UIColor.theme(named: .main).cgColor
-        googleButton.layer.borderWidth = 1.0
-        googleButton.imageView?.contentMode = .scaleAspectFit
-        googleButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
     }
     
     //MARK: -Setup Constraints
@@ -124,11 +94,6 @@ class RegisterViewController: UIViewController {
             make.top.equalTo(passwordField.snp.bottomMargin).offset(48)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
-        
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(registerButton.snp.bottomMargin).offset(32)
-            make.horizontalEdges.equalToSuperview().inset(24)
-        }
     }
     
     //MARK: -Setup UI
@@ -140,7 +105,6 @@ class RegisterViewController: UIViewController {
         view.addSubview(emailField)
         view.addSubview(passwordField)
         view.addSubview(registerButton)
-        view.addSubview(stackView)
         
         buttonActions()
         

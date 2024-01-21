@@ -31,6 +31,7 @@
 		113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C992B5D204B0069CCC2 /* FontExtension.swift */; };
 		113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */; };
 		113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */; };
+		113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA12B5D2E690069CCC2 /* OTPViewController.swift */; };
 		115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C39672B5C63F8005843F0 /* ParentViewController.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
@@ -62,6 +63,7 @@
 		113F9C992B5D204B0069CCC2 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
 		113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		113F9CA12B5D2E690069CCC2 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		115C39672B5C63F8005843F0 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				110E838E2B5150FB0000D6D9 /* Login screen */,
 				110E838D2B5150E00000D6D9 /* Register screen */,
+				113F9CA02B5D2E4B0069CCC2 /* OTP screen */,
 				115C39662B5C63B2005843F0 /* Container view */,
 				1106A58E2B59C54C00DF7450 /* Birthday screen */,
 				1106A5962B59CECF00DF7450 /* Birthplace screen */,
@@ -264,6 +267,14 @@
 				113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */,
 			);
 			path = Colors;
+			sourceTree = "<group>";
+		};
+		113F9CA02B5D2E4B0069CCC2 /* OTP screen */ = {
+			isa = PBXGroup;
+			children = (
+				113F9CA12B5D2E690069CCC2 /* OTPViewController.swift */,
+			);
+			path = "OTP screen";
 			sourceTree = "<group>";
 		};
 		115C39662B5C63B2005843F0 /* Container view */ = {
@@ -404,6 +415,7 @@
 				1106A5902B59C67000DF7450 /* BirthdayViewController.swift in Sources */,
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
+				113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
