@@ -33,6 +33,8 @@
 		113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */; };
 		113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA12B5D2E690069CCC2 /* OTPViewController.swift */; };
 		113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */; };
+		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
+		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
 		115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C39672B5C63F8005843F0 /* ParentViewController.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
@@ -66,6 +68,8 @@
 		113F9C9E2B5D23180069CCC2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		113F9CA12B5D2E690069CCC2 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
 		113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilder.swift; sourceTree = "<group>"; };
+		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
 		115C39672B5C63F8005843F0 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
@@ -214,10 +218,12 @@
 		110E838C2B5150D90000D6D9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				113F9CAC2B5D4B0F0069CCC2 /* Cell */,
 				110E838E2B5150FB0000D6D9 /* Login screen */,
 				110E838D2B5150E00000D6D9 /* Register screen */,
 				113F9CA02B5D2E4B0069CCC2 /* OTP screen */,
 				113F9CA32B5D39610069CCC2 /* Users Data Flow */,
+				113F9CA72B5D3F310069CCC2 /* Home screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -294,6 +300,22 @@
 				113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		113F9CA72B5D3F310069CCC2 /* Home screen */ = {
+			isa = PBXGroup;
+			children = (
+				113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */,
+			);
+			path = "Home screen";
+			sourceTree = "<group>";
+		};
+		113F9CAC2B5D4B0F0069CCC2 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		115C39662B5C63B2005843F0 /* Container view */ = {
@@ -432,7 +454,9 @@
 				110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */,
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
 				1106A5902B59C67000DF7450 /* BirthdayViewController.swift in Sources */,
+				113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */,
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
+				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
 				113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,

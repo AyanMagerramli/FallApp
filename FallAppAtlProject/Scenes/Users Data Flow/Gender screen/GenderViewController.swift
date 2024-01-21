@@ -21,6 +21,8 @@ class GenderViewController: UIViewController {
     private func completeButtonAction() {
         completeButton.buttonTappedHandler = {
             //send all user datas from builder to api
+            let vc = HomeViewController()
+            self.navigationController?.show(vc, sender: nil)
         }
     }
     

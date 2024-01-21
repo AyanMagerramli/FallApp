@@ -10,4 +10,5 @@ import Foundation
 enum Color: String {
     case main = "mainColor"
     case background = "backgroundColor"
+    case text = "textColor"
 }
