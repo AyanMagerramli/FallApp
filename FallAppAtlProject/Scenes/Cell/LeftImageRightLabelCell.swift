@@ -88,7 +88,14 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         containerView.addSubview(titleLabel)
         containerView.addSubview(subtitleLabel)
         containerView.addSubview(textLabell)
-
+        
+        containerView.layer.cornerRadius = 16
+        containerView.layer.masksToBounds = true
+        
+        // Add white border to containerView
+        containerView.layer.borderWidth = 1.0
+        containerView.layer.borderColor = UIColor.theme(named: .main).cgColor
+        
         makeConstraints()
         configureUI()
     }

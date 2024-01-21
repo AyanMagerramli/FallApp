@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: (view.frame.size.width)-48, height: 196)
-        layout.minimumLineSpacing = 12
+        layout.minimumLineSpacing = 24
         layout.minimumInteritemSpacing = 4
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collection.frame = view.bounds
@@ -69,13 +69,13 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftImageRightLabelCell.identifier, for: indexPath) as! LeftImageRightLabelCell
         cell.configureUI()
-        cell.layer.cornerRadius = 12
+      //  cell.layer.cornerRadius = 12
         return cell
     }
 }
