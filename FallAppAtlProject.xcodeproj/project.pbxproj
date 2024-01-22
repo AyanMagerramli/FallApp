@@ -27,6 +27,8 @@
 		110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83912B5151300000D6D9 /* RegisterViewModel.swift */; };
 		110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83932B51514E0000D6D9 /* LoginViewController.swift */; };
 		110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83952B51515E0000D6D9 /* LoginViewModel.swift */; };
+		113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113932C62B5EF8DC00D402BA /* TarotViewController.swift */; };
+		113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113932C82B5EFA5000D402BA /* OnlyImageCell.swift */; };
 		113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C952B5D1C2D0069CCC2 /* RobotoFont.swift */; };
 		113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C992B5D204B0069CCC2 /* FontExtension.swift */; };
 		113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */; };
@@ -63,6 +65,8 @@
 		110E83912B5151300000D6D9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		110E83932B51514E0000D6D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		110E83952B51515E0000D6D9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		113932C62B5EF8DC00D402BA /* TarotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotViewController.swift; sourceTree = "<group>"; };
+		113932C82B5EFA5000D402BA /* OnlyImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyImageCell.swift; sourceTree = "<group>"; };
 		113F9C952B5D1C2D0069CCC2 /* RobotoFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotoFont.swift; sourceTree = "<group>"; };
 		113F9C992B5D204B0069CCC2 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				113F9CA02B5D2E4B0069CCC2 /* OTP screen */,
 				113F9CA32B5D39610069CCC2 /* Users Data Flow */,
 				113F9CA72B5D3F310069CCC2 /* Home screen */,
+				113932C52B5EF8BE00D402BA /* Tarot screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -246,6 +251,14 @@
 				110E83952B51515E0000D6D9 /* LoginViewModel.swift */,
 			);
 			path = "Login screen";
+			sourceTree = "<group>";
+		};
+		113932C52B5EF8BE00D402BA /* Tarot screen */ = {
+			isa = PBXGroup;
+			children = (
+				113932C62B5EF8DC00D402BA /* TarotViewController.swift */,
+			);
+			path = "Tarot screen";
 			sourceTree = "<group>";
 		};
 		113F9C972B5D20020069CCC2 /* Extensions */ = {
@@ -317,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */,
+				113932C82B5EFA5000D402BA /* OnlyImageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -481,6 +495,8 @@
 				110E83602B5146A70000D6D9 /* SceneDelegate.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
+				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,
+				113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */,
 				113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */,
 				113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */,
 			);

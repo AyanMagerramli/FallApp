@@ -8,18 +8,27 @@
 import Foundation
 import UIKit
 
+enum navigationAction {
+    
+}
+
 class MainCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController
+    var window: UIWindow?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        
+        setupTabBarController()
     }
     
-    
+    private func setupTabBarController() {
+        let tabBarController = TabBarController()
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
+    }
 }
 
 //

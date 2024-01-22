@@ -15,9 +15,13 @@ class TabBarController: UITabBarController {
     }
     
     func setupViewControllers() {
-//        let firstVC = LoginViewController()
-//        let homeNav = UINavigationController(rootViewController: firstVC)
+        let firstVC = HomeViewController()
+        let homeNav = UINavigationController(rootViewController: firstVC)
+        firstVC.tabBarItem.title = "Home"
+        firstVC.tabBarItem.image = UIImage(named: "HomeTabItem")
+        firstVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
+        viewControllers = [homeNav]
     }
 }
 

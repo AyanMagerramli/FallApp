@@ -87,5 +87,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //go to detail page
+        let vc = TarotViewController()
+        navigationController?.show(vc, sender: nil)
     }
 }
