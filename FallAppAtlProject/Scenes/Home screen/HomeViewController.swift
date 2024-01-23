@@ -47,6 +47,8 @@ class HomeViewController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
+        customizeBackButton()
+        
         view.addSubview(backgroundImage)
         // Send the image view to the back so other UI elements are on top
         view.sendSubviewToBack(backgroundImage)

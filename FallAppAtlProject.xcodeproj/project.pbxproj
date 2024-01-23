@@ -38,6 +38,7 @@
 		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
 		115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C39672B5C63F8005843F0 /* ParentViewController.swift */; };
+		1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169DA472B60459700AB32AE /* CustomHeaderView.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
 		119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB30A2B53DDFC006445FD /* TabBarController.swift */; };
@@ -76,6 +77,7 @@
 		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
 		115C39672B5C63F8005843F0 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		1169DA472B60459700AB32AE /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		119BB30A2B53DDFC006445FD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		110E838C2B5150D90000D6D9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				1169DA462B6044D000AB32AE /* Header */,
 				113F9CAC2B5D4B0F0069CCC2 /* Cell */,
 				110E838E2B5150FB0000D6D9 /* Login screen */,
 				110E838D2B5150E00000D6D9 /* Register screen */,
@@ -341,6 +344,14 @@
 				115C39672B5C63F8005843F0 /* ParentViewController.swift */,
 			);
 			path = "Container view";
+			sourceTree = "<group>";
+		};
+		1169DA462B6044D000AB32AE /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				1169DA472B60459700AB32AE /* CustomHeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		119BB3042B53DC7F006445FD /* Coordinator */ = {
@@ -484,6 +495,7 @@
 				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
 				113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */,
+				1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,

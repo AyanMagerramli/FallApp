@@ -54,6 +54,8 @@ class OTPViewController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
+        customizeBackButton()
+        
         view.backgroundColor = UIColor.theme(named: .background)
         
         view.addSubview(titleLabel)

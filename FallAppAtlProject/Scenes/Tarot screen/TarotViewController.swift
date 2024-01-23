@@ -14,28 +14,6 @@ class TarotViewController: UIViewController {
     
     // MARK: - UI Elements
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "What is your Date of Birth?"
-        label.textAlignment = .left
-        label.numberOfLines = 0
-        label.font = UIFont.robotoFont(ofType: .bold, size: 20)
-        label.lineBreakMode = .byWordWrapping
-        label.textColor = UIColor.theme(named: .main)
-        return label
-    }()
-    
-    private lazy var subtitleLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.text = "Вы можете сделать выбор иллюстраций карт Таро. Выбирайте то, что нравится, это поможет глубже разобрать вашу ситуацию"
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        label.font = UIFont.robotoFont(ofType: .medium, size: 16)
-        label.textColor = UIColor.theme(named: .main)
-        return label
-    }()
-    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -43,10 +21,13 @@ class TarotViewController: UIViewController {
         layout.minimumLineSpacing = 16
         layout.minimumInteritemSpacing = 16
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        // Set content inset to create space between the header view and the collection view
+        collection.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
         collection.backgroundColor = .clear
         collection.dataSource = self
         collection.delegate = self
         collection.register(OnlyImageCell.self, forCellWithReuseIdentifier: OnlyImageCell.identifier)
+        collection.register(CustomHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CustomHeaderView.identifier)
         return collection
     }()
 
@@ -60,10 +41,10 @@ class TarotViewController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = UIColor.theme(named: .background)
+        customizeBackButton()
         
-        view.addSubview(titleLabel)
-        view.addSubview(subtitleLabel)
+        view.backgroundColor = UIColor.theme(named: .background)
+
         view.addSubview(collectionView)
         
         makeConstraints()
@@ -72,18 +53,9 @@ class TarotViewController: UIViewController {
     // MARK: - Setup constraints
     
     private func makeConstraints() {
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(107)
-            make.horizontalEdges.equalToSuperview().inset(24)
-        }
-        
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(12)
-            make.horizontalEdges.equalToSuperview().inset(24)
-        }
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(24)
+            make.top.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(24)
             make.bottom.equalToSuperview()
         }
@@ -106,8 +78,23 @@ extension TarotViewController: UICollectionViewDataSource {
     
     // MARK: - Collection View Data Soruce methods
 
-extension TarotViewController: UICollectionViewDelegate {
+extension TarotViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // go to tarot card detail screen here
+    }
+    
+    // Size for header view
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        // Return the size of your header view
+        return CGSize(width: collectionView.frame.width, height: 140)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderView.identifier, for: indexPath) as! CustomHeaderView
+            
+            return headerView
+        }
+        return UICollectionReusableView()
     }
 }
