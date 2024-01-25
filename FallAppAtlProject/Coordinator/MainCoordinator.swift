@@ -16,7 +16,7 @@ enum NavigationDestination {
     case birthCity
     case name
     case gender
-    case home
+    case tarotDetail
     
     func navigate (from coordinator: MainCoordinator) {
         switch self {
@@ -35,8 +35,8 @@ enum NavigationDestination {
             coordinator.goToNameScreen()
         case .gender:
             coordinator.goToGenderScreen()
-        case .home:
-            coordinator.goToHomeScreen()
+        case .tarotDetail:
+            coordinator.goToTarotDetail()
         }
     }
 }
@@ -106,8 +106,8 @@ class MainCoordinator: CoordinatorProtocol {
         navigationController.show(vc, sender: nil)
     }
     
-    func goToHomeScreen() {
-        let vc = HomeViewController()
+    func goToTarotDetail() {
+        let vc = TarotDetailViewController()
         vc.coordinator = self
         navigationController.show(vc, sender: nil)
     }

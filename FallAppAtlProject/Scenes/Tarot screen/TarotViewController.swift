@@ -82,7 +82,7 @@ extension TarotViewController: UICollectionViewDataSource {
 
 extension TarotViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // go to tarot card detail screen here
+        self.coordinator?.navigate(to: .tarotDetail)
     }
     
     // Size for header view
