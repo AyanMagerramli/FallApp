@@ -12,6 +12,8 @@ class HomeViewController: UIViewController {
     
     // MARK: Properties
     
+    var coordinator: MainCoordinator?
+    
     // MARK: UI Elements
     
     private lazy var backgroundImage: UIImageView = {
@@ -57,7 +59,7 @@ class HomeViewController: UIViewController {
         
         view.addSubview(collectionView)
         
-       title = "Hello, there"
+      // title = "Hello, there"
         
         makeConstraints()
     }

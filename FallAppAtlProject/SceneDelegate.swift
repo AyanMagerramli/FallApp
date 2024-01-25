@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var mainCoordinator: MainCoordinator?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -22,10 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func setTabBarAsRootController(windowScene: UIWindowScene) {
         window = UIWindow(windowScene: windowScene)
-        let controller = TabBarController()
-        window?.rootViewController = controller
-        //UINavigationController(rootViewController: controller) do not put tabbar into navigation stack
-        window?.makeKeyAndVisible()
+        mainCoordinator = MainCoordinator(navigationController: UINavigationController())
+        mainCoordinator?.window = window
+        mainCoordinator?.start()
     }
     
     func setLoginAsRootController(windowScene: UIWindowScene) {

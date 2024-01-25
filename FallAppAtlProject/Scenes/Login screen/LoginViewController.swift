@@ -153,6 +153,7 @@ class LoginViewController: UIViewController {
     
     private func buttonActions() {
         loginButton.buttonTappedHandler = {
+            self.didUserLogin()
             let vc = ParentViewController()
               self.navigationController?.show(vc, sender: nil)
         }

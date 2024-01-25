@@ -12,6 +12,8 @@ class TarotViewController: UIViewController {
     
     // MARK:  Properties
     
+    var coordinator: MainCoordinator?
+    
     // MARK: - UI Elements
     
     private lazy var collectionView: UICollectionView = {
