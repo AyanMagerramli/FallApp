@@ -12,6 +12,7 @@ class GenderViewController: UIViewController {
     
     // MARK: Properties
     
+    var coordinator: MainCoordinator?
     var builder: UserInfoBuilder?
     
     // MARK: - UI Components
@@ -21,8 +22,7 @@ class GenderViewController: UIViewController {
     private func completeButtonAction() {
         completeButton.buttonTappedHandler = {
             //send all user datas from builder to api
-            let vc = HomeViewController()
-            self.navigationController?.show(vc, sender: nil)
+            self.coordinator?.start()
         }
     }
     

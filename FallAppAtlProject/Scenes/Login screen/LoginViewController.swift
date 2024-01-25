@@ -12,6 +12,8 @@ class LoginViewController: UIViewController {
     
     //MARK: Properties
     
+    var coordinator: MainCoordinator?
+    
     //MARK: -UI Elements
     
   private let image: UIImageView = {
@@ -90,7 +92,7 @@ class LoginViewController: UIViewController {
     }
     
     private func didUserLogin() {
-        UserDefaults.standard.setValue(true, forKey: "Logged in")   
+      //  UserDefaults.standard.setValue(true, forKey: "Logged in")
     }
     
     //MARK: - Setup constraints
@@ -154,13 +156,11 @@ class LoginViewController: UIViewController {
     private func buttonActions() {
         loginButton.buttonTappedHandler = {
             self.didUserLogin()
-            let vc = ParentViewController()
-              self.navigationController?.show(vc, sender: nil)
+            self.coordinator?.navigate(to: .birtDate)
         }
         
         registerButton.buttonTappedHandler = {
-            let vc = RegisterViewController()
-            self.navigationController?.show(vc, sender: nil)
+            self.coordinator?.navigate(to: .register)
         }
     }
 }

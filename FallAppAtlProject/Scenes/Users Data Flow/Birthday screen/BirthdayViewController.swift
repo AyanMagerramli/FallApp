@@ -12,6 +12,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     
     //MARK: Properties
     
+    var coordinator: MainCoordinator?
     var mainViewController: ParentViewController?
     var builder: UserInfoBuilder?
     
@@ -96,17 +97,17 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     
     private func didContinueButtonTapped() {
         continueButton.buttonTappedHandler = {
-            if let birthDate = self.dateField.text,
-               let birthTime = self.birthTimeField.text {
-                self.builder?.birthDate = birthDate
-                self.builder?.birthTime = birthTime
-            }
             let vc = BirthCityViewController()
             vc.builder = self.builder
             vc.mainViewController = self.mainViewController
 //            self.transition(from:self , to: vc, duration: 0, animations: nil)
             self.mainViewController?.add(childViewController: vc)
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.coordinator?.navigate(to: .birthCity)
+            if let birthDate = self.dateField.text,
+               let birthTime = self.birthTimeField.text {
+                self.builder?.birthDate = birthDate
+                self.builder?.birthTime = birthTime
+            }
         }
     }
     

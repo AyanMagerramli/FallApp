@@ -11,6 +11,8 @@ class RegisterViewController: UIViewController {
     
     //MARK: Properties
     
+    var coordinator: MainCoordinator?
+    
     //MARK: -UI Elements
     
   private let image: UIImageView = {
@@ -64,8 +66,7 @@ class RegisterViewController: UIViewController {
     
     private func buttonActions() {
         registerButton.buttonTappedHandler = {
-            let vc = OTPViewController()
-            self.navigationController?.show(vc, sender: nil)
+            self.coordinator?.navigate(to: .otp)
         }
     }
     

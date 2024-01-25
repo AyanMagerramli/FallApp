@@ -12,6 +12,7 @@ class NameViewController: UIViewController {
     
     // MARK: Properties
     
+    var coordinator: MainCoordinator?
     var builder: UserInfoBuilder?
     
     // MARK: - UI Components
@@ -75,7 +76,7 @@ class NameViewController: UIViewController {
             }
             let vc = GenderViewController()
             vc.builder = self.builder
-            self.navigationController?.show(vc, sender: nil)
+            self.coordinator?.navigate(to: .gender)
         }
     }
     

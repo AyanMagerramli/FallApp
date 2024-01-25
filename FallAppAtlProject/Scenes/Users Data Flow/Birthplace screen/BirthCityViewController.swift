@@ -12,6 +12,7 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     
     // MARK: Properties
     
+    var coordinator: MainCoordinator?
     var mainViewController: ParentViewController?
     var builder: UserInfoBuilder?
     
@@ -32,7 +33,7 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
             let vc = NameViewController()
             vc.builder = self.builder
            // self.mainViewController?.add(childViewController: vc)
-            self.navigationController?.show(vc, sender: nil)
+            self.coordinator?.navigate(to: .name)
         }
     }
     

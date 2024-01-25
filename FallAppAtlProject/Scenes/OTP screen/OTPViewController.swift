@@ -12,6 +12,8 @@ class OTPViewController: UIViewController {
     
     // MARK: Properties
     
+    var coordinator: MainCoordinator?
+    
     // MARK: UI Elements
     
     private lazy var approveButton = ReusableButton(title: "Approve")

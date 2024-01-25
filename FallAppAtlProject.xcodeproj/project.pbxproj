@@ -39,6 +39,7 @@
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
 		115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C39672B5C63F8005843F0 /* ParentViewController.swift */; };
 		1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169DA472B60459700AB32AE /* CustomHeaderView.swift */; };
+		1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
 		119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB30A2B53DDFC006445FD /* TabBarController.swift */; };
@@ -78,6 +79,7 @@
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
 		115C39672B5C63F8005843F0 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		1169DA472B60459700AB32AE /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
+		1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailViewController.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		119BB30A2B53DDFC006445FD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				113F9CA32B5D39610069CCC2 /* Users Data Flow */,
 				113F9CA72B5D3F310069CCC2 /* Home screen */,
 				113932C52B5EF8BE00D402BA /* Tarot screen */,
+				1173B4882B630DE7005ED1C5 /* Tarot Detail screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -352,6 +355,14 @@
 				1169DA472B60459700AB32AE /* CustomHeaderView.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		1173B4882B630DE7005ED1C5 /* Tarot Detail screen */ = {
+			isa = PBXGroup;
+			children = (
+				1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */,
+			);
+			path = "Tarot Detail screen";
 			sourceTree = "<group>";
 		};
 		119BB3042B53DC7F006445FD /* Coordinator */ = {
@@ -502,6 +513,7 @@
 				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
+				1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */,
 				11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */,
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,
 				110E83602B5146A70000D6D9 /* SceneDelegate.swift in Sources */,

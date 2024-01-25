@@ -30,10 +30,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func setLoginAsRootController(windowScene: UIWindowScene) {
         window = UIWindow(windowScene: windowScene)
-        let loginVC = LoginViewController()
+        mainCoordinator = MainCoordinator(navigationController: UINavigationController())
+        mainCoordinator?.window = window
+        mainCoordinator?.navigate(to: .login)
+        //let loginVC = LoginViewController()
         // Clear the previous navigation stack
-        let navigationController = UINavigationController(rootViewController: loginVC)
-        window?.rootViewController = navigationController
+       // let navigationController = UINavigationController(rootViewController: loginVC)
+       // window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

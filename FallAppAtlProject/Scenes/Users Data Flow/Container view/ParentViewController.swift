@@ -20,6 +20,8 @@ class ParentViewController: UIViewController, ProgressUpdateable {
     
     // MARK: - Properties
     
+    var coordinator: MainCoordinator?
+    
     var progressValue: Float = 0.0 {
         didSet {
             updateProgressBar(value: progressValue)
@@ -61,6 +63,7 @@ class ParentViewController: UIViewController, ProgressUpdateable {
     func showChildViewController() {
         // Embed your first child view controller
         let firstViewController = BirthdayViewController()
+        firstViewController.coordinator = self.coordinator
         add(childViewController: firstViewController)
     }
     
