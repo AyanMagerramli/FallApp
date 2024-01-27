@@ -16,22 +16,29 @@ class NetworkManager {
         parameters: Parameters? = nil,
         method: HTTPMethod = .get,
         encoding: ParameterEncoding = URLEncoding.default,
-        completion: @escaping((T?, String?) -> Void))
+        completion: @escaping((T?, ErrorModel?) -> Void))
     {
         AF.request("\(NetworkHelper.baseURL)\(endpoint ?? "")",
                    method: method,
                    parameters: parameters,
                    encoding: encoding,
-                   headers: NetworkHelper.header).responseDecodable(of: T.self) {
-            response in
-            switch response.result {
-            case .success(let data):
-                completion(data, nil)
-            case .failure(let error):
-                completion(nil, error.localizedDescription)
+                   headers: NetworkHelper.header).responseData { response in
+            if response.response?.statusCode == 200 {
+                if let data = response.data {
+                    self.handleResponse(model: T.self, data: data) { model in
+                        completion(model, nil)
+                    }
+                }
+            } else {
+                self.handleResponse(model: ErrorModel.self, data: response.data ?? Data()) { model in
+                    completion(nil, model)
+                }
             }
-            print ( " Ayan \(NetworkHelper.baseURL)\(endpoint ?? "")  " )
         }
     }
+    
+    fileprivate static func handleResponse<T: Codable>(model: T.Type, data: Data, completion: @escaping((T?)->())) {
+        let result = try? JSONDecoder().decode(T.self, from: data)
+        completion(result)
+    }
 }
-

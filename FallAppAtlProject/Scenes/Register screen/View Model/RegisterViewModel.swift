@@ -15,9 +15,10 @@ class RegisterViewModel {
     var success: (() -> Void)?
     
     func registerUser(userData: RegisterUserModel) {
-        manager.registerUser(registerData: userData) { data, errorMessage in
-            if let errorMessage {
-                self.error?(errorMessage)
+        manager.registerUser(registerData: userData) { data, error in
+            if let error {
+                self.error?(error)
+              //  self.response?.message = errorMessage
             } else if let data {
                 print("DATA is \(data)")
                 self.response = data

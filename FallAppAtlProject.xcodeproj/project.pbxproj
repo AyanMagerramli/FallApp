@@ -37,6 +37,7 @@
 		113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */; };
 		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
+		1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF2D2B64F7BB00452019 /* ErrorModel.swift */; };
 		115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C39672B5C63F8005843F0 /* ParentViewController.swift */; };
 		1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169DA472B60459700AB32AE /* CustomHeaderView.swift */; };
 		11708CFE2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */; };
@@ -90,6 +91,7 @@
 		113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilder.swift; sourceTree = "<group>"; };
 		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
+		1156FF2D2B64F7BB00452019 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		115C39672B5C63F8005843F0 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		1169DA472B60459700AB32AE /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignDetailViewController.swift; sourceTree = "<group>"; };
@@ -178,15 +180,14 @@
 		110E835C2B5146A70000D6D9 /* FallAppAtlProject */ = {
 			isa = PBXGroup;
 			children = (
-				11708D132B643BCF00C8DB60 /* UseCases */,
+				110E83892B5150700000D6D9 /* Managers */,
+				110E83712B514D3E0000D6D9 /* NetworkManager */,
 				113F9C972B5D20020069CCC2 /* Extensions */,
 				1106A5932B59CA7C00DF7450 /* Custom Views */,
 				119BB3092B53DD74006445FD /* TabBar setup */,
 				119BB3042B53DC7F006445FD /* Coordinator */,
 				110E838C2B5150D90000D6D9 /* Scenes */,
 				110E838A2B5150900000D6D9 /* Models */,
-				110E83892B5150700000D6D9 /* Managers */,
-				110E83712B514D3E0000D6D9 /* NetworkManager */,
 				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
 				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
 				110E83662B5146A80000D6D9 /* Assets.xcassets */,
@@ -200,8 +201,9 @@
 		110E83712B514D3E0000D6D9 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				110E83882B514FFE0000D6D9 /* Endpoints */,
 				110E83722B514D4A0000D6D9 /* Core */,
+				110E83882B514FFE0000D6D9 /* Endpoints */,
+				11708D132B643BCF00C8DB60 /* UseCases */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -211,6 +213,7 @@
 			children = (
 				110E83732B514D9E0000D6D9 /* Network Manager.swift */,
 				110E83752B514DAD0000D6D9 /* Network Helper.swift */,
+				1156FF2D2B64F7BB00452019 /* ErrorModel.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */,
 				11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */,
 				110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */,
+				1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */,
 				110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */,
 				11708CFE2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift in Sources */,
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
