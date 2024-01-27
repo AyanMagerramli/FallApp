@@ -11,7 +11,9 @@ class RegisterViewController: UIViewController {
     
     //MARK: Properties
     
-    var coordinator: MainCoordinator?
+    weak var coordinator: MainCoordinator?
+    private let viewModel = RegisterViewModel()
+    var myUser: RegisterUserModel = RegisterUserModel()
     
     //MARK: -UI Elements
     
@@ -37,7 +39,7 @@ class RegisterViewController: UIViewController {
         field.layer.borderWidth = 1.0
         field.layer.cornerRadius = 24
         field.layer.borderColor = UIColor.theme(named: .main).cgColor
-        
+
         return field
     }()
     
@@ -62,11 +64,15 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+      //  viewModelSetup()
     }
     
     private func buttonActions() {
-        registerButton.buttonTappedHandler = {
-            self.coordinator?.navigate(to: .otp)
+        registerButton.buttonTappedHandler = { [weak self] in
+            self?.setupUserData()
+            guard let user = self?.myUser else { return }
+            self?.viewModel.registerUser(userData: user)
+            self?.viewModelSetup()
         }
     }
     
@@ -110,5 +116,22 @@ class RegisterViewController: UIViewController {
         buttonActions()
         
         makeConstraints()
+    }
+    
+    private func setupUserData() {
+        self.myUser.email = emailField.text ?? ""
+        self.myUser.password = passwordField.text ?? ""
+    }
+    
+    private func viewModelSetup() {
+        self.viewModel.success = { [weak self] in
+            print(self?.viewModel.response?.message ?? "no message")
+            self?.coordinator?.navigate(to: .otp)
+        }
+        
+        self.viewModel.error = { [weak self] error in
+            //error alert
+            print(error)
+        }
     }
 }

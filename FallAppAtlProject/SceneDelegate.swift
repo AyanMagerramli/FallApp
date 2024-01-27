@@ -33,10 +33,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainCoordinator = MainCoordinator(navigationController: UINavigationController())
         mainCoordinator?.window = window
         mainCoordinator?.navigate(to: .login)
-        //let loginVC = LoginViewController()
-        // Clear the previous navigation stack
-       // let navigationController = UINavigationController(rootViewController: loginVC)
-       // window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

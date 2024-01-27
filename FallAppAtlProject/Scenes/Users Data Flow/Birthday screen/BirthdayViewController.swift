@@ -217,15 +217,14 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     }
     
     // MARK: - Setup progress bar
-    
-//    var mainViewController: ParentViewController? {
-//        return parent as? ParentViewController
-//    }
-//    
+
     var progressValue: Float = 0.25
     
     // Call this method when a step is completed
     func updateProgressBar(value: Float) {
         mainViewController?.updateProgressBar(value: value)
+        let vc = BirthCityViewController()
+        vc.mainViewController = self.mainViewController
+        mainViewController?.add(childViewController: vc)
     }
 }

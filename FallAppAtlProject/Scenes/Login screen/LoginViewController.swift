@@ -150,6 +150,10 @@ class LoginViewController: UIViewController {
         view.addSubview(registerButton)
         view.addSubview(registerLabel)
         
+        registerButton.backgroundColor = .background
+        registerButton.setTitleColor(.main, for: .normal)
+        registerButton.titleLabel?.font = .robotoFont(ofType: .bold, size: 18)
+        
         makeConstraints()
     }
     

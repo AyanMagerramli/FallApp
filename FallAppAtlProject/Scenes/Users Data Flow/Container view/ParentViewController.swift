@@ -63,6 +63,7 @@ class ParentViewController: UIViewController, ProgressUpdateable {
     func showChildViewController() {
         // Embed your first child view controller
         let firstViewController = BirthdayViewController()
+        firstViewController.mainViewController = self
         firstViewController.coordinator = self.coordinator
         add(childViewController: firstViewController)
     }

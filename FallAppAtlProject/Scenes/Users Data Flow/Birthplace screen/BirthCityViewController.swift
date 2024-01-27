@@ -160,6 +160,9 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     
     func updateProgressBar(value: Float) {
         // Update progress bar
-        mainViewController?.updateProgressBar(value: Float(progressValue))
+        mainViewController?.updateProgressBar(value: value)
+     //   mainViewController?.add(childViewController: NameViewController())
     }
 }
+
+
