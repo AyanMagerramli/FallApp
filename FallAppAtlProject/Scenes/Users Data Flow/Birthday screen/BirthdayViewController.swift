@@ -8,12 +8,11 @@
 import UIKit
 import SnapKit
 
-class BirthdayViewController: UIViewController, ProgressUpdateable {
+class BirthdayViewController: UIViewController {
     
     //MARK: Properties
     
     var coordinator: MainCoordinator?
-    var mainViewController: ParentViewController?
     var builder: UserInfoBuilder?
     
     //MARK: - UI Elements
@@ -71,6 +70,7 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        updateProgress()
     }
     
     //MARK: - Setup UI
@@ -80,28 +80,28 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
         
         customizeBackButton()
         
-        view.addSubview(titleLabel)
-        view.addSubview(continueButton)
-        view.addSubview(dateField)
-        view.addSubview(strokeView1)
-        view.addSubview(birthTimeField)
-        view.addSubview(strokeView2)
+        
+        [titleLabel,
+         continueButton,
+         dateField,
+         strokeView1,
+         birthTimeField,
+         strokeView2
+        ].forEach(view.addSubview(_:))
         
         didContinueButtonTapped()
         makeConstraints()
         setupDatePicker()
         setupTimePicker()
         
-        updateProgressBar(value: progressValue)
+       // updateProgressBar(value: progressValue)
     }
     
     private func didContinueButtonTapped() {
         continueButton.buttonTappedHandler = {
+            ProgressManager.shared.progress += 0.25
             let vc = BirthCityViewController()
             vc.builder = self.builder
-            vc.mainViewController = self.mainViewController
-//            self.transition(from:self , to: vc, duration: 0, animations: nil)
-            self.mainViewController?.add(childViewController: vc)
             self.coordinator?.navigate(to: .birthCity)
             if let birthDate = self.dateField.text,
                let birthTime = self.birthTimeField.text {
@@ -180,6 +180,13 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
         birthTimeField.text = formatTime(timePicker.date)
     }
     
+    // MARK: - Update Progress Bar
+    
+    func updateProgress() {
+          let progress = ProgressManager.shared.progress
+          self.navigationController?.addProgressBar(progress: progress)
+      }
+    
     //MARK: Setup constraints
     
     private func makeConstraints() {
@@ -214,17 +221,5 @@ class BirthdayViewController: UIViewController, ProgressUpdateable {
             make.height.equalTo(1)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
-    }
-    
-    // MARK: - Setup progress bar
-
-    var progressValue: Float = 0.25
-    
-    // Call this method when a step is completed
-    func updateProgressBar(value: Float) {
-        mainViewController?.updateProgressBar(value: value)
-        let vc = BirthCityViewController()
-        vc.mainViewController = self.mainViewController
-        mainViewController?.add(childViewController: vc)
     }
 }

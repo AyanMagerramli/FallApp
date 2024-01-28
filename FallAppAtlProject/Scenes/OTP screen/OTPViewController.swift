@@ -16,7 +16,7 @@ class OTPViewController: UIViewController {
     
     // MARK: UI Elements
     
-    private lazy var approveButton = ReusableButton(title: "Approve")
+    private lazy var approveButton = ReusableButton(title: "Confirm")
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -45,6 +45,8 @@ class OTPViewController: UIViewController {
         return view
     }()
     
+    private lazy var resendButton = ReusableButton(title: "Resend")
+    
     
     // MARK: - Life cycle
 
@@ -60,10 +62,11 @@ class OTPViewController: UIViewController {
         
         view.backgroundColor = UIColor.theme(named: .background)
         
-        view.addSubview(titleLabel)
-        view.addSubview(otpField)
-        view.addSubview(strokeView)
-        view.addSubview(approveButton)
+        [titleLabel,
+         otpField,
+         strokeView,
+         resendButton,
+         approveButton].forEach(view.addSubview(_:))
         
         makeConstraints()
     }
@@ -90,10 +93,14 @@ class OTPViewController: UIViewController {
             make.width.equalTo(otpField)
         }
         
+        resendButton.snp.makeConstraints { make in
+            make.top.equalTo(strokeView.snp.bottom).offset(20)
+            make.centerX.equalToSuperview()
+        }
+        
         approveButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(90)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
     }
-    
 }

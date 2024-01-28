@@ -8,12 +8,11 @@
 import UIKit
 import SnapKit
 
-class BirthCityViewController: UIViewController, ProgressUpdateable {
+class BirthCityViewController: UIViewController {
     
     // MARK: Properties
     
     var coordinator: MainCoordinator?
-    var mainViewController: ParentViewController?
     var builder: UserInfoBuilder?
     
     let cities = ["City1", "City2", "City3"]
@@ -25,6 +24,7 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     
     private func buttonAction() {
         continueButton.buttonTappedHandler = {
+            ProgressManager.shared.progress += 0.25
             if let birthCountry = self.countryPickerTextField.text,
                let birthCity = self.cityPickerTextField.text {
                 self.builder?.birthCity = birthCity
@@ -89,6 +89,7 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        updateProgress()
     }
     
     // MARK: - Setup UI
@@ -98,21 +99,27 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
         
         customizeBackButton()
         
-        view.addSubview(titleLabel)
-        view.addSubview(cityPickerTextField)
-        view.addSubview(countryPickerTextField)
-        view.addSubview(strokeView1)
-        view.addSubview(strokeView2)
-        view.addSubview(continueButton)
-        
+        [titleLabel,
+         cityPickerTextField,
+         countryPickerTextField,
+         strokeView1,
+         strokeView2,
+         continueButton
+        ].forEach(view.addSubview(_:))
+                
         makeConstraints()
         
         setupCityPicker()
         setupCountryPicker()
         buttonAction()
-        
-        updateProgressBar(value: progressValue)
     }
+    
+    // MARK: - Update Progress Bar
+    
+    func updateProgress() {
+          let progress = ProgressManager.shared.progress
+          self.navigationController?.addProgressBar(progress: progress)
+      }
     
     // MARK: - Setup Constraints
     
@@ -148,20 +155,6 @@ class BirthCityViewController: UIViewController, ProgressUpdateable {
             make.height.equalTo(1)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
-    }
-    
-    // MARK: - Setup navigation bar
-    
-//    var mainViewController: ParentViewController? {
-//        return parent as? ParentViewController
-//    }
-    
-    var progressValue: Float = 0.50
-    
-    func updateProgressBar(value: Float) {
-        // Update progress bar
-        mainViewController?.updateProgressBar(value: value)
-     //   mainViewController?.add(childViewController: NameViewController())
     }
 }
 

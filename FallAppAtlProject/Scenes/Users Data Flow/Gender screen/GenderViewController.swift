@@ -21,6 +21,7 @@ class GenderViewController: UIViewController {
     
     private func completeButtonAction() {
         completeButton.buttonTappedHandler = {
+            ProgressManager.shared.progress += 0.25
             //send all user datas from builder to api
             self.coordinator?.start()
         }
@@ -55,6 +56,7 @@ class GenderViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        updateProgress()
     }
     
     // MARK: - Setup UI
@@ -64,9 +66,9 @@ class GenderViewController: UIViewController {
         
         customizeBackButton()
         
-        view.addSubview(titleLabel)
-        view.addSubview(completeButton)
-        view.addSubview(stackView)
+        [titleLabel,
+        completeButton,
+         stackView].forEach(view.addSubview(_:))
         
         makeConstraints()
         completeButtonAction()
@@ -88,6 +90,13 @@ class GenderViewController: UIViewController {
         maleButton.imageView?.contentMode = .scaleAspectFit
         maleButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
     }
+    
+    // MARK: - Update Progress Bar
+    
+    func updateProgress() {
+          let progress = ProgressManager.shared.progress
+          self.navigationController?.addProgressBar(progress: progress)
+      }
     
     // MARK: - Make Constraints
     

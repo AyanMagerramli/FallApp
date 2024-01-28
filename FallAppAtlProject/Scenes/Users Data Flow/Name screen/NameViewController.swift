@@ -52,6 +52,7 @@ class NameViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         buttonAction()
+        updateProgress()
     }
     
     //MARK: - Setup UI
@@ -61,16 +62,17 @@ class NameViewController: UIViewController {
         
         customizeBackButton()
         
-        view.addSubview(titleLabel)
-        view.addSubview(strokeView)
-        view.addSubview(nameField)
-        view.addSubview(continueButton)
+        [titleLabel,
+         strokeView,
+         nameField,
+         continueButton].forEach(view.addSubview(_:))
         
         makeConstraints()
     }
     
     private func buttonAction() {
         continueButton.buttonTappedHandler = {
+            ProgressManager.shared.progress += 0.25
             if let name = self.nameField.text {
                 self.builder?.name = name
             }
@@ -79,6 +81,13 @@ class NameViewController: UIViewController {
             self.coordinator?.navigate(to: .gender)
         }
     }
+    
+    // MARK: - Update Progress Bar
+    
+    func updateProgress() {
+          let progress = ProgressManager.shared.progress
+          self.navigationController?.addProgressBar(progress: progress)
+      }
     
     //MARK: - Setup Constraints
     

@@ -10,6 +10,7 @@ import SnapKit
 class LeftImageRightLabelCell: UICollectionViewCell {
 
     // MARK: Properties
+    
     static let identifier = "LeftImageRightLabelCell"
 
     // MARK: - UI Elements
@@ -82,6 +83,7 @@ class LeftImageRightLabelCell: UICollectionViewCell {
 
     private func setupUI() {
         addSubview(containerView)
+        
         containerView.addSubview(blurEffectView)
         containerView.addSubview(leftImage)
         containerView.addSubview(titleLabel)

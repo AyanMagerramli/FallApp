@@ -84,7 +84,6 @@ class MainCoordinator: CoordinatorProtocol {
     
     func goToBirthDateScreen() {
         let vc = BirthdayViewController()
-        vc.mainViewController = navigationController.topViewController as? ParentViewController
         vc.coordinator = self
         navigationController.show(vc, sender: nil)
     }
@@ -92,7 +91,6 @@ class MainCoordinator: CoordinatorProtocol {
     func goToBirthCityScreen() {
         let vc = BirthCityViewController()
         vc.coordinator = self
-        vc.mainViewController = navigationController.topViewController as? ParentViewController
         navigationController.show(vc, sender: nil)
     }
     

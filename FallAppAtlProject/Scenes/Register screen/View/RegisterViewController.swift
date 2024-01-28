@@ -108,10 +108,10 @@ class RegisterViewController: UIViewController {
     private func setupUI() {
         self.view.backgroundColor = UIColor.theme(named: .background)
         
-        view.addSubview(image)
-        view.addSubview(emailField)
-        view.addSubview(passwordField)
-        view.addSubview(registerButton)
+        [image,
+         emailField,
+         passwordField,
+         registerButton].forEach(view.addSubview(_:))
         
         buttonActions()
         

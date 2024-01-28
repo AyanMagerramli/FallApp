@@ -65,7 +65,7 @@ class ParentViewController: UIViewController, ProgressUpdateable {
         let firstViewController = BirthdayViewController()
         firstViewController.mainViewController = self
         firstViewController.coordinator = self.coordinator
-        add(childViewController: firstViewController)
+   //     add(childViewController: firstViewController)
     }
     
     func add(childViewController: UIViewController & ProgressUpdateable) {

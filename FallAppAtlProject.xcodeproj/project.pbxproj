@@ -38,7 +38,8 @@
 		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
 		1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF2D2B64F7BB00452019 /* ErrorModel.swift */; };
-		115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115C39672B5C63F8005843F0 /* ParentViewController.swift */; };
+		1156FF312B65115900452019 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF302B65115900452019 /* ProgressBar.swift */; };
+		1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF332B65143F00452019 /* ProgressBarManager.swift */; };
 		1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169DA472B60459700AB32AE /* CustomHeaderView.swift */; };
 		11708CFE2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */; };
 		11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D002B63CA7600C8DB60 /* YearSignDetailViewController.swift */; };
@@ -92,7 +93,8 @@
 		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
 		1156FF2D2B64F7BB00452019 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
-		115C39672B5C63F8005843F0 /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		1156FF302B65115900452019 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		1156FF332B65143F00452019 /* ProgressBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarManager.swift; sourceTree = "<group>"; };
 		1169DA472B60459700AB32AE /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignDetailViewController.swift; sourceTree = "<group>"; };
 		11708D002B63CA7600C8DB60 /* YearSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSignDetailViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 		113F9C972B5D20020069CCC2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1156FF2F2B65112D00452019 /* Navigation Controller */,
 				11F9BF482B5D92EC00F913F7 /* View Controller */,
 				113F9C9B2B5D22B00069CCC2 /* Colors */,
 				113F9C982B5D200B0069CCC2 /* Roboto Font */,
@@ -328,7 +331,7 @@
 		113F9CA32B5D39610069CCC2 /* Users Data Flow */ = {
 			isa = PBXGroup;
 			children = (
-				115C39662B5C63B2005843F0 /* Container view */,
+				1156FF322B65142F00452019 /* Progress Bar Manager */,
 				1106A58E2B59C54C00DF7450 /* Birthday screen */,
 				1106A5962B59CECF00DF7450 /* Birthplace screen */,
 				11A2418F2B5B217B000E2CEE /* Name screen */,
@@ -364,12 +367,20 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		115C39662B5C63B2005843F0 /* Container view */ = {
+		1156FF2F2B65112D00452019 /* Navigation Controller */ = {
 			isa = PBXGroup;
 			children = (
-				115C39672B5C63F8005843F0 /* ParentViewController.swift */,
+				1156FF302B65115900452019 /* ProgressBar.swift */,
 			);
-			path = "Container view";
+			path = "Navigation Controller";
+			sourceTree = "<group>";
+		};
+		1156FF322B65142F00452019 /* Progress Bar Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1156FF332B65143F00452019 /* ProgressBarManager.swift */,
+			);
+			path = "Progress Bar Manager";
 			sourceTree = "<group>";
 		};
 		1169DA462B6044D000AB32AE /* Header */ = {
@@ -586,7 +597,6 @@
 				11708D0C2B63D20E00C8DB60 /* UserInfoCell.swift in Sources */,
 				113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */,
 				119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */,
-				115C39682B5C63F8005843F0 /* ParentViewController.swift in Sources */,
 				11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */,
 				110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */,
 				1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */,
@@ -595,6 +605,7 @@
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
 				11708D202B64710300C8DB60 /* RegisterResponseModel.swift in Sources */,
 				1106A5902B59C67000DF7450 /* BirthdayViewController.swift in Sources */,
+				1156FF312B65115900452019 /* ProgressBar.swift in Sources */,
 				113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */,
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
 				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
@@ -620,6 +631,7 @@
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,
 				110E83602B5146A70000D6D9 /* SceneDelegate.swift in Sources */,
+				1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
 				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,

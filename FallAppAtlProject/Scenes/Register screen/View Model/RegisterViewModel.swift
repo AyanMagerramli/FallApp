@@ -10,15 +10,16 @@ import Foundation
 class RegisterViewModel {
     
     var response: RegisterResponseModel?
+    var errorResponse: ErrorModel?
     private let manager = RegisterManager()
-    var error: ((String) -> Void)?
+    var error: ((ErrorModel) -> Void)?
     var success: (() -> Void)?
     
     func registerUser(userData: RegisterUserModel) {
         manager.registerUser(registerData: userData) { data, error in
             if let error {
                 self.error?(error)
-              //  self.response?.message = errorMessage
+                self.errorResponse = error
             } else if let data {
                 print("DATA is \(data)")
                 self.response = data
