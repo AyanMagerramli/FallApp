@@ -66,10 +66,10 @@ class DetailCell: UITableViewCell {
     
     private func setupUI() {
         contentView.backgroundColor = UIColor.theme(named: .background)
-    
-        contentView.addSubview(image)
-        contentView.addSubview(titleLabel)
-        contentView.addSubview(infoDetailLabel)
+        
+        [image,
+         titleLabel,
+         infoDetailLabel].forEach(contentView.addSubview(_:))
         
         makeConstraints()
     }

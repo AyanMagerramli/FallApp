@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - RegisterResponse
 
-struct RegisterResponseModel: Codable {
+struct RegisterOTPResponseModel: Codable {
     let data: DataClass?
     let message: String?
 }

@@ -8,6 +8,6 @@
 import Foundation
 
 protocol RegisterUseCase {
-    func registerUser (registerData: RegisterUserModel, completion: @escaping((RegisterResponseModel?, ErrorModel?)->Void))
+    func registerUser (registerData: RegisterUserModel, completion: @escaping((RegisterOTPResponseModel?, ErrorModel?)->Void))
 }
 

@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Error Model stays the same for each API, use only this one each time
+
 struct ErrorModel: Codable {
     let type: String?
     let title: String?

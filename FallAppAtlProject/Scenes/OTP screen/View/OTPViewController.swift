@@ -7,14 +7,19 @@
 
 import UIKit
 import SnapKit
+import KeychainSwift
 
 class OTPViewController: UIViewController {
     
     // MARK: Properties
     
     var coordinator: MainCoordinator?
+    private let viewModel = OTPViewModel()
+    var otpModel = OTPResponseModel()
+    var otpResetModel = OTPResetModel()
+    let keychain = KeychainSwift()
     
-    // MARK: UI Elements
+    // MARK: - UI Elements
     
     private lazy var approveButton = ReusableButton(title: "Confirm")
     
@@ -47,9 +52,30 @@ class OTPViewController: UIViewController {
     
     private lazy var resendButton = ReusableButton(title: "Resend")
     
+    private func buttonActions () {
+        approveButton.buttonTappedHandler = { [weak self] in
+            self?.setupUserData()
+        //    print("Mail is \(String(describing: self?.otpModel.email))")
+        //    print("Mail is \(String(describing: self?.otpModel.pin))")
+            guard let otp = self?.otpModel else {return}
+        //    print("OTPMODEL is \(otp)")
+            self?.viewModel.confirmOTP(otpData: otp)
+            print(otp)
+            
+            self?.viewModelSetup()
+        }
+        
+        resendButton.buttonTappedHandler = { [weak self] in
+            self?.setupResetOTPData()
+            guard let otp = self?.otpResetModel else {return}
+            print("OTPMODEL is \(otp)")
+            self?.viewModel.resetOTP(otpData: otp)
+        }
+    }
+    
     
     // MARK: - Life cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -69,6 +95,8 @@ class OTPViewController: UIViewController {
          approveButton].forEach(view.addSubview(_:))
         
         makeConstraints()
+        
+        buttonActions()
     }
     
     // MARK: - Setup Constraints
@@ -101,6 +129,30 @@ class OTPViewController: UIViewController {
         approveButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(90)
             make.horizontalEdges.equalToSuperview().inset(24)
+        }
+    }
+    
+    private func setupUserData() {
+        let email = UserDefaults.standard.string(forKey: "email")
+        self.otpModel.email = email ?? "no email"
+        self.otpModel.pin = otpField.text ?? "no otp"
+    }
+    
+    private func setupResetOTPData() {
+        let email = UserDefaults.standard.string(forKey: "email")
+        self.otpResetModel.email = email
+        self.otpResetModel.password = keychain.get("password")
+    }
+    
+    private func viewModelSetup() {
+        self.viewModel.success = { [weak self] in
+            print(self?.viewModel.successResponse?.message ?? "no message")
+            self?.coordinator?.navigate(to: .login)
+        }
+        
+        self.viewModel.error = { [weak self] error in
+            //error alert
+            print(error)
         }
     }
 }

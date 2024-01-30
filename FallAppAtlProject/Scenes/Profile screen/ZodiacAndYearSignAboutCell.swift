@@ -84,11 +84,12 @@ class ZodiacAndYearSignAboutCell: UITableViewCell {
 
     private func setupUI() {
         addSubview(containerView)
-        containerView.addSubview(blurEffectView)
-        containerView.addSubview(leftImage)
-        containerView.addSubview(titleLabel)
-        containerView.addSubview(subtitleLabel)
-        containerView.addSubview(textLabell)
+        
+        [blurEffectView,
+         leftImage,
+         titleLabel,
+         subtitleLabel,
+         textLabell].forEach(containerView.addSubview(_:))
         
         containerView.layer.cornerRadius = 16
         containerView.layer.masksToBounds = true

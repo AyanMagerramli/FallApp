@@ -16,7 +16,9 @@ class NetworkManager {
         parameters: Parameters? = nil,
         method: HTTPMethod = .get,
         encoding: ParameterEncoding = URLEncoding.default,
-        completion: @escaping((T?, ErrorModel?) -> Void))
+        completion: @escaping((T?, ErrorModel?) -> Void)
+    
+    )
     {
         AF.request("\(NetworkHelper.baseURL)\(endpoint ?? "")",
                    method: method,

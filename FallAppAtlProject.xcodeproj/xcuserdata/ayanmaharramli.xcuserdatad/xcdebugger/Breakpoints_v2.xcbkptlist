@@ -14,8 +14,8 @@
             filePath = "FallAppAtlProject/Scenes/Tarot Detail screen/TarotDetailViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,17 +23,432 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "199C16EC-AAFD-4E28-BCEA-878D0E553105"
+            uuid = "4873A274-E9E3-4987-923F-AA779BD7BFF4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/NetworkManager/Core/Network Manager.swift"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View Model/OTPViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "request(model:endpoint:parameters:method:encoding:completion:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "confirmOTP(otpData:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4873A274-E9E3-4987-923F-AA779BD7BFF4 - 69151f1429ff4a19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.OTPResponseModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.OTPViewModel.confirmOTP(otpData: FallAppAtlProject.OTPResponseModel) -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View%20Model/OTPViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "508">
+               </Location>
+               <Location
+                  uuid = "4873A274-E9E3-4987-923F-AA779BD7BFF4 - 6c2961520feb38e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.RegisterLoginOTPResponseModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.OTPViewModel.confirmOTP(otpData: FallAppAtlProject.OTPResponseModel) -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View%20Model/OTPViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "508">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "82F708F0-0BFB-48D4-823F-0FEA1F70EE17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View Model/OTPViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "confirmOTP(otpData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "82F708F0-0BFB-48D4-823F-0FEA1F70EE17 - 69151f1429ff4a9d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.OTPResponseModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.OTPViewModel.confirmOTP(otpData: FallAppAtlProject.OTPResponseModel) -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View%20Model/OTPViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "864">
+               </Location>
+               <Location
+                  uuid = "82F708F0-0BFB-48D4-823F-0FEA1F70EE17 - 6c2961520feb3866"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.RegisterLoginOTPResponseModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.OTPViewModel.confirmOTP(otpData: FallAppAtlProject.OTPResponseModel) -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View%20Model/OTPViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "916">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CFE2D325-6A71-404D-BE5B-7B88AFFD9E35"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "buttonActions()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7764B539-CEFF-4C78-AC08-3ABC1EB1604E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "buttonActions()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00A57AEC-5F0A-4A85-9C87-1DB256FFD651"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "buttonActions()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8FBA4A93-6F13-4FF2-8185-6D308FFF3567"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "viewModelSetup()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8FBA4A93-6F13-4FF2-8185-6D308FFF3567 - 4a8a1c33f575f596"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (FallAppAtlProject.ErrorModel) -&gt; () in FallAppAtlProject.OTPViewController.viewModelSetup() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View/OTPViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "8FBA4A93-6F13-4FF2-8185-6D308FFF3567 - 201517a6245e3ea3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallAppAtlProject.OTPViewController.viewModelSetup() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View/OTPViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "8FBA4A93-6F13-4FF2-8185-6D308FFF3567 - 4a8a1c33f575f454"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (FallAppAtlProject.ErrorModel) -&gt; () in FallAppAtlProject.OTPViewController.viewModelSetup() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View/OTPViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0E03E277-A534-4AEE-AE49-89966A9DE2E4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "viewModelSetup()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0E03E277-A534-4AEE-AE49-89966A9DE2E4 - 201517a6245e3f61"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FallAppAtlProject.OTPViewController.viewModelSetup() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View/OTPViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "0E03E277-A534-4AEE-AE49-89966A9DE2E4 - 4a8a1c33f575f454"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (FallAppAtlProject.ErrorModel) -&gt; () in FallAppAtlProject.OTPViewController.viewModelSetup() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View/OTPViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDCD0907-4E90-4CD6-B084-237508E0DBFF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "buttonActions()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FDCD0907-4E90-4CD6-B084-237508E0DBFF - b47e27096dccaabd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FallAppAtlProject.OTPViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View/OTPViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "FDCD0907-4E90-4CD6-B084-237508E0DBFF - b47e27096dccaabd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FallAppAtlProject.OTPViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View/OTPViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "212">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C8AC983-9833-4AA1-92DE-6B513F4A8461"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View Model/OTPViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "resetOTP(otpData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C8AC983-9833-4AA1-92DE-6B513F4A8461 - f28e291c5fa81487"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.OTPResetSuccessResponseModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.OTPViewModel.resetOTP(otpData: FallAppAtlProject.OTPResetModel) -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View%20Model/OTPViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "6C8AC983-9833-4AA1-92DE-6B513F4A8461 - f28e291c5fa81487"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.OTPResetSuccessResponseModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.OTPViewModel.resetOTP(otpData: FallAppAtlProject.OTPResetModel) -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/OTP%20screen/View%20Model/OTPViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "42E61436-E815-40B2-AFA6-F00A2B02CF4F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View Model/OTPViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "resetOTP(otpData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DBD19A4-0223-4BFE-B3D8-E91F92C38455"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/OTP screen/View Model/OTPViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "resetOTP(otpData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B48DB739-DE54-4467-A891-55134EB535FD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/Login screen/View/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "buttonActions()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B48DB739-DE54-4467-A891-55134EB535FD - 90d757a0661710ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "B48DB739-DE54-4467-A891-55134EB535FD - 90d757a0661710ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "169"
+                  endingLineNumber = "169"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

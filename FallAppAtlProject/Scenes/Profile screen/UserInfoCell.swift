@@ -75,10 +75,10 @@ class UserInfoCell: UITableViewCell {
     private func setupUI() {
         contentView.backgroundColor = .clear
         
-        contentView.addSubview(image)
-        contentView.addSubview(birthdayLabel)
-        contentView.addSubview(yearSignLabel)
-        contentView.addSubview(zodiacSignLabel)
+        [image,
+         birthdayLabel,
+         yearSignLabel,
+         zodiacSignLabel].forEach(contentView.addSubview(_:))
         
         makeConstraints()
     }

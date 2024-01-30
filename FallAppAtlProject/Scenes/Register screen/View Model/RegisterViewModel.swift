@@ -9,9 +9,9 @@ import Foundation
 
 class RegisterViewModel {
     
-    var response: RegisterResponseModel?
-    var errorResponse: ErrorModel?
     private let manager = RegisterManager()
+    var response: RegisterOTPResponseModel?
+    var errorResponse: ErrorModel?
     var error: ((ErrorModel) -> Void)?
     var success: (() -> Void)?
     
@@ -21,7 +21,7 @@ class RegisterViewModel {
                 self.error?(error)
                 self.errorResponse = error
             } else if let data {
-                print("DATA is \(data)")
+              //  print("DATA is \(data)")
                 self.response = data
                 self.success?()
             }

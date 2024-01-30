@@ -27,8 +27,12 @@
 		110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83912B5151300000D6D9 /* RegisterViewModel.swift */; };
 		110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83932B51514E0000D6D9 /* LoginViewController.swift */; };
 		110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83952B51515E0000D6D9 /* LoginViewModel.swift */; };
+		113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113014652B66EACD0089E5D6 /* OTPManager.swift */; };
+		113014682B66EAEA0089E5D6 /* OTPUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113014672B66EAEA0089E5D6 /* OTPUseCase.swift */; };
 		113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113932C62B5EF8DC00D402BA /* TarotViewController.swift */; };
 		113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113932C82B5EFA5000D402BA /* OnlyImageCell.swift */; };
+		113E4E372B68356B0033375D /* OTPResetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E4E362B68356B0033375D /* OTPResetModel.swift */; };
+		113E4E392B6836280033375D /* OTPResetSuccessResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113E4E382B6836280033375D /* OTPResetSuccessResponseModel.swift */; };
 		113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C952B5D1C2D0069CCC2 /* RobotoFont.swift */; };
 		113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C992B5D204B0069CCC2 /* FontExtension.swift */; };
 		113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */; };
@@ -40,6 +44,8 @@
 		1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF2D2B64F7BB00452019 /* ErrorModel.swift */; };
 		1156FF312B65115900452019 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF302B65115900452019 /* ProgressBar.swift */; };
 		1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF332B65143F00452019 /* ProgressBarManager.swift */; };
+		115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D95A12B66B01F00BB80DE /* OTPViewModel.swift */; };
+		115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D95A52B66B3EA00BB80DE /* OTPResponseModel.swift */; };
 		1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169DA472B60459700AB32AE /* CustomHeaderView.swift */; };
 		11708CFE2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */; };
 		11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D002B63CA7600C8DB60 /* YearSignDetailViewController.swift */; };
@@ -52,7 +58,7 @@
 		11708D152B643BF200C8DB60 /* RegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D142B643BF200C8DB60 /* RegisterUseCase.swift */; };
 		11708D1A2B646B4700C8DB60 /* RegisterUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D192B646B4700C8DB60 /* RegisterUserModel.swift */; };
 		11708D1E2B646C5F00C8DB60 /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D1D2B646C5F00C8DB60 /* RegisterManager.swift */; };
-		11708D202B64710300C8DB60 /* RegisterResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D1F2B64710300C8DB60 /* RegisterResponseModel.swift */; };
+		11708D202B64710300C8DB60 /* RegisterOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D1F2B64710300C8DB60 /* RegisterOTPResponseModel.swift */; };
 		1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */; };
 		1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4892B631038005ED1C5 /* DetailCell.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
@@ -62,6 +68,10 @@
 		11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */; };
 		11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241902B5B2195000E2CEE /* NameViewController.swift */; };
 		11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241932B5B2859000E2CEE /* GenderViewController.swift */; };
+		11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41AC2B69601100E07C63 /* LoginSuccessModel.swift */; };
+		11DA41AF2B69658B00E07C63 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */; };
+		11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B02B6965D200E07C63 /* LoginUserModel.swift */; };
+		11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B22B69668800E07C63 /* LoginManager.swift */; };
 		11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,8 +92,12 @@
 		110E83912B5151300000D6D9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		110E83932B51514E0000D6D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		110E83952B51515E0000D6D9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		113014652B66EACD0089E5D6 /* OTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPManager.swift; sourceTree = "<group>"; };
+		113014672B66EAEA0089E5D6 /* OTPUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUseCase.swift; sourceTree = "<group>"; };
 		113932C62B5EF8DC00D402BA /* TarotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotViewController.swift; sourceTree = "<group>"; };
 		113932C82B5EFA5000D402BA /* OnlyImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlyImageCell.swift; sourceTree = "<group>"; };
+		113E4E362B68356B0033375D /* OTPResetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResetModel.swift; sourceTree = "<group>"; };
+		113E4E382B6836280033375D /* OTPResetSuccessResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResetSuccessResponseModel.swift; sourceTree = "<group>"; };
 		113F9C952B5D1C2D0069CCC2 /* RobotoFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobotoFont.swift; sourceTree = "<group>"; };
 		113F9C992B5D204B0069CCC2 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		113F9C9C2B5D22D40069CCC2 /* ColorEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorEnum.swift; sourceTree = "<group>"; };
@@ -95,6 +109,8 @@
 		1156FF2D2B64F7BB00452019 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		1156FF302B65115900452019 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1156FF332B65143F00452019 /* ProgressBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarManager.swift; sourceTree = "<group>"; };
+		115D95A12B66B01F00BB80DE /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		115D95A52B66B3EA00BB80DE /* OTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponseModel.swift; sourceTree = "<group>"; };
 		1169DA472B60459700AB32AE /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignDetailViewController.swift; sourceTree = "<group>"; };
 		11708D002B63CA7600C8DB60 /* YearSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSignDetailViewController.swift; sourceTree = "<group>"; };
@@ -107,7 +123,7 @@
 		11708D142B643BF200C8DB60 /* RegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUseCase.swift; sourceTree = "<group>"; };
 		11708D192B646B4700C8DB60 /* RegisterUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserModel.swift; sourceTree = "<group>"; };
 		11708D1D2B646C5F00C8DB60 /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
-		11708D1F2B64710300C8DB60 /* RegisterResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponseModel.swift; sourceTree = "<group>"; };
+		11708D1F2B64710300C8DB60 /* RegisterOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterOTPResponseModel.swift; sourceTree = "<group>"; };
 		1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailViewController.swift; sourceTree = "<group>"; };
 		1173B4892B631038005ED1C5 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
@@ -117,6 +133,10 @@
 		11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable View.swift"; sourceTree = "<group>"; };
 		11A241902B5B2195000E2CEE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		11A241932B5B2859000E2CEE /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		11DA41AC2B69601100E07C63 /* LoginSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessModel.swift; sourceTree = "<group>"; };
+		11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		11DA41B02B6965D200E07C63 /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
+		11DA41B22B69668800E07C63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				11708D1D2B646C5F00C8DB60 /* RegisterManager.swift */,
+				113014652B66EACD0089E5D6 /* OTPManager.swift */,
+				11DA41B22B69668800E07C63 /* LoginManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -277,8 +299,9 @@
 		110E838E2B5150FB0000D6D9 /* Login screen */ = {
 			isa = PBXGroup;
 			children = (
-				110E83932B51514E0000D6D9 /* LoginViewController.swift */,
-				110E83952B51515E0000D6D9 /* LoginViewModel.swift */,
+				11DA41A92B695FF100E07C63 /* View */,
+				11DA41AA2B695FF900E07C63 /* View Model */,
+				11DA41AB2B69600400E07C63 /* Model */,
 			);
 			path = "Login screen";
 			sourceTree = "<group>";
@@ -323,7 +346,9 @@
 		113F9CA02B5D2E4B0069CCC2 /* OTP screen */ = {
 			isa = PBXGroup;
 			children = (
-				113F9CA12B5D2E690069CCC2 /* OTPViewController.swift */,
+				115D95A32B66B3CB00BB80DE /* View */,
+				115D95A42B66B3D300BB80DE /* View Model */,
+				115D95A72B66B3F200BB80DE /* Model */,
 			);
 			path = "OTP screen";
 			sourceTree = "<group>";
@@ -383,6 +408,32 @@
 			path = "Progress Bar Manager";
 			sourceTree = "<group>";
 		};
+		115D95A32B66B3CB00BB80DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113F9CA12B5D2E690069CCC2 /* OTPViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		115D95A42B66B3D300BB80DE /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				115D95A12B66B01F00BB80DE /* OTPViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		115D95A72B66B3F200BB80DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				113E4E382B6836280033375D /* OTPResetSuccessResponseModel.swift */,
+				115D95A52B66B3EA00BB80DE /* OTPResponseModel.swift */,
+				113E4E362B68356B0033375D /* OTPResetModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1169DA462B6044D000AB32AE /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +480,8 @@
 			isa = PBXGroup;
 			children = (
 				11708D142B643BF200C8DB60 /* RegisterUseCase.swift */,
+				113014672B66EAEA0089E5D6 /* OTPUseCase.swift */,
+				11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -437,7 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				11708D192B646B4700C8DB60 /* RegisterUserModel.swift */,
-				11708D1F2B64710300C8DB60 /* RegisterResponseModel.swift */,
+				11708D1F2B64710300C8DB60 /* RegisterOTPResponseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,6 +550,31 @@
 				11A241932B5B2859000E2CEE /* GenderViewController.swift */,
 			);
 			path = "Gender screen";
+			sourceTree = "<group>";
+		};
+		11DA41A92B695FF100E07C63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				110E83932B51514E0000D6D9 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11DA41AA2B695FF900E07C63 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				110E83952B51515E0000D6D9 /* LoginViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		11DA41AB2B69600400E07C63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11DA41AC2B69601100E07C63 /* LoginSuccessModel.swift */,
+				11DA41B02B6965D200E07C63 /* LoginUserModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		11F9BF482B5D92EC00F913F7 /* View Controller */ = {
@@ -603,11 +681,13 @@
 				110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */,
 				11708CFE2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift in Sources */,
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
-				11708D202B64710300C8DB60 /* RegisterResponseModel.swift in Sources */,
+				11708D202B64710300C8DB60 /* RegisterOTPResponseModel.swift in Sources */,
 				1106A5902B59C67000DF7450 /* BirthdayViewController.swift in Sources */,
 				1156FF312B65115900452019 /* ProgressBar.swift in Sources */,
+				11DA41AF2B69658B00E07C63 /* LoginUseCase.swift in Sources */,
 				113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */,
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
+				113014682B66EAEA0089E5D6 /* OTPUseCase.swift in Sources */,
 				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
 				11708D1A2B646B4700C8DB60 /* RegisterUserModel.swift in Sources */,
@@ -619,13 +699,20 @@
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
 				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,
+				113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */,
+				113E4E372B68356B0033375D /* OTPResetModel.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
 				11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
 				11708D102B63D77900C8DB60 /* ZodiacAndYearSignAboutCell.swift in Sources */,
+				11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */,
 				1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */,
+				11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */,
 				1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */,
 				11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */,
+				113E4E392B6836280033375D /* OTPResetSuccessResponseModel.swift in Sources */,
+				11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */,
+				115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */,
 				11708D152B643BF200C8DB60 /* RegisterUseCase.swift in Sources */,
 				11708D122B643A6600C8DB60 /* LoginEndpoint.swift in Sources */,
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
@@ -636,6 +723,7 @@
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
 				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,
 				113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */,
+				115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */,
 				113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */,
 				113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */,
 				11708D072B63CD3500C8DB60 /* YearAndZodiacSignsViewController.swift in Sources */,

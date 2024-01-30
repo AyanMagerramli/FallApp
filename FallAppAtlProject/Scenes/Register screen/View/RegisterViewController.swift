@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class RegisterViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class RegisterViewController: UIViewController {
     weak var coordinator: MainCoordinator?
     private let viewModel = RegisterViewModel()
     var myUser: RegisterUserModel = RegisterUserModel()
+    let keychain = KeychainSwift()
     
     //MARK: -UI Elements
     
@@ -121,6 +123,9 @@ class RegisterViewController: UIViewController {
     private func setupUserData() {
         self.myUser.email = emailField.text ?? ""
         self.myUser.password = passwordField.text ?? ""
+        
+        UserDefaults.standard.setValue(emailField.text, forKey: "email")
+        keychain.set(passwordField.text ?? "no password", forKey: "password")
     }
     
     private func viewModelSetup() {

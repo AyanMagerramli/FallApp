@@ -41,9 +41,6 @@ class TarotDetailViewController: UIViewController {
         
         view.addSubview(tableView)
     }
-    
-    // MARK: - Setup constraints
-
 }
 
     // MARK: - UITableView Data Source methods

@@ -51,15 +51,13 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         customizeBackButton()
         
-        view.addSubview(backgroundImage)
+        [backgroundImage,
+         collectionView].forEach(view.addSubview(_:))
+        
         // Send the image view to the back so other UI elements are on top
         view.sendSubviewToBack(backgroundImage)
         
         view.backgroundColor = .clear
-        
-        view.addSubview(collectionView)
-        
-      // title = "Hello, there"
         
         makeConstraints()
     }
@@ -81,7 +79,6 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftImageRightLabelCell.identifier, for: indexPath) as! LeftImageRightLabelCell
         cell.configureUI()
-      //  cell.layer.cornerRadius = 12
         return cell
     }
 }
