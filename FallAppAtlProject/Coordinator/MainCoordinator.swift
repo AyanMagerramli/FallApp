@@ -64,9 +64,9 @@ class MainCoordinator: CoordinatorProtocol {
        }
     
     func goToLoginScreen() {
-        let vc = LoginViewController()
-        window?.rootViewController = navigationController
-        vc.coordinator = self
+        let vc = LoginViewController(viewModel: .init(coordinator: self))
+//        window?.rootViewController = navigationController
+       // vc.coordinator = self
         navigationController.show(vc, sender: nil)
     }
     

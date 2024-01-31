@@ -11,11 +11,21 @@ import SnapKit
 class LoginViewController: UIViewController {
     
     //MARK: Properties
-
-    private let viewModel = LoginViewModel()
-    var coordinator: MainCoordinator?
-    var user = LoginUserModel()
-    var registerUserModel = RegisterUserModel()
+    
+    private var viewModel: LoginViewModel
+    private var user = LoginUserModel()
+    private  var registerUserModel = RegisterUserModel()
+    
+    //MARK: - Init
+    
+    init (viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: -UI Elements
     
@@ -90,7 +100,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
+        viewModelSetup()
         buttonActions()
     }
     
@@ -161,54 +173,30 @@ class LoginViewController: UIViewController {
     }
     
     private func buttonActions() {
-        loginButton.buttonTappedHandler = {
-            self.didUserLogin()
-            self.setupUserData()
-            
-            self.viewModel.registerUser(userData: self.registerUserModel)
-            self.viewModel.error = { [weak self] error in
-                if let statusCode = self?.viewModel.errorResponse?.status {
-                    if statusCode == 409 {
-                        // User is already registered, proceed with login
-                        self?.viewModel.loginUser(userData: self?.user ?? LoginUserModel())
-                        self?.viewModelSetup()
-                    } else {
-                        // Handle other errors, if needed
-                        print("Error with status code: \(statusCode)")
-                    }
-                } else {
-                    // Handle other errors, if needed
-                    print("Unknown error occurred")
-                }
-            }
+        loginButton.buttonTappedHandler = { [weak self] in
+            self?.didUserLogin()
+            self?.setupUserData()
+   
+            self?.viewModel.registerUser(userData: self?.registerUserModel ?? RegisterUserModel())
         }
         
         registerButton.buttonTappedHandler = {
-            self.coordinator?.navigate(to: .register)
+            self.viewModel.coordinator.navigate(to: .register)
         }
     }
     
     private func setupUserData() {
-        self.user.email = emailField.text ?? ""
-        self.user.password = passwordField.text ?? ""
+        user.email = emailField.text ?? ""
+        user.password = passwordField.text ?? ""
         
-        self.registerUserModel.email = self.user.email
-        self.registerUserModel.password = self.user.password
+        registerUserModel.email = self.user.email
+        registerUserModel.password = self.user.password
     }
     
     private func viewModelSetup() {
-        self.viewModel.success = { [weak self] in
+        viewModel.success = { [weak self] in
             print(self?.viewModel.response?.message ?? "no message")
-            self?.coordinator?.navigate(to: .birtDate) //This should change according to hasData field
+            self?.viewModel.coordinator.navigate(to: .birtDate) //This should change according to hasData field
         }
-        
-//        self.viewModel.error = { [weak self] error in
-//            //error alert
-//            print(error)
-//        }
     }
 }
-
-
-
-   

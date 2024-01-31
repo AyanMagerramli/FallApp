@@ -46,6 +46,7 @@
 		1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF332B65143F00452019 /* ProgressBarManager.swift */; };
 		115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D95A12B66B01F00BB80DE /* OTPViewModel.swift */; };
 		115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D95A52B66B3EA00BB80DE /* OTPResponseModel.swift */; };
+		116582A92B6AB22700EF7268 /* UploadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116582A82B6AB22700EF7268 /* UploadEndpoint.swift */; };
 		1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169DA472B60459700AB32AE /* CustomHeaderView.swift */; };
 		11708CFE2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */; };
 		11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D002B63CA7600C8DB60 /* YearSignDetailViewController.swift */; };
@@ -111,6 +112,7 @@
 		1156FF332B65143F00452019 /* ProgressBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarManager.swift; sourceTree = "<group>"; };
 		115D95A12B66B01F00BB80DE /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		115D95A52B66B3EA00BB80DE /* OTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponseModel.swift; sourceTree = "<group>"; };
+		116582A82B6AB22700EF7268 /* UploadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadEndpoint.swift; sourceTree = "<group>"; };
 		1169DA472B60459700AB32AE /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
 		11708CFD2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignDetailViewController.swift; sourceTree = "<group>"; };
 		11708D002B63CA7600C8DB60 /* YearSignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearSignDetailViewController.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				11708D032B63CB7900C8DB60 /* RegisterEndpoint.swift */,
 				11708D112B643A6600C8DB60 /* LoginEndpoint.swift */,
+				116582A82B6AB22700EF7268 /* UploadEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -673,6 +676,7 @@
 				110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */,
 				1106A5982B59CEF900DF7450 /* BirthCityViewController.swift in Sources */,
 				11708D0C2B63D20E00C8DB60 /* UserInfoCell.swift in Sources */,
+				116582A92B6AB22700EF7268 /* UploadEndpoint.swift in Sources */,
 				113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */,
 				119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */,
 				11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */,
