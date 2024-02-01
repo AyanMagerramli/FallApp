@@ -12,8 +12,20 @@ class GenderViewController: UIViewController {
     
     // MARK: Properties
     
-    var coordinator: MainCoordinator?
+    var viewModel: GenderScreenViewModel
     var builder: UserInfoBuilder?
+    var selectedGender: String?
+    
+    // MARK: - init
+    
+    init(viewModel: GenderScreenViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI Components
     
@@ -23,7 +35,8 @@ class GenderViewController: UIViewController {
         completeButton.buttonTappedHandler = {
             ProgressManager.shared.progress += 0.25
             //send all user datas from builder to api
-            self.coordinator?.start()
+            self.viewModel.uploadUserData(userData: self.viewModel.userDataModel ?? UploadUserDataModel())
+            self.viewModelSetup()
         }
     }
     
@@ -57,6 +70,8 @@ class GenderViewController: UIViewController {
         
         setupUI()
         updateProgress()
+        buttonActions()
+        completeButtonAction()
     }
     
     // MARK: - Setup UI
@@ -91,6 +106,29 @@ class GenderViewController: UIViewController {
         maleButton.setTitleColor(UIColor.theme(named: .main), for: .normal)
     }
     
+    private func buttonActions() {
+        maleButton.buttonTappedHandler = {
+            self.selectedGender = "Male"
+            self.maleButton.isSelected = true
+            self.femaleButton.isSelected = false
+        }
+        
+        femaleButton.buttonTappedHandler = {
+            self.selectedGender = "Female"
+            self.maleButton.isSelected = false
+            self.femaleButton.isSelected = true
+        }
+        
+        self.builder?.gender = self.selectedGender
+    }
+    
+    private func setupBuilderData() {
+        self.viewModel.userDataModel?.name = self.builder?.name
+        self.viewModel.userDataModel?.birthdate = self.builder?.birthDate
+        self.viewModel.userDataModel?.city = self.builder?.birthCity
+        self.viewModel.userDataModel?.name = self.builder?.gender
+    }
+    
     // MARK: - Update Progress Bar
     
     func updateProgress() {
@@ -115,6 +153,13 @@ class GenderViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(24)
             make.centerY.equalToSuperview()
             make.height.equalTo(270)
+        }
+    }
+    
+    private func viewModelSetup() {
+        viewModel.success = { [weak self] in
+           // print(self?.viewModel.response?.message ?? "no message")
+            self?.viewModel.coordinator?.start() //This should change according to hasData field
         }
     }
 }

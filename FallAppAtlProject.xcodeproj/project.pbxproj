@@ -41,6 +41,10 @@
 		113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */; };
 		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
+		114995272B6C3AFB00F44962 /* GenderScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114995262B6C3AFB00F44962 /* GenderScreenViewModel.swift */; };
+		1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */; };
+		1149952E2B6C407700F44962 /* UploadUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952D2B6C407700F44962 /* UploadUseCase.swift */; };
+		114995302B6C432900F44962 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952F2B6C432900F44962 /* UploadManager.swift */; };
 		1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF2D2B64F7BB00452019 /* ErrorModel.swift */; };
 		1156FF312B65115900452019 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF302B65115900452019 /* ProgressBar.swift */; };
 		1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF332B65143F00452019 /* ProgressBarManager.swift */; };
@@ -107,6 +111,10 @@
 		113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilder.swift; sourceTree = "<group>"; };
 		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
+		114995262B6C3AFB00F44962 /* GenderScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderScreenViewModel.swift; sourceTree = "<group>"; };
+		1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUserDataModel.swift; sourceTree = "<group>"; };
+		1149952D2B6C407700F44962 /* UploadUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUseCase.swift; sourceTree = "<group>"; };
+		1149952F2B6C432900F44962 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
 		1156FF2D2B64F7BB00452019 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		1156FF302B65115900452019 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1156FF332B65143F00452019 /* ProgressBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarManager.swift; sourceTree = "<group>"; };
@@ -258,6 +266,7 @@
 				11708D1D2B646C5F00C8DB60 /* RegisterManager.swift */,
 				113014652B66EACD0089E5D6 /* OTPManager.swift */,
 				11DA41B22B69668800E07C63 /* LoginManager.swift */,
+				1149952F2B6C432900F44962 /* UploadManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -364,6 +373,7 @@
 				1106A5962B59CECF00DF7450 /* Birthplace screen */,
 				11A2418F2B5B217B000E2CEE /* Name screen */,
 				11A241922B5B27A4000E2CEE /* Gender screen */,
+				1149952A2B6C3F8500F44962 /* Model */,
 				113F9CA62B5D39F40069CCC2 /* Builder */,
 			);
 			path = "Users Data Flow";
@@ -393,6 +403,30 @@
 				1173B4892B631038005ED1C5 /* DetailCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		114995282B6C3F3E00F44962 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11A241932B5B2859000E2CEE /* GenderViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		114995292B6C3F4700F44962 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				114995262B6C3AFB00F44962 /* GenderScreenViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		1149952A2B6C3F8500F44962 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1156FF2F2B65112D00452019 /* Navigation Controller */ = {
@@ -485,6 +519,7 @@
 				11708D142B643BF200C8DB60 /* RegisterUseCase.swift */,
 				113014672B66EAEA0089E5D6 /* OTPUseCase.swift */,
 				11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */,
+				1149952D2B6C407700F44962 /* UploadUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -550,7 +585,8 @@
 		11A241922B5B27A4000E2CEE /* Gender screen */ = {
 			isa = PBXGroup;
 			children = (
-				11A241932B5B2859000E2CEE /* GenderViewController.swift */,
+				114995282B6C3F3E00F44962 /* View */,
+				114995292B6C3F4700F44962 /* View Model */,
 			);
 			path = "Gender screen";
 			sourceTree = "<group>";
@@ -673,6 +709,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1149952E2B6C407700F44962 /* UploadUseCase.swift in Sources */,
 				110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */,
 				1106A5982B59CEF900DF7450 /* BirthCityViewController.swift in Sources */,
 				11708D0C2B63D20E00C8DB60 /* UserInfoCell.swift in Sources */,
@@ -700,6 +737,7 @@
 				1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */,
 				11708D1E2B646C5F00C8DB60 /* RegisterManager.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
+				114995302B6C432900F44962 /* UploadManager.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
 				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,
@@ -718,6 +756,7 @@
 				11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */,
 				115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */,
 				11708D152B643BF200C8DB60 /* RegisterUseCase.swift in Sources */,
+				114995272B6C3AFB00F44962 /* GenderScreenViewModel.swift in Sources */,
 				11708D122B643A6600C8DB60 /* LoginEndpoint.swift in Sources */,
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,
@@ -725,6 +764,7 @@
 				1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
+				1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */,
 				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,
 				113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */,
 				115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */,
