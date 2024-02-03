@@ -26,6 +26,7 @@ class GenderScreenViewModel {
                 self.error?(error)
             } else if let data {
                 self.successModel = data
+                UserDefaults.standard.setValue(data.data?.zodiacSign, forKey: "zodiacSign")
                 print("SUCCESSSS ISSS \(String(describing: self.successModel?.data))")
                 self.success?()
             }

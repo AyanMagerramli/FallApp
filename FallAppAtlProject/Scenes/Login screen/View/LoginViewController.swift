@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import KeychainSwift
 
 class LoginViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class LoginViewController: UIViewController {
     var viewModel: LoginViewModel?
     private var user = LoginUserModel()
     private var registerUserModel = RegisterUserModel()
+    private let keychain = KeychainSwift()
     
     //MARK: -UI Elements
     
@@ -62,6 +64,16 @@ class LoginViewController: UIViewController {
     
     private lazy var loginButton = ReusableButton(title: "Login")
     
+    private let errorLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.robotoFont(ofType: .light, size: 16)
+        label.textColor = .red
+        label.textAlignment = .center
+        label.backgroundColor = .clear
+        return label
+    }()
+    
     private let loginLabel: UILabel = {
         let label = UILabel()
         label.text = "Not any account?"
@@ -72,11 +84,9 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    private lazy var registerButton = ReusableButton(title: "Register")
-    
     private let registerLabel: UILabel = {
         let label = UILabel()
-        label.text = "Create your user and begin your astrology journey:"
+        label.text = "Create your user and begin your astrology journey right here"
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .light, size: 16)
         label.textColor = UIColor.theme(named: .main)
@@ -91,7 +101,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        viewModelSetup()
+      //  viewModelSetup()
         buttonActions()
     }
     
@@ -107,6 +117,11 @@ class LoginViewController: UIViewController {
     
     private func didUserLogin() {
         //  UserDefaults.standard.setValue(true, forKey: "Logged in")
+    }
+    
+    private func saveUserData() {
+        UserDefaults.standard.setValue(emailField.text, forKey: "email")
+        keychain.set(passwordField.text ?? "no password", forKey: "password")
     }
     
     //MARK: - Setup constraints
@@ -135,8 +150,13 @@ class LoginViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(loginButton.snp.bottomMargin).offset(24)
+            make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
         loginLabel.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottomMargin).offset(90)
+            make.top.equalTo(loginButton.snp.bottomMargin).offset(70)
             make.centerX.equalToSuperview()
         }
         
@@ -144,16 +164,12 @@ class LoginViewController: UIViewController {
             make.top.equalTo(loginLabel.snp.bottomMargin).offset(20)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
-        
-        registerButton.snp.makeConstraints { make in
-            make.top.equalTo(registerLabel.snp.bottomMargin).offset(20)
-            make.horizontalEdges.equalToSuperview().inset(24)
-        }
     }
     
     //MARK: - Setup UI
     
     private func setupUI() {
+        self.errorLabel.isHidden = true
         
         self.view.backgroundColor = UIColor.theme(named: .background)
         
@@ -161,27 +177,30 @@ class LoginViewController: UIViewController {
          emailField,
          passwordField,
          loginButton,
+         errorLabel,
          loginLabel,
-         registerLabel,
-         registerButton].forEach(view.addSubview(_:))
-        
-        registerButton.backgroundColor = .background
-        registerButton.setTitleColor(.main, for: .normal)
-        registerButton.titleLabel?.font = .robotoFont(ofType: .bold, size: 18)
-        
+         registerLabel].forEach(view.addSubview(_:))
+    
         makeConstraints()
     }
     
     private func buttonActions() {
         loginButton.buttonTappedHandler = { [weak self] in
-            self?.didUserLogin()
             self?.setupUserData()
-            
             self?.viewModel?.registerUser(userData: self?.registerUserModel ?? RegisterUserModel())
-        }
-        
-        registerButton.buttonTappedHandler = {
-            self.viewModel?.coordinator.navigate(to: .register)
+            
+            self?.viewModel?.success = { [weak self] in
+                DispatchQueue.main.async {
+                    self?.didUserLogin()
+                    self?.saveUserData()
+                }
+            }
+            self?.viewModel?.error = { [weak self] error in
+                DispatchQueue.main.async {
+                    self?.errorLabel.isHidden = false
+                    self?.errorLabel.text = error.detail
+                }
+            }
         }
     }
     
@@ -196,7 +215,7 @@ class LoginViewController: UIViewController {
     private func viewModelSetup() {
         viewModel?.success = { [weak self] in
             print(self?.viewModel?.response?.message ?? "no message")
-            self?.viewModel?.coordinator.navigate(to: .birtDate) //This should change according to hasData field
+          //  self?.viewModel?.coordinator.navigate(to: .birtDate) //This should change according to hasData field
         }
     }
 }

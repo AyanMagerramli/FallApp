@@ -310,7 +310,6 @@
 		110E838C2B5150D90000D6D9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				114FCB482B6E69D600D492F2 /* Zodian Sign Info screen */,
 				1169DA462B6044D000AB32AE /* Header */,
 				113F9CAC2B5D4B0F0069CCC2 /* Cell */,
 				110E838E2B5150FB0000D6D9 /* Login screen */,
@@ -421,6 +420,7 @@
 				1106A5962B59CECF00DF7450 /* Birthplace screen */,
 				11A2418F2B5B217B000E2CEE /* Name screen */,
 				11A241922B5B27A4000E2CEE /* Gender screen */,
+				114FCB482B6E69D600D492F2 /* Zodian Sign Info screen */,
 				1149952A2B6C3F8500F44962 /* Model */,
 				113F9CA62B5D39F40069CCC2 /* Builder */,
 			);

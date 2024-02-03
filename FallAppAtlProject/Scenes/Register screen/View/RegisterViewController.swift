@@ -133,8 +133,8 @@ class RegisterViewController: UIViewController {
         self.myUser.email = emailField.text ?? ""
         self.myUser.password = passwordField.text ?? ""
         
-        UserDefaults.standard.setValue(emailField.text, forKey: "email")
-        keychain.set(passwordField.text ?? "no password", forKey: "password")
+//        UserDefaults.standard.setValue(emailField.text, forKey: "email")
+//        keychain.set(passwordField.text ?? "no password", forKey: "password")
     }
     
     private func viewModelSetup() {

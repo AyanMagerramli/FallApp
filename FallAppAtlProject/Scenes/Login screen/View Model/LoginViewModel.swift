@@ -65,6 +65,7 @@ final class LoginViewModel {
                 print(" Register DATA is \(data)")
                 self.registerResponse = data
                 self.success?()
+                self.coordinator.navigate(to: .otp)
             }
         }
     }

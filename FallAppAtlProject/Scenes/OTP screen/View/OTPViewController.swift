@@ -88,6 +88,9 @@ class OTPViewController: UIViewController {
         
         view.backgroundColor = UIColor.theme(named: .background)
         
+        resendButton.backgroundColor = .clear
+        resendButton.setTitleColor(.main, for: .normal)
+        
         [titleLabel,
          otpField,
          strokeView,
@@ -123,7 +126,7 @@ class OTPViewController: UIViewController {
         
         resendButton.snp.makeConstraints { make in
             make.top.equalTo(strokeView.snp.bottom).offset(20)
-            make.centerX.equalToSuperview()
+            make.horizontalEdges.equalToSuperview().inset(24)
         }
         
         approveButton.snp.makeConstraints { make in
@@ -147,6 +150,7 @@ class OTPViewController: UIViewController {
     private func viewModelSetup() {
         self.viewModel.success = { [weak self] in
             print(self?.viewModel.successResponse?.message ?? "no message")
+            self?.navigationController?.popViewController(animated: true)
          //   self?.coordinator?.navigate(to: .login)
         }
         

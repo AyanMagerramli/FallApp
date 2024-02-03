@@ -174,8 +174,8 @@
             filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "viewModelSetup()"
             landmarkType = "7">
             <Locations>
@@ -237,8 +237,8 @@
             filePath = "FallAppAtlProject/Scenes/OTP screen/View/OTPViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "viewModelSetup()"
             landmarkType = "7">
             <Locations>
@@ -588,8 +588,8 @@
             filePath = "FallAppAtlProject/Scenes/Users Data Flow/Gender screen/View Model/GenderScreenViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "uploadUserData(userData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -864,6 +864,162 @@
             endingLineNumber = "35"
             landmarkName = "downloadCities()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9844FECD-DBBC-4182-A4A8-6F6C0EB246E6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/Login screen/View/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
+            landmarkName = "buttonActions()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9844FECD-DBBC-4182-A4A8-6F6C0EB246E6 - 670e1b0fad830207"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (FallAppAtlProject.ErrorModel) -&gt; () in closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "240">
+               </Location>
+               <Location
+                  uuid = "9844FECD-DBBC-4182-A4A8-6F6C0EB246E6 - 90d757a066171463"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "1356">
+               </Location>
+               <Location
+                  uuid = "9844FECD-DBBC-4182-A4A8-6F6C0EB246E6 - 82a9d81310df4db0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (FallAppAtlProject.ErrorModel) -&gt; () in closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  uuid = "9844FECD-DBBC-4182-A4A8-6F6C0EB246E6 - 670e1b0fad830207"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (FallAppAtlProject.ErrorModel) -&gt; () in closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1DE42672-5F45-4C75-9B6D-D76648BA336C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/Login screen/View/LoginViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
+            landmarkName = "buttonActions()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1DE42672-5F45-4C75-9B6D-D76648BA336C - d5a659cee0e36701"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "1DE42672-5F45-4C75-9B6D-D76648BA336C - 90d757a0661715a5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "920">
+               </Location>
+               <Location
+                  uuid = "1DE42672-5F45-4C75-9B6D-D76648BA336C - 46f2ac169f9a1606"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "1DE42672-5F45-4C75-9B6D-D76648BA336C - d5a659cee0e36701"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 () -&gt; () in closure #1 () -&gt; () in FallAppAtlProject.LoginViewController.buttonActions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Login%20screen/View/LoginViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "192"
+                  endingLineNumber = "192"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -31,7 +31,7 @@ class ZodiacSignInfoController: UIViewController {
         label.font = UIFont.robotoFont(ofType: .bold, size: 30)
         label.lineBreakMode = .byWordWrapping
         label.textColor = UIColor.theme(named: .main)
-        label.text = "You are Scorpio"
+        label.text = "You are \(String(describing: viewModel.zodiacSign))"
         return label
     }()
     
