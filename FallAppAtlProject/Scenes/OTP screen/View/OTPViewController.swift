@@ -50,18 +50,24 @@ class OTPViewController: UIViewController {
         return view
     }()
     
+    private lazy var messageLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont.robotoFont(ofType: .bold, size: 12)
+        label.lineBreakMode = .byWordWrapping
+        label.textColor = .main
+        return label
+    }()
+    
     private lazy var resendButton = ReusableButton(title: "Resend")
     
     private func buttonActions () {
         approveButton.buttonTappedHandler = { [weak self] in
             self?.setupUserData()
-        //    print("Mail is \(String(describing: self?.otpModel.email))")
-        //    print("Mail is \(String(describing: self?.otpModel.pin))")
             guard let otp = self?.otpModel else {return}
-        //    print("OTPMODEL is \(otp)")
             self?.viewModel.confirmOTP(otpData: otp)
             print(otp)
-            
             self?.viewModelSetup()
         }
         
@@ -86,6 +92,8 @@ class OTPViewController: UIViewController {
     private func setupUI() {
         customizeBackButton()
         
+        messageLabel.text = UserDefaults.standard.string(forKey: "otp")
+        
         view.backgroundColor = UIColor.theme(named: .background)
         
         resendButton.backgroundColor = .clear
@@ -94,6 +102,7 @@ class OTPViewController: UIViewController {
         [titleLabel,
          otpField,
          strokeView,
+         messageLabel,
          resendButton,
          approveButton].forEach(view.addSubview(_:))
         
@@ -124,8 +133,13 @@ class OTPViewController: UIViewController {
             make.width.equalTo(otpField)
         }
         
-        resendButton.snp.makeConstraints { make in
+        messageLabel.snp.makeConstraints { make in
             make.top.equalTo(strokeView.snp.bottom).offset(20)
+            make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
+        resendButton.snp.makeConstraints { make in
+            make.top.equalTo(messageLabel.snp.bottom).offset(20)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         

@@ -65,6 +65,7 @@ final class LoginViewModel {
                 print(" Register DATA is \(data)")
                 self.registerResponse = data
                 self.success?()
+                UserDefaults.standard.setValue(data.data?.message, forKey: "otp")
                 self.coordinator.navigate(to: .otp)
             }
         }
