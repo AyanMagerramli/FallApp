@@ -73,9 +73,14 @@ class BirthdayViewController: UIViewController {
         updateProgress()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     //MARK: - Setup UI
     
-    private func setupUI() {
+    private func setupUI() {        
         view.backgroundColor = UIColor.theme(named: .background)
         
         customizeBackButton()

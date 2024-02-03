@@ -12,31 +12,20 @@ class LoginViewController: UIViewController {
     
     //MARK: Properties
     
-    private var viewModel: LoginViewModel
+    var viewModel: LoginViewModel?
     private var user = LoginUserModel()
-    private  var registerUserModel = RegisterUserModel()
-    
-    //MARK: - Init
-    
-    init (viewModel: LoginViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private var registerUserModel = RegisterUserModel()
     
     //MARK: -UI Elements
     
-  private let image: UIImageView = {
+    private let image: UIImageView = {
         let image = UIImageView()
-      image.image = UIImage(named: "loginImage")
-      image.layer.masksToBounds = true
-      image.contentMode = .scaleAspectFill
-      image.clipsToBounds = true
-      
-      return image
+        image.image = UIImage(named: "loginImage")
+        image.layer.masksToBounds = true
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        
+        return image
     }()
     
     private let emailField: UITextField = {
@@ -83,7 +72,7 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-   private lazy var registerButton = ReusableButton(title: "Register")
+    private lazy var registerButton = ReusableButton(title: "Register")
     
     private let registerLabel: UILabel = {
         let label = UILabel()
@@ -97,7 +86,7 @@ class LoginViewController: UIViewController {
     }()
     
     //MARK: -Life cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,8 +95,18 @@ class LoginViewController: UIViewController {
         buttonActions()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
     private func didUserLogin() {
-      //  UserDefaults.standard.setValue(true, forKey: "Logged in")
+        //  UserDefaults.standard.setValue(true, forKey: "Logged in")
     }
     
     //MARK: - Setup constraints
@@ -155,6 +154,7 @@ class LoginViewController: UIViewController {
     //MARK: - Setup UI
     
     private func setupUI() {
+        
         self.view.backgroundColor = UIColor.theme(named: .background)
         
         [image,
@@ -176,12 +176,12 @@ class LoginViewController: UIViewController {
         loginButton.buttonTappedHandler = { [weak self] in
             self?.didUserLogin()
             self?.setupUserData()
-   
-            self?.viewModel.registerUser(userData: self?.registerUserModel ?? RegisterUserModel())
+            
+            self?.viewModel?.registerUser(userData: self?.registerUserModel ?? RegisterUserModel())
         }
         
         registerButton.buttonTappedHandler = {
-            self.viewModel.coordinator.navigate(to: .register)
+            self.viewModel?.coordinator.navigate(to: .register)
         }
     }
     
@@ -194,9 +194,9 @@ class LoginViewController: UIViewController {
     }
     
     private func viewModelSetup() {
-        viewModel.success = { [weak self] in
-            print(self?.viewModel.response?.message ?? "no message")
-            self?.viewModel.coordinator.navigate(to: .birtDate) //This should change according to hasData field
+        viewModel?.success = { [weak self] in
+            print(self?.viewModel?.response?.message ?? "no message")
+            self?.viewModel?.coordinator.navigate(to: .birtDate) //This should change according to hasData field
         }
     }
 }

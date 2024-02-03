@@ -35,8 +35,11 @@ class GenderViewController: UIViewController {
         completeButton.buttonTappedHandler = {
             ProgressManager.shared.progress += 0.25
             //send all user datas from builder to api
+            self.setupBuilderData()
             self.viewModel.uploadUserData(userData: self.viewModel.userDataModel ?? UploadUserDataModel())
+            
             self.viewModelSetup()
+            self.viewModel.coordinator?.navigate(to: .zodiacInfo)
         }
     }
     

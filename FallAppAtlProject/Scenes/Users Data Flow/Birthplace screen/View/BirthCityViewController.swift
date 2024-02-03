@@ -14,9 +14,13 @@ class BirthCityViewController: UIViewController {
     
     var coordinator: MainCoordinator?
     var builder: UserInfoBuilder?
+    let viewModel = BirthPlaceViewModel()
+    var countryList: CountryModel?
+    
+    var isMovingBack: Bool?
     
     let cities = ["City1", "City2", "City3"]
-    let countries = ["Country1", "Country2", "Country3"]
+  //  let countries = ["Country1", "Country2", "Country3"]
     
     // MARK: - UI Elements
     
@@ -27,6 +31,8 @@ class BirthCityViewController: UIViewController {
             ProgressManager.shared.progress += 0.25
             if let birthCountry = self.countryPickerTextField.text,
                let birthCity = self.cityPickerTextField.text {
+//                self.viewModel.selectedCountry = birthCountry
+//                self.viewModel.countrySelection()
                 self.builder?.birthCity = birthCity
                 self.builder?.birthCountry = birthCountry
             }
@@ -67,7 +73,7 @@ class BirthCityViewController: UIViewController {
         let field = UITextField()
         field.backgroundColor = .clear
         field.borderStyle = .roundedRect
-        let attributedPlaceholder = NSAttributedString(string: "  City", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
+        let attributedPlaceholder = NSAttributedString(string: "City", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor.theme(named: .main)
         return field
@@ -77,7 +83,7 @@ class BirthCityViewController: UIViewController {
         let field = UITextField()
         field.backgroundColor = .clear
         field.borderStyle = .roundedRect
-        let attributedPlaceholder = NSAttributedString(string: "  Country", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
+        let attributedPlaceholder = NSAttributedString(string: "Country", attributes: [NSAttributedString.Key.foregroundColor: UIColor.theme(named: .main)])
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor.theme(named: .main)
         return field
@@ -90,7 +96,31 @@ class BirthCityViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         updateProgress()
+        
+        viewModelSetup()
+        self.viewModel.downloadCountries()
+        print("COuntries are \(String(describing: countryList))")
+       // print("Citiess are \(String(describing: ci))")
+       
     }
+    
+//    override func viewWillDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        
+//        if isMovingBack ?? true {
+//            ProgressManager.shared.progress -= 0.25
+//            self.navigationController?.addProgressBar(progress: ProgressManager.shared.progress)
+//        }
+//    }
+//    
+//    override func willMove(toParent parent: UIViewController?) {
+//        super.willMove(toParent: parent)
+//        
+//        if parent == nil {
+//            // View controller is being popped (moving back)
+//            isMovingBack = true
+//        }
+//    }
     
     // MARK: - Setup UI
     
@@ -154,6 +184,13 @@ class BirthCityViewController: UIViewController {
             make.top.equalTo(cityPickerTextField.snp.bottomMargin).offset(4)
             make.height.equalTo(1)
             make.horizontalEdges.equalToSuperview().inset(24)
+        }
+    }
+    
+    private func viewModelSetup() {
+        self.viewModel.success = {
+          //  self.countryList = self.viewModel.successModel
+            
         }
     }
 }

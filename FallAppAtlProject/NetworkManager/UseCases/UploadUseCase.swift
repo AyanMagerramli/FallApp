@@ -8,6 +8,6 @@
 import Foundation
 
 protocol UploadUseCase {
-    func uploadUserData (userData: UploadUserDataModel, completion: @escaping((LoginSuccessModel?, ErrorModel?)->Void))
+    func uploadUserData (userData: UploadUserDataModel, completion: @escaping((UploadUserSuccessModel?, ErrorModel?)->Void))
 }
 

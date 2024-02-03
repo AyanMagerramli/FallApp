@@ -9,20 +9,17 @@ import Foundation
 import UIKit
 
 enum NavigationDestination {
-    case login
     case register
     case otp
     case birtDate
     case birthCity
     case name
     case gender
+    case zodiacInfo
     case tarotDetail
     
     func navigate (from coordinator: MainCoordinator) {
-        switch self {
-            
-        case .login:
-            coordinator.goToLoginScreen()
+        switch self {            
         case .register:
             coordinator.goToRegisterScreen()
         case .otp:
@@ -35,6 +32,8 @@ enum NavigationDestination {
             coordinator.goToNameScreen()
         case .gender:
             coordinator.goToGenderScreen()
+        case .zodiacInfo:
+            coordinator.goToZodiacInfoSignScreen()
         case .tarotDetail:
             coordinator.goToTarotDetail()
         }
@@ -60,12 +59,7 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func navigate(to destination: NavigationDestination) {
-           destination.navigate(from: self)
-       }
-    
-    func goToLoginScreen() {
-        let vc = LoginViewController(viewModel: .init(coordinator: self))
-        navigationController.show(vc, sender: nil)
+        destination.navigate(from: self)
     }
     
     func goToRegisterScreen() {
@@ -100,6 +94,11 @@ class MainCoordinator: CoordinatorProtocol {
     
     func goToGenderScreen() {
         let vc = GenderViewController(viewModel: .init(coordinator: self))
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToZodiacInfoSignScreen() {
+        let vc = ZodiacSignInfoController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
     

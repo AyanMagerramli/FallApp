@@ -19,14 +19,14 @@ class RegisterViewController: UIViewController {
     
     //MARK: -UI Elements
     
-  private let image: UIImageView = {
+    private let image: UIImageView = {
         let image = UIImageView()
-      image.image = UIImage(named: "registerImage")
-      image.layer.masksToBounds = true
-      image.contentMode = .scaleAspectFill
-      image.clipsToBounds = true
-      
-      return image
+        image.image = UIImage(named: "registerImage")
+        image.layer.masksToBounds = true
+        image.contentMode = .scaleAspectFill
+        image.clipsToBounds = true
+        
+        return image
     }()
     
     private let emailField: UITextField = {
@@ -62,6 +62,15 @@ class RegisterViewController: UIViewController {
     }()
     
     private lazy var registerButton = ReusableButton(title: "Register")
+    
+    init(coordinator: MainCoordinator? = nil) {
+        super.init(nibName: nil, bundle: nil)
+        self.coordinator = coordinator
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

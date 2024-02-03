@@ -16,21 +16,22 @@ class GenderScreenViewModel {
     var errorResponse: ErrorModel?
     var error: ((ErrorModel) -> Void)?
     var success: (() -> Void)?
-    
+    var successModel: UploadUserSuccessModel?    
     
     func uploadUserData(userData: UploadUserDataModel) {
         manager.uploadUserData(userData: userData) { data, error in
             if let error {
                 self.errorResponse = error
+                print("ERROR ISS \(String(describing: error.detail))")
                 self.error?(error)
             } else if let data {
-                //self.userDataModel = data
+                self.successModel = data
+                print("SUCCESSSS ISSS \(String(describing: self.successModel?.data))")
                 self.success?()
             }
         }
     }
-    
-    
+        
     // MARK: - init
     
     init(coordinator: MainCoordinator? = nil) {

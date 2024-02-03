@@ -48,35 +48,64 @@ extension BirthCityViewController: UIPickerViewDelegate, UIPickerViewDataSource,
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == cityPicker {
-            return cities.count
+            if let cities = self.viewModel.cities?.data {
+                return cities.count
+            }
         } else if pickerView == countryPicker {
-            return countries.count
+            if let countries = self.viewModel.countries?.data {
+                return countries.count
+            }
         }
         return 0
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == cityPicker {
-            return cities[row]
+            if let cities = self.viewModel.cities?.data {
+                // check if the data is not nill
+                let city = cities[row]
+                return city.cityName ?? "City Name Not Available"
+            }
         } else if pickerView == countryPicker {
-            return countries[row]
+            if let countries = self.viewModel.countries?.data {
+                // Check if the data is not nil
+                let country = countries[row]
+                return country.countryName ?? "Country Name Not Available"
+            } else {
+                return "No Data Available"
+            }
         }
         return nil
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // Handle selection if needed
+        if pickerView == countryPicker {
+            // Make sure the selected row is within the bounds of your data
+            if let countries = self.viewModel.countries?.data, row < countries.count {
+                // Set the text of the countryPickerTextField to the selected country name
+                countryPickerTextField.text = countries[row].countryName ?? "Country Name Not Available"
+                self.viewModel.selectedCountry = countryPickerTextField.text
+                self.viewModel.countrySelection()
+                self.viewModel.downloadCities()
+            }
+        } else if pickerView == cityPicker {
+            if let cities = self.viewModel.cities?.data, row < cities.count {
+                // Set the text of the cityPickerTextField to the selected city name
+               
+                cityPickerTextField.text = cities[row].cityName ?? "City Name Not Available"
+            }
+        }
     }
 
     // MARK: - "Done" button actions
 
     @objc func cityDoneButtonTapped() {
-        cityPickerTextField.text = cities[cityPicker.selectedRow(inComponent: 0)]
+       // cityPickerTextField.text = cities[cityPicker.selectedRow(inComponent: 0)]
+      //  cityPickerTextField.text = self.viewModel.successModel?.data.
         cityPickerTextField.resignFirstResponder()
     }
 
     @objc func countryDoneButtonTapped() {
-        countryPickerTextField.text = countries[countryPicker.selectedRow(inComponent: 0)]
         countryPickerTextField.resignFirstResponder()
     }
 }

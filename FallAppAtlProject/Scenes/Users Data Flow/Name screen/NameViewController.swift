@@ -76,7 +76,7 @@ class NameViewController: UIViewController {
             if let name = self.nameField.text {
                 self.builder?.name = name
             }
-            let vc = GenderViewController()
+            let vc = GenderViewController(viewModel: GenderScreenViewModel())
             vc.builder = self.builder
             self.coordinator?.navigate(to: .gender)
         }

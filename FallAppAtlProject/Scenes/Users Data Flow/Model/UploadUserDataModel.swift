@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UploadUserDataModel {
+struct UploadUserDataModel: Codable {
     
     var name: String?
     var surname: String?
@@ -21,7 +21,7 @@ struct UploadUserDataModel {
             "surname" : surname ?? "",
             "city" : city ?? "",
             "gender" : gender ?? "",
-            "birthdate" : birthdate ?? ""
+            "birthDate" : birthdate ?? ""
         ]
     }
 }

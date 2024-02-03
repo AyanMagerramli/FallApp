@@ -147,7 +147,7 @@ class OTPViewController: UIViewController {
     private func viewModelSetup() {
         self.viewModel.success = { [weak self] in
             print(self?.viewModel.successResponse?.message ?? "no message")
-            self?.coordinator?.navigate(to: .login)
+         //   self?.coordinator?.navigate(to: .login)
         }
         
         self.viewModel.error = { [weak self] error in

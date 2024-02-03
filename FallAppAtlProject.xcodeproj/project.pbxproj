@@ -27,6 +27,9 @@
 		110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83912B5151300000D6D9 /* RegisterViewModel.swift */; };
 		110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83932B51514E0000D6D9 /* LoginViewController.swift */; };
 		110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E83952B51515E0000D6D9 /* LoginViewModel.swift */; };
+		111EA1382B6D08DC002ACF7A /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EA1372B6D08DC002ACF7A /* CountryModel.swift */; };
+		111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EA1392B6D0AC5002ACF7A /* CountryEndpoint.swift */; };
+		111EA13C2B6D0AF7002ACF7A /* CityEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EA13B2B6D0AF7002ACF7A /* CityEndpoint.swift */; };
 		113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113014652B66EACD0089E5D6 /* OTPManager.swift */; };
 		113014682B66EAEA0089E5D6 /* OTPUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113014672B66EAEA0089E5D6 /* OTPUseCase.swift */; };
 		113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113932C62B5EF8DC00D402BA /* TarotViewController.swift */; };
@@ -45,6 +48,8 @@
 		1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */; };
 		1149952E2B6C407700F44962 /* UploadUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952D2B6C407700F44962 /* UploadUseCase.swift */; };
 		114995302B6C432900F44962 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952F2B6C432900F44962 /* UploadManager.swift */; };
+		114FCB4A2B6E6A1500D492F2 /* ZodiacSignInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FCB492B6E6A1500D492F2 /* ZodiacSignInfoController.swift */; };
+		114FCB4E2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FCB4D2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift */; };
 		1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF2D2B64F7BB00452019 /* ErrorModel.swift */; };
 		1156FF312B65115900452019 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF302B65115900452019 /* ProgressBar.swift */; };
 		1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF332B65143F00452019 /* ProgressBarManager.swift */; };
@@ -73,11 +78,18 @@
 		11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */; };
 		11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241902B5B2195000E2CEE /* NameViewController.swift */; };
 		11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241932B5B2859000E2CEE /* GenderViewController.swift */; };
+		11A8ACA12B6D0220008930A4 /* UploadUserSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A8ACA02B6D0220008930A4 /* UploadUserSuccessModel.swift */; };
+		11D7F1702B6D0D30007ABDB0 /* CountriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7F16F2B6D0D30007ABDB0 /* CountriesUseCase.swift */; };
+		11D7F1722B6D0E71007ABDB0 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7F1712B6D0E71007ABDB0 /* CountriesManager.swift */; };
+		11D7F1752B6D0F09007ABDB0 /* BirthPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D7F1742B6D0F09007ABDB0 /* BirthPlaceViewModel.swift */; };
 		11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41AC2B69601100E07C63 /* LoginSuccessModel.swift */; };
 		11DA41AF2B69658B00E07C63 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */; };
 		11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B02B6965D200E07C63 /* LoginUserModel.swift */; };
 		11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B22B69668800E07C63 /* LoginManager.swift */; };
 		11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */; };
+		11FB140F2B6D110D004EB5CC /* CitiesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB140E2B6D110D004EB5CC /* CitiesUseCase.swift */; };
+		11FB14112B6D1134004EB5CC /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB14102B6D1134004EB5CC /* CityManager.swift */; };
+		11FB14132B6D1174004EB5CC /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB14122B6D1174004EB5CC /* CityModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +109,9 @@
 		110E83912B5151300000D6D9 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		110E83932B51514E0000D6D9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		110E83952B51515E0000D6D9 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		111EA1372B6D08DC002ACF7A /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		111EA1392B6D0AC5002ACF7A /* CountryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEndpoint.swift; sourceTree = "<group>"; };
+		111EA13B2B6D0AF7002ACF7A /* CityEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEndpoint.swift; sourceTree = "<group>"; };
 		113014652B66EACD0089E5D6 /* OTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPManager.swift; sourceTree = "<group>"; };
 		113014672B66EAEA0089E5D6 /* OTPUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUseCase.swift; sourceTree = "<group>"; };
 		113932C62B5EF8DC00D402BA /* TarotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +130,8 @@
 		1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUserDataModel.swift; sourceTree = "<group>"; };
 		1149952D2B6C407700F44962 /* UploadUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUseCase.swift; sourceTree = "<group>"; };
 		1149952F2B6C432900F44962 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
+		114FCB492B6E6A1500D492F2 /* ZodiacSignInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignInfoController.swift; sourceTree = "<group>"; };
+		114FCB4D2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignInfiViewModel.swift; sourceTree = "<group>"; };
 		1156FF2D2B64F7BB00452019 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		1156FF302B65115900452019 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1156FF332B65143F00452019 /* ProgressBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarManager.swift; sourceTree = "<group>"; };
@@ -143,11 +160,18 @@
 		11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable View.swift"; sourceTree = "<group>"; };
 		11A241902B5B2195000E2CEE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		11A241932B5B2859000E2CEE /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		11A8ACA02B6D0220008930A4 /* UploadUserSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUserSuccessModel.swift; sourceTree = "<group>"; };
+		11D7F16F2B6D0D30007ABDB0 /* CountriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesUseCase.swift; sourceTree = "<group>"; };
+		11D7F1712B6D0E71007ABDB0 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
+		11D7F1742B6D0F09007ABDB0 /* BirthPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthPlaceViewModel.swift; sourceTree = "<group>"; };
 		11DA41AC2B69601100E07C63 /* LoginSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSuccessModel.swift; sourceTree = "<group>"; };
 		11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		11DA41B02B6965D200E07C63 /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
 		11DA41B22B69668800E07C63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
+		11FB140E2B6D110D004EB5CC /* CitiesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesUseCase.swift; sourceTree = "<group>"; };
+		11FB14102B6D1134004EB5CC /* CityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManager.swift; sourceTree = "<group>"; };
+		11FB14122B6D1174004EB5CC /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +211,9 @@
 		1106A5962B59CECF00DF7450 /* Birthplace screen */ = {
 			isa = PBXGroup;
 			children = (
-				1106A5972B59CEF900DF7450 /* BirthCityViewController.swift */,
-				11A2418B2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift */,
+				11D7F1732B6D0EEF007ABDB0 /* View Model */,
+				111EA1362B6D08CB002ACF7A /* Model */,
+				111EA1352B6D08B4002ACF7A /* View */,
 			);
 			path = "Birthplace screen";
 			sourceTree = "<group>";
@@ -212,6 +237,8 @@
 		110E835C2B5146A70000D6D9 /* FallAppAtlProject */ = {
 			isa = PBXGroup;
 			children = (
+				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
+				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
 				110E83892B5150700000D6D9 /* Managers */,
 				110E83712B514D3E0000D6D9 /* NetworkManager */,
 				113F9C972B5D20020069CCC2 /* Extensions */,
@@ -220,8 +247,6 @@
 				119BB3042B53DC7F006445FD /* Coordinator */,
 				110E838C2B5150D90000D6D9 /* Scenes */,
 				110E838A2B5150900000D6D9 /* Models */,
-				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
-				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
 				110E83662B5146A80000D6D9 /* Assets.xcassets */,
 				110E83682B5146A80000D6D9 /* LaunchScreen.storyboard */,
 				110E836B2B5146A80000D6D9 /* Info.plist */,
@@ -256,6 +281,8 @@
 				11708D032B63CB7900C8DB60 /* RegisterEndpoint.swift */,
 				11708D112B643A6600C8DB60 /* LoginEndpoint.swift */,
 				116582A82B6AB22700EF7268 /* UploadEndpoint.swift */,
+				111EA1392B6D0AC5002ACF7A /* CountryEndpoint.swift */,
+				111EA13B2B6D0AF7002ACF7A /* CityEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -267,6 +294,8 @@
 				113014652B66EACD0089E5D6 /* OTPManager.swift */,
 				11DA41B22B69668800E07C63 /* LoginManager.swift */,
 				1149952F2B6C432900F44962 /* UploadManager.swift */,
+				11D7F1712B6D0E71007ABDB0 /* CountriesManager.swift */,
+				11FB14102B6D1134004EB5CC /* CityManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -281,6 +310,7 @@
 		110E838C2B5150D90000D6D9 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				114FCB482B6E69D600D492F2 /* Zodian Sign Info screen */,
 				1169DA462B6044D000AB32AE /* Header */,
 				113F9CAC2B5D4B0F0069CCC2 /* Cell */,
 				110E838E2B5150FB0000D6D9 /* Login screen */,
@@ -316,6 +346,24 @@
 				11DA41AB2B69600400E07C63 /* Model */,
 			);
 			path = "Login screen";
+			sourceTree = "<group>";
+		};
+		111EA1352B6D08B4002ACF7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1106A5972B59CEF900DF7450 /* BirthCityViewController.swift */,
+				11A2418B2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		111EA1362B6D08CB002ACF7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				111EA1372B6D08DC002ACF7A /* CountryModel.swift */,
+				11FB14122B6D1174004EB5CC /* CityModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		113932C52B5EF8BE00D402BA /* Tarot screen */ = {
@@ -425,8 +473,34 @@
 			isa = PBXGroup;
 			children = (
 				1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */,
+				11A8ACA02B6D0220008930A4 /* UploadUserSuccessModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		114FCB482B6E69D600D492F2 /* Zodian Sign Info screen */ = {
+			isa = PBXGroup;
+			children = (
+				114FCB4C2B6E6EEB00D492F2 /* View Model */,
+				114FCB4B2B6E6EE500D492F2 /* View */,
+			);
+			path = "Zodian Sign Info screen";
+			sourceTree = "<group>";
+		};
+		114FCB4B2B6E6EE500D492F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				114FCB492B6E6A1500D492F2 /* ZodiacSignInfoController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		114FCB4C2B6E6EEB00D492F2 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				114FCB4D2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		1156FF2F2B65112D00452019 /* Navigation Controller */ = {
@@ -520,6 +594,8 @@
 				113014672B66EAEA0089E5D6 /* OTPUseCase.swift */,
 				11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */,
 				1149952D2B6C407700F44962 /* UploadUseCase.swift */,
+				11D7F16F2B6D0D30007ABDB0 /* CountriesUseCase.swift */,
+				11FB140E2B6D110D004EB5CC /* CitiesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -589,6 +665,14 @@
 				114995292B6C3F4700F44962 /* View Model */,
 			);
 			path = "Gender screen";
+			sourceTree = "<group>";
+		};
+		11D7F1732B6D0EEF007ABDB0 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				11D7F1742B6D0F09007ABDB0 /* BirthPlaceViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		11DA41A92B695FF100E07C63 /* View */ = {
@@ -710,6 +794,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1149952E2B6C407700F44962 /* UploadUseCase.swift in Sources */,
+				11D7F1702B6D0D30007ABDB0 /* CountriesUseCase.swift in Sources */,
+				11FB140F2B6D110D004EB5CC /* CitiesUseCase.swift in Sources */,
 				110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */,
 				1106A5982B59CEF900DF7450 /* BirthCityViewController.swift in Sources */,
 				11708D0C2B63D20E00C8DB60 /* UserInfoCell.swift in Sources */,
@@ -720,6 +806,7 @@
 				110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */,
 				1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */,
 				110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */,
+				111EA13C2B6D0AF7002ACF7A /* CityEndpoint.swift in Sources */,
 				11708CFE2B63C9FA00C8DB60 /* ZodiacSignDetailViewController.swift in Sources */,
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
 				11708D202B64710300C8DB60 /* RegisterOTPResponseModel.swift in Sources */,
@@ -727,14 +814,18 @@
 				1156FF312B65115900452019 /* ProgressBar.swift in Sources */,
 				11DA41AF2B69658B00E07C63 /* LoginUseCase.swift in Sources */,
 				113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */,
+				111EA1382B6D08DC002ACF7A /* CountryModel.swift in Sources */,
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
 				113014682B66EAEA0089E5D6 /* OTPUseCase.swift in Sources */,
+				11D7F1752B6D0F09007ABDB0 /* BirthPlaceViewModel.swift in Sources */,
 				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
 				11708D1A2B646B4700C8DB60 /* RegisterUserModel.swift in Sources */,
 				11708D042B63CB7900C8DB60 /* RegisterEndpoint.swift in Sources */,
 				113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */,
+				11D7F1722B6D0E71007ABDB0 /* CountriesManager.swift in Sources */,
 				1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */,
+				114FCB4A2B6E6A1500D492F2 /* ZodiacSignInfoController.swift in Sources */,
 				11708D1E2B646C5F00C8DB60 /* RegisterManager.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
 				114995302B6C432900F44962 /* UploadManager.swift in Sources */,
@@ -745,12 +836,16 @@
 				113E4E372B68356B0033375D /* OTPResetModel.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
 				11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */,
+				111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
+				11FB14132B6D1174004EB5CC /* CityModel.swift in Sources */,
 				11708D102B63D77900C8DB60 /* ZodiacAndYearSignAboutCell.swift in Sources */,
+				114FCB4E2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift in Sources */,
 				11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */,
 				1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */,
 				11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */,
 				1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */,
+				11FB14112B6D1134004EB5CC /* CityManager.swift in Sources */,
 				11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */,
 				113E4E392B6836280033375D /* OTPResetSuccessResponseModel.swift in Sources */,
 				11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */,
@@ -762,6 +857,7 @@
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,
 				110E83602B5146A70000D6D9 /* SceneDelegate.swift in Sources */,
 				1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */,
+				11A8ACA12B6D0220008930A4 /* UploadUserSuccessModel.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
 				1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */,

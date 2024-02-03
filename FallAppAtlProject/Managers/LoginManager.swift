@@ -18,3 +18,4 @@ class LoginManager: LoginUseCase {
                                 completion: completion)
     }
 }
+

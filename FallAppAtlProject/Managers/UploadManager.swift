@@ -9,15 +9,13 @@ import Foundation
 import Alamofire
 
 class UploadManager: UploadUseCase {
-    func uploadUserData(userData: UploadUserDataModel, completion: @escaping ((LoginSuccessModel?, ErrorModel?) -> Void)) {
-        NetworkManager.request(model: LoginSuccessModel.self,
+    func uploadUserData(userData: UploadUserDataModel, completion: @escaping ((UploadUserSuccessModel?, ErrorModel?) -> Void)) {
+        NetworkManager.request(model: UploadUserSuccessModel.self,
                                endpoint: UploadEndpoint.upload.rawValue,
                                parameters: userData.dictionary,
                                method: .post,
                                encoding: JSONEncoding.default,
                                completion: completion)
     }
-    
-    
 }
 
