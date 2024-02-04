@@ -38,7 +38,6 @@ class GenderViewController: UIViewController {
             print("USER MODEL IS \(String(describing: self.viewModel.userDataModel))")
             print("Gender in complete button is \(String(describing: self.selectedGender))")
             self.viewModel.uploadUserData(userData: self.viewModel.userDataModel )
-            UserDefaults.standard.setValue(self.viewModel.successModel?.data?.zodiacSign, forKey: "zodiacSign")
             self.viewModelSetup()
             self.viewModel.coordinator?.navigate(to: .zodiacInfo)
         }

@@ -406,22 +406,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F0A34BAE-60FE-4275-BC81-6C21DB8D5F13"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/Users Data Flow/Birthplace screen/View/BirthCityViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "225A54E7-FBD8-4A31-80A2-36C7778F269D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -429,8 +413,8 @@
             filePath = "FallAppAtlProject/Scenes/Users Data Flow/Birthplace screen/View/BirthCityViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
             landmarkName = "viewModelSetup()"
             landmarkType = "7">
             <Locations>

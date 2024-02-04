@@ -13,6 +13,9 @@ class BirthdayViewController: UIViewController {
     // MARK: Properties
     
      var viewModel: BirthdayViewModel
+    // Store the previous dates for comparison
+    private var previousTimeDate: Date?
+    private var previousDatePicker: Date?
     
     // MARK: - Init
     
@@ -46,6 +49,17 @@ class BirthdayViewController: UIViewController {
         field.inputView = datePicker
         field.text = formatDate(Date())
         return field
+    }()
+    
+    private lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.robotoFont(ofType: .light, size: 16)
+        label.textColor = .red
+        label.textAlignment = .center
+        label.backgroundColor = .clear
+        label.text = "Please fill both Date and Time fields"
+        return label
     }()
     
     private lazy var strokeView1: UIView = {
@@ -93,6 +107,8 @@ class BirthdayViewController: UIViewController {
     private func setupUI() {        
         view.backgroundColor = UIColor.theme(named: .background)
         
+        self.errorLabel.isHidden = true
+        
         customizeBackButton()
         
         [titleLabel,
@@ -100,6 +116,7 @@ class BirthdayViewController: UIViewController {
          dateField,
          strokeView1,
          birthTimeField,
+         errorLabel,
          strokeView2
         ].forEach(view.addSubview(_:))
         
@@ -112,13 +129,6 @@ class BirthdayViewController: UIViewController {
     private func didContinueButtonTapped() {
         continueButton.buttonTappedHandler = { [weak self] in
             ProgressManager.shared.progress += 0.25
-            //            if let builder = self?.viewModel.builder {
-            //                if let coordinator = self?.viewModel.coordinator{
-            //                    let vm = BirthPlaceViewModel(coordinator: coordinator)
-            //                   // let controller = BirthCityViewController(viewModel: vm)
-            //                    vm.builder = builder
-            //
-            //                }
             self?.viewModel.coordinator.navigate(to: .birthCity)
         }
     }
@@ -136,7 +146,9 @@ class BirthdayViewController: UIViewController {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
 
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                         target: self,
+                                         action: #selector(doneButtonTapped))
         toolbar.setItems([doneButton], animated: false)
 
         dateField.inputAccessoryView = toolbar
@@ -178,7 +190,9 @@ class BirthdayViewController: UIViewController {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
 
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done2ButtonTapped))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                         target: self,
+                                         action: #selector(done2ButtonTapped))
         toolbar.setItems([doneButton], animated: false)
 
         birthTimeField.inputAccessoryView = toolbar
@@ -234,6 +248,11 @@ class BirthdayViewController: UIViewController {
         strokeView2.snp.makeConstraints { make in
             make.top.equalTo(birthTimeField.snp.bottomMargin).offset(4)
             make.height.equalTo(1)
+            make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(strokeView2.snp.bottom).offset(60)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
     }

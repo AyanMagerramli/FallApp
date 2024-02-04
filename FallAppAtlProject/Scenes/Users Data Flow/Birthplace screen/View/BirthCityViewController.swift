@@ -29,6 +29,17 @@ class BirthCityViewController: UIViewController {
     
     // MARK: - UI Elements
     
+    private lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.robotoFont(ofType: .light, size: 16)
+        label.textColor = .red
+        label.textAlignment = .center
+        label.backgroundColor = .clear
+        label.text = "Please fill both country and city fields"
+        return label
+    }()
+    
     private lazy var continueButton = ReusableButton(title: "Continue")
     
     private func buttonAction() {
@@ -39,10 +50,12 @@ class BirthCityViewController: UIViewController {
                 UserInfoBuilder.shared.birthCity = birthCity
                 UserInfoBuilder.shared.birthCountry = birthCountry
             }
-         //   let vc = NameViewController()
-           // vc.builder = self.viewModel.builder
             print("Date is \(String(describing: UserInfoBuilder.shared.birthDate)), City is \(String(describing: UserInfoBuilder.shared.birthCity))")
-            self.viewModel.coordinator.navigate(to: .name)
+            if !(self.countryPickerTextField.text?.isEmpty ?? true || self.cityPickerTextField.text?.isEmpty ?? true) {
+                self.viewModel.coordinator.navigate(to: .name)
+            } else {
+                self.errorLabel.isHidden = false
+            }
         }
     }
     
@@ -99,31 +112,9 @@ class BirthCityViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         updateProgress()
-        
         viewModelSetup()
         self.viewModel.downloadCountries()
-        print("COuntries are \(String(describing: countryList))")
-       // print("Citiess are \(String(describing: ci))")
-       
     }
-    
-//    override func viewWillDisappear(_ animated: Bool) {
-//        super.viewWillDisappear(animated)
-//        
-//        if isMovingBack ?? true {
-//            ProgressManager.shared.progress -= 0.25
-//            self.navigationController?.addProgressBar(progress: ProgressManager.shared.progress)
-//        }
-//    }
-//    
-//    override func willMove(toParent parent: UIViewController?) {
-//        super.willMove(toParent: parent)
-//        
-//        if parent == nil {
-//            // View controller is being popped (moving back)
-//            isMovingBack = true
-//        }
-//    }
     
     // MARK: - Setup UI
     
@@ -132,11 +123,14 @@ class BirthCityViewController: UIViewController {
         
         customizeBackButton()
         
+        errorLabel.isHidden = true
+        
         [titleLabel,
          cityPickerTextField,
          countryPickerTextField,
          strokeView1,
          strokeView2,
+         errorLabel,
          continueButton
         ].forEach(view.addSubview(_:))
                 
@@ -186,6 +180,11 @@ class BirthCityViewController: UIViewController {
         strokeView2.snp.makeConstraints { make in
             make.top.equalTo(cityPickerTextField.snp.bottomMargin).offset(4)
             make.height.equalTo(1)
+            make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(strokeView2.snp.bottom).offset(60)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
     }
