@@ -39,8 +39,8 @@ final class LoginViewModel {
                 self.response = data
                 guard let accessToken = data.data?.accessToken,
                       let refreshToken = data.data?.refreshToken else { return }
-                self.keychain.set(accessToken, forKey: "accessToken")
-                self.keychain.set(refreshToken, forKey: "refreshToken")
+                // Store new tokens in Keychain upon successful login
+                self.storeTokensInKeychain(accessToken: accessToken, refreshToken: refreshToken)
                 print("LOGIN DATA is \(data)")
                 if data.data?.hasData == false {
                     self.coordinator.navigate(to: .birtDate)
@@ -56,6 +56,7 @@ final class LoginViewModel {
         registerManager.registerUser(registerData: userData) { data, error in
             if let error {
                 if error.status == 409 {
+                    // Handle registration conflict error
                     self.loginUser(userData: .init(email: userData.email, password: userData.password))
                 } else {
                     self.error?(error)
@@ -69,5 +70,17 @@ final class LoginViewModel {
                 self.coordinator.navigate(to: .otp)
             }
         }
+    }
+    
+    // Function to store tokens in Keychain
+    private func storeTokensInKeychain(accessToken: String, refreshToken: String) {
+        keychain.set(accessToken, forKey: "accessToken")
+        keychain.set(refreshToken, forKey: "refreshToken")
+    }
+    
+    // Function to clear tokens from Keychain (on logout)
+     func clearTokensFromKeychain() {
+        keychain.delete("accessToken")
+        keychain.delete("refreshToken")
     }
 }

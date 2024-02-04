@@ -10,12 +10,22 @@ import SnapKit
 
 class BirthdayViewController: UIViewController {
     
-    //MARK: Properties
+    // MARK: Properties
     
-    var coordinator: MainCoordinator?
-    var builder: UserInfoBuilder?
+     var viewModel: BirthdayViewModel
     
-    //MARK: - UI Elements
+    // MARK: - Init
+    
+    init(viewModel: BirthdayViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - UI Elements
 
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -85,7 +95,6 @@ class BirthdayViewController: UIViewController {
         
         customizeBackButton()
         
-        
         [titleLabel,
          continueButton,
          dateField,
@@ -98,23 +107,22 @@ class BirthdayViewController: UIViewController {
         makeConstraints()
         setupDatePicker()
         setupTimePicker()
-        
-       // updateProgressBar(value: progressValue)
     }
     
     private func didContinueButtonTapped() {
-        continueButton.buttonTappedHandler = {
+        continueButton.buttonTappedHandler = { [weak self] in
             ProgressManager.shared.progress += 0.25
-            let vc = BirthCityViewController()
-            vc.builder = self.builder
-            self.coordinator?.navigate(to: .birthCity)
-            if let birthDate = self.dateField.text,
-               let birthTime = self.birthTimeField.text {
-                self.builder?.birthDate = birthDate
-                self.builder?.birthTime = birthTime
-            }
+            //            if let builder = self?.viewModel.builder {
+            //                if let coordinator = self?.viewModel.coordinator{
+            //                    let vm = BirthPlaceViewModel(coordinator: coordinator)
+            //                   // let controller = BirthCityViewController(viewModel: vm)
+            //                    vm.builder = builder
+            //
+            //                }
+            self?.viewModel.coordinator.navigate(to: .birthCity)
         }
     }
+    
     
     private func setupDatePicker() {
         datePicker.datePickerMode = .date
@@ -123,8 +131,6 @@ class BirthdayViewController: UIViewController {
         datePicker.frame.size = CGSize(width: 0, height: 300)
         datePicker.maximumDate = Date()
         datePicker.addTarget(self, action: #selector(dateValueChanged), for: .valueChanged)
-    
-       // dateField.becomeFirstResponder()
         
         // Set up the toolbar with a "Done" button to dismiss the picker
         let toolbar = UIToolbar()
@@ -138,7 +144,9 @@ class BirthdayViewController: UIViewController {
     
     @objc private func doneButtonTapped() {
         // Handle the "Done" button tap, you may dismiss the keyboard or perform any other action
-                view.endEditing(true)
+        view.endEditing(true)
+        UserInfoBuilder.shared.birthDate = dateField.text
+        print("Birth DATE is \(String(describing: UserInfoBuilder.shared.birthDate))")
         birthTimeField.becomeFirstResponder()
     }
     
@@ -146,17 +154,17 @@ class BirthdayViewController: UIViewController {
         dateField.text = formatDate(datePicker.date)
     }
     
-    private func formatDate(_ date: Date) -> String {
+    private func formatDate(_ date: Date) -> String? {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMMM dd yyyy"
         return formatter.string(from: date)
     }
     
     func formatTime(_ date: Date) -> String {
-           let timeFormatter = DateFormatter()
-           timeFormatter.dateFormat = "HH:mm"
-           return timeFormatter.string(from: date)
-       }
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm"
+        return timeFormatter.string(from: date)
+    }
     
     private func setupTimePicker() {
         timePicker.datePickerMode = .time
@@ -178,7 +186,9 @@ class BirthdayViewController: UIViewController {
     
     @objc private func done2ButtonTapped() {
         // Handle the "Done" button tap, you may dismiss the keyboard or perform any other action
-                view.endEditing(true)
+        view.endEditing(true)
+        UserInfoBuilder.shared.birthTime = birthTimeField.text
+        print("Birth TIME is \(String(describing: UserInfoBuilder.shared.birthTime))")
     }
     
     @objc private func timeValueChanged() {
@@ -188,9 +198,9 @@ class BirthdayViewController: UIViewController {
     // MARK: - Update Progress Bar
     
     func updateProgress() {
-          let progress = ProgressManager.shared.progress
-          self.navigationController?.addProgressBar(progress: progress)
-      }
+        let progress = ProgressManager.shared.progress
+        self.navigationController?.addProgressBar(progress: progress)
+    }
     
     //MARK: Setup constraints
     

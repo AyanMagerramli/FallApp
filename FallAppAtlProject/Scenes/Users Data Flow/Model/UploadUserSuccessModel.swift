@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - UploadUserSuccessModel
+// MARK: - UploadUserModel
 struct UploadUserSuccessModel: Codable {
     let data: DataClassForUpload?
     let message: String?
@@ -18,3 +18,4 @@ struct DataClassForUpload: Codable {
     let name, birthDate, zodiacSign, animalYear: String?
     let ascendantSign: String?
 }
+

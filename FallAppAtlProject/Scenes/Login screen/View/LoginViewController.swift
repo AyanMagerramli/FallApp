@@ -101,8 +101,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-      //  viewModelSetup()
         buttonActions()
+        self.viewModel?.clearTokensFromKeychain()
     }
     
     override func viewWillAppear(_ animated: Bool) {

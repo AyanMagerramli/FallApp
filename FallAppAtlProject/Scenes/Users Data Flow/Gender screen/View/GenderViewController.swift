@@ -12,13 +12,12 @@ class GenderViewController: UIViewController {
     
     // MARK: Properties
     
-    var viewModel: GenderScreenViewModel
-    var builder: UserInfoBuilder?
+    var viewModel: GenderViewModel
     var selectedGender: String?
     
     // MARK: - init
     
-    init(viewModel: GenderScreenViewModel) {
+    init(viewModel: GenderViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -36,8 +35,10 @@ class GenderViewController: UIViewController {
             ProgressManager.shared.progress += 0.25
             //send all user datas from builder to api
             self.setupBuilderData()
-            self.viewModel.uploadUserData(userData: self.viewModel.userDataModel ?? UploadUserDataModel())
-            
+            print("USER MODEL IS \(String(describing: self.viewModel.userDataModel))")
+            print("Gender in complete button is \(String(describing: self.selectedGender))")
+            self.viewModel.uploadUserData(userData: self.viewModel.userDataModel )
+            UserDefaults.standard.setValue(self.viewModel.successModel?.data?.zodiacSign, forKey: "zodiacSign")
             self.viewModelSetup()
             self.viewModel.coordinator?.navigate(to: .zodiacInfo)
         }
@@ -48,7 +49,7 @@ class GenderViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Ayan, what is your Gender?"
+        label.text = "What is your Gender?"
         label.textAlignment = .left
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .bold, size: 20)
@@ -122,14 +123,18 @@ class GenderViewController: UIViewController {
             self.femaleButton.isSelected = true
         }
         
-        self.builder?.gender = self.selectedGender
+        print("Gender is \(String(describing: self.selectedGender))")
     }
     
     private func setupBuilderData() {
-        self.viewModel.userDataModel?.name = self.builder?.name
-        self.viewModel.userDataModel?.birthdate = self.builder?.birthDate
-        self.viewModel.userDataModel?.city = self.builder?.birthCity
-        self.viewModel.userDataModel?.name = self.builder?.gender
+        UserInfoBuilder.shared.gender = self.selectedGender
+        self.viewModel.userDataModel.name = UserInfoBuilder.shared.name
+        self.viewModel.userDataModel.city = UserInfoBuilder.shared.birthCity
+        self.viewModel.userDataModel.gender = UserInfoBuilder.shared.gender
+        if let birthDate = UserInfoBuilder.shared.birthDate,
+           let birthTime = UserInfoBuilder.shared.birthTime {
+            self.viewModel.userDataModel.birthdate = "\(birthDate) \(birthTime)"
+        }
     }
     
     // MARK: - Update Progress Bar

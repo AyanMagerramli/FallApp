@@ -12,8 +12,18 @@ class NameViewController: UIViewController {
     
     // MARK: Properties
     
-    var coordinator: MainCoordinator?
-    var builder: UserInfoBuilder?
+    var viewModel: NameViewModel
+    
+    // MARK: -Init
+    
+    init(viewModel: NameViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI Components
     
@@ -71,14 +81,12 @@ class NameViewController: UIViewController {
     }
     
     private func buttonAction() {
-        continueButton.buttonTappedHandler = {
+        continueButton.buttonTappedHandler = { [weak self] in
             ProgressManager.shared.progress += 0.25
-            if let name = self.nameField.text {
-                self.builder?.name = name
+            if let name = self?.nameField.text {
+                UserInfoBuilder.shared.name = name
             }
-            let vc = GenderViewController(viewModel: GenderScreenViewModel())
-            vc.builder = self.builder
-            self.coordinator?.navigate(to: .gender)
+            self?.viewModel.coordinator.navigate(to: .gender)
         }
     }
     

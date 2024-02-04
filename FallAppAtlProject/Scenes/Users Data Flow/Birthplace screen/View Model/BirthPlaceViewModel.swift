@@ -11,13 +11,18 @@ final class BirthPlaceViewModel {
     
     private let countryManager = CountriesManager()
     private let cityManager = CityManager()
-    var coordinator: MainCoordinator?
+    var coordinator: MainCoordinator
     var errorResponse: ErrorModel?
     var error: ((ErrorModel) -> Void)?
     var success: (() -> Void)?
     var countries: CountryModel?
     var cities: CityModel?
     var selectedCountry: String?
+   // var builder = UserInfoBuilder()
+    
+    init (coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+    }
     
     func downloadCountries() {
         countryManager.downloadCountryList { data, error in

@@ -18,6 +18,9 @@ protocol UserInfoBuilderProtocol {
 
 
 class UserInfoBuilder: UserInfoBuilderProtocol {
+    
+    static let shared = UserInfoBuilder()
+    
     var birthDate: String?
     var birthTime: String?
     var birthCountry: String?

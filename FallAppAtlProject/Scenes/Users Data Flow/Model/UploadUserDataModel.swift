@@ -10,7 +10,6 @@ import Foundation
 struct UploadUserDataModel: Codable {
     
     var name: String?
-    var surname: String?
     var city: String?
     var gender: String?
     var birthdate: String?
@@ -18,7 +17,6 @@ struct UploadUserDataModel: Codable {
     var dictionary: [String: Any] {
         return [
             "name" : name ?? "",
-            "surname" : surname ?? "",
             "city" : city ?? "",
             "gender" : gender ?? "",
             "birthDate" : birthdate ?? ""

@@ -24,7 +24,7 @@ class NetworkManager {
                    method: method,
                    parameters: parameters,
                    encoding: encoding,
-                   headers: NetworkHelper.header).responseData { response in
+                   headers: NetworkHelper.getHeader()).responseData { response in
             if response.response?.statusCode == 200 {
                 if let data = response.data {
                     self.handleResponse(model: T.self, data: data) { model in

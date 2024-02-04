@@ -44,7 +44,7 @@
 		113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */; };
 		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
-		114995272B6C3AFB00F44962 /* GenderScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114995262B6C3AFB00F44962 /* GenderScreenViewModel.swift */; };
+		114995272B6C3AFB00F44962 /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114995262B6C3AFB00F44962 /* GenderViewModel.swift */; };
 		1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */; };
 		1149952E2B6C407700F44962 /* UploadUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952D2B6C407700F44962 /* UploadUseCase.swift */; };
 		114995302B6C432900F44962 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952F2B6C432900F44962 /* UploadManager.swift */; };
@@ -86,6 +86,8 @@
 		11DA41AF2B69658B00E07C63 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */; };
 		11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B02B6965D200E07C63 /* LoginUserModel.swift */; };
 		11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B22B69668800E07C63 /* LoginManager.swift */; };
+		11F6D0E12B6F9D8D006837C5 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D0E02B6F9D8D006837C5 /* BirthdayViewModel.swift */; };
+		11F6D0E32B6FA94A006837C5 /* NameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D0E22B6FA94A006837C5 /* NameViewModel.swift */; };
 		11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */; };
 		11FB140F2B6D110D004EB5CC /* CitiesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB140E2B6D110D004EB5CC /* CitiesUseCase.swift */; };
 		11FB14112B6D1134004EB5CC /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11FB14102B6D1134004EB5CC /* CityManager.swift */; };
@@ -126,7 +128,7 @@
 		113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilder.swift; sourceTree = "<group>"; };
 		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
-		114995262B6C3AFB00F44962 /* GenderScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderScreenViewModel.swift; sourceTree = "<group>"; };
+		114995262B6C3AFB00F44962 /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
 		1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUserDataModel.swift; sourceTree = "<group>"; };
 		1149952D2B6C407700F44962 /* UploadUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUseCase.swift; sourceTree = "<group>"; };
 		1149952F2B6C432900F44962 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
@@ -168,6 +170,8 @@
 		11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		11DA41B02B6965D200E07C63 /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
 		11DA41B22B69668800E07C63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		11F6D0E02B6F9D8D006837C5 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		11F6D0E22B6FA94A006837C5 /* NameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewModel.swift; sourceTree = "<group>"; };
 		11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
 		11FB140E2B6D110D004EB5CC /* CitiesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesUseCase.swift; sourceTree = "<group>"; };
 		11FB14102B6D1134004EB5CC /* CityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManager.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				1106A58F2B59C67000DF7450 /* BirthdayViewController.swift */,
+				11F6D0E02B6F9D8D006837C5 /* BirthdayViewModel.swift */,
 			);
 			path = "Birthday screen";
 			sourceTree = "<group>";
@@ -464,7 +469,7 @@
 		114995292B6C3F4700F44962 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				114995262B6C3AFB00F44962 /* GenderScreenViewModel.swift */,
+				114995262B6C3AFB00F44962 /* GenderViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -653,7 +658,8 @@
 		11A2418F2B5B217B000E2CEE /* Name screen */ = {
 			isa = PBXGroup;
 			children = (
-				11A241902B5B2195000E2CEE /* NameViewController.swift */,
+				11F6D0E42B6FA957006837C5 /* View */,
+				11F6D0E52B6FA960006837C5 /* View Model */,
 			);
 			path = "Name screen";
 			sourceTree = "<group>";
@@ -698,6 +704,22 @@
 				11DA41B02B6965D200E07C63 /* LoginUserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		11F6D0E42B6FA957006837C5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11A241902B5B2195000E2CEE /* NameViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11F6D0E52B6FA960006837C5 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				11F6D0E22B6FA94A006837C5 /* NameViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		11F9BF482B5D92EC00F913F7 /* View Controller */ = {
@@ -802,6 +824,7 @@
 				116582A92B6AB22700EF7268 /* UploadEndpoint.swift in Sources */,
 				113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */,
 				119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */,
+				11F6D0E12B6F9D8D006837C5 /* BirthdayViewModel.swift in Sources */,
 				11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */,
 				110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */,
 				1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */,
@@ -835,6 +858,7 @@
 				113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */,
 				113E4E372B68356B0033375D /* OTPResetModel.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
+				11F6D0E32B6FA94A006837C5 /* NameViewModel.swift in Sources */,
 				11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */,
 				111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
@@ -851,7 +875,7 @@
 				11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */,
 				115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */,
 				11708D152B643BF200C8DB60 /* RegisterUseCase.swift in Sources */,
-				114995272B6C3AFB00F44962 /* GenderScreenViewModel.swift in Sources */,
+				114995272B6C3AFB00F44962 /* GenderViewModel.swift in Sources */,
 				11708D122B643A6600C8DB60 /* LoginEndpoint.swift in Sources */,
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,

@@ -75,20 +75,17 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func goToBirthDateScreen() {
-        let vc = BirthdayViewController()
-        vc.coordinator = self
+        let vc = BirthdayViewController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
     
     func goToBirthCityScreen() {
-        let vc = BirthCityViewController()
-        vc.coordinator = self
+        let vc = BirthCityViewController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
     
     func goToNameScreen() {
-        let vc = NameViewController()
-        vc.coordinator = self
+        let vc = NameViewController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
     

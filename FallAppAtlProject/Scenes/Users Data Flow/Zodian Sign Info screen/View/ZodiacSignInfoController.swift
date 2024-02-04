@@ -31,7 +31,6 @@ class ZodiacSignInfoController: UIViewController {
         label.font = UIFont.robotoFont(ofType: .bold, size: 30)
         label.lineBreakMode = .byWordWrapping
         label.textColor = UIColor.theme(named: .main)
-        label.text = "You are \(String(describing: viewModel.zodiacSign))"
         return label
     }()
     
@@ -56,8 +55,9 @@ class ZodiacSignInfoController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
-        
         navigationController?.navigationBar.isHidden = true
+        
+        zodiacLabel.text = "You are \(String(describing: viewModel.zodiacSign))"
         
         [backgroundImage,
          zodiacLabel].forEach(view.addSubview(_:))

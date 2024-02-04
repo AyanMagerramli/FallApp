@@ -12,15 +12,20 @@ class BirthCityViewController: UIViewController {
     
     // MARK: Properties
     
-    var coordinator: MainCoordinator?
-    var builder: UserInfoBuilder?
-    let viewModel = BirthPlaceViewModel()
+    var viewModel:  BirthPlaceViewModel
     var countryList: CountryModel?
-    
     var isMovingBack: Bool?
     
-    let cities = ["City1", "City2", "City3"]
-  //  let countries = ["Country1", "Country2", "Country3"]
+    // MARK: - Init
+    
+    init(viewModel: BirthPlaceViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI Elements
     
@@ -31,15 +36,13 @@ class BirthCityViewController: UIViewController {
             ProgressManager.shared.progress += 0.25
             if let birthCountry = self.countryPickerTextField.text,
                let birthCity = self.cityPickerTextField.text {
-//                self.viewModel.selectedCountry = birthCountry
-//                self.viewModel.countrySelection()
-                self.builder?.birthCity = birthCity
-                self.builder?.birthCountry = birthCountry
+                UserInfoBuilder.shared.birthCity = birthCity
+                UserInfoBuilder.shared.birthCountry = birthCountry
             }
-            let vc = NameViewController()
-            vc.builder = self.builder
-           // self.mainViewController?.add(childViewController: vc)
-            self.coordinator?.navigate(to: .name)
+         //   let vc = NameViewController()
+           // vc.builder = self.viewModel.builder
+            print("Date is \(String(describing: UserInfoBuilder.shared.birthDate)), City is \(String(describing: UserInfoBuilder.shared.birthCity))")
+            self.viewModel.coordinator.navigate(to: .name)
         }
     }
     
