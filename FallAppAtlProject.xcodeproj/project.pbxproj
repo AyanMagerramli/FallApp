@@ -44,6 +44,11 @@
 		113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */; };
 		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
+		114956E92B715B1C003E41D4 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956E82B715B1C003E41D4 /* HomeUseCase.swift */; };
+		114956EE2B715B97003E41D4 /* HomeSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956ED2B715B97003E41D4 /* HomeSuccessModel.swift */; };
+		114956F02B715D33003E41D4 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956EF2B715D33003E41D4 /* HomeManager.swift */; };
+		114956F22B715DC8003E41D4 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956F12B715DC8003E41D4 /* HomeEndpoint.swift */; };
+		114956F42B715E41003E41D4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956F32B715E41003E41D4 /* HomeViewModel.swift */; };
 		114995272B6C3AFB00F44962 /* GenderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114995262B6C3AFB00F44962 /* GenderViewModel.swift */; };
 		1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */; };
 		1149952E2B6C407700F44962 /* UploadUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952D2B6C407700F44962 /* UploadUseCase.swift */; };
@@ -128,6 +133,11 @@
 		113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilder.swift; sourceTree = "<group>"; };
 		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
+		114956E82B715B1C003E41D4 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		114956ED2B715B97003E41D4 /* HomeSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSuccessModel.swift; sourceTree = "<group>"; };
+		114956EF2B715D33003E41D4 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		114956F12B715DC8003E41D4 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		114956F32B715E41003E41D4 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		114995262B6C3AFB00F44962 /* GenderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewModel.swift; sourceTree = "<group>"; };
 		1149952B2B6C3FC100F44962 /* UploadUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUserDataModel.swift; sourceTree = "<group>"; };
 		1149952D2B6C407700F44962 /* UploadUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadUseCase.swift; sourceTree = "<group>"; };
@@ -288,6 +298,7 @@
 				116582A82B6AB22700EF7268 /* UploadEndpoint.swift */,
 				111EA1392B6D0AC5002ACF7A /* CountryEndpoint.swift */,
 				111EA13B2B6D0AF7002ACF7A /* CityEndpoint.swift */,
+				114956F12B715DC8003E41D4 /* HomeEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -301,6 +312,7 @@
 				1149952F2B6C432900F44962 /* UploadManager.swift */,
 				11D7F1712B6D0E71007ABDB0 /* CountriesManager.swift */,
 				11FB14102B6D1134004EB5CC /* CityManager.swift */,
+				114956EF2B715D33003E41D4 /* HomeManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -443,7 +455,9 @@
 		113F9CA72B5D3F310069CCC2 /* Home screen */ = {
 			isa = PBXGroup;
 			children = (
-				113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */,
+				114956EC2B715B78003E41D4 /* Model */,
+				114956EB2B715B71003E41D4 /* View Model */,
+				114956EA2B715B6C003E41D4 /* View */,
 			);
 			path = "Home screen";
 			sourceTree = "<group>";
@@ -456,6 +470,30 @@
 				1173B4892B631038005ED1C5 /* DetailCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		114956EA2B715B6C003E41D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		114956EB2B715B71003E41D4 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				114956F32B715E41003E41D4 /* HomeViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		114956EC2B715B78003E41D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				114956ED2B715B97003E41D4 /* HomeSuccessModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		114995282B6C3F3E00F44962 /* View */ = {
@@ -601,6 +639,7 @@
 				1149952D2B6C407700F44962 /* UploadUseCase.swift */,
 				11D7F16F2B6D0D30007ABDB0 /* CountriesUseCase.swift */,
 				11FB140E2B6D110D004EB5CC /* CitiesUseCase.swift */,
+				114956E82B715B1C003E41D4 /* HomeUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -852,7 +891,9 @@
 				11708D1E2B646C5F00C8DB60 /* RegisterManager.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
 				114995302B6C432900F44962 /* UploadManager.swift in Sources */,
+				114956F42B715E41003E41D4 /* HomeViewModel.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
+				114956EE2B715B97003E41D4 /* HomeSuccessModel.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
 				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,
 				113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */,
@@ -868,6 +909,7 @@
 				11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */,
 				1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */,
 				11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */,
+				114956F02B715D33003E41D4 /* HomeManager.swift in Sources */,
 				1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */,
 				11FB14112B6D1134004EB5CC /* CityManager.swift in Sources */,
 				11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */,
@@ -879,10 +921,12 @@
 				11708D122B643A6600C8DB60 /* LoginEndpoint.swift in Sources */,
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,
+				114956E92B715B1C003E41D4 /* HomeUseCase.swift in Sources */,
 				110E83602B5146A70000D6D9 /* SceneDelegate.swift in Sources */,
 				1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */,
 				11A8ACA12B6D0220008930A4 /* UploadUserSuccessModel.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
+				114956F22B715DC8003E41D4 /* HomeEndpoint.swift in Sources */,
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
 				1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */,
 				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,

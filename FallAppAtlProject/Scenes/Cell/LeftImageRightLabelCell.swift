@@ -7,6 +7,22 @@
 import UIKit
 import SnapKit
 
+protocol LeftImageRightLabelCellProtocol {
+    var dataTitle: String { get }
+    var dataZodiacSignName: String { get }
+    var dataZodiacImage: String { get }
+    var dataForecast: String { get }
+}
+
+// Update the protocol to include optional properties
+extension LeftImageRightLabelCellProtocol {
+    var dataTitle: String { return "" }
+    var dataZodiacSignName: String { return "" }
+    var dataZodiacImage: String { return "" }
+    var dataForecast: String { return "" }
+}
+
+
 class LeftImageRightLabelCell: UICollectionViewCell {
 
     // MARK: Properties
@@ -98,7 +114,6 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         containerView.layer.borderColor = UIColor.theme(named: .main).cgColor
         
         makeConstraints()
-        configureUI()
     }
 
     // MARK: - Setup Constraints
@@ -136,10 +151,10 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         }
     }
 
-    func configureUI() {
+    func configureUI(data: LeftImageRightLabelCellProtocol) {
         leftImage.image = UIImage(named: "cellDummyImage")
-        titleLabel.text = "Your daily prediction"
-        subtitleLabel.text = "Scorpio"
-        textLabell.text = "You can bet there’s something juicy going on, under the wraps, though, because Scorpios like extremes, challenges, danger and darkness. They are, because of their planetary ruler Pluto, drawn to the outliers of human experience. If it’s kinky, risky or thrilling, a Scorpio will be involved somehow!Scorpios are loyal, smart, shrewd and stoic. They stand by their beliefs, and they don’t crave anyone else’s approval.Scorpio is like the big, bad older sister of the Water sign crew. You don’t mess with the turbulent, deadly scorpion my friend, their sting can be fatal - and they make the other signs of the zodiac (apart from maybe Aries, who they share a planetary influence with) look like wusses!"
+        titleLabel.text = data.dataTitle
+        subtitleLabel.text = data.dataZodiacSignName
+        textLabell.text = data.dataForecast
     }
 }

@@ -18,6 +18,12 @@ class GenderViewModel {
     var success: (() -> Void)?
     var successModel: UploadUserSuccessModel?    
     
+    // MARK: - init
+    
+    init(coordinator: MainCoordinator? = nil) {
+        self.coordinator = coordinator
+    }
+    
     func uploadUserData(userData: UploadUserDataModel) {
         manager.uploadUserData(userData: userData) { data, error in
             if let error {
@@ -31,11 +37,4 @@ class GenderViewModel {
             }
         }
     }
-        
-    // MARK: - init
-    
-    init(coordinator: MainCoordinator? = nil) {
-        self.coordinator = coordinator
-    }
-    
 }

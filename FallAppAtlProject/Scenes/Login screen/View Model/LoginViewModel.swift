@@ -45,7 +45,8 @@ final class LoginViewModel {
                 if data.data?.hasData == false {
                     self.coordinator.navigate(to: .birtDate)
                 } else {
-                    self.coordinator.start()
+                   // self.coordinator.start()
+                    self.coordinator.goToHomeScreen()
                 }
                 self.success?()
             }

@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     // MARK: Properties
     
     var coordinator: MainCoordinator?
+    private let viewModel = HomeViewModel()
     
     // MARK: UI Elements
     
@@ -44,6 +45,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        self.viewModel.loadUserZodiacSignPredictions()
+        self.viewModel.success = {
+            self.collectionView.reloadData()
+        }
     }
     
     // MARK: - Setup UI
@@ -73,12 +78,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        6
+        self.viewModel.userPredictions?.data?.title?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftImageRightLabelCell.identifier, for: indexPath) as! LeftImageRightLabelCell
-        cell.configureUI()
+        if let data = self.viewModel.userPredictions?.data {
+            cell.configureUI(data: data)
+        }
         return cell
     }
 }

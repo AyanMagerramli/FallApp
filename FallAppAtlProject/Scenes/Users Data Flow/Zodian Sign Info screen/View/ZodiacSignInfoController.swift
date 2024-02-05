@@ -34,6 +34,8 @@ class ZodiacSignInfoController: UIViewController {
         return label
     }()
     
+    private lazy var completeButton = ReusableButton(title: "Begin Journey")
+    
     // MARK: - Init
 
     init(viewModel: ZodiacSignInfiViewModel) {
@@ -50,6 +52,7 @@ class ZodiacSignInfoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        buttonAction()
     }
     
     // MARK: - Setup UI
@@ -60,7 +63,8 @@ class ZodiacSignInfoController: UIViewController {
         zodiacLabel.text = "You are \(String(describing: viewModel.zodiacSign))"
         
         [backgroundImage,
-         zodiacLabel].forEach(view.addSubview(_:))
+         zodiacLabel,
+         completeButton].forEach(view.addSubview(_:))
         
         // Send the image view to the back so other UI elements are on top
         view.sendSubviewToBack(backgroundImage)
@@ -69,11 +73,22 @@ class ZodiacSignInfoController: UIViewController {
         makeConstraints()
     }
     
+    private func buttonAction() {
+        completeButton.buttonTappedHandler = { [weak self] in
+            self?.viewModel.coordinator.start()
+        }
+    }
+    
     // MARK: - Setup Constraints
     
     private func makeConstraints() {
         zodiacLabel.snp.makeConstraints { make in
             make.center.equalToSuperview()
+        }
+        
+        completeButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(90)
+            make.horizontalEdges.equalToSuperview().inset(24)
         }
     }
 }

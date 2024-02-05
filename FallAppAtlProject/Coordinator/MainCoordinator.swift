@@ -104,5 +104,11 @@ class MainCoordinator: CoordinatorProtocol {
         vc.coordinator = self
         navigationController.show(vc, sender: nil)
     }
+    
+    func goToHomeScreen() {
+        let vc = HomeViewController()
+        vc.coordinator = self
+        navigationController.show(vc, sender: nil)
+    }
 }
 
