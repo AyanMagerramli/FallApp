@@ -11,7 +11,8 @@ import KeychainSwift
 
 class NetworkHelper {
     
-    // tokeni keychainden alacaqsan,  login ekranda gelen response-dan refresh ve access tokeni keychainde save ediceksin
+    // We get token (both access and refresh) from Keychain (cause save there while user logged in)
+    
     static let baseURL = "http://184.73.181.83:8080/"
     static func getHeader() -> HTTPHeaders? {
         let accessToken = KeychainSwift().get("accessToken") ?? ""

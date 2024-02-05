@@ -76,6 +76,7 @@
 		11708D202B64710300C8DB60 /* RegisterOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D1F2B64710300C8DB60 /* RegisterOTPResponseModel.swift */; };
 		1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */; };
 		1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4892B631038005ED1C5 /* DetailCell.swift */; };
+		1179869E2B71872C001EF473 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179869D2B71872C001EF473 /* ImageViewExtension.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
 		119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB30A2B53DDFC006445FD /* TabBarController.swift */; };
@@ -165,6 +166,7 @@
 		11708D1F2B64710300C8DB60 /* RegisterOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterOTPResponseModel.swift; sourceTree = "<group>"; };
 		1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailViewController.swift; sourceTree = "<group>"; };
 		1173B4892B631038005ED1C5 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		1179869D2B71872C001EF473 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		119BB30A2B53DDFC006445FD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 		113F9C972B5D20020069CCC2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1179869C2B7186F2001EF473 /* Image */,
 				1156FF2F2B65112D00452019 /* Navigation Controller */,
 				11F9BF482B5D92EC00F913F7 /* View Controller */,
 				113F9C9B2B5D22B00069CCC2 /* Colors */,
@@ -677,6 +680,14 @@
 			path = "Tarot Detail screen";
 			sourceTree = "<group>";
 		};
+		1179869C2B7186F2001EF473 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1179869D2B71872C001EF473 /* ImageViewExtension.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
 		119BB3042B53DC7F006445FD /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -896,6 +907,7 @@
 				114956EE2B715B97003E41D4 /* HomeSuccessModel.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
 				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,
+				1179869E2B71872C001EF473 /* ImageViewExtension.swift in Sources */,
 				113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */,
 				113E4E372B68356B0033375D /* OTPResetModel.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,

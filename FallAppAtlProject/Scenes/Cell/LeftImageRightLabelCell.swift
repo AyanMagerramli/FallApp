@@ -30,7 +30,7 @@ class LeftImageRightLabelCell: UICollectionViewCell {
     
     private lazy var leftImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         image.backgroundColor = .clear
         image.layer.cornerRadius = 8
@@ -139,17 +139,20 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         titleLabel.text = prediction?.title
         subtitleLabel.text = prediction?.today?.title
         forecastLabel.text = prediction?.today?.forecast
+        leftImage.loadImage(url: prediction?.today?.zodiacImage ?? "no image")
     }
     
     func configureMonthlyPrediction (with prediction: PredictionModel?) {
         titleLabel.text = prediction?.title
         subtitleLabel.text = prediction?.monthly?.title
         forecastLabel.text = prediction?.monthly?.forecast
+        leftImage.loadImage(url: prediction?.monthly?.zodiacImage ?? "no image")
     }
     
     func configureYearlyPrediction (with prediction: PredictionModel?) {
         titleLabel.text = prediction?.title
         subtitleLabel.text = prediction?.yearly?.title
         forecastLabel.text = prediction?.yearly?.forecast
+        leftImage.loadImage(url: prediction?.yearly?.zodiacImage ?? "no image")
     }
 }
