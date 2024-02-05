@@ -17,7 +17,8 @@ class NetworkHelper {
         let accessToken = KeychainSwift().get("accessToken") ?? ""
         var header: HTTPHeaders = [
             "Key" : "36a1adc80d58d14c3bc67e77c6d28158d45a6b74787d71c7a57a882345eb4659",
-            "accept": "application/json"
+            "accept": "application/json",
+            "Accept-Language": "en"
         ]
         if !accessToken.isEmpty {
             header["Authorization"] = "Bearer \(accessToken)"

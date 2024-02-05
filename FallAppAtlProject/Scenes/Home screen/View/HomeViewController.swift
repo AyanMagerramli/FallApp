@@ -45,10 +45,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        self.viewModel.loadUserZodiacSignPredictions()
-        self.viewModel.success = {
-            self.collectionView.reloadData()
-        }
+        setupViewModel()
     }
     
     // MARK: - Setup UI
@@ -67,6 +64,14 @@ class HomeViewController: UIViewController {
         makeConstraints()
     }
     
+    private func setupViewModel() {
+        self.viewModel.loadUserZodiacSignPredictions()
+        self.viewModel.success = { [weak self] in
+            self?.collectionView.reloadData()
+            self?.navigationItem.title = self?.viewModel.userPredictions?.data?.title
+        }
+    }
+    
     // MARK: - Setup Constraints
     
     private func makeConstraints() {
@@ -77,25 +82,44 @@ class HomeViewController: UIViewController {
     // MARK: - Colelction View Data Source methods
 
 extension HomeViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        3 // Three sections for today, monthly, and yearly
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.viewModel.userPredictions?.data?.title?.count ?? 0
+        1  // One row for each section
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftImageRightLabelCell.identifier, for: indexPath) as! LeftImageRightLabelCell
-        if let data = self.viewModel.userPredictions?.data {
-            cell.configureUI(data: data)
+        switch indexPath.section {
+            
+        case 0:
+            cell.configureDailyPrediction(with: self.viewModel.userPredictions?.data)
+            
+        case 1:
+            cell.configureMonthlyPrediction(with: self.viewModel.userPredictions?.data)
+            
+        case 2:
+            cell.configureYearlyPrediction(with: self.viewModel.userPredictions?.data)
+            
+        default:
+           break
         }
+        
         return cell
     }
 }
-
 // MARK: - Colelction View Delegate methods
 
-extension HomeViewController: UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //go to detail page
         let vc = TarotViewController()
         navigationController?.show(vc, sender: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 24, left: 24, bottom: 0, right: 24)
     }
 }
