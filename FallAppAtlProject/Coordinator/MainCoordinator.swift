@@ -100,8 +100,7 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func goToTarotDetail() {
-        let vc = TarotDetailViewController()
-        vc.coordinator = self
+        let vc = TarotDetailViewController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
     

@@ -11,7 +11,18 @@ class TarotDetailViewController: UIViewController {
     
     // MARK: Properties
     
-    var coordinator: MainCoordinator?
+    var viewModel: TarotDetailViewModel
+    
+    // MARK: - Init
+    
+    init(viewModel: TarotDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI Elements
     
