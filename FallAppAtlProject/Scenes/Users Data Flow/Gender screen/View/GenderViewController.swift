@@ -38,7 +38,6 @@ class GenderViewController: UIViewController {
             print("USER MODEL IS \(String(describing: self.viewModel.userDataModel))")
             print("Gender in complete button is \(String(describing: self.selectedGender))")
             self.viewModel.uploadUserData(userData: self.viewModel.userDataModel )
-            self.viewModelSetup()
             self.viewModel.coordinator?.navigate(to: .zodiacInfo)
         }
     }
@@ -75,6 +74,7 @@ class GenderViewController: UIViewController {
         updateProgress()
         buttonActions()
         completeButtonAction()
+        viewModelSetup()
     }
     
     // MARK: - Setup UI
@@ -165,8 +165,7 @@ class GenderViewController: UIViewController {
     
     private func viewModelSetup() {
         viewModel.success = { [weak self] in
-           // print(self?.viewModel.response?.message ?? "no message")
-            self?.viewModel.coordinator?.start() //This should change according to hasData field
+            UserDefaults.standard.setValue(self?.viewModel.successModel?.data?.zodiacSign, forKey: "zodiacSign")
         }
     }
 }

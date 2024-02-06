@@ -77,6 +77,8 @@
 		1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */; };
 		1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4892B631038005ED1C5 /* DetailCell.swift */; };
 		1179869E2B71872C001EF473 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179869D2B71872C001EF473 /* ImageViewExtension.swift */; };
+		118B9F812B722A5B0012AFD7 /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */; };
+		118B9F852B722C880012AFD7 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
 		119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB30A2B53DDFC006445FD /* TabBarController.swift */; };
@@ -167,6 +169,8 @@
 		1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailViewController.swift; sourceTree = "<group>"; };
 		1173B4892B631038005ED1C5 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		1179869D2B71872C001EF473 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
+		118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		119BB30A2B53DDFC006445FD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -336,6 +340,7 @@
 				113F9CA02B5D2E4B0069CCC2 /* OTP screen */,
 				113F9CA32B5D39610069CCC2 /* Users Data Flow */,
 				113F9CA72B5D3F310069CCC2 /* Home screen */,
+				118B9F7F2B7229FE0012AFD7 /* Home Detail screen */,
 				113932C52B5EF8BE00D402BA /* Tarot screen */,
 				1173B4882B630DE7005ED1C5 /* Tarot Detail screen */,
 				11708D052B63CCC100C8DB60 /* Year and Zodiac signs collection screen */,
@@ -688,6 +693,31 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		118B9F7F2B7229FE0012AFD7 /* Home Detail screen */ = {
+			isa = PBXGroup;
+			children = (
+				118B9F832B722C780012AFD7 /* View Model */,
+				118B9F822B722C720012AFD7 /* View */,
+			);
+			path = "Home Detail screen";
+			sourceTree = "<group>";
+		};
+		118B9F822B722C720012AFD7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		118B9F832B722C780012AFD7 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		119BB3042B53DC7F006445FD /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -893,6 +923,7 @@
 				11D7F1752B6D0F09007ABDB0 /* BirthPlaceViewModel.swift in Sources */,
 				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
+				118B9F812B722A5B0012AFD7 /* HomeDetailController.swift in Sources */,
 				11708D1A2B646B4700C8DB60 /* RegisterUserModel.swift in Sources */,
 				11708D042B63CB7900C8DB60 /* RegisterEndpoint.swift in Sources */,
 				113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */,
@@ -944,6 +975,7 @@
 				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,
 				113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */,
 				115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */,
+				118B9F852B722C880012AFD7 /* HomeDetailViewModel.swift in Sources */,
 				113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */,
 				113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */,
 				11708D072B63CD3500C8DB60 /* YearAndZodiacSignsViewController.swift in Sources */,

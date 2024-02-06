@@ -98,10 +98,22 @@ class DetailCell: UITableViewCell {
     
     // MARK: - Configure cell function
     
-    func configureCell() {
-        image.image = UIImage(named: "cellDummyImage")
-        titleLabel.text = "Tarot card name"
-        infoDetailLabel.text = "The pack to which these cards were added naturally bore Italian suitmarks and belonged to an experimental period of card design when queens were often added to the series of court cards previously consisting of only a king and two male figures (see playing card). In standard cards (but not in tarots), the four figures were subsequently reduced to three again by suppression of the queen, except in French cards, which suppressed the cavalier (knight).The pack to which these cards were added naturally bore Italian suitmarks and belonged to an experimental period of card design when queens were often added to the series of court cards previously consisting of only a king and two male figures (see playing card). In standard cards (but not in tarots), the four figures were subsequently reduced to three again by suppression of the queen, except in French cards, which suppressed the cavalier (knight).The pack to which these cards were added naturally bore Italian suitmarks and belonged to an experimental period of card design when queens were often added to the series of court cards previously consisting of only a king and two male figures (see playing card). In standard cards (but not in tarots), the four figures were subsequently reduced to three again by suppression of the queen, except in French cards, which suppressed the cavalier (knight).The pack to which these cards were added naturally bore Italian suitmarks and belonged to an experimental period of card design when queens were often added to the series of court cards previously consisting of only a king and two male figures (see playing card). In standard cards (but not in tarots), the four figures were subsequently reduced to three again by suppression of the queen, except in French cards, which suppressed the cavalier (knight)."
+    func configureDailyPrediction (with prediction: PredictionModel?) {
+        titleLabel.text = prediction?.title
+        infoDetailLabel.text = prediction?.today?.forecast
+        image.loadImage(url: prediction?.today?.zodiacImage ?? "no image")
+    }
+    
+    func configureMonthlyPrediction (with prediction: PredictionModel?) {
+        titleLabel.text = prediction?.title
+        infoDetailLabel.text = prediction?.monthly?.forecast
+        image.loadImage(url: prediction?.monthly?.zodiacImage ?? "no image")
+    }
+    
+    func configureYearlyPrediction (with prediction: PredictionModel?) {
+        titleLabel.text = prediction?.title
+        infoDetailLabel.text = prediction?.yearly?.forecast
+        image.loadImage(url: prediction?.yearly?.zodiacImage ?? "no image")
     }
 }
 
