@@ -92,6 +92,10 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftImageRightLabelCell.identifier, for: indexPath) as! LeftImageRightLabelCell
+        
+        let tag = indexPath.section
+        cell.tag = tag
+        
         switch indexPath.section {
             
         case 0:
@@ -114,9 +118,8 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //go to detail page
-        let vc = TarotViewController()
-        navigationController?.show(vc, sender: nil)
+        let selectedTag = indexPath.section
+        coordinator?.goToHomeDetailScreen(tag: selectedTag) //go to detail page
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

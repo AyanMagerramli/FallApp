@@ -80,7 +80,7 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func goToBirthCityScreen() {
-        let vc = BirthCityViewController(viewModel: .init(coordinator: self))
+        let vc = BirthPlaceViewController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
     
@@ -108,6 +108,12 @@ class MainCoordinator: CoordinatorProtocol {
     func goToHomeScreen() {
         let vc = HomeViewController()
         vc.coordinator = self
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToHomeDetailScreen(tag: Int) {
+        let vc = HomeDetailController(viewModel: .init(coordinator: self))
+        vc.tag = tag
         navigationController.show(vc, sender: nil)
     }
 }

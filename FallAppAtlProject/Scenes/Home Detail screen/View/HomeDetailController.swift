@@ -11,7 +11,19 @@ class HomeDetailController: UIViewController {
     
     // MARK: Properties
     
-    private let viewModel = HomeDetailViewModel()
+    var viewModel: HomeDetailViewModel
+    var tag: Int?
+    
+    // MARK: - Init
+    
+    init(viewModel: HomeDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI views
     
@@ -41,6 +53,10 @@ class HomeDetailController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupViewModel()
+        guard let tag = tag else {
+            // Handle when tag is nil
+            return
+        }
     }
     
     // MARK: - Setup UI
@@ -76,6 +92,24 @@ extension HomeDetailController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as! DetailCell
+        
+        switch self.tag {
+            
+        case 0:
+            cell.configureDailyPrediction(with: self.viewModel.userPredictions?.data)
+            
+        case 1:
+            cell.configureMonthlyPrediction(with: self.viewModel.userPredictions?.data)
+            
+        case 2:
+            cell.configureYearlyPrediction(with: self.viewModel.userPredictions?.data)
+            
+        default:
+            break
+        }
+        
+        cell.backgroundColor = .clear
+        cell.selectionStyle = .none
         return cell
     }
 }

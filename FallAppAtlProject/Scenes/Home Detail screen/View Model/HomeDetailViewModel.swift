@@ -9,11 +9,16 @@ import Foundation
 
 final class HomeDetailViewModel {
     
+    var coordinator: MainCoordinator
     private let manager = HomeManager()
     var error: ((ErrorModel) -> Void)?
     var errorModel: ErrorModel?
     var success: (() -> Void)?
     var userPredictions: HomeSuccessModel?
+    
+    init (coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+    }
     
     func loadUserZodiacSignPredictions() {
         manager.loadUserSignsPredictions { data, error in

@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import KeychainSwift
 
 class NetworkManager {
     
@@ -43,4 +44,16 @@ class NetworkManager {
         let result = try? JSONDecoder().decode(T.self, from: data)
         completion(result)
     }
+    
+    fileprivate static func refreshToken(completion: @escaping (RefreshTokenSuccessModel?, ErrorModel?) -> Void) {
+        let tokenModel = RefreshTokenModel()
+        self.request(model: RefreshTokenSuccessModel.self,
+                     endpoint: RefreshTokenEndpoint.refreshToken.rawValue,
+                     parameters: tokenModel.dictionary,
+                     method: .post,
+                     encoding: JSONEncoding.default,
+                     completion: completion)
+    }
 }
+
+

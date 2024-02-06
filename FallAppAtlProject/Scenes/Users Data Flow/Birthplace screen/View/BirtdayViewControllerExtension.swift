@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension BirthCityViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+extension BirthPlaceViewController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     // MARK: - Picker setup
 
@@ -107,6 +107,7 @@ extension BirthCityViewController: UIPickerViewDelegate, UIPickerViewDataSource,
 
     @objc func countryDoneButtonTapped() {
         countryPickerTextField.resignFirstResponder()
+        cityPickerTextField.becomeFirstResponder()
     }
 }
 

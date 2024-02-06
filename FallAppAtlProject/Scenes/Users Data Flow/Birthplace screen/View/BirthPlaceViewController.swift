@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BirthCityViewController: UIViewController {
+class BirthPlaceViewController: UIViewController {
     
     // MARK: Properties
     

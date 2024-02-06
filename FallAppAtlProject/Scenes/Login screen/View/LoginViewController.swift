@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor.theme(named: .main)
         field.textAlignment = .left
+        field.autocapitalizationType = .none
         field.font = UIFont.robotoFont(ofType: .light, size: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
@@ -53,6 +54,7 @@ class LoginViewController: UIViewController {
         field.attributedPlaceholder = attributedPlaceholder
         field.textColor = UIColor.theme(named: .main)
         field.textAlignment = .left
+        field.autocapitalizationType = .none
         field.font = UIFont.robotoFont(ofType: .light, size: 16)
         field.borderStyle = .roundedRect
         field.layer.borderWidth = 1.0
