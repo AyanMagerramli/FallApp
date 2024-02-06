@@ -116,5 +116,10 @@ class MainCoordinator: CoordinatorProtocol {
         vc.tag = tag
         navigationController.show(vc, sender: nil)
     }
+    
+    func goToTarotListScreen() { //this is temperary, pls then delete <3
+        let vc = TarotViewController(viewModel: .init(coordinator: self))
+        navigationController.show(vc, sender: nil)
+    }
 }
 

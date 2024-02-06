@@ -46,7 +46,8 @@ final class LoginViewModel {
                     self.coordinator.navigate(to: .birtDate)
                 } else {
                    // self.coordinator.start()
-                    self.coordinator.goToHomeScreen()
+                  //  self.coordinator.goToHomeScreen()
+                    self.coordinator.goToTarotListScreen()
                 }
                 self.success?()
             }

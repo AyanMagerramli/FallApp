@@ -18,7 +18,7 @@ class CustomHeaderView: UICollectionReusableView {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "What is your Date of Birth?"
+     //   label.text = "What is your Date of Birth?"
         label.textAlignment = .left
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .bold, size: 20)
@@ -30,8 +30,8 @@ class CustomHeaderView: UICollectionReusableView {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .clear
-        label.text = "Вы можете сделать выбор иллюстраций карт Таро. Выбирайте то, что нравится, это поможет глубже разобрать вашу ситуацию"
-        label.textAlignment = .center
+      //  label.text = "Вы можете сделать выбор иллюстраций карт Таро. Выбирайте то, что нравится, это поможет глубже разобрать вашу ситуацию"
+        label.textAlignment = .left
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .medium, size: 16)
         label.textColor = UIColor.theme(named: .main)
@@ -73,7 +73,13 @@ class CustomHeaderView: UICollectionReusableView {
         subtitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(12)
             make.horizontalEdges.equalToSuperview()
-            make.bottom.equalToSuperview().inset(24)
         }
+    }
+        
+    // MARK: - Configure Header for Tarot List screen
+    
+    func configureHeader(data: UserInfoData?) {
+        self.titleLabel.text = data?.title
+        self.subtitleLabel.text = data?.subtitle
     }
 }

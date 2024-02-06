@@ -22,7 +22,7 @@ class TabBarController: UITabBarController {
         firstVC.tabBarItem.image = UIImage(named: "HomeTabItem")
         firstVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
-        let secondVC = TarotViewController()
+        let secondVC = TarotViewController(viewModel: .init(coordinator: MainCoordinator(navigationController: UINavigationController()))) //then change this 
         let tarotNav = UINavigationController(rootViewController: secondVC)
         secondVC.coordinator = MainCoordinator(navigationController: tarotNav)
         secondVC.tabBarItem.title = "Tarot"

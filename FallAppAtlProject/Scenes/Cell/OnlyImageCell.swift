@@ -46,7 +46,8 @@ class OnlyImageCell: UICollectionViewCell {
     
     // MARK: - Configure function
     
-    func configureCell() {
-        image.image = UIImage(named: "cellDummyImage")
+    // for Tarot Cards List screen
+    func configureTarotListCell (data: TarotData) {
+        image.loadImage(url: data.mainImage ?? "no image")
     }
 }

@@ -12,7 +12,19 @@ class TarotViewController: UIViewController {
     
     // MARK:  Properties
     
+    var viewModel: TarotViewModel
     var coordinator: MainCoordinator?
+    
+    // MARK: - Init
+    
+    init(viewModel: TarotViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI Elements
     
@@ -24,7 +36,7 @@ class TarotViewController: UIViewController {
         layout.minimumInteritemSpacing = 16
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         // Set content inset to create space between the header view and the collection view
-        collection.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
+        collection.contentInset = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
         collection.backgroundColor = .clear
         collection.dataSource = self
         collection.delegate = self
@@ -38,6 +50,7 @@ class TarotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupViewModel()
     }
     
     // MARK: - Setup UI
@@ -50,6 +63,16 @@ class TarotViewController: UIViewController {
         view.addSubview(collectionView)
         
         makeConstraints()
+    }
+    
+    // MARK: - Setup View Model
+    
+    private func setupViewModel() {
+        self.viewModel.loadTarotList()
+        
+        self.viewModel.success = {
+            self.collectionView.reloadData()
+        }
     }
     
     // MARK: - Setup constraints
@@ -68,16 +91,26 @@ class TarotViewController: UIViewController {
 
 extension TarotViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        12
+        self.viewModel.responseData?.data?.cards?.count ?? 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
-        cell.configureCell()
-        return cell
+        guard let responseData = self.viewModel.responseData,
+                  let data = responseData.data,
+                  let cards = data.cards,
+                  indexPath.row < cards.count else {
+                print("Invalid data or indexPath")
+                return cell
+            }
+            
+            let tarotData = cards[indexPath.row]
+            cell.configureTarotListCell(data: tarotData)
+            
+            return cell
     }
 }
-    
+
     // MARK: - Collection View Data Soruce methods
 
 extension TarotViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -88,12 +121,14 @@ extension TarotViewController: UICollectionViewDelegate, UICollectionViewDelegat
     // Size for header view
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         // Return the size of your header view
-        return CGSize(width: collectionView.frame.width, height: 140)
+        return CGSize(width: collectionView.frame.width, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderView.identifier, for: indexPath) as! CustomHeaderView
+            
+            headerView.configureHeader(data: self.viewModel.responseData?.data)
             
             return headerView
         }
