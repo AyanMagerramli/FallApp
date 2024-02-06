@@ -26,6 +26,14 @@ class TarotDetailViewController: UIViewController {
     
     // MARK: - UI Elements
     
+    private lazy var backgroundImage: UIImageView = {
+        let image = UIImageView()
+        image.frame = view.bounds
+        image.contentMode = .scaleAspectFill
+        image.image = UIImage(named: "tarotDetailBackground")
+        return image
+    }()
+    
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.delegate = self
@@ -43,14 +51,26 @@ class TarotDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupViewModel()
     }
     
     // MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = UIColor.theme(named: .background)
+        view.backgroundColor = .clear
         
-        view.addSubview(tableView)
+        [backgroundImage,
+         tableView].forEach(view.addSubview(_:))
+        
+        view.sendSubviewToBack(backgroundImage)
+    }
+    
+    private func setupViewModel() {
+        self.viewModel.getTarotDetailedInfo()
+        
+        self.viewModel.success = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -63,7 +83,11 @@ extension TarotDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as! DetailCell
-      //  cell.configureCell()
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        if let tarotDetail = viewModel.tarotDetail {
+            cell.configureTarotDetailCell(data: tarotDetail)
+        }
         return cell
     }
 }

@@ -91,7 +91,6 @@ extension BirthPlaceViewController: UIPickerViewDelegate, UIPickerViewDataSource
         } else if pickerView == cityPicker {
             if let cities = self.viewModel.cities?.data, row < cities.count {
                 // Set the text of the cityPickerTextField to the selected city name
-               
                 cityPickerTextField.text = cities[row].cityName ?? "City Name Not Available"
             }
         }
@@ -100,8 +99,6 @@ extension BirthPlaceViewController: UIPickerViewDelegate, UIPickerViewDataSource
     // MARK: - "Done" button actions
 
     @objc func cityDoneButtonTapped() {
-       // cityPickerTextField.text = cities[cityPicker.selectedRow(inComponent: 0)]
-      //  cityPickerTextField.text = self.viewModel.successModel?.data.
         cityPickerTextField.resignFirstResponder()
     }
 

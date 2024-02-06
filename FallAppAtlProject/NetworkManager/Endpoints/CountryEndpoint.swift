@@ -10,3 +10,5 @@ import Foundation
 enum  CountryEndpoint: String {
     case country = "api/v1/astro-land/geo/countries"
 }
+
+// {tarotID}

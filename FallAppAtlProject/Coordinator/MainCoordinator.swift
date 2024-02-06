@@ -9,19 +9,15 @@ import Foundation
 import UIKit
 
 enum NavigationDestination {
-    case register
     case otp
     case birtDate
     case birthCity
     case name
     case gender
     case zodiacInfo
-    case tarotDetail
     
     func navigate (from coordinator: MainCoordinator) {
-        switch self {            
-        case .register:
-            coordinator.goToRegisterScreen()
+        switch self {
         case .otp:
             coordinator.goToOtpScreen()
         case .birtDate:
@@ -34,12 +30,10 @@ enum NavigationDestination {
             coordinator.goToGenderScreen()
         case .zodiacInfo:
             coordinator.goToZodiacInfoSignScreen()
-        case .tarotDetail:
-            coordinator.goToTarotDetail()
         }
     }
 }
-
+    
 class MainCoordinator: CoordinatorProtocol {
     var navigationController: UINavigationController
     var window: UIWindow?
@@ -61,12 +55,12 @@ class MainCoordinator: CoordinatorProtocol {
     func navigate(to destination: NavigationDestination) {
         destination.navigate(from: self)
     }
-    
-    func goToRegisterScreen() {
-        let vc = RegisterViewController()
-        vc.coordinator = self
-        navigationController.show(vc, sender: nil)
-    }
+    //
+    //        func goToRegisterScreen() {
+    //            let vc = RegisterViewController()
+    //            vc.coordinator = self
+    //            navigationController.show(vc, sender: nil)
+    //        }
     
     func goToOtpScreen() {
         let vc = OTPViewController()
@@ -99,8 +93,8 @@ class MainCoordinator: CoordinatorProtocol {
         navigationController.show(vc, sender: nil)
     }
     
-    func goToTarotDetail() {
-        let vc = TarotDetailViewController(viewModel: .init(coordinator: self))
+    func goToTarotDetail(tarotId: String) {
+        let vc = TarotDetailViewController(viewModel: .init(coordinator: self, tarotId: tarotId))
         navigationController.show(vc, sender: nil)
     }
     

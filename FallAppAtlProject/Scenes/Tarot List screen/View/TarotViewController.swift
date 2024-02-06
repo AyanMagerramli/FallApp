@@ -12,8 +12,9 @@ class TarotViewController: UIViewController {
     
     // MARK:  Properties
     
-    var viewModel: TarotViewModel
     var coordinator: MainCoordinator?
+    var viewModel: TarotViewModel
+    var tarotId: String?
     
     // MARK: - Init
     
@@ -97,17 +98,17 @@ extension TarotViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
         guard let responseData = self.viewModel.responseData,
-                  let data = responseData.data,
-                  let cards = data.cards,
-                  indexPath.row < cards.count else {
-                print("Invalid data or indexPath")
-                return cell
-            }
-            
-            let tarotData = cards[indexPath.row]
-            cell.configureTarotListCell(data: tarotData)
-            
+              let data = responseData.data,
+              let cards = data.cards,
+              indexPath.row < cards.count else {
+            print("Invalid data or indexPath")
             return cell
+        }
+        
+        let tarotData = cards[indexPath.row]
+        cell.configureTarotListCell(data: tarotData)
+        self.tarotId = tarotData.id
+        return cell
     }
 }
 
@@ -115,7 +116,17 @@ extension TarotViewController: UICollectionViewDataSource {
 
 extension TarotViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.coordinator?.navigate(to: .tarotDetail)
+        
+        guard let responseData = self.viewModel.responseData,
+              let data = responseData.data,
+              let cards = data.cards else {
+                  print("Invalid data or indexPath")
+                  return
+              }
+        let tarotData = cards[indexPath.row]
+        self.tarotId = tarotData.id
+        
+        self.viewModel.coordinator.goToTarotDetail(tarotId: tarotId ?? "")
     }
     
     // Size for header view

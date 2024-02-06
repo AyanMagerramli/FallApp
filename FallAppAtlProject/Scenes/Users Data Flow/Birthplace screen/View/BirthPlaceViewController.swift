@@ -105,7 +105,6 @@ class BirthPlaceViewController: UIViewController {
         return field
     }()
     
-    
     // MARK: - Life cycle
 
     override func viewDidLoad() {

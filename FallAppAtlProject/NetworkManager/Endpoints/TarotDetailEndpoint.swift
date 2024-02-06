@@ -8,5 +8,5 @@
 import Foundation
 
 enum TarotDetailEndpoint: String {
-    case tarotDetail = ""
+    case tarotDetail = "api/v1/astro-land/tarot/"
 }

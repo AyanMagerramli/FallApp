@@ -83,7 +83,7 @@ class DetailCell: UITableViewCell {
         }
         
         image.snp.makeConstraints { make in
-            make.height.equalTo(245)
+            make.height.equalTo(300)
             make.width.equalTo(200)
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.centerX.equalToSuperview()
@@ -117,6 +117,14 @@ class DetailCell: UITableViewCell {
         infoDetailLabel.text = prediction?.yearly?.forecast
         image.image = UIImage(named: "YearlyPrediction")
       //  image.loadImage(url: prediction?.yearly?.zodiacImage ?? "no image")
+    }
+    
+    // MARK: - Configure cell function for Tarot Detail Screen
+    
+    func configureTarotDetailCell(data: TarotDetailResponseModel) {
+        titleLabel.text = "Interesting... What does this card mean?"
+        infoDetailLabel.text = data.data?.card?.generalInfo
+        image.loadImage(url: data.data?.card?.backImage ?? "no image")
     }
 }
 
