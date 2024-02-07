@@ -43,11 +43,11 @@ final class LoginViewModel {
                 self.storeTokensInKeychain(accessToken: accessToken, refreshToken: refreshToken)
                 print("LOGIN DATA is \(data)")
                 if data.data?.hasData == false {
-                    self.coordinator.navigate(to: .birtDate)
+                    self.coordinator.navigate(to: .birthDate)
                 } else {
-                   // self.coordinator.start()
+                    self.coordinator.start()
                   //  self.coordinator.goToHomeScreen()
-                    self.coordinator.goToTarotListScreen()
+                   // self.coordinator.goToTarotListScreen()
                 }
                 self.success?()
             }

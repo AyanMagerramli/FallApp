@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import KeychainSwift
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Properties
     
@@ -57,6 +57,7 @@ class LoginViewController: UIViewController {
         field.autocapitalizationType = .none
         field.font = UIFont.robotoFont(ofType: .light, size: 16)
         field.borderStyle = .roundedRect
+        field.isSecureTextEntry = true
         field.layer.borderWidth = 1.0
         field.layer.cornerRadius = 24
         field.layer.borderColor = UIColor.theme(named: .main).cgColor
@@ -101,6 +102,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set the delegate of the email text field
+        emailField.delegate = self
         
         setupUI()
         buttonActions()
@@ -173,7 +177,12 @@ class LoginViewController: UIViewController {
     private func setupUI() {
         self.errorLabel.isHidden = true
         
+        emailField.becomeFirstResponder()
+        
         self.view.backgroundColor = UIColor.theme(named: .background)
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(gesture)
         
         [image,
          emailField,
@@ -185,6 +194,24 @@ class LoginViewController: UIViewController {
     
         makeConstraints()
     }
+    
+    @objc func dismissKeyboard () {
+        emailField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+    }
+    
+    // MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailField {
+            // If return key is pressed while editing the email field,
+            // make the password field become the first responder
+            passwordField.becomeFirstResponder()
+        }
+        return true
+    }
+    
+    // MARK: - Button actions
     
     private func buttonActions() {
         loginButton.buttonTappedHandler = { [weak self] in

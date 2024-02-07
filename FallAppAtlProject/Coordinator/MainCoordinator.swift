@@ -10,7 +10,7 @@ import UIKit
 
 enum NavigationDestination {
     case otp
-    case birtDate
+    case birthDate
     case birthCity
     case name
     case gender
@@ -20,7 +20,7 @@ enum NavigationDestination {
         switch self {
         case .otp:
             coordinator.goToOtpScreen()
-        case .birtDate:
+        case .birthDate:
             coordinator.goToBirthDateScreen()
         case .birthCity:
             coordinator.goToBirthCityScreen()

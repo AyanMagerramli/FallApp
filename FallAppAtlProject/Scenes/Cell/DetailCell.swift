@@ -83,7 +83,7 @@ class DetailCell: UITableViewCell {
         }
         
         image.snp.makeConstraints { make in
-            make.height.equalTo(300)
+            make.height.equalTo(310)
             make.width.equalTo(200)
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.centerX.equalToSuperview()
