@@ -99,13 +99,22 @@ extension HomeViewController: UICollectionViewDataSource {
         switch indexPath.section {
             
         case 0:
-            cell.configureDailyPrediction(with: self.viewModel.userPredictions?.data)
+            if let title = self.viewModel.userPredictions?.data,
+               let data = self.viewModel.userPredictions?.data?.today {
+                cell.configureCell(title: title, data: data)
+            }
             
         case 1:
-            cell.configureMonthlyPrediction(with: self.viewModel.userPredictions?.data)
+            if let title = self.viewModel.userPredictions?.data,
+               let data = self.viewModel.userPredictions?.data?.monthly {
+                cell.configureCell(title: title, data: data)
+            }
             
         case 2:
-            cell.configureYearlyPrediction(with: self.viewModel.userPredictions?.data)
+            if let title = self.viewModel.userPredictions?.data,
+               let data = self.viewModel.userPredictions?.data?.yearly {
+                cell.configureCell(title: title, data: data)
+            }
             
         default:
            break

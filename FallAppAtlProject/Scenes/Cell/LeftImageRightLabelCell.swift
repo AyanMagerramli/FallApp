@@ -7,11 +7,14 @@
 import UIKit
 import SnapKit
 
-protocol LeftImageRightLabelCellProtocol {
+protocol LeftImageRightLabelCellTitleProtocol {
     var titleText: String { get }
-    var subtitleText: String { get }
-    var infoText: String { get }
-    var astroImage: String { get }
+}
+
+protocol LeftImageRightLabelCellProtocol {
+    var subtitleTextt: String { get }
+    var infoTextt: String { get }
+    var astroImagee: String { get }
 }
 
 class LeftImageRightLabelCell: UICollectionViewCell {
@@ -142,27 +145,12 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         }
     }
     
-    func configureDailyPrediction (with prediction: PredictionModel?) {
-        titleLabel.text = prediction?.title
-        subtitleLabel.text = prediction?.today?.title
-        forecastLabel.text = prediction?.today?.forecast
-        leftImage.image = UIImage(named: "DailyPrediction")
-       // leftImage.loadImage(url: prediction?.today?.zodiacImage ?? "no image")
-    }
+    // MARK: - Configure Cell method
     
-    func configureMonthlyPrediction (with prediction: PredictionModel?) {
-        titleLabel.text = prediction?.title
-        subtitleLabel.text = prediction?.monthly?.title
-        forecastLabel.text = prediction?.monthly?.forecast
-        leftImage.image = UIImage(named: "MonthlyPrediction")
-       // leftImage.loadImage(url: prediction?.monthly?.zodiacImage ?? "no image")
-    }
-    
-    func configureYearlyPrediction (with prediction: PredictionModel?) {
-        titleLabel.text = prediction?.title
-        subtitleLabel.text = prediction?.yearly?.title
-        forecastLabel.text = prediction?.yearly?.forecast
-        leftImage.image = UIImage(named: "YearlyPrediction")
-      //  leftImage.loadImage(url: prediction?.yearly?.zodiacImage ?? "no image")
+    func configureCell (title: LeftImageRightLabelCellTitleProtocol, data: LeftImageRightLabelCellProtocol) {
+        self.titleLabel.text = title.titleText
+        self.subtitleLabel.text = data.subtitleTextt
+        self.forecastLabel.text = data.infoTextt
+        leftImage.loadImage(url: data.astroImagee)
     }
 }
