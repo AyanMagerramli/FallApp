@@ -10,6 +10,7 @@ import Foundation
 final class HomeViewModel {
     
   private let manager = HomeManager()
+    var coordinator: MainCoordinator?
     var error: ((ErrorModel) -> Void)?
     var errorModel: ErrorModel?
     var success: (() -> Void)?

@@ -10,15 +10,11 @@ import Foundation
 final class TarotViewModel {
     
     private let manager = TarotListManager()
-    var coordinator: MainCoordinator
+    var coordinator: MainCoordinator?
     var error: ((ErrorModel) -> Void)?
     var success: (() -> Void)?
     var errorModel: ErrorModel?
     var responseData: TarotDataModel?
-    
-    init (coordinator: MainCoordinator) {
-        self.coordinator = coordinator
-    }
     
     func loadTarotList () {
         manager.loadTarotList { data, error in

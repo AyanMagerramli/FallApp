@@ -54,7 +54,7 @@ class CustomHeaderView: UICollectionReusableView {
     // MARK: - Setup UI
     
     private func setupUI() {
-        backgroundColor = UIColor.theme(named: .background)
+        backgroundColor = .clear
         
         addSubview(titleLabel)
         addSubview(subtitleLabel)

@@ -20,7 +20,12 @@ struct UserInfoData: Codable {
 }
 
 // MARK: - TarotData
-struct TarotData: Codable {
+struct TarotData: Codable, OnlyImageCellProtocol {
     let id: String?
     let mainImage: String?
+    
+    // ConfigureOnlyImageCell stub
+    var image: String {
+        mainImage ?? "no image"
+    }
 }

@@ -8,12 +8,32 @@
 import UIKit
 
 class YearSignDetailViewController: UIViewController {
+    
     // MARK: Properties
     
-    var coordinator: MainCoordinator?
+    var viewModel: ZodiacsAndYearsDetailViewModel
+    
+    // MARK: - Init
+    
+    init(viewModel: ZodiacsAndYearsDetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - UI Elements
     
+    private lazy var backgroundImage: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "zodiacDetailBackground")
+        image.frame = view.bounds
+        image.contentMode = .scaleAspectFill
+        return image
+    }()
+        
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.delegate = self
@@ -31,14 +51,29 @@ class YearSignDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupViewModel()
     }
     
     // MARK: - Setup UI
     
-    private func setupUI() {
-        view.backgroundColor = UIColor.theme(named: .background)
+    private func setupUI () {
+        view.backgroundColor = .clear
         
-        view.addSubview(tableView)
+        view.sendSubviewToBack(backgroundImage)
+        
+        [backgroundImage,
+         tableView].forEach(view.addSubview(_:))
+        
+    }
+    
+    // MARK: - Setup View Model
+    
+    private func setupViewModel () {
+        self.viewModel.getZodiacOrYearDetail()
+        
+        self.viewModel.success = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -51,7 +86,12 @@ extension YearSignDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as! DetailCell
-     //   cell.configureCell()
+        cell.selectionStyle = .none
+        cell.backgroundColor = .clear
+        cell.contentView.backgroundColor = .clear
+        if let data = self.viewModel.responseList?.data?.item {
+            cell.configureCell(data: data)
+        }
         return cell
     }
 }

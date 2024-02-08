@@ -1,26 +1,24 @@
 //
-//  TarotViewController.swift
+//  ZodiacSignsController.swift
 //  FallAppAtlProject
 //
-//  Created by Ayan on 22.01.24.
+//  Created by Ayan on 07.02.24.
 //
 
 import UIKit
 import SnapKit
 
-class TarotViewController: UIViewController {
+class ZodiacsController: UIViewController {
     
     // MARK:  Properties
     
-  //  var coordinator: MainCoordinator?
-    let viewModel = TarotViewModel()
-    var tarotId: String?
+    let viewModel = ZodiacsAndYearsViewModel()
     
     // MARK: - UI Elements
     
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "tarotListBackgound")
+        image.image = UIImage(named: "zodiacSignsBackground")
         image.frame = view.bounds
         image.contentMode = .scaleAspectFill
         return image
@@ -29,7 +27,7 @@ class TarotViewController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: (view.frame.size.width/2)-32, height: 246)
+        layout.itemSize = CGSize(width: (view.frame.size.width/3)-32, height: 165)
         layout.minimumLineSpacing = 16
         layout.minimumInteritemSpacing = 16
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -39,10 +37,10 @@ class TarotViewController: UIViewController {
         collection.dataSource = self
         collection.delegate = self
         collection.register(OnlyImageCell.self, forCellWithReuseIdentifier: OnlyImageCell.identifier)
-        collection.register(CustomHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: CustomHeaderView.identifier)
+        
         return collection
     }()
-
+    
     // MARK: - Life cycle
     
     override func viewDidLoad() {
@@ -69,10 +67,10 @@ class TarotViewController: UIViewController {
     // MARK: - Setup View Model
     
     private func setupViewModel() {
-        self.viewModel.loadTarotList()
+        self.viewModel.getAllZodiacsAndYearsList()
         
-        self.viewModel.success = {
-            self.collectionView.reloadData()
+        self.viewModel.success = { [weak self] in
+            self?.collectionView.reloadData()
         }
     }
     
@@ -90,16 +88,15 @@ class TarotViewController: UIViewController {
 
     // MARK: - Collection View Data Soruce methods
 
-extension TarotViewController: UICollectionViewDataSource {
+extension ZodiacsController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        self.viewModel.responseData?.data?.cards?.count ?? 3
+        self.viewModel.responseList?.data?.zodiacs?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
-        if let cards = self.viewModel.responseData?.data?.cards?[indexPath.row] {
-            cell.configureCell(data: cards)
-            self.tarotId = cards.id
+        if let zodiacs = self.viewModel.responseList?.data?.zodiacs?[indexPath.row] {
+            cell.configureCell(data: zodiacs)
         }
         return cell
     }
@@ -107,35 +104,11 @@ extension TarotViewController: UICollectionViewDataSource {
 
     // MARK: - Collection View Data Soruce methods
 
-extension TarotViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension ZodiacsController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        guard let responseData = self.viewModel.responseData,
-              let data = responseData.data,
-              let cards = data.cards else {
-                  print("Invalid data or indexPath")
-                  return
-              }
-        let tarotData = cards[indexPath.row]
-        self.tarotId = tarotData.id
-        
-        self.viewModel.coordinator?.goToTarotDetail(tarotId: tarotId ?? "")
-    }
-    
-    // Size for header view
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        // Return the size of your header view
-        return CGSize(width: collectionView.frame.width, height: 100)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionView.elementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CustomHeaderView.identifier, for: indexPath) as! CustomHeaderView
-            
-            headerView.configureHeader(data: self.viewModel.responseData?.data)
-            
-            return headerView
+        // go to zodiac detail
+        if let zodiacs = self.viewModel.responseList?.data?.zodiacs?[indexPath.row] {
+            self.viewModel.coordinator?.goToZodiacAndYearDetailScreen(id: zodiacs.id ?? "", type: "zodiac")
         }
-        return UICollectionReusableView()
     }
 }

@@ -7,6 +7,13 @@
 import UIKit
 import SnapKit
 
+protocol LeftImageRightLabelCellProtocol {
+    var titleText: String { get }
+    var subtitleText: String { get }
+    var infoText: String { get }
+    var astroImage: String { get }
+}
+
 class LeftImageRightLabelCell: UICollectionViewCell {
     
     // MARK: Properties

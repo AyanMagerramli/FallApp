@@ -20,9 +20,22 @@ struct DataClassForTarotDetail: Codable {
 }
 
 // MARK: - Card
-struct Card: Codable {
+struct Card: Codable, DetailCellProtocol {
     let id: String?
     let backImage: String?
     let generalInfo, forecast: String?
+    
+   // DetailCellProtocol stubs
+    var titleText: String {
+        "Interesting... What does this card mean?"
+    }
+    
+    var infoText: String {
+        self.generalInfo ?? ""
+    }
+    
+    var astroImage: String {
+        self.backImage ?? ""
+    }
 }
 

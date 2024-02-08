@@ -8,6 +8,12 @@
 import UIKit
 import SnapKit
 
+protocol DetailCellProtocol {
+    var titleText: String { get }
+    var infoText: String { get }
+    var astroImage: String { get }
+}
+
 class DetailCell: UITableViewCell {
     
     // MARK: Properties
@@ -96,35 +102,12 @@ class DetailCell: UITableViewCell {
         }
     }
     
-    // MARK: - Configure cell function for Home Detail Screen
+    // MARK: - Configure cell function
     
-    func configureDailyPrediction (with prediction: PredictionModel?) {
-        titleLabel.text = prediction?.today?.title
-        infoDetailLabel.text = prediction?.today?.forecast
-        image.image = UIImage(named: "DailyPrediction")
-       // image.loadImage(url: prediction?.today?.zodiacImage ?? "no image")
-    }
-    
-    func configureMonthlyPrediction (with prediction: PredictionModel?) {
-        titleLabel.text = prediction?.monthly?.title
-        infoDetailLabel.text = prediction?.monthly?.forecast
-        image.image = UIImage(named: "MonthlyPrediction")
-       // image.loadImage(url: prediction?.monthly?.zodiacImage ?? "no image")
-    }
-    
-    func configureYearlyPrediction (with prediction: PredictionModel?) {
-        titleLabel.text = prediction?.yearly?.title
-        infoDetailLabel.text = prediction?.yearly?.forecast
-        image.image = UIImage(named: "YearlyPrediction")
-      //  image.loadImage(url: prediction?.yearly?.zodiacImage ?? "no image")
-    }
-    
-    // MARK: - Configure cell function for Tarot Detail Screen
-    
-    func configureTarotDetailCell(data: TarotDetailResponseModel) {
-        titleLabel.text = "Interesting... What does this card mean?"
-        infoDetailLabel.text = data.data?.card?.generalInfo
-        image.loadImage(url: data.data?.card?.backImage ?? "no image")
+    func configureCell (data: DetailCellProtocol) {
+        self.titleLabel.text = data.titleText
+        self.infoDetailLabel.text = data.infoText
+        self.image.loadImage(url: data.astroImage)
     }
 }
 

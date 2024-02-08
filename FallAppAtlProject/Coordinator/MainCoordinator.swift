@@ -55,12 +55,6 @@ class MainCoordinator: CoordinatorProtocol {
     func navigate(to destination: NavigationDestination) {
         destination.navigate(from: self)
     }
-    //
-    //        func goToRegisterScreen() {
-    //            let vc = RegisterViewController()
-    //            vc.coordinator = self
-    //            navigationController.show(vc, sender: nil)
-    //        }
     
     func goToOtpScreen() {
         let vc = OTPViewController()
@@ -98,20 +92,14 @@ class MainCoordinator: CoordinatorProtocol {
         navigationController.show(vc, sender: nil)
     }
     
-    func goToHomeScreen() {
-        let vc = HomeViewController()
-        vc.coordinator = self
-        navigationController.show(vc, sender: nil)
-    }
-    
     func goToHomeDetailScreen(tag: Int) {
         let vc = HomeDetailController(viewModel: .init(coordinator: self))
         vc.tag = tag
         navigationController.show(vc, sender: nil)
     }
     
-    func goToTarotListScreen() { //this is temperary, pls then delete <3
-        let vc = TarotViewController(viewModel: .init(coordinator: self))
+    func goToZodiacAndYearDetailScreen(id: String, type: String) {
+        let vc = YearSignDetailViewController(viewModel: .init(coordinator: self, id: id, type: type))
         navigationController.show(vc, sender: nil)
     }
 }

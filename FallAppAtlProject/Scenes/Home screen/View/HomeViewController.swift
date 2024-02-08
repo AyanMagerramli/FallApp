@@ -12,8 +12,8 @@ class HomeViewController: UIViewController {
     
     // MARK: Properties
     
-    var coordinator: MainCoordinator?
-    private let viewModel = HomeViewModel()
+  //  var coordinator: MainCoordinator?
+     let viewModel = HomeViewModel()
     
     // MARK: UI Elements
     
@@ -119,7 +119,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedTag = indexPath.section
-        coordinator?.goToHomeDetailScreen(tag: selectedTag) //go to detail page
+        viewModel.coordinator?.goToHomeDetailScreen(tag: selectedTag) //go to detail page
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

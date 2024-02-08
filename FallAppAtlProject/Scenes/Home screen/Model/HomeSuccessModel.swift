@@ -20,8 +20,21 @@ struct PredictionModel: Codable {
 }
 
 // MARK: - PredictioDataModel
-struct PredictioDataModel: Codable {
+struct PredictioDataModel: Codable, DetailCellProtocol {
     let title: String?
     let zodiacImage: String?
     let forecast: String?
+    
+    //DetailCellProtocol stubs
+    var titleText: String {
+        title ?? ""
+    }
+    
+    var infoText: String {
+        forecast ?? ""
+    }
+    
+    var astroImage: String {
+        zodiacImage ?? ""
+    }
 }

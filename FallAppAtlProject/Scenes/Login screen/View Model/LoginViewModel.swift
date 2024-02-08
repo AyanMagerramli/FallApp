@@ -5,6 +5,7 @@
 //  Created by Ayan on 12.01.24.
 //
 
+import UIKit
 import Foundation
 import KeychainSwift
 
@@ -48,6 +49,11 @@ final class LoginViewModel {
                     self.coordinator.start()
                   //  self.coordinator.goToHomeScreen()
                    // self.coordinator.goToTarotListScreen()
+                    
+//                    if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//                        let sceneDelegate = scene.delegate as? SceneDelegate {
+//                        sceneDelegate.setTabBarAsRootController(windowScene: scene)                        
+//                    }
                 }
                 self.success?()
             }

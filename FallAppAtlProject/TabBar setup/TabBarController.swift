@@ -17,18 +17,37 @@ class TabBarController: UITabBarController {
     func setupViewControllers() {
         let firstVC = HomeViewController()
         let homeNav = UINavigationController(rootViewController: firstVC)
-        firstVC.coordinator = MainCoordinator(navigationController: homeNav)
+        firstVC.viewModel.coordinator = MainCoordinator(navigationController: homeNav)
         firstVC.tabBarItem.title = "Home"
-        firstVC.tabBarItem.image = UIImage(named: "HomeTabItem")
+        let homeImage = UIImage(named: "HomeTabItem")?.withRenderingMode(.alwaysTemplate)
+        firstVC.tabBarItem.image = homeImage
+        firstVC.tabBarItem.selectedImage = homeImage
         firstVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
-        let secondVC = TarotViewController(viewModel: .init(coordinator: MainCoordinator(navigationController: UINavigationController()))) //then change this 
+        let secondVC = TarotViewController()
         let tarotNav = UINavigationController(rootViewController: secondVC)
-        secondVC.coordinator = MainCoordinator(navigationController: tarotNav)
+        secondVC.viewModel.coordinator = MainCoordinator(navigationController: tarotNav)
         secondVC.tabBarItem.title = "Tarot"
-        secondVC.tabBarItem.image = UIImage(named: "tarotTabItem")
+        // Set the image with the rendering mode
+        let tarotImage = UIImage(named: "tarotTabItem")?.withRenderingMode(.alwaysTemplate)
+        secondVC.tabBarItem.image = tarotImage
+        secondVC.tabBarItem.selectedImage = tarotImage
         secondVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
-        viewControllers = [homeNav, tarotNav]
+        let thirdVC = ZodiacsAndYearsController()
+        let yearAndSignsNav = UINavigationController(rootViewController: thirdVC)
+        thirdVC.viewModel.coordinator = MainCoordinator(navigationController: yearAndSignsNav)
+        thirdVC.tabBarItem.title = "Zodiacs"
+        let tabImage = UIImage(named: "tarotTabItem")?.withRenderingMode(.alwaysTemplate)
+        thirdVC.tabBarItem.image = tabImage
+        thirdVC.tabBarItem.selectedImage = tabImage
+        thirdVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        
+        // Set tab bar appearance
+        if let tabBar = tabBarController?.tabBar {
+            tabBar.tintColor = .main
+        }
+        
+        viewControllers = [homeNav, tarotNav, yearAndSignsNav]
     }
 }

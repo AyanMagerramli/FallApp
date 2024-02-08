@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol OnlyImageCellProtocol {
+    var image: String { get }
+}
+
 class OnlyImageCell: UICollectionViewCell {
     
     // MARK: - Properties
@@ -20,6 +24,7 @@ class OnlyImageCell: UICollectionViewCell {
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.backgroundColor = .clear
+        image.image = UIImage(named: "cellDummyImage")
         image.layer.cornerRadius = 8
         image.frame = contentView.bounds
         return image
@@ -45,9 +50,8 @@ class OnlyImageCell: UICollectionViewCell {
     }
     
     // MARK: - Configure function
-    
-    // for Tarot Cards List screen
-    func configureTarotListCell (data: TarotData) {
-        image.loadImage(url: data.mainImage ?? "no image")
+
+    func configureCell (data: OnlyImageCellProtocol) {
+        image.loadImage(url: data.image)
     }
 }

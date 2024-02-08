@@ -7,13 +7,20 @@
 
 import UIKit
 
-class ZodiacSignDetailViewController: UIViewController {
+class ZodiacsAndYearsController: UIViewController {
     
     // MARK: Properties
-    
-    var coordinator: MainCoordinator?
+
     
     // MARK: - UI Elements
+    
+    private lazy var backgroundImage: UIImageView = {
+        let image = UIImageView()
+        image.frame = view.bounds
+        image.contentMode = .scaleAspectFill
+        image.image = UIImage(named: "zodiacDetailBackground")
+        return image
+    }()
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
@@ -37,15 +44,18 @@ class ZodiacSignDetailViewController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
-        view.backgroundColor = UIColor.theme(named: .background)
+        view.backgroundColor = .clear
         
-        view.addSubview(tableView)
+        view.sendSubviewToBack(backgroundImage)
+        
+        [backgroundImage,
+         tableView].forEach(view.addSubview(_:))
     }
 }
 
 // MARK: - UITableView Data Source methods
 
-extension ZodiacSignDetailViewController: UITableViewDataSource {
+extension ZodiacsAndYearsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -59,7 +69,7 @@ extension ZodiacSignDetailViewController: UITableViewDataSource {
 
 // MARK: - UITableView Delegate methods
 
-extension ZodiacSignDetailViewController: UITableViewDelegate {
+extension ZodiacsAndYearsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // for now there is no navigation
     }

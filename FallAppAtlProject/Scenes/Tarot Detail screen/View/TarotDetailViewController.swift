@@ -85,8 +85,8 @@ extension TarotDetailViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as! DetailCell
         cell.selectionStyle = .none
         cell.backgroundColor = .clear
-        if let tarotDetail = viewModel.tarotDetail {
-            cell.configureTarotDetailCell(data: tarotDetail)
+        if let data = viewModel.tarotDetail?.data?.card {
+            cell.configureCell(data: data)
         }
         return cell
     }

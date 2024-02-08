@@ -14,26 +14,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: windowScene)
+        
+        mainCoordinator = MainCoordinator(navigationController: UINavigationController())
+        mainCoordinator?.window = window
         if UserDefaults.standard.bool(forKey: "Logged in") {
-            setTabBarAsRootController(windowScene: windowScene)
+            mainCoordinator?.start()
         } else {
             setLoginAsRootController(windowScene: windowScene)
         }
     }
     
-    func setTabBarAsRootController(windowScene: UIWindowScene) {
-        window = UIWindow(windowScene: windowScene)
-        mainCoordinator = MainCoordinator(navigationController: UINavigationController())
-        mainCoordinator?.window = window
-        mainCoordinator?.start()
-    }
+//    func setTabBarAsRootController(windowScene: UIWindowScene) {
+//        window = UIWindow(windowScene: windowScene)
+//        mainCoordinator = MainCoordinator(navigationController: UINavigationController())
+//        mainCoordinator?.window = window
+//        mainCoordinator?.start()
+//    }
     
     func setLoginAsRootController(windowScene: UIWindowScene) {
-        window = UIWindow(windowScene: windowScene)
-        
         let controller = LoginViewController()
         let navigationController = UINavigationController(rootViewController: controller)
-        controller.viewModel = .init(coordinator: MainCoordinator(navigationController: navigationController))
+        controller.viewModel = .init(coordinator: mainCoordinator!)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
