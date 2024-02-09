@@ -1,44 +1,34 @@
 //
-//  LeftImageRightLabelCell.swift
+//  ZodiacAndYearSignAboutCell.swift
 //  FallAppAtlProject
 //
-//  Created by Ayan on 21.01.24.
+//  Created by Ayan on 26.01.24.
 //
+
 import UIKit
-import SnapKit
 
-protocol LeftImageRightLabelCellTitleProtocol {
-    var titleText: String { get }
-}
-
-protocol LeftImageRightLabelCellProtocol {
-    var subtitleTextt: String { get }
-    var infoTextt: String { get }
-    var astroImagee: String { get }
-}
-
-class LeftImageRightLabelCell: UICollectionViewCell {
+class ZodiacAndYearSignAboutCell: UITableViewCell {
     
     // MARK: Properties
     
-    static let identifier = "LeftImageRightLabelCell"
-    
+    static let identifier = "ZodiacAndYearSignAboutCell"
+
     // MARK: - UI Elements
-    
+
     private lazy var containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
         return view
     }()
-    
+
     private lazy var blurEffectView: UIVisualEffectView = {
         let blurEffect = UIBlurEffect(style: .light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.translatesAutoresizingMaskIntoConstraints = false
         return blurEffectView
     }()
-    
-    private lazy var leftImage: UIImageView = {
+
+    private lazy var topImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
@@ -46,7 +36,7 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         image.layer.cornerRadius = 8
         return image
     }()
-    
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -56,7 +46,7 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         label.textColor = UIColor.theme(named: .main)
         return label
     }()
-    
+
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
@@ -66,8 +56,8 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         label.textColor = UIColor.theme(named: .main)
         return label
     }()
-    
-    private lazy var forecastLabel: UILabel = {
+
+    private lazy var textLabell: UILabel = {
         let label = UILabel()
         label.textAlignment = .justified
         label.numberOfLines = 0
@@ -77,28 +67,30 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         return label
     }()
     
-    // MARK: - Life Cycle
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    // MARK: - Life cycle
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+            super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupUI()
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
     }
     
     // MARK: - Setup UI
-    
+
     private func setupUI() {
         addSubview(containerView)
         
         [blurEffectView,
-         leftImage,
+         topImage,
          titleLabel,
-         subtitleLabel,
-         forecastLabel].forEach(containerView.addSubview(_:))
+         textLabell].forEach(containerView.addSubview(_:))
         
         containerView.layer.cornerRadius = 16
         containerView.layer.masksToBounds = true
@@ -109,48 +101,40 @@ class LeftImageRightLabelCell: UICollectionViewCell {
         
         makeConstraints()
     }
-    
+
     // MARK: - Setup Constraints
-    
+
     private func makeConstraints() {
         containerView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         blurEffectView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
-        leftImage.snp.makeConstraints { make in
-            make.verticalEdges.equalToSuperview().inset(24)
-            make.leading.equalToSuperview().inset(24)
-            make.width.equalTo(96)
+
+        topImage.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(24)
+            make.top.equalToSuperview().inset(12)
+            make.height.equalTo(200)
+            make.width.equalTo(200)
         }
-        
+
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(24)
-            make.leading.equalTo(leftImage.snp.trailing).offset(12)
+            make.top.equalTo(topImage.snp.bottom).offset(12)
+            make.horizontalEdges.equalToSuperview().inset(24)
         }
-        
-        subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottomMargin).offset(16)
-            make.leading.equalTo(leftImage.snp.trailing).offset(12)
-        }
-        
-        forecastLabel.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottomMargin).offset(16)
-            make.leading.equalTo(leftImage.snp.trailing).offset(12)
-            make.trailing.equalToSuperview().inset(12)
-            make.bottom.equalToSuperview().inset(24)
+
+        textLabell.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottomMargin).offset(12)
+            make.horizontalEdges.equalToSuperview().inset(24)
+            make.bottom.equalToSuperview().inset(12)
         }
     }
-    
-    // MARK: - Configure Cell method
-    
-    func configureCell (title: LeftImageRightLabelCellTitleProtocol, data: LeftImageRightLabelCellProtocol) {
-        self.titleLabel.text = title.titleText
-        self.subtitleLabel.text = data.subtitleTextt
-        self.forecastLabel.text = data.infoTextt
-        leftImage.loadImage(url: data.astroImagee)
+
+    func configureCell(data: Items?, title: String) {
+        topImage.loadImage(url: data?.image ?? "no image")
+        titleLabel.text = title
+        textLabell.text = data?.text
     }
 }

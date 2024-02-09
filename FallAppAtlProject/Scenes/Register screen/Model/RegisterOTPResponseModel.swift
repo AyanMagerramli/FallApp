@@ -10,12 +10,12 @@ import Foundation
 // MARK: - RegisterResponse
 
 struct RegisterOTPResponseModel: Codable {
-    let data: DataClass?
+    let data: General?
     let message: String?
 }
 
 // MARK: - DataClass
 
-struct DataClass: Codable {
+struct General: Codable {
     let message: String?
 }

@@ -26,7 +26,8 @@ class YearsController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: (view.frame.size.width/3)-32, height: 165)
+      //  layout.itemSize = CGSize(width: (view.frame.size.width/3)-32, height: 165)
+        layout.itemSize = CGSize(width: (view.frame.size.width/2)-32, height: 246)
         layout.minimumLineSpacing = 16
         layout.minimumInteritemSpacing = 16
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)

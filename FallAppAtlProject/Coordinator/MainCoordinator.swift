@@ -15,6 +15,7 @@ enum NavigationDestination {
     case name
     case gender
     case zodiacInfo
+    case profile
     
     func navigate (from coordinator: MainCoordinator) {
         switch self {
@@ -30,6 +31,8 @@ enum NavigationDestination {
             coordinator.goToGenderScreen()
         case .zodiacInfo:
             coordinator.goToZodiacInfoSignScreen()
+        case .profile:
+            coordinator.goToProfileScreen()
         }
     }
 }
@@ -100,6 +103,11 @@ class MainCoordinator: CoordinatorProtocol {
     
     func goToZodiacAndYearDetailScreen(id: String, type: String) {
         let vc = YearSignDetailViewController(viewModel: .init(coordinator: self, id: id, type: type))
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToProfileScreen() {
+        let vc = ProfileViewController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
 }

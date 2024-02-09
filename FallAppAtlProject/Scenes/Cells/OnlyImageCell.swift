@@ -49,7 +49,7 @@ class OnlyImageCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 8
     }
     
-    // MARK: - Configure function
+    // MARK: - Configure cell method
 
     func configureCell (data: OnlyImageCellProtocol) {
         image.loadImage(url: data.image)

@@ -12,8 +12,7 @@ class HomeViewController: UIViewController {
     
     // MARK: Properties
     
-  //  var coordinator: MainCoordinator?
-     let viewModel = HomeViewModel()
+    let viewModel = HomeViewModel()
     
     // MARK: UI Elements
     
@@ -62,6 +61,8 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .clear
         
         makeConstraints()
+        
+        setupNavigationBarButtons()
     }
     
     private func setupViewModel() {
@@ -76,6 +77,24 @@ class HomeViewController: UIViewController {
     
     private func makeConstraints() {
     
+    }
+    
+    // MARK: - Navigation bar buttons setup
+    
+    private func setupNavigationBarButtons() {
+        // Create a UIBarButtonItem
+        let leftButton = UIBarButtonItem(image: UIImage(systemName: "person.fill"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(leftButtonTapped))
+        
+        // Assign the left button to the navigation item
+        self.navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    @objc func leftButtonTapped() {
+        // Handle left button tap -> go to Profile screen
+        self.viewModel.coordinator?.navigate(to: .profile)
     }
 }
 

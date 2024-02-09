@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         registerCustomFonts()
+        // For get rid of white stroke while creating ui table view header or footer:
+        if #available(iOS 14.0, *) {
+               var bgConfig = UIBackgroundConfiguration.listPlainCell()
+               bgConfig.backgroundColor = UIColor.clear
+               UITableViewHeaderFooterView.appearance().backgroundConfiguration = bgConfig
+               //For cell use: UITableViewCell.appearance().backgroundConfiguration = bgConfig
+           }
         return true
     }
 

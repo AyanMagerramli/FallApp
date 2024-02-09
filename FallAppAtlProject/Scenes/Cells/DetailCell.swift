@@ -102,7 +102,7 @@ class DetailCell: UITableViewCell {
         }
     }
     
-    // MARK: - Configure cell function
+    // MARK: - Configure cell method
     
     func configureCell (data: DetailCellProtocol) {
         self.titleLabel.text = data.titleText
