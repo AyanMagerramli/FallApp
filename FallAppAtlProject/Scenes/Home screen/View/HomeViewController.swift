@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
         collection.dataSource = self
         collection.delegate = self
         collection.register(LeftImageRightLabelCell.self, forCellWithReuseIdentifier: LeftImageRightLabelCell.identifier)
+        collection.register(OnlyImageCell.self, forCellWithReuseIdentifier: OnlyImageCell.identifier)
         return collection
     }()
     
@@ -59,9 +60,7 @@ class HomeViewController: UIViewController {
         view.sendSubviewToBack(backgroundImage)
         
         view.backgroundColor = .clear
-        
         makeConstraints()
-        
         setupNavigationBarButtons()
     }
     
@@ -102,7 +101,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        3 // Three sections for today, monthly, and yearly
+        4 // Three sections for today, monthly, and yearly and for matching banner
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -110,7 +109,11 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftImageRightLabelCell.identifier, for: indexPath) as! LeftImageRightLabelCell
+        var cell: UICollectionViewCell
+        
+        let leftImageRightLabelCell = collectionView.dequeueReusableCell(withReuseIdentifier: LeftImageRightLabelCell.identifier, for: indexPath) as! LeftImageRightLabelCell
+        
+        cell = leftImageRightLabelCell
         
         let tag = indexPath.section
         cell.tag = tag
@@ -120,21 +123,24 @@ extension HomeViewController: UICollectionViewDataSource {
         case 0:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.today {
-                cell.configureCell(title: title, data: data)
+                leftImageRightLabelCell.configureCell(title: title, data: data)
             }
             
         case 1:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.monthly {
-                cell.configureCell(title: title, data: data)
+                leftImageRightLabelCell.configureCell(title: title, data: data)
             }
             
         case 2:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.yearly {
-                cell.configureCell(title: title, data: data)
+                leftImageRightLabelCell.configureCell(title: title, data: data)
             }
-            
+        case 3:
+            let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
+            cell = imageCell
+            imageCell.setupPicture()
         default:
            break
         }
@@ -142,12 +148,17 @@ extension HomeViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
 // MARK: - Colelction View Delegate methods
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedTag = indexPath.section
-        viewModel.coordinator?.goToHomeDetailScreen(tag: selectedTag) //go to detail page
+        if indexPath.section == 3 {
+            self.viewModel.coordinator?.navigate(to: .matchingList) // Go to matching signs list screen
+        } else {
+            viewModel.coordinator?.goToHomeDetailScreen(tag: selectedTag) // Go to prediction detail page
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

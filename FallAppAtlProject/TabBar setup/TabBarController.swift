@@ -42,6 +42,15 @@ class TabBarController: UITabBarController {
         thirdVC.tabBarItem.image = tabImage
         thirdVC.tabBarItem.selectedImage = tabImage
         thirdVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+//        
+//        let fourthVC = ZodiacSignsMatchingListController()
+//        let zodiacSignMatchingNav = UINavigationController(rootViewController: fourthVC)
+//        fourthVC.viewModel.coordinator = MainCoordinator(navigationController: zodiacSignMatchingNav)
+//        fourthVC.tabBarItem.title = "Matching"
+//        let tab4Image = UIImage(named: "tarotTabItem")?.withRenderingMode(.alwaysTemplate)
+//        fourthVC.tabBarItem.image = tab4Image
+//        fourthVC.tabBarItem.selectedImage = tab4Image
+//        fourthVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
         // Set tab bar appearance
         if let tabBar = tabBarController?.tabBar {

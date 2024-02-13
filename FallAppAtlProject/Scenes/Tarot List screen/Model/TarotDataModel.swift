@@ -25,7 +25,7 @@ struct TarotData: Codable, OnlyImageCellProtocol {
     let mainImage: String?
     
     // ConfigureOnlyImageCell stub
-    var image: String {
+    var imagee: String {
         mainImage ?? "no image"
     }
 }

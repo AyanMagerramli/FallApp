@@ -8,7 +8,7 @@
 import UIKit
 
 protocol OnlyImageCellProtocol {
-    var image: String { get }
+    var imagee: String { get }
 }
 
 class OnlyImageCell: UICollectionViewCell {
@@ -19,7 +19,7 @@ class OnlyImageCell: UICollectionViewCell {
     
     // MARK: - UI Elements
     
-    private lazy var image: UIImageView = {
+     lazy var image: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
@@ -52,6 +52,19 @@ class OnlyImageCell: UICollectionViewCell {
     // MARK: - Configure cell method
 
     func configureCell (data: OnlyImageCellProtocol) {
-        image.loadImage(url: data.image)
+        image.loadImage(url: data.imagee)
+    }
+    
+    // for Home Screen Matching banner
+    
+    func setupPicture() {
+        image.image = UIImage(named: "matchingResult")
+    }
+    
+    // fro matching selection
+    
+    func changeCellImage() {
+        image.image = UIImage(named: "matchingSelectionImage")
     }
 }
+

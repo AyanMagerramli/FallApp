@@ -16,6 +16,7 @@ enum NavigationDestination {
     case gender
     case zodiacInfo
     case profile
+    case matchingList
     
     func navigate (from coordinator: MainCoordinator) {
         switch self {
@@ -33,6 +34,8 @@ enum NavigationDestination {
             coordinator.goToZodiacInfoSignScreen()
         case .profile:
             coordinator.goToProfileScreen()
+        case .matchingList:
+            coordinator.goToMatchingListScreen()
         }
     }
 }
@@ -110,5 +113,29 @@ class MainCoordinator: CoordinatorProtocol {
         let vc = ProfileViewController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
+    
+    func goToMatchingListScreen() {
+        let vc = ZodiacSignsMatchingListController(viewModel: .init(coordinator: self))
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToMatchingResultScreen(body: MatchingResultBodyModel) {
+        let vc = MatchingResultController(viewModel: .init(coordinator: self, body: body))
+        navigationController.show(vc, sender: nil)
+    }
+    
+//    func goToMatchingResultScreen(body: MatchingResultBodyModel) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Adjust the delay as needed
+//            guard let window = UIApplication.shared.windows.first,
+//                  let rootViewController = window.rootViewController else {
+//                print("Window or root view controller is nil.")
+//                return
+//            }
+//
+//            let vc = MatchingResultController(viewModel: .init(coordinator: self, body: body))
+//            let navigationController = UINavigationController(rootViewController: vc)
+//            rootViewController.present(navigationController, animated: true, completion: nil)
+//        }
+//    }
 }
 

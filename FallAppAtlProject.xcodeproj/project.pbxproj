@@ -88,13 +88,27 @@
 		1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */; };
 		1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4892B631038005ED1C5 /* DetailCell.swift */; };
 		1179869E2B71872C001EF473 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179869D2B71872C001EF473 /* ImageViewExtension.swift */; };
+		11844B8F2B7BEFB100E87898 /* MatchingResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11844B8E2B7BEFB100E87898 /* MatchingResultCell.swift */; };
 		118B9F812B722A5B0012AFD7 /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */; };
 		118B9F852B722C880012AFD7 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */; };
+		11931DCE2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DCD2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift */; };
+		11931DD12B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DD02B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift */; };
+		11931DD42B79122400CAA64B /* ZodiacSignsMatchingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DD32B79122400CAA64B /* ZodiacSignsMatchingListModel.swift */; };
+		11931DD62B7932C400CAA64B /* ZodiacSignsMatchingListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DD52B7932C300CAA64B /* ZodiacSignsMatchingListHeader.swift */; };
+		11931DD82B7934C400CAA64B /* MatchingListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DD72B7934C400CAA64B /* MatchingListEndpoint.swift */; };
+		11931DDA2B7935AB00CAA64B /* MatchingListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DD92B7935AB00CAA64B /* MatchingListUseCase.swift */; };
+		11931DDC2B79362800CAA64B /* MatchingListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DDB2B79362800CAA64B /* MatchingListManager.swift */; };
+		11931DE22B79539C00CAA64B /* MatchingResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DE12B79539C00CAA64B /* MatchingResultController.swift */; };
+		11931DE62B7953CB00CAA64B /* MatchingResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DE52B7953CB00CAA64B /* MatchingResultViewModel.swift */; };
+		11931DE82B79544000CAA64B /* MatchingResultSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DE72B79544000CAA64B /* MatchingResultSuccessModel.swift */; };
+		11931DEA2B79548E00CAA64B /* MatchingResultEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DE92B79548E00CAA64B /* MatchingResultEndpoint.swift */; };
+		11931DEC2B7954EF00CAA64B /* MatchingResultUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DEB2B7954EF00CAA64B /* MatchingResultUseCase.swift */; };
+		11931DEE2B79552700CAA64B /* MatchingResultBodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DED2B79552700CAA64B /* MatchingResultBodyModel.swift */; };
+		11931DF02B7955E900CAA64B /* MatchingResultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DEF2B7955E900CAA64B /* MatchingResultManager.swift */; };
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
 		119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB30A2B53DDFC006445FD /* TabBarController.swift */; };
 		11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2418B2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift */; };
-		11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */; };
 		11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241902B5B2195000E2CEE /* NameViewController.swift */; };
 		11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241932B5B2859000E2CEE /* GenderViewController.swift */; };
 		11A5716B2B73F6BB001B2BF9 /* ZodiacsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A5716A2B73F6BB001B2BF9 /* ZodiacsController.swift */; };
@@ -210,13 +224,27 @@
 		1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailViewController.swift; sourceTree = "<group>"; };
 		1173B4892B631038005ED1C5 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		1179869D2B71872C001EF473 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
+		11844B8E2B7BEFB100E87898 /* MatchingResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultCell.swift; sourceTree = "<group>"; };
 		118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
 		118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
+		11931DCD2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListController.swift; sourceTree = "<group>"; };
+		11931DD02B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListViewModel.swift; sourceTree = "<group>"; };
+		11931DD32B79122400CAA64B /* ZodiacSignsMatchingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListModel.swift; sourceTree = "<group>"; };
+		11931DD52B7932C300CAA64B /* ZodiacSignsMatchingListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListHeader.swift; sourceTree = "<group>"; };
+		11931DD72B7934C400CAA64B /* MatchingListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingListEndpoint.swift; sourceTree = "<group>"; };
+		11931DD92B7935AB00CAA64B /* MatchingListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingListUseCase.swift; sourceTree = "<group>"; };
+		11931DDB2B79362800CAA64B /* MatchingListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingListManager.swift; sourceTree = "<group>"; };
+		11931DE12B79539C00CAA64B /* MatchingResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultController.swift; sourceTree = "<group>"; };
+		11931DE52B7953CB00CAA64B /* MatchingResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultViewModel.swift; sourceTree = "<group>"; };
+		11931DE72B79544000CAA64B /* MatchingResultSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultSuccessModel.swift; sourceTree = "<group>"; };
+		11931DE92B79548E00CAA64B /* MatchingResultEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultEndpoint.swift; sourceTree = "<group>"; };
+		11931DEB2B7954EF00CAA64B /* MatchingResultUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultUseCase.swift; sourceTree = "<group>"; };
+		11931DED2B79552700CAA64B /* MatchingResultBodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultBodyModel.swift; sourceTree = "<group>"; };
+		11931DEF2B7955E900CAA64B /* MatchingResultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultManager.swift; sourceTree = "<group>"; };
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		119BB30A2B53DDFC006445FD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		11A2418B2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirtdayViewControllerExtension.swift; sourceTree = "<group>"; };
-		11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable View.swift"; sourceTree = "<group>"; };
 		11A241902B5B2195000E2CEE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		11A241932B5B2859000E2CEE /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
 		11A5716A2B73F6BB001B2BF9 /* ZodiacsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacsController.swift; sourceTree = "<group>"; };
@@ -284,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				1106A5942B59CA9C00DF7450 /* ReusableButton.swift */,
-				11A2418D2B5B1A6E000E2CEE /* Reusable View.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -320,8 +347,8 @@
 			children = (
 				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
 				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
-				110E83892B5150700000D6D9 /* Managers */,
 				110E83712B514D3E0000D6D9 /* NetworkManager */,
+				110E83892B5150700000D6D9 /* Managers */,
 				113F9C972B5D20020069CCC2 /* Extensions */,
 				1106A5932B59CA7C00DF7450 /* Custom Views */,
 				119BB3092B53DD74006445FD /* TabBar setup */,
@@ -372,6 +399,8 @@
 				113C31732B75434A006570C8 /* ZodiacsAndYearsListEndpoint.swift */,
 				113C31832B755A03006570C8 /* ZodiacsAndYearsDetailEndpoint.swift */,
 				11D6D5572B76D5430041B577 /* ProfileEndpoint.swift */,
+				11931DD72B7934C400CAA64B /* MatchingListEndpoint.swift */,
+				11931DE92B79548E00CAA64B /* MatchingResultEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -391,6 +420,8 @@
 				113C31772B7545DB006570C8 /* ZodiacsAndYearsManager.swift */,
 				113C31892B755B24006570C8 /* ZodiacsAndYearsDetailManager.swift */,
 				11D6D55D2B76D7000041B577 /* ProfileManager.swift */,
+				11931DDB2B79362800CAA64B /* MatchingListManager.swift */,
+				11931DEF2B7955E900CAA64B /* MatchingResultManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -410,7 +441,9 @@
 				1173B4882B630DE7005ED1C5 /* Tarot Detail screen */,
 				11708D052B63CCC100C8DB60 /* Years and Zodiacs list screen */,
 				11708CFF2B63CA0000C8DB60 /* Zodiac and Year Detail screen */,
+				11931DCB2B79117A00CAA64B /* Zodiac Signs Matching screen */,
 				11708D0A2B63CE3A00C8DB60 /* Profile screen */,
+				11931DDF2B79534400CAA64B /* Matching Result screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -747,6 +780,8 @@
 				113C31752B7543D9006570C8 /* ZodiacsAndYearsUseCase.swift */,
 				113C31852B755A79006570C8 /* ZodiacsAndYearsDetailUseCase.swift */,
 				11D6D5552B76D5280041B577 /* ProfileUseCase.swift */,
+				11931DD92B7935AB00CAA64B /* MatchingListUseCase.swift */,
+				11931DEB2B7954EF00CAA64B /* MatchingResultUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -817,6 +852,77 @@
 				118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		11931DCB2B79117A00CAA64B /* Zodiac Signs Matching screen */ = {
+			isa = PBXGroup;
+			children = (
+				11931DD22B79120A00CAA64B /* Model */,
+				11931DCF2B7911E300CAA64B /* View Model */,
+				11931DCC2B7911B000CAA64B /* View */,
+			);
+			path = "Zodiac Signs Matching screen";
+			sourceTree = "<group>";
+		};
+		11931DCC2B7911B000CAA64B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11931DCD2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift */,
+				11931DD52B7932C300CAA64B /* ZodiacSignsMatchingListHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11931DCF2B7911E300CAA64B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				11931DD02B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		11931DD22B79120A00CAA64B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11931DD32B79122400CAA64B /* ZodiacSignsMatchingListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11931DDF2B79534400CAA64B /* Matching Result screen */ = {
+			isa = PBXGroup;
+			children = (
+				11931DE42B7953B800CAA64B /* Model */,
+				11931DE32B7953AD00CAA64B /* View Model */,
+				11931DE02B79535600CAA64B /* View */,
+			);
+			path = "Matching Result screen";
+			sourceTree = "<group>";
+		};
+		11931DE02B79535600CAA64B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11931DE12B79539C00CAA64B /* MatchingResultController.swift */,
+				11844B8E2B7BEFB100E87898 /* MatchingResultCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11931DE32B7953AD00CAA64B /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				11931DE52B7953CB00CAA64B /* MatchingResultViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		11931DE42B7953B800CAA64B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11931DE72B79544000CAA64B /* MatchingResultSuccessModel.swift */,
+				11931DED2B79552700CAA64B /* MatchingResultBodyModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		119BB3042B53DC7F006445FD /* Coordinator */ = {
@@ -1106,6 +1212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1149952E2B6C407700F44962 /* UploadUseCase.swift in Sources */,
+				11931DDA2B7935AB00CAA64B /* MatchingListUseCase.swift in Sources */,
 				11A95BDD2B728BAE008BD9FF /* TarotDataModel.swift in Sources */,
 				11D6D55C2B76D5B40041B577 /* ProfileSuccessModel.swift in Sources */,
 				11D7F1702B6D0D30007ABDB0 /* CountriesUseCase.swift in Sources */,
@@ -1130,18 +1237,23 @@
 				11A95BE22B728CDF008BD9FF /* TarotListUseCase.swift in Sources */,
 				11A571772B73F75B001B2BF9 /* ZodiacsAndYearsResponseModel.swift in Sources */,
 				1156FF312B65115900452019 /* ProgressBar.swift in Sources */,
+				11931DF02B7955E900CAA64B /* MatchingResultManager.swift in Sources */,
 				11DA41AF2B69658B00E07C63 /* LoginUseCase.swift in Sources */,
 				113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */,
+				11844B8F2B7BEFB100E87898 /* MatchingResultCell.swift in Sources */,
 				111EA1382B6D08DC002ACF7A /* CountryModel.swift in Sources */,
 				1102AE7D2B72C7E800948EC3 /* TarotDetailUseCase.swift in Sources */,
 				113C31762B7543D9006570C8 /* ZodiacsAndYearsUseCase.swift in Sources */,
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
+				11931DD42B79122400CAA64B /* ZodiacSignsMatchingListModel.swift in Sources */,
 				113014682B66EAEA0089E5D6 /* OTPUseCase.swift in Sources */,
 				11D7F1752B6D0F09007ABDB0 /* BirthPlaceViewModel.swift in Sources */,
 				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
+				11931DE22B79539C00CAA64B /* MatchingResultController.swift in Sources */,
 				11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */,
 				118B9F812B722A5B0012AFD7 /* HomeDetailController.swift in Sources */,
 				11570B1F2B76BF0C00131D90 /* ProfileViewModel.swift in Sources */,
+				11931DEC2B7954EF00CAA64B /* MatchingResultUseCase.swift in Sources */,
 				11D6D55E2B76D7000041B577 /* ProfileManager.swift in Sources */,
 				11708D1A2B646B4700C8DB60 /* RegisterUserModel.swift in Sources */,
 				11A95BEB2B72A045008BD9FF /* TarotDetailEndpoint.swift in Sources */,
@@ -1154,8 +1266,11 @@
 				11708D1E2B646C5F00C8DB60 /* RegisterManager.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
 				114995302B6C432900F44962 /* UploadManager.swift in Sources */,
+				11931DEE2B79552700CAA64B /* MatchingResultBodyModel.swift in Sources */,
 				11A571732B73F726001B2BF9 /* ZodiacsAndYearsViewModel.swift in Sources */,
 				114956F42B715E41003E41D4 /* HomeViewModel.swift in Sources */,
+				11931DE82B79544000CAA64B /* MatchingResultSuccessModel.swift in Sources */,
+				11931DE62B7953CB00CAA64B /* MatchingResultViewModel.swift in Sources */,
 				11D6D5562B76D5280041B577 /* ProfileUseCase.swift in Sources */,
 				11D6D5542B76CD960041B577 /* SectionSpaceFooter.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
@@ -1169,6 +1284,7 @@
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
 				11F6D0E32B6FA94A006837C5 /* NameViewModel.swift in Sources */,
 				11A95BDB2B728B4A008BD9FF /* TarotEndpoint.swift in Sources */,
+				11931DD12B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift in Sources */,
 				113C31822B75570E006570C8 /* ZodiacsAndYearsDetailResponseModel.swift in Sources */,
 				11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */,
 				111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */,
@@ -1176,6 +1292,7 @@
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
 				11FB14132B6D1174004EB5CC /* CityModel.swift in Sources */,
 				11708D102B63D77900C8DB60 /* ZodiacAndYearSignAboutCell.swift in Sources */,
+				11931DCE2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift in Sources */,
 				114FCB4E2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift in Sources */,
 				11570B222B76C01000131D90 /* UserInfoHeader.swift in Sources */,
 				11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */,
@@ -1186,7 +1303,6 @@
 				1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */,
 				11FB14112B6D1134004EB5CC /* CityManager.swift in Sources */,
 				11A95BD32B725C3E008BD9FF /* RefreshTokenModel.swift in Sources */,
-				11A2418E2B5B1A6E000E2CEE /* Reusable View.swift in Sources */,
 				11A95BE42B728D30008BD9FF /* TarotListManager.swift in Sources */,
 				11A95BE02B728C6F008BD9FF /* TarotViewModel.swift in Sources */,
 				11D6D5582B76D5430041B577 /* ProfileEndpoint.swift in Sources */,
@@ -1194,6 +1310,7 @@
 				11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */,
 				115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */,
 				11708D152B643BF200C8DB60 /* RegisterUseCase.swift in Sources */,
+				11931DD82B7934C400CAA64B /* MatchingListEndpoint.swift in Sources */,
 				114995272B6C3AFB00F44962 /* GenderViewModel.swift in Sources */,
 				11708D122B643A6600C8DB60 /* LoginEndpoint.swift in Sources */,
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
@@ -1204,12 +1321,14 @@
 				1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */,
 				11A8ACA12B6D0220008930A4 /* UploadUserSuccessModel.swift in Sources */,
 				11A95BE92B729F81008BD9FF /* TarotDetailViewModel.swift in Sources */,
+				11931DEA2B79548E00CAA64B /* MatchingResultEndpoint.swift in Sources */,
 				1102AE7B2B72C08100948EC3 /* TarotDetailResponseModel.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
 				114956F22B715DC8003E41D4 /* HomeEndpoint.swift in Sources */,
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
 				1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */,
 				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,
+				11931DD62B7932C400CAA64B /* ZodiacSignsMatchingListHeader.swift in Sources */,
 				113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */,
 				115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */,
 				118B9F852B722C880012AFD7 /* HomeDetailViewModel.swift in Sources */,
@@ -1218,6 +1337,7 @@
 				113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */,
 				11708D072B63CD3500C8DB60 /* ZodiacsAndYearsController.swift in Sources */,
 				113C317F2B755660006570C8 /* ZodiacsAndYearsDetailViewModel.swift in Sources */,
+				11931DDC2B79362800CAA64B /* MatchingListManager.swift in Sources */,
 				11A95BD52B726313008BD9FF /* RefreshTokenSuccessModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
