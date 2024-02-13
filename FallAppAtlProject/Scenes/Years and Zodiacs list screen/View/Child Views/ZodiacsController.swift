@@ -18,7 +18,7 @@ class ZodiacsController: UIViewController {
     
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "zodiacSignsBackground")
+        image.image = UIImage(named: "zodiacDetailBackground")
         image.frame = view.bounds
         image.contentMode = .scaleAspectFill
         return image

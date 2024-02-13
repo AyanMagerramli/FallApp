@@ -17,7 +17,7 @@ class YearsController: UIViewController {
     
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "yearSignsBackground")
+        image.image = UIImage(named: "zodiacDetailBackground")
         image.frame = view.bounds
         image.contentMode = .scaleAspectFill
         return image

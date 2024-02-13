@@ -145,13 +145,15 @@ extension ZodiacSignsMatchingListController: UICollectionViewDelegate, UICollect
                 self.viewModel.matchingResultBody?.secondZodiacID = selectedIndexPaths.last
                 print("matchingResultBody \(self.viewModel.matchingResultBody)")
                 DispatchQueue.main.async {
-                    
                     cell.changeCellImage()
-//                    cell.image.image = UIImage(named: "cellDummyImage")
-//                    collectionView.reloadData()
                 }
                 print("ARRAY is \(selectedIndexPaths)")
             } else if let index = selectedIndexPaths.firstIndex(of: data.id ?? "") {
+                DispatchQueue.main.async {
+                    if let data = self.viewModel.responseData?.data?[indexPath.row] {
+                        cell.configureCell(data: data)
+                    }
+                }
                 cell.contentView.backgroundColor = .clear
                 selectedIndexPaths.remove(at: index)
                 print("ARRAY decrease is \(selectedIndexPaths)")
