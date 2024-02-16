@@ -124,18 +124,10 @@ class MainCoordinator: CoordinatorProtocol {
         navigationController.show(vc, sender: nil)
     }
     
-//    func goToMatchingResultScreen(body: MatchingResultBodyModel) {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { // Adjust the delay as needed
-//            guard let window = UIApplication.shared.windows.first,
-//                  let rootViewController = window.rootViewController else {
-//                print("Window or root view controller is nil.")
-//                return
-//            }
-//
-//            let vc = MatchingResultController(viewModel: .init(coordinator: self, body: body))
-//            let navigationController = UINavigationController(rootViewController: vc)
-//            rootViewController.present(navigationController, animated: true, completion: nil)
-//        }
-//    }
+    func goToNewsDetailScreen(selectedItem: News) {
+        let vc = NewsDetailController(newsDetailViewModel: .init(coordinator: self, selectedItem: selectedItem))
+        
+        navigationController.show(vc, sender: nil)
+    }
 }
 

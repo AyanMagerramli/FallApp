@@ -57,11 +57,11 @@ class OnlyImageCell: UICollectionViewCell {
     
     // for Home Screen Matching banner
     
-    func setupPicture() {
+    func setupMatchingPicture() {
         image.image = UIImage(named: "matchingResult")
     }
     
-    // fro matching selection
+    // for matching selection
     
     func changeCellImage() {
         image.image = UIImage(named: "matchingSelectionImage")

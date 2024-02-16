@@ -20,31 +20,38 @@ class TabBarController: UITabBarController {
         let firstVC = HomeViewController()
         let homeNav = UINavigationController(rootViewController: firstVC)
         firstVC.viewModel.coordinator = MainCoordinator(navigationController: homeNav)
-        firstVC.tabBarItem.title = "Home"
-        let homeImage = UIImage(named: "HomeTabItem")?.withRenderingMode(.alwaysTemplate)
-        firstVC.tabBarItem.image = homeImage
-        firstVC.tabBarItem.selectedImage = homeImage
+        let homeTabBarItem = UITabBarItem(title: "Home",
+                                          image: UIImage(named: "HomeTabItem"),
+                                          selectedImage: nil)
+        firstVC.tabBarItem = homeTabBarItem
         firstVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
         let secondVC = TarotViewController()
         let tarotNav = UINavigationController(rootViewController: secondVC)
         secondVC.viewModel.coordinator = MainCoordinator(navigationController: tarotNav)
-        secondVC.tabBarItem.title = "Tarot"
-        // Set the image with the rendering mode
-        let tarotImage = UIImage(named: "tabBarItem2")?.withRenderingMode(.alwaysTemplate)
-        secondVC.tabBarItem.image = tarotImage
-        secondVC.tabBarItem.selectedImage = tarotImage
+        let tarotTabBarItem = UITabBarItem(title: "Tarot",
+                                          image: UIImage(named: "tabBarItem2"),
+                                          selectedImage: nil)
+        secondVC.tabBarItem = tarotTabBarItem
         secondVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
         
         let thirdVC = ZodiacsAndYearsController()
         let yearAndSignsNav = UINavigationController(rootViewController: thirdVC)
         thirdVC.viewModel.coordinator = MainCoordinator(navigationController: yearAndSignsNav)
-        thirdVC.tabBarItem.title = "Zodiacs"
-        let tabImage = UIImage(named: "tarotTabItem")?.withRenderingMode(.alwaysTemplate)
-        thirdVC.tabBarItem.image = tabImage
-        thirdVC.tabBarItem.selectedImage = tabImage
+        let zodiacAndYearsTabBarItem = UITabBarItem(title: "Zodiacs",
+                                                    image: UIImage(named: "tarotTabItem"),
+                                                    selectedImage: nil)
+        thirdVC.tabBarItem = zodiacAndYearsTabBarItem
         thirdVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
-
-        viewControllers = [homeNav, tarotNav, yearAndSignsNav]
+        
+        let fourthVC = NewsController()
+        let newsNav = UINavigationController(rootViewController: fourthVC)
+        fourthVC.viewModel.coordinator = MainCoordinator(navigationController: newsNav)
+        let newsTabBarItem = UITabBarItem(title: "News",
+                                          image: UIImage(systemName: "newspaper"),
+                                          selectedImage: nil)
+        fourthVC.tabBarItem = newsTabBarItem
+        thirdVC.tabBarItem.imageInsets = UIEdgeInsets(top: 5, left: 0, bottom: -5, right: 0)
+        viewControllers = [homeNav, newsNav, tarotNav, yearAndSignsNav]
     }
 }

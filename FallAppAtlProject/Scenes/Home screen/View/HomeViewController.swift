@@ -101,7 +101,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        4 // Three sections for today, monthly, and yearly and for matching banner
+        4 // Three sections for today, monthly, and yearly and for matching and news banner
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -138,9 +138,9 @@ extension HomeViewController: UICollectionViewDataSource {
                 leftImageRightLabelCell.configureCell(title: title, data: data)
             }
         case 3:
-            let imageCell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
-            cell = imageCell
-            imageCell.setupPicture()
+            let matchingCell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
+            cell = matchingCell
+            matchingCell.setupMatchingPicture()
         default:
            break
         }

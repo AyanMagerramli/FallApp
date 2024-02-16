@@ -66,6 +66,15 @@
 		114995302B6C432900F44962 /* UploadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1149952F2B6C432900F44962 /* UploadManager.swift */; };
 		114FCB4A2B6E6A1500D492F2 /* ZodiacSignInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FCB492B6E6A1500D492F2 /* ZodiacSignInfoController.swift */; };
 		114FCB4E2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114FCB4D2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift */; };
+		1150C5742B80069700241CC5 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C5732B80069700241CC5 /* NewsController.swift */; };
+		1150C57A2B800FCB00241CC5 /* NewsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C5792B800FCB00241CC5 /* NewsEndpoint.swift */; };
+		1150C57C2B80100C00241CC5 /* NewsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C57B2B80100C00241CC5 /* NewsResponseModel.swift */; };
+		1150C57E2B80107600241CC5 /* NewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C57D2B80107600241CC5 /* NewsUseCase.swift */; };
+		1150C5802B8010C500241CC5 /* NewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C57F2B8010C500241CC5 /* NewsManager.swift */; };
+		1150C5822B80113100241CC5 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C5812B80113100241CC5 /* NewsViewModel.swift */; };
+		1150C5862B8015C500241CC5 /* LeftImageRightTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C5852B8015C500241CC5 /* LeftImageRightTitleCell.swift */; };
+		1150C5882B801C3F00241CC5 /* NewsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C5872B801C3F00241CC5 /* NewsDetailController.swift */; };
+		1150C58E2B801CE100241CC5 /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1150C58D2B801CE100241CC5 /* NewsDetailViewModel.swift */; };
 		1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF2D2B64F7BB00452019 /* ErrorModel.swift */; };
 		1156FF312B65115900452019 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF302B65115900452019 /* ProgressBar.swift */; };
 		1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF332B65143F00452019 /* ProgressBarManager.swift */; };
@@ -202,6 +211,15 @@
 		1149952F2B6C432900F44962 /* UploadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadManager.swift; sourceTree = "<group>"; };
 		114FCB492B6E6A1500D492F2 /* ZodiacSignInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignInfoController.swift; sourceTree = "<group>"; };
 		114FCB4D2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignInfiViewModel.swift; sourceTree = "<group>"; };
+		1150C5732B80069700241CC5 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
+		1150C5792B800FCB00241CC5 /* NewsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndpoint.swift; sourceTree = "<group>"; };
+		1150C57B2B80100C00241CC5 /* NewsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponseModel.swift; sourceTree = "<group>"; };
+		1150C57D2B80107600241CC5 /* NewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUseCase.swift; sourceTree = "<group>"; };
+		1150C57F2B8010C500241CC5 /* NewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsManager.swift; sourceTree = "<group>"; };
+		1150C5812B80113100241CC5 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		1150C5852B8015C500241CC5 /* LeftImageRightTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightTitleCell.swift; sourceTree = "<group>"; };
+		1150C5872B801C3F00241CC5 /* NewsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailController.swift; sourceTree = "<group>"; };
+		1150C58D2B801CE100241CC5 /* NewsDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewModel.swift; sourceTree = "<group>"; };
 		1156FF2D2B64F7BB00452019 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		1156FF302B65115900452019 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		1156FF332B65143F00452019 /* ProgressBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarManager.swift; sourceTree = "<group>"; };
@@ -401,6 +419,7 @@
 				11D6D5572B76D5430041B577 /* ProfileEndpoint.swift */,
 				11931DD72B7934C400CAA64B /* MatchingListEndpoint.swift */,
 				11931DE92B79548E00CAA64B /* MatchingResultEndpoint.swift */,
+				1150C5792B800FCB00241CC5 /* NewsEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -422,6 +441,7 @@
 				11D6D55D2B76D7000041B577 /* ProfileManager.swift */,
 				11931DDB2B79362800CAA64B /* MatchingListManager.swift */,
 				11931DEF2B7955E900CAA64B /* MatchingResultManager.swift */,
+				1150C57F2B8010C500241CC5 /* NewsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -444,6 +464,8 @@
 				11931DCB2B79117A00CAA64B /* Zodiac Signs Matching screen */,
 				11708D0A2B63CE3A00C8DB60 /* Profile screen */,
 				11931DDF2B79534400CAA64B /* Matching Result screen */,
+				1150C5752B80069D00241CC5 /* News screen */,
+				1150C5892B801C4400241CC5 /* News Detail screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -599,6 +621,7 @@
 				113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */,
 				113932C82B5EFA5000D402BA /* OnlyImageCell.swift */,
 				1173B4892B631038005ED1C5 /* DetailCell.swift */,
+				1150C5852B8015C500241CC5 /* LeftImageRightTitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -673,6 +696,65 @@
 			isa = PBXGroup;
 			children = (
 				114FCB4D2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		1150C5752B80069D00241CC5 /* News screen */ = {
+			isa = PBXGroup;
+			children = (
+				1150C5782B8006BB00241CC5 /* View Model */,
+				1150C5772B8006B300241CC5 /* Model */,
+				1150C5762B8006AC00241CC5 /* View */,
+			);
+			path = "News screen";
+			sourceTree = "<group>";
+		};
+		1150C5762B8006AC00241CC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1150C5732B80069700241CC5 /* NewsController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1150C5772B8006B300241CC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1150C57B2B80100C00241CC5 /* NewsResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1150C5782B8006BB00241CC5 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				1150C5812B80113100241CC5 /* NewsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		1150C5892B801C4400241CC5 /* News Detail screen */ = {
+			isa = PBXGroup;
+			children = (
+				1150C58B2B801C8900241CC5 /* View Model */,
+				1150C58A2B801C8300241CC5 /* View */,
+			);
+			path = "News Detail screen";
+			sourceTree = "<group>";
+		};
+		1150C58A2B801C8300241CC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1150C5872B801C3F00241CC5 /* NewsDetailController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1150C58B2B801C8900241CC5 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				1150C58D2B801CE100241CC5 /* NewsDetailViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -782,6 +864,7 @@
 				11D6D5552B76D5280041B577 /* ProfileUseCase.swift */,
 				11931DD92B7935AB00CAA64B /* MatchingListUseCase.swift */,
 				11931DEB2B7954EF00CAA64B /* MatchingResultUseCase.swift */,
+				1150C57D2B80107600241CC5 /* NewsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1218,11 +1301,14 @@
 				11D7F1702B6D0D30007ABDB0 /* CountriesUseCase.swift in Sources */,
 				11FB140F2B6D110D004EB5CC /* CitiesUseCase.swift in Sources */,
 				110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */,
+				1150C58E2B801CE100241CC5 /* NewsDetailViewModel.swift in Sources */,
 				113C31862B755A79006570C8 /* ZodiacsAndYearsDetailUseCase.swift in Sources */,
 				1106A5982B59CEF900DF7450 /* BirthPlaceViewController.swift in Sources */,
 				113C31782B7545DB006570C8 /* ZodiacsAndYearsManager.swift in Sources */,
 				116582A92B6AB22700EF7268 /* UploadEndpoint.swift in Sources */,
+				1150C57A2B800FCB00241CC5 /* NewsEndpoint.swift in Sources */,
 				113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */,
+				1150C5742B80069700241CC5 /* NewsController.swift in Sources */,
 				119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */,
 				11F6D0E12B6F9D8D006837C5 /* BirthdayViewModel.swift in Sources */,
 				11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */,
@@ -1242,6 +1328,7 @@
 				113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */,
 				11844B8F2B7BEFB100E87898 /* MatchingResultCell.swift in Sources */,
 				111EA1382B6D08DC002ACF7A /* CountryModel.swift in Sources */,
+				1150C5882B801C3F00241CC5 /* NewsDetailController.swift in Sources */,
 				1102AE7D2B72C7E800948EC3 /* TarotDetailUseCase.swift in Sources */,
 				113C31762B7543D9006570C8 /* ZodiacsAndYearsUseCase.swift in Sources */,
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
@@ -1270,16 +1357,19 @@
 				11A571732B73F726001B2BF9 /* ZodiacsAndYearsViewModel.swift in Sources */,
 				114956F42B715E41003E41D4 /* HomeViewModel.swift in Sources */,
 				11931DE82B79544000CAA64B /* MatchingResultSuccessModel.swift in Sources */,
+				1150C5822B80113100241CC5 /* NewsViewModel.swift in Sources */,
 				11931DE62B7953CB00CAA64B /* MatchingResultViewModel.swift in Sources */,
 				11D6D5562B76D5280041B577 /* ProfileUseCase.swift in Sources */,
 				11D6D5542B76CD960041B577 /* SectionSpaceFooter.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				114956EE2B715B97003E41D4 /* HomeSuccessModel.swift in Sources */,
+				1150C57E2B80107600241CC5 /* NewsUseCase.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
 				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,
 				1179869E2B71872C001EF473 /* ImageViewExtension.swift in Sources */,
 				113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */,
 				11A5716B2B73F6BB001B2BF9 /* ZodiacsController.swift in Sources */,
+				1150C57C2B80100C00241CC5 /* NewsResponseModel.swift in Sources */,
 				113E4E372B68356B0033375D /* OTPResetModel.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
 				11F6D0E32B6FA94A006837C5 /* NameViewModel.swift in Sources */,
@@ -1290,12 +1380,14 @@
 				111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */,
 				113C31842B755A03006570C8 /* ZodiacsAndYearsDetailEndpoint.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
+				1150C5862B8015C500241CC5 /* LeftImageRightTitleCell.swift in Sources */,
 				11FB14132B6D1174004EB5CC /* CityModel.swift in Sources */,
 				11708D102B63D77900C8DB60 /* ZodiacAndYearSignAboutCell.swift in Sources */,
 				11931DCE2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift in Sources */,
 				114FCB4E2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift in Sources */,
 				11570B222B76C01000131D90 /* UserInfoHeader.swift in Sources */,
 				11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */,
+				1150C5802B8010C500241CC5 /* NewsManager.swift in Sources */,
 				1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */,
 				11A5716F2B73F6F1001B2BF9 /* YearsController.swift in Sources */,
 				11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */,
