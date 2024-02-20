@@ -52,6 +52,10 @@ class YearSignDetailViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupViewModel()
+        // How to follow navigation stack ? Try these print statements:
+//        print(" All vc s \(navigationController?.viewControllers)")
+//        print("Top vc \(navigationController?.topViewController)")
+//        print(" Visible vc \(navigationController?.visibleViewController)")
     }
     
     // MARK: - Setup UI

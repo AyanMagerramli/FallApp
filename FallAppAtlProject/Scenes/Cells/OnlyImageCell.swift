@@ -67,4 +67,3 @@ class OnlyImageCell: UICollectionViewCell {
         image.image = UIImage(named: "matchingSelectionImage")
     }
 }
-
