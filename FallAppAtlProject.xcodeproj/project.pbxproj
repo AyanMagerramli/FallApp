@@ -369,11 +369,11 @@
 		110E835C2B5146A70000D6D9 /* FallAppAtlProject */ = {
 			isa = PBXGroup;
 			children = (
-				11DE7FB32B853BB40053D9CA /* UserDefaultsManager */,
-				11DE7FAE2B8532470053D9CA /* KeychainManager */,
 				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
 				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
 				110E83712B514D3E0000D6D9 /* NetworkManager */,
+				11DE7FAE2B8532470053D9CA /* Keychain */,
+				11DE7FB32B853BB40053D9CA /* UserDefaults */,
 				110E83892B5150700000D6D9 /* Managers */,
 				113F9C972B5D20020069CCC2 /* Extensions */,
 				1106A5932B59CA7C00DF7450 /* Custom Views */,
@@ -1193,21 +1193,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		11DE7FAE2B8532470053D9CA /* KeychainManager */ = {
+		11DE7FAE2B8532470053D9CA /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
 				11DE7FAF2B8532630053D9CA /* KeychainManager.swift */,
 				11DE7FB12B8535F30053D9CA /* KeychainValues.swift */,
 			);
-			path = KeychainManager;
+			path = Keychain;
 			sourceTree = "<group>";
 		};
-		11DE7FB32B853BB40053D9CA /* UserDefaultsManager */ = {
+		11DE7FB32B853BB40053D9CA /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
 				11DE7FB42B853BCE0053D9CA /* UserdefaultsManager.swift */,
 			);
-			path = UserDefaultsManager;
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		11F6D0E42B6FA957006837C5 /* View */ = {
