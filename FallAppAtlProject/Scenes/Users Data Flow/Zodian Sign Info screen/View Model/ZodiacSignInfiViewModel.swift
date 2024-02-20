@@ -9,7 +9,7 @@ import Foundation
 
 final class ZodiacSignInfiViewModel {
     var coordinator: MainCoordinator
-    let zodiacSign = UserDefaults.standard.value(forKey: "zodiacSign")
+    let zodiacSign = UserdefaultsManager.shared.getValue(for: "zodiacSign") ?? ""//UserDefaults.standard.value(forKey: "zodiacSign")
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator

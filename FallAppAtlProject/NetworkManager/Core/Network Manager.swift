@@ -7,7 +7,6 @@
 
 import Foundation
 import Alamofire
-import KeychainSwift
 
 class NetworkManager {
     
@@ -39,14 +38,13 @@ class NetworkManager {
                         self.handleResponse(model: T.self,
                                             data: response.data!) { model in
                             completion(model, nil)
-                            // set access token here again into keychain
-                            let keychain = KeychainSwift()
+                            // set new access token come from refresh token API here again into keychain
                             if let token = data.data?.accessToken {
-                                keychain.set(token, forKey: "accessToken")
+                                KeychainManager.shared.setValue(value: token, for: KeychainValues.accessToken.rawValue)
                             }
                         }
                     } else if let error {
-                        
+                        print(error)
                     }
                 }
                 
@@ -66,7 +64,10 @@ class NetworkManager {
     
     fileprivate static func refreshToken(completion: @escaping (RefreshTokenSuccessModel?, ErrorModel?) -> Void) {
         let tokenModel = RefreshTokenModel()
-        KeychainSwift().set("", forKey: "accessToken")
+        
+        // delete access token from store while call refresh token API
+        KeychainManager.shared.deleteValue(key: KeychainValues.accessToken.rawValue)
+        
         self.request(model: RefreshTokenSuccessModel.self,
                      endpoint: RefreshTokenEndpoint.refreshToken.rawValue,
                      parameters: tokenModel.dictionary,

@@ -165,7 +165,8 @@ class GenderViewController: UIViewController {
     
     private func viewModelSetup() {
         viewModel.success = { [weak self] in
-            UserDefaults.standard.setValue(self?.viewModel.successModel?.data?.zodiacSign, forKey: "zodiacSign")
+            UserdefaultsManager.shared.setValue(value: self?.viewModel.successModel?.data?.zodiacSign, for: "zodiacSign")
+          //  UserDefaults.standard.setValue(self?.viewModel.successModel?.data?.zodiacSign, forKey: "zodiacSign")
         }
     }
 }

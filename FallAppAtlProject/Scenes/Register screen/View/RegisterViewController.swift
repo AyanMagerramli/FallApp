@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import KeychainSwift
 
 class RegisterViewController: UIViewController {
     
@@ -15,7 +14,6 @@ class RegisterViewController: UIViewController {
     weak var coordinator: MainCoordinator?
     private let viewModel = RegisterViewModel()
     var myUser: RegisterUserModel = RegisterUserModel()
-    let keychain = KeychainSwift()
     
     //MARK: -UI Elements
     

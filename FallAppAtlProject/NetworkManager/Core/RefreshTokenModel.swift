@@ -6,14 +6,12 @@
 //
 
 import Foundation
-import KeychainSwift
 
 struct RefreshTokenModel: Codable {
     var refreshToken: String?
     
     init () {
-        let keychain = KeychainSwift()
-        self.refreshToken = keychain.get("refreshToken")
+        self.refreshToken = KeychainManager.shared.getValue(key: KeychainValues.refreshToken.rawValue)
     }
     
     var dictionary: [String : Any] {

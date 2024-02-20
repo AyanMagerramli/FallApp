@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import KeychainSwift
 
 class OTPViewController: UIViewController {
     
@@ -17,7 +16,6 @@ class OTPViewController: UIViewController {
     private let viewModel = OTPViewModel()
     var otpModel = OTPResponseModel()
     var otpResetModel = OTPResetModel()
-    let keychain = KeychainSwift()
     
     // MARK: - UI Elements
     
@@ -92,7 +90,8 @@ class OTPViewController: UIViewController {
     private func setupUI() {
         customizeBackButton()
         
-        messageLabel.text = UserDefaults.standard.string(forKey: "otp")
+    //    messageLabel.text = UserDefaults.standard.string(forKey: "otp")
+        messageLabel.text = UserdefaultsManager.shared.getValue(for: "otp")
         
         view.backgroundColor = UIColor.theme(named: .background)
         
@@ -150,15 +149,18 @@ class OTPViewController: UIViewController {
     }
     
     private func setupUserData() {
-        let email = UserDefaults.standard.string(forKey: "email")
-        self.otpModel.email = email ?? "no email"
+       // let email = UserDefaults.standard.string(forKey: "email")
+        let email = UserdefaultsManager.shared.getValue(for: "email") ?? ""
+        self.otpModel.email = email
         self.otpModel.pin = otpField.text ?? "no otp"
     }
     
     private func setupResetOTPData() {
-        let email = UserDefaults.standard.string(forKey: "email")
+      //  let email = UserDefaults.standard.string(forKey: "email")
+        let email = UserdefaultsManager.shared.getValue(for: "email") ?? ""
         self.otpResetModel.email = email
-        self.otpResetModel.password = keychain.get("password")
+       // self.otpResetModel.password = keychain.get("password")
+        self.otpResetModel.password = KeychainManager.shared.getValue(key: KeychainValues.password.rawValue)
     }
     
     private func viewModelSetup() {

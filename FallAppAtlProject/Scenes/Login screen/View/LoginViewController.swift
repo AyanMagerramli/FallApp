@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import KeychainSwift
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -16,7 +15,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var viewModel: LoginViewModel?
     private var user = LoginUserModel()
     private var registerUserModel = RegisterUserModel()
-    private let keychain = KeychainSwift()
     
     //MARK: -UI Elements
     
@@ -126,8 +124,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func saveUserData() {
-        UserDefaults.standard.setValue(emailField.text, forKey: "email")
-        keychain.set(passwordField.text ?? "no password", forKey: "password")
+        UserdefaultsManager.shared.setValue(value: emailField.text, for: "email")
+       // UserDefaults.standard.setValue(emailField.text, forKey: "email")
+        KeychainManager.shared.setValue(value: passwordField.text ?? "", for: KeychainValues.password.rawValue)
     }
     
     //MARK: - Setup constraints

@@ -7,7 +7,6 @@
 
 import UIKit
 import Foundation
-import KeychainSwift
 
 final class LoginViewModel {
     
@@ -21,7 +20,6 @@ final class LoginViewModel {
     var success: (() -> Void)?
     var error: ((ErrorModel) -> Void)?
     var coordinator: MainCoordinator
-    let keychain = KeychainSwift()
     
     init (coordinator: MainCoordinator) {
         self.coordinator = coordinator
@@ -36,7 +34,9 @@ final class LoginViewModel {
             if let error {
                 self.errorResponse = error
                 self.error?(error)
-            } else if let data {
+            } 
+            
+            else if let data {
                 self.response = data
                 guard let accessToken = data.data?.accessToken,
                       let refreshToken = data.data?.refreshToken else { return }
@@ -45,7 +45,9 @@ final class LoginViewModel {
                 print("LOGIN DATA is \(data)")
                 if data.data?.hasData == false {
                     self.coordinator.navigate(to: .birthDate)
-                } else {
+                } 
+                
+                else {
                     self.coordinator.start()
                   //  self.coordinator.goToHomeScreen()
                    // self.coordinator.goToTarotListScreen()
@@ -62,6 +64,7 @@ final class LoginViewModel {
     
     func registerUser(userData: RegisterUserModel) {
         registerManager.registerUser(registerData: userData) { data, error in
+            
             if let error {
                 if error.status == 409 {
                     // Handle registration conflict error
@@ -70,11 +73,13 @@ final class LoginViewModel {
                     self.error?(error)
                     self.errorResponse = error
                 }
+                
             } else if let data {
                 print(" Register DATA is \(data)")
                 self.registerResponse = data
                 self.success?()
-                UserDefaults.standard.setValue(data.data?.message, forKey: "otp")
+                UserdefaultsManager.shared.setValue(value: data.data?.message, for: "otp")
+               // UserDefaults.standard.setValue(data.data?.message, forKey: "otp")
                 self.coordinator.navigate(to: .otp)
             }
         }
@@ -82,13 +87,13 @@ final class LoginViewModel {
     
     // Function to store tokens in Keychain
     private func storeTokensInKeychain(accessToken: String, refreshToken: String) {
-        keychain.set(accessToken, forKey: "accessToken")
-        keychain.set(refreshToken, forKey: "refreshToken")
+        KeychainManager.shared.setValue(value: accessToken, for: KeychainValues.accessToken.rawValue)
+        KeychainManager.shared.setValue(value: refreshToken, for: KeychainValues.refreshToken.rawValue)
     }
     
     // Function to clear tokens from Keychain (on logout)
      func clearTokensFromKeychain() {
-        keychain.delete("accessToken")
-        keychain.delete("refreshToken")
+         KeychainManager.shared.deleteValue(key: KeychainValues.accessToken.rawValue)
+         KeychainManager.shared.deleteValue(key: KeychainValues.refreshToken.rawValue)
     }
 }

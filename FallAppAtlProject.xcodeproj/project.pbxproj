@@ -147,6 +147,9 @@
 		11DA41AF2B69658B00E07C63 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */; };
 		11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B02B6965D200E07C63 /* LoginUserModel.swift */; };
 		11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DA41B22B69668800E07C63 /* LoginManager.swift */; };
+		11DE7FB02B8532630053D9CA /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE7FAF2B8532630053D9CA /* KeychainManager.swift */; };
+		11DE7FB22B8535F30053D9CA /* KeychainValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE7FB12B8535F30053D9CA /* KeychainValues.swift */; };
+		11DE7FB52B853BCE0053D9CA /* UserdefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DE7FB42B853BCE0053D9CA /* UserdefaultsManager.swift */; };
 		11F6D0E12B6F9D8D006837C5 /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D0E02B6F9D8D006837C5 /* BirthdayViewModel.swift */; };
 		11F6D0E32B6FA94A006837C5 /* NameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F6D0E22B6FA94A006837C5 /* NameViewModel.swift */; };
 		11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */; };
@@ -292,6 +295,9 @@
 		11DA41AE2B69658B00E07C63 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		11DA41B02B6965D200E07C63 /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
 		11DA41B22B69668800E07C63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		11DE7FAF2B8532630053D9CA /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		11DE7FB12B8535F30053D9CA /* KeychainValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainValues.swift; sourceTree = "<group>"; };
+		11DE7FB42B853BCE0053D9CA /* UserdefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserdefaultsManager.swift; sourceTree = "<group>"; };
 		11F6D0E02B6F9D8D006837C5 /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		11F6D0E22B6FA94A006837C5 /* NameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewModel.swift; sourceTree = "<group>"; };
 		11F9BF492B5D931D00F913F7 /* NavigationBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBackButton.swift; sourceTree = "<group>"; };
@@ -363,6 +369,8 @@
 		110E835C2B5146A70000D6D9 /* FallAppAtlProject */ = {
 			isa = PBXGroup;
 			children = (
+				11DE7FB32B853BB40053D9CA /* UserDefaultsManager */,
+				11DE7FAE2B8532470053D9CA /* KeychainManager */,
 				110E835D2B5146A70000D6D9 /* AppDelegate.swift */,
 				110E835F2B5146A70000D6D9 /* SceneDelegate.swift */,
 				110E83712B514D3E0000D6D9 /* NetworkManager */,
@@ -1185,6 +1193,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		11DE7FAE2B8532470053D9CA /* KeychainManager */ = {
+			isa = PBXGroup;
+			children = (
+				11DE7FAF2B8532630053D9CA /* KeychainManager.swift */,
+				11DE7FB12B8535F30053D9CA /* KeychainValues.swift */,
+			);
+			path = KeychainManager;
+			sourceTree = "<group>";
+		};
+		11DE7FB32B853BB40053D9CA /* UserDefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				11DE7FB42B853BCE0053D9CA /* UserdefaultsManager.swift */,
+			);
+			path = UserDefaultsManager;
+			sourceTree = "<group>";
+		};
 		11F6D0E42B6FA957006837C5 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1392,6 +1417,7 @@
 				11A5716F2B73F6F1001B2BF9 /* YearsController.swift in Sources */,
 				11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */,
 				114956F02B715D33003E41D4 /* HomeManager.swift in Sources */,
+				11DE7FB52B853BCE0053D9CA /* UserdefaultsManager.swift in Sources */,
 				1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */,
 				11FB14112B6D1134004EB5CC /* CityManager.swift in Sources */,
 				11A95BD32B725C3E008BD9FF /* RefreshTokenModel.swift in Sources */,
@@ -1403,6 +1429,7 @@
 				115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */,
 				11708D152B643BF200C8DB60 /* RegisterUseCase.swift in Sources */,
 				11931DD82B7934C400CAA64B /* MatchingListEndpoint.swift in Sources */,
+				11DE7FB02B8532630053D9CA /* KeychainManager.swift in Sources */,
 				114995272B6C3AFB00F44962 /* GenderViewModel.swift in Sources */,
 				11708D122B643A6600C8DB60 /* LoginEndpoint.swift in Sources */,
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
@@ -1428,6 +1455,7 @@
 				113C318A2B755B24006570C8 /* ZodiacsAndYearsDetailManager.swift in Sources */,
 				113F9C962B5D1C2D0069CCC2 /* RobotoFont.swift in Sources */,
 				11708D072B63CD3500C8DB60 /* ZodiacsAndYearsController.swift in Sources */,
+				11DE7FB22B8535F30053D9CA /* KeychainValues.swift in Sources */,
 				113C317F2B755660006570C8 /* ZodiacsAndYearsDetailViewModel.swift in Sources */,
 				11931DDC2B79362800CAA64B /* MatchingListManager.swift in Sources */,
 				11A95BD52B726313008BD9FF /* RefreshTokenSuccessModel.swift in Sources */,
