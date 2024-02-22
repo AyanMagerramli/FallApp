@@ -67,7 +67,7 @@ class ProfileViewController: UIViewController {
         view.sendSubviewToBack(backgrounImage)
         
         [backgrounImage,
-         tableView].forEach(view.addSubview(_:))
+         tableView].forEach(view.addSubview)
         
         makeConstraints()
         

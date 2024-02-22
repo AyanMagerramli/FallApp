@@ -117,6 +117,13 @@
 		119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */; };
 		119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB3072B53DC9D006445FD /* MainCoordinator.swift */; };
 		119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119BB30A2B53DDFC006445FD /* TabBarController.swift */; };
+		119E368D2B87D71A00938677 /* ConfirmOTPController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E368C2B87D71A00938677 /* ConfirmOTPController.swift */; };
+		119E36912B87E7BC00938677 /* ConfirmOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E36902B87E7BC00938677 /* ConfirmOTPViewModel.swift */; };
+		119E36952B87E99C00938677 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E36942B87E99C00938677 /* SettingsController.swift */; };
+		119E369A2B87EB7000938677 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E36992B87EB7000938677 /* SettingsViewModel.swift */; };
+		119E369C2B87EFA700938677 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E369B2B87EFA700938677 /* SettingsCell.swift */; };
+		119E369F2B8808E500938677 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E369E2B8808E500938677 /* ResetPasswordController.swift */; };
+		119E36A22B88090600938677 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119E36A12B88090600938677 /* ResetPasswordViewModel.swift */; };
 		11A2418C2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2418B2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift */; };
 		11A241912B5B2195000E2CEE /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241902B5B2195000E2CEE /* NameViewController.swift */; };
 		11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A241932B5B2859000E2CEE /* GenderViewController.swift */; };
@@ -265,6 +272,13 @@
 		119BB3052B53DC91006445FD /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		119BB3072B53DC9D006445FD /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		119BB30A2B53DDFC006445FD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		119E368C2B87D71A00938677 /* ConfirmOTPController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPController.swift; sourceTree = "<group>"; };
+		119E36902B87E7BC00938677 /* ConfirmOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPViewModel.swift; sourceTree = "<group>"; };
+		119E36942B87E99C00938677 /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		119E36992B87EB7000938677 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		119E369B2B87EFA700938677 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		119E369E2B8808E500938677 /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
+		119E36A12B88090600938677 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		11A2418B2B5B1475000E2CEE /* BirtdayViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirtdayViewControllerExtension.swift; sourceTree = "<group>"; };
 		11A241902B5B2195000E2CEE /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
 		11A241932B5B2859000E2CEE /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
@@ -474,6 +488,8 @@
 				11931DDF2B79534400CAA64B /* Matching Result screen */,
 				1150C5752B80069D00241CC5 /* News screen */,
 				1150C5892B801C4400241CC5 /* News Detail screen */,
+				119E368E2B87D72200938677 /* Reset Password flow */,
+				119E36962B87E99F00938677 /* Settings screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1033,6 +1049,91 @@
 			path = "TabBar setup";
 			sourceTree = "<group>";
 		};
+		119E368E2B87D72200938677 /* Reset Password flow */ = {
+			isa = PBXGroup;
+			children = (
+				119E368F2B87D7FB00938677 /* Confirm OTP screen */,
+				119E369D2B8808A300938677 /* Reset Password screen */,
+			);
+			path = "Reset Password flow";
+			sourceTree = "<group>";
+		};
+		119E368F2B87D7FB00938677 /* Confirm OTP screen */ = {
+			isa = PBXGroup;
+			children = (
+				119E36922B87E7C000938677 /* View */,
+				119E36932B87E7C500938677 /* View Model */,
+			);
+			path = "Confirm OTP screen";
+			sourceTree = "<group>";
+		};
+		119E36922B87E7C000938677 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				119E368C2B87D71A00938677 /* ConfirmOTPController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		119E36932B87E7C500938677 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				119E36902B87E7BC00938677 /* ConfirmOTPViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		119E36962B87E99F00938677 /* Settings screen */ = {
+			isa = PBXGroup;
+			children = (
+				119E36982B87EB6100938677 /* View Model */,
+				119E36972B87E9A900938677 /* View */,
+			);
+			path = "Settings screen";
+			sourceTree = "<group>";
+		};
+		119E36972B87E9A900938677 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				119E36942B87E99C00938677 /* SettingsController.swift */,
+				119E369B2B87EFA700938677 /* SettingsCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		119E36982B87EB6100938677 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				119E36992B87EB7000938677 /* SettingsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		119E369D2B8808A300938677 /* Reset Password screen */ = {
+			isa = PBXGroup;
+			children = (
+				119E36A02B8808F500938677 /* View */,
+				119E36A32B88090A00938677 /* View Model */,
+			);
+			path = "Reset Password screen";
+			sourceTree = "<group>";
+		};
+		119E36A02B8808F500938677 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				119E369E2B8808E500938677 /* ResetPasswordController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		119E36A32B88090A00938677 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				119E36A12B88090600938677 /* ResetPasswordViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		11A2418F2B5B217B000E2CEE /* Name screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1328,6 +1429,7 @@
 				110E83762B514DAD0000D6D9 /* Network Helper.swift in Sources */,
 				1150C58E2B801CE100241CC5 /* NewsDetailViewModel.swift in Sources */,
 				113C31862B755A79006570C8 /* ZodiacsAndYearsDetailUseCase.swift in Sources */,
+				119E36912B87E7BC00938677 /* ConfirmOTPViewModel.swift in Sources */,
 				1106A5982B59CEF900DF7450 /* BirthPlaceViewController.swift in Sources */,
 				113C31782B7545DB006570C8 /* ZodiacsAndYearsManager.swift in Sources */,
 				116582A92B6AB22700EF7268 /* UploadEndpoint.swift in Sources */,
@@ -1345,6 +1447,7 @@
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
 				11708D202B64710300C8DB60 /* RegisterOTPResponseModel.swift in Sources */,
 				1106A5902B59C67000DF7450 /* BirthdayViewController.swift in Sources */,
+				119E36952B87E99C00938677 /* SettingsController.swift in Sources */,
 				11A95BE22B728CDF008BD9FF /* TarotListUseCase.swift in Sources */,
 				11A571772B73F75B001B2BF9 /* ZodiacsAndYearsResponseModel.swift in Sources */,
 				1156FF312B65115900452019 /* ProgressBar.swift in Sources */,
@@ -1359,6 +1462,7 @@
 				113F9C9A2B5D204B0069CCC2 /* FontExtension.swift in Sources */,
 				11931DD42B79122400CAA64B /* ZodiacSignsMatchingListModel.swift in Sources */,
 				113014682B66EAEA0089E5D6 /* OTPUseCase.swift in Sources */,
+				119E369F2B8808E500938677 /* ResetPasswordController.swift in Sources */,
 				11D7F1752B6D0F09007ABDB0 /* BirthPlaceViewModel.swift in Sources */,
 				113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */,
 				11931DE22B79539C00CAA64B /* MatchingResultController.swift in Sources */,
@@ -1374,6 +1478,7 @@
 				11D7F1722B6D0E71007ABDB0 /* CountriesManager.swift in Sources */,
 				11A95BD72B7264AC008BD9FF /* RefreshTokenEndpoint.swift in Sources */,
 				1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */,
+				119E368D2B87D71A00938677 /* ConfirmOTPController.swift in Sources */,
 				114FCB4A2B6E6A1500D492F2 /* ZodiacSignInfoController.swift in Sources */,
 				11708D1E2B646C5F00C8DB60 /* RegisterManager.swift in Sources */,
 				11A241942B5B2859000E2CEE /* GenderViewController.swift in Sources */,
@@ -1420,6 +1525,7 @@
 				11DE7FB52B853BCE0053D9CA /* UserdefaultsManager.swift in Sources */,
 				1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */,
 				11FB14112B6D1134004EB5CC /* CityManager.swift in Sources */,
+				119E369C2B87EFA700938677 /* SettingsCell.swift in Sources */,
 				11A95BD32B725C3E008BD9FF /* RefreshTokenModel.swift in Sources */,
 				11A95BE42B728D30008BD9FF /* TarotListManager.swift in Sources */,
 				11A95BE02B728C6F008BD9FF /* TarotViewModel.swift in Sources */,
@@ -1459,6 +1565,8 @@
 				113C317F2B755660006570C8 /* ZodiacsAndYearsDetailViewModel.swift in Sources */,
 				11931DDC2B79362800CAA64B /* MatchingListManager.swift in Sources */,
 				11A95BD52B726313008BD9FF /* RefreshTokenSuccessModel.swift in Sources */,
+				119E369A2B87EB7000938677 /* SettingsViewModel.swift in Sources */,
+				119E36A22B88090600938677 /* ResetPasswordViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

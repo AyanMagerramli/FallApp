@@ -87,13 +87,27 @@ class HomeViewController: UIViewController {
                                          target: self,
                                          action: #selector(leftButtonTapped))
         
+        let rightButton = UIBarButtonItem(image: UIImage(systemName: "gear"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(rightButtonTapped))
+        
         // Assign the left button to the navigation item
         self.navigationItem.leftBarButtonItem = leftButton
+        self.navigationItem.rightBarButtonItem = rightButton
+        
     }
     
-    @objc func leftButtonTapped() {
+    @objc
+    private func leftButtonTapped() {
         // Handle left button tap -> go to Profile screen
         self.viewModel.coordinator?.navigate(to: .profile)
+    }
+    
+    @objc
+    private func rightButtonTapped() {
+        // Handle left button tap -> go to Settings screen
+        self.viewModel.coordinator?.goToSettingsScreen()
     }
 }
 

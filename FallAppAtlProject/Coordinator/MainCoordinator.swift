@@ -126,7 +126,21 @@ class MainCoordinator: CoordinatorProtocol {
     
     func goToNewsDetailScreen(selectedItem: News) {
         let vc = NewsDetailController(newsDetailViewModel: .init(coordinator: self, selectedItem: selectedItem))
-        
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToSettingsScreen() {
+        let vc = SettingsController(viewModel: .init(coordinator: self))
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToConfirmOTPScreen() {
+        let vc = ConfirmOTPController(viewModel: .init(coordinator: self))
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToResetPasswordScreen() {
+        let vc = ResetPasswordController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
 }
