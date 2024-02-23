@@ -64,6 +64,7 @@ class ConfirmOTPController: UIViewController {
         super.viewDidLoad()
         setupUI()
         continueButtonAction()
+        setupViewModel()
     }
     
     // MARK: - Setup UI
@@ -72,6 +73,8 @@ class ConfirmOTPController: UIViewController {
         navigationItem.title = "Verify OTP"
         
         view.backgroundColor = .background
+        
+        otpField.becomeFirstResponder()
         
         [titleLabel,
          otpField,
@@ -100,12 +103,40 @@ class ConfirmOTPController: UIViewController {
         }
     }
     
+    // MARK: - Setup View Model
+    
+    private func setupViewModel() {
+        viewModel.sendOTP()
+        
+        viewModel.success = { [weak self] in
+            self?.titleLabel.text = self?.viewModel.sendOTPData?.data
+        }
+    }
+    
     //button action
     
     private func continueButtonAction () {
+        
         continueButton.buttonTappedHandler = { [weak self] in
-            // send request and navigate into set new password field
-            self?.viewModel.coordinator.goToResetPasswordScreen()
+                guard let self = self else { return }
+
+            let email = UserdefaultsManager.shared.getValue(for: "email") ?? ""
+            let enteredOTP = self.otpField.text ?? ""
+        
+            let otpVerifyBody = VerifyOTPResponseModel(
+                mail: email,
+                otp: enteredOTP)
+            
+            // Make the API call to verify OTP
+            self.viewModel.verifyOTP(body: otpVerifyBody)
+            
+            // Handle success in viewModel
+            self.viewModel.success = { [weak self] in
+                
+                print("BODY ISSS \(otpVerifyBody)")
+                // Navigate to reset password screen upon successful OTP verification
+                self?.viewModel.coordinator.goToResetPasswordScreen(code: self?.viewModel.verifyOTPData?.data ?? "")
+            }
         }
     }
 }

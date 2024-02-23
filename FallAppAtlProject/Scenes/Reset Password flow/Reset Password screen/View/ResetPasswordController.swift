@@ -12,6 +12,7 @@ class ResetPasswordController: UIViewController {
     // MARK: Properties
     
     var viewModel: ResetPasswordViewModel
+    var code: String
     
     // MARK: UI Elements
     
@@ -26,7 +27,7 @@ class ResetPasswordController: UIViewController {
         return label
     }()
     
-    private let otpField: UITextField = {
+    private let passwordField: UITextField = {
         let field = UITextField()
         field.backgroundColor = .clear
         let attributedPlaceholder = NSAttributedString(string: " New password",
@@ -48,8 +49,9 @@ class ResetPasswordController: UIViewController {
     
     // MARK: - Init
     
-    init(viewModel: ResetPasswordViewModel) {
+    init(viewModel: ResetPasswordViewModel, code: String) {
         self.viewModel = viewModel
+        self.code = code
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -68,12 +70,14 @@ class ResetPasswordController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
-        navigationItem.title = "Verify OTP"
+        navigationItem.title = "Password"
         
         view.backgroundColor = .background
         
+        passwordField.becomeFirstResponder()
+        
         [titleLabel,
-         otpField,
+         passwordField,
          resetPasswordButton].forEach(view.addSubview)
         
         makeConstraints()
@@ -87,7 +91,7 @@ class ResetPasswordController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
-        otpField.snp.makeConstraints { make in
+        passwordField.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(40)
             make.horizontalEdges.equalToSuperview().inset(24)
             make.height.equalTo(48)
@@ -99,11 +103,30 @@ class ResetPasswordController: UIViewController {
         }
     }
     
+    // MARK: - Setup View Model
+    
+    private func setupViewModel () {
+        let email = UserdefaultsManager.shared.getValue(for: "email") ?? ""
+        let password = passwordField.text ?? ""
+        let code = self.code
+        
+        let body = ResetPasswordResponseModel(mail: email,
+                                              password: password,
+                                              verificationCode: code)
+        
+        self.viewModel.resetPassword(body: body)
+        
+        self.viewModel.success = { [weak self] in
+            // go to success screen
+            self?.viewModel.coordinator.goToSuccessScreen()
+        }
+    }
+    
     //button action
     
     private func resetPasswordButtonAction() {
         resetPasswordButton.buttonTappedHandler = { [weak self] in
-            // navigate into success screen
+            self?.setupViewModel()
         }
     }
 }

@@ -98,6 +98,23 @@
 		1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4892B631038005ED1C5 /* DetailCell.swift */; };
 		1179869E2B71872C001EF473 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179869D2B71872C001EF473 /* ImageViewExtension.swift */; };
 		11844B8F2B7BEFB100E87898 /* MatchingResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11844B8E2B7BEFB100E87898 /* MatchingResultCell.swift */; };
+		11859BC92B8897B400E2675F /* ConfirmOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BC82B8897B400E2675F /* ConfirmOTPResponseModel.swift */; };
+		11859BCC2B88987900E2675F /* ConfirmOTPSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BCB2B88987900E2675F /* ConfirmOTPSuccessModel.swift */; };
+		11859BCE2B8898FB00E2675F /* OTPForPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BCD2B8898FB00E2675F /* OTPForPasswordUseCase.swift */; };
+		11859BD02B8899ED00E2675F /* OTPForPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BCF2B8899ED00E2675F /* OTPForPasswordManager.swift */; };
+		11859BD22B889A4D00E2675F /* SendOTPForPasswordEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BD12B889A4D00E2675F /* SendOTPForPasswordEndpoint.swift */; };
+		11859BD42B889FD600E2675F /* VerifyOTPEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BD32B889FD600E2675F /* VerifyOTPEndpoint.swift */; };
+		11859BD72B88A02E00E2675F /* VerifyOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BD62B88A02E00E2675F /* VerifyOTPResponseModel.swift */; };
+		11859BDA2B88A0A500E2675F /* VerifyOTPSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BD92B88A0A500E2675F /* VerifyOTPSuccessModel.swift */; };
+		11859BDC2B88A0E700E2675F /* VerifyOTPUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BDB2B88A0E700E2675F /* VerifyOTPUseCase.swift */; };
+		11859BDE2B88A13900E2675F /* VerifyOTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BDD2B88A13900E2675F /* VerifyOTPManager.swift */; };
+		11859BE02B88B43900E2675F /* ResetPasswordEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BDF2B88B43900E2675F /* ResetPasswordEndpoint.swift */; };
+		11859BE32B88B49800E2675F /* ResetPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BE22B88B49800E2675F /* ResetPasswordResponseModel.swift */; };
+		11859BE52B88B52A00E2675F /* ResetPasswordSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BE42B88B52A00E2675F /* ResetPasswordSuccessModel.swift */; };
+		11859BE72B88B5EE00E2675F /* ResetPasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BE62B88B5EE00E2675F /* ResetPasswordUseCase.swift */; };
+		11859BE92B88B66D00E2675F /* ResetPasswordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BE82B88B66D00E2675F /* ResetPasswordManager.swift */; };
+		11859BEE2B88BD3400E2675F /* SuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BED2B88BD3400E2675F /* SuccessViewModel.swift */; };
+		11859BF02B88BD7400E2675F /* SuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BEF2B88BD7400E2675F /* SuccessController.swift */; };
 		118B9F812B722A5B0012AFD7 /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */; };
 		118B9F852B722C880012AFD7 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */; };
 		11931DCE2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DCD2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift */; };
@@ -253,6 +270,23 @@
 		1173B4892B631038005ED1C5 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		1179869D2B71872C001EF473 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		11844B8E2B7BEFB100E87898 /* MatchingResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultCell.swift; sourceTree = "<group>"; };
+		11859BC82B8897B400E2675F /* ConfirmOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPResponseModel.swift; sourceTree = "<group>"; };
+		11859BCB2B88987900E2675F /* ConfirmOTPSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPSuccessModel.swift; sourceTree = "<group>"; };
+		11859BCD2B8898FB00E2675F /* OTPForPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPForPasswordUseCase.swift; sourceTree = "<group>"; };
+		11859BCF2B8899ED00E2675F /* OTPForPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPForPasswordManager.swift; sourceTree = "<group>"; };
+		11859BD12B889A4D00E2675F /* SendOTPForPasswordEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendOTPForPasswordEndpoint.swift; sourceTree = "<group>"; };
+		11859BD32B889FD600E2675F /* VerifyOTPEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPEndpoint.swift; sourceTree = "<group>"; };
+		11859BD62B88A02E00E2675F /* VerifyOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponseModel.swift; sourceTree = "<group>"; };
+		11859BD92B88A0A500E2675F /* VerifyOTPSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPSuccessModel.swift; sourceTree = "<group>"; };
+		11859BDB2B88A0E700E2675F /* VerifyOTPUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPUseCase.swift; sourceTree = "<group>"; };
+		11859BDD2B88A13900E2675F /* VerifyOTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPManager.swift; sourceTree = "<group>"; };
+		11859BDF2B88B43900E2675F /* ResetPasswordEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordEndpoint.swift; sourceTree = "<group>"; };
+		11859BE22B88B49800E2675F /* ResetPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordResponseModel.swift; sourceTree = "<group>"; };
+		11859BE42B88B52A00E2675F /* ResetPasswordSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordSuccessModel.swift; sourceTree = "<group>"; };
+		11859BE62B88B5EE00E2675F /* ResetPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordUseCase.swift; sourceTree = "<group>"; };
+		11859BE82B88B66D00E2675F /* ResetPasswordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordManager.swift; sourceTree = "<group>"; };
+		11859BED2B88BD3400E2675F /* SuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewModel.swift; sourceTree = "<group>"; };
+		11859BEF2B88BD7400E2675F /* SuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessController.swift; sourceTree = "<group>"; };
 		118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
 		118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
 		11931DCD2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListController.swift; sourceTree = "<group>"; };
@@ -442,6 +476,9 @@
 				11931DD72B7934C400CAA64B /* MatchingListEndpoint.swift */,
 				11931DE92B79548E00CAA64B /* MatchingResultEndpoint.swift */,
 				1150C5792B800FCB00241CC5 /* NewsEndpoint.swift */,
+				11859BD12B889A4D00E2675F /* SendOTPForPasswordEndpoint.swift */,
+				11859BD32B889FD600E2675F /* VerifyOTPEndpoint.swift */,
+				11859BDF2B88B43900E2675F /* ResetPasswordEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -464,6 +501,9 @@
 				11931DDB2B79362800CAA64B /* MatchingListManager.swift */,
 				11931DEF2B7955E900CAA64B /* MatchingResultManager.swift */,
 				1150C57F2B8010C500241CC5 /* NewsManager.swift */,
+				11859BCF2B8899ED00E2675F /* OTPForPasswordManager.swift */,
+				11859BDD2B88A13900E2675F /* VerifyOTPManager.swift */,
+				11859BE82B88B66D00E2675F /* ResetPasswordManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -889,6 +929,9 @@
 				11931DD92B7935AB00CAA64B /* MatchingListUseCase.swift */,
 				11931DEB2B7954EF00CAA64B /* MatchingResultUseCase.swift */,
 				1150C57D2B80107600241CC5 /* NewsUseCase.swift */,
+				11859BCD2B8898FB00E2675F /* OTPForPasswordUseCase.swift */,
+				11859BDB2B88A0E700E2675F /* VerifyOTPUseCase.swift */,
+				11859BE62B88B5EE00E2675F /* ResetPasswordUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -934,6 +977,67 @@
 				1179869D2B71872C001EF473 /* ImageViewExtension.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		11859BCA2B8897BD00E2675F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11859BD52B88A01700E2675F /* Confirm OTP Models */,
+				11859BD82B88A03700E2675F /* Verify OTP Models */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11859BD52B88A01700E2675F /* Confirm OTP Models */ = {
+			isa = PBXGroup;
+			children = (
+				11859BC82B8897B400E2675F /* ConfirmOTPResponseModel.swift */,
+				11859BCB2B88987900E2675F /* ConfirmOTPSuccessModel.swift */,
+			);
+			path = "Confirm OTP Models";
+			sourceTree = "<group>";
+		};
+		11859BD82B88A03700E2675F /* Verify OTP Models */ = {
+			isa = PBXGroup;
+			children = (
+				11859BD62B88A02E00E2675F /* VerifyOTPResponseModel.swift */,
+				11859BD92B88A0A500E2675F /* VerifyOTPSuccessModel.swift */,
+			);
+			path = "Verify OTP Models";
+			sourceTree = "<group>";
+		};
+		11859BE12B88B48200E2675F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11859BE22B88B49800E2675F /* ResetPasswordResponseModel.swift */,
+				11859BE42B88B52A00E2675F /* ResetPasswordSuccessModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11859BEA2B88BCFA00E2675F /* Success screen */ = {
+			isa = PBXGroup;
+			children = (
+				11859BEC2B88BD1000E2675F /* View Model */,
+				11859BEB2B88BD0800E2675F /* View */,
+			);
+			path = "Success screen";
+			sourceTree = "<group>";
+		};
+		11859BEB2B88BD0800E2675F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11859BEF2B88BD7400E2675F /* SuccessController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11859BEC2B88BD1000E2675F /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				11859BED2B88BD3400E2675F /* SuccessViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		118B9F7F2B7229FE0012AFD7 /* Home Detail screen */ = {
@@ -1054,6 +1158,7 @@
 			children = (
 				119E368F2B87D7FB00938677 /* Confirm OTP screen */,
 				119E369D2B8808A300938677 /* Reset Password screen */,
+				11859BEA2B88BCFA00E2675F /* Success screen */,
 			);
 			path = "Reset Password flow";
 			sourceTree = "<group>";
@@ -1063,6 +1168,7 @@
 			children = (
 				119E36922B87E7C000938677 /* View */,
 				119E36932B87E7C500938677 /* View Model */,
+				11859BCA2B8897BD00E2675F /* Model */,
 			);
 			path = "Confirm OTP screen";
 			sourceTree = "<group>";
@@ -1112,6 +1218,7 @@
 		119E369D2B8808A300938677 /* Reset Password screen */ = {
 			isa = PBXGroup;
 			children = (
+				11859BE12B88B48200E2675F /* Model */,
 				119E36A02B8808F500938677 /* View */,
 				119E36A32B88090A00938677 /* View Model */,
 			);
@@ -1431,9 +1538,11 @@
 				113C31862B755A79006570C8 /* ZodiacsAndYearsDetailUseCase.swift in Sources */,
 				119E36912B87E7BC00938677 /* ConfirmOTPViewModel.swift in Sources */,
 				1106A5982B59CEF900DF7450 /* BirthPlaceViewController.swift in Sources */,
+				11859BD72B88A02E00E2675F /* VerifyOTPResponseModel.swift in Sources */,
 				113C31782B7545DB006570C8 /* ZodiacsAndYearsManager.swift in Sources */,
 				116582A92B6AB22700EF7268 /* UploadEndpoint.swift in Sources */,
 				1150C57A2B800FCB00241CC5 /* NewsEndpoint.swift in Sources */,
+				11859BD22B889A4D00E2675F /* SendOTPForPasswordEndpoint.swift in Sources */,
 				113F9C9F2B5D23180069CCC2 /* ColorExtension.swift in Sources */,
 				1150C5742B80069700241CC5 /* NewsController.swift in Sources */,
 				119BB3062B53DC91006445FD /* CoordinatorProtocol.swift in Sources */,
@@ -1446,6 +1555,7 @@
 				111EA13C2B6D0AF7002ACF7A /* CityEndpoint.swift in Sources */,
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,
 				11708D202B64710300C8DB60 /* RegisterOTPResponseModel.swift in Sources */,
+				11859BE72B88B5EE00E2675F /* ResetPasswordUseCase.swift in Sources */,
 				1106A5902B59C67000DF7450 /* BirthdayViewController.swift in Sources */,
 				119E36952B87E99C00938677 /* SettingsController.swift in Sources */,
 				11A95BE22B728CDF008BD9FF /* TarotListUseCase.swift in Sources */,
@@ -1488,10 +1598,13 @@
 				114956F42B715E41003E41D4 /* HomeViewModel.swift in Sources */,
 				11931DE82B79544000CAA64B /* MatchingResultSuccessModel.swift in Sources */,
 				1150C5822B80113100241CC5 /* NewsViewModel.swift in Sources */,
+				11859BDC2B88A0E700E2675F /* VerifyOTPUseCase.swift in Sources */,
 				11931DE62B7953CB00CAA64B /* MatchingResultViewModel.swift in Sources */,
+				11859BE32B88B49800E2675F /* ResetPasswordResponseModel.swift in Sources */,
 				11D6D5562B76D5280041B577 /* ProfileUseCase.swift in Sources */,
 				11D6D5542B76CD960041B577 /* SectionSpaceFooter.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
+				11859BD02B8899ED00E2675F /* OTPForPasswordManager.swift in Sources */,
 				114956EE2B715B97003E41D4 /* HomeSuccessModel.swift in Sources */,
 				1150C57E2B80107600241CC5 /* NewsUseCase.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
@@ -1510,14 +1623,18 @@
 				111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */,
 				113C31842B755A03006570C8 /* ZodiacsAndYearsDetailEndpoint.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
+				11859BE92B88B66D00E2675F /* ResetPasswordManager.swift in Sources */,
 				1150C5862B8015C500241CC5 /* LeftImageRightTitleCell.swift in Sources */,
 				11FB14132B6D1174004EB5CC /* CityModel.swift in Sources */,
+				11859BF02B88BD7400E2675F /* SuccessController.swift in Sources */,
 				11708D102B63D77900C8DB60 /* ZodiacAndYearSignAboutCell.swift in Sources */,
 				11931DCE2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift in Sources */,
 				114FCB4E2B6E6EFF00D492F2 /* ZodiacSignInfiViewModel.swift in Sources */,
 				11570B222B76C01000131D90 /* UserInfoHeader.swift in Sources */,
 				11DA41B32B69668800E07C63 /* LoginManager.swift in Sources */,
+				11859BDE2B88A13900E2675F /* VerifyOTPManager.swift in Sources */,
 				1150C5802B8010C500241CC5 /* NewsManager.swift in Sources */,
+				11859BEE2B88BD3400E2675F /* SuccessViewModel.swift in Sources */,
 				1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */,
 				11A5716F2B73F6F1001B2BF9 /* YearsController.swift in Sources */,
 				11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */,
@@ -1529,6 +1646,7 @@
 				11A95BD32B725C3E008BD9FF /* RefreshTokenModel.swift in Sources */,
 				11A95BE42B728D30008BD9FF /* TarotListManager.swift in Sources */,
 				11A95BE02B728C6F008BD9FF /* TarotViewModel.swift in Sources */,
+				11859BDA2B88A0A500E2675F /* VerifyOTPSuccessModel.swift in Sources */,
 				11D6D5582B76D5430041B577 /* ProfileEndpoint.swift in Sources */,
 				113E4E392B6836280033375D /* OTPResetSuccessResponseModel.swift in Sources */,
 				11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */,
@@ -1537,6 +1655,7 @@
 				11931DD82B7934C400CAA64B /* MatchingListEndpoint.swift in Sources */,
 				11DE7FB02B8532630053D9CA /* KeychainManager.swift in Sources */,
 				114995272B6C3AFB00F44962 /* GenderViewModel.swift in Sources */,
+				11859BC92B8897B400E2675F /* ConfirmOTPResponseModel.swift in Sources */,
 				11708D122B643A6600C8DB60 /* LoginEndpoint.swift in Sources */,
 				11708D092B63CDA700C8DB60 /* ProfileViewController.swift in Sources */,
 				119BB30B2B53DDFC006445FD /* TabBarController.swift in Sources */,
@@ -1548,11 +1667,14 @@
 				11A95BE92B729F81008BD9FF /* TarotDetailViewModel.swift in Sources */,
 				11931DEA2B79548E00CAA64B /* MatchingResultEndpoint.swift in Sources */,
 				1102AE7B2B72C08100948EC3 /* TarotDetailResponseModel.swift in Sources */,
+				11859BE02B88B43900E2675F /* ResetPasswordEndpoint.swift in Sources */,
 				110E83962B51515E0000D6D9 /* LoginViewModel.swift in Sources */,
 				114956F22B715DC8003E41D4 /* HomeEndpoint.swift in Sources */,
 				113F9C9D2B5D22D40069CCC2 /* ColorEnum.swift in Sources */,
+				11859BCE2B8898FB00E2675F /* OTPForPasswordUseCase.swift in Sources */,
 				1149952C2B6C3FC100F44962 /* UploadUserDataModel.swift in Sources */,
 				113932C72B5EF8DC00D402BA /* TarotViewController.swift in Sources */,
+				11859BCC2B88987900E2675F /* ConfirmOTPSuccessModel.swift in Sources */,
 				11931DD62B7932C400CAA64B /* ZodiacSignsMatchingListHeader.swift in Sources */,
 				113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */,
 				115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */,
@@ -1563,7 +1685,9 @@
 				11708D072B63CD3500C8DB60 /* ZodiacsAndYearsController.swift in Sources */,
 				11DE7FB22B8535F30053D9CA /* KeychainValues.swift in Sources */,
 				113C317F2B755660006570C8 /* ZodiacsAndYearsDetailViewModel.swift in Sources */,
+				11859BE52B88B52A00E2675F /* ResetPasswordSuccessModel.swift in Sources */,
 				11931DDC2B79362800CAA64B /* MatchingListManager.swift in Sources */,
+				11859BD42B889FD600E2675F /* VerifyOTPEndpoint.swift in Sources */,
 				11A95BD52B726313008BD9FF /* RefreshTokenSuccessModel.swift in Sources */,
 				119E369A2B87EB7000938677 /* SettingsViewModel.swift in Sources */,
 				119E36A22B88090600938677 /* ResetPasswordViewModel.swift in Sources */,

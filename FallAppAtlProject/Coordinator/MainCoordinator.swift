@@ -139,8 +139,13 @@ class MainCoordinator: CoordinatorProtocol {
         navigationController.show(vc, sender: nil)
     }
     
-    func goToResetPasswordScreen() {
-        let vc = ResetPasswordController(viewModel: .init(coordinator: self))
+    func goToResetPasswordScreen(code: String) {
+        let vc = ResetPasswordController(viewModel: .init(coordinator: self), code: code)
+        navigationController.show(vc, sender: nil)
+    }
+    
+    func goToSuccessScreen() {
+        let vc = SuccessController(viewModel: .init(coordinator: self))
         navigationController.show(vc, sender: nil)
     }
 }
