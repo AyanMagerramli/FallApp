@@ -120,12 +120,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func didUserLogin() {
-        //  UserDefaults.standard.setValue(true, forKey: "Logged in")
+          UserDefaults.standard.setValue(true, forKey: "loggedIn")
     }
     
     private func saveUserData() {
         UserdefaultsManager.shared.setValue(value: emailField.text, for: "email")
-       // UserDefaults.standard.setValue(emailField.text, forKey: "email")
         KeychainManager.shared.setValue(value: passwordField.text ?? "", for: KeychainValues.password.rawValue)
     }
     

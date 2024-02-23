@@ -96,6 +96,13 @@
 		11708D202B64710300C8DB60 /* RegisterOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11708D1F2B64710300C8DB60 /* RegisterOTPResponseModel.swift */; };
 		1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */; };
 		1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1173B4892B631038005ED1C5 /* DetailCell.swift */; };
+		117448622B892B62006C495B /* LogoutEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117448612B892B62006C495B /* LogoutEndpoint.swift */; };
+		117448642B892B9F006C495B /* LogoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117448632B892B9F006C495B /* LogoutManager.swift */; };
+		117448662B892BBB006C495B /* LogoutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117448652B892BBB006C495B /* LogoutUseCase.swift */; };
+		117448692B892C2C006C495B /* LogoutSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117448682B892C2C006C495B /* LogoutSuccessModel.swift */; };
+		1174486B2B8940FC006C495B /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174486A2B8940FC006C495B /* UserDefaultsExtension.swift */; };
+		1174486D2B894601006C495B /* AboutUsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1174486C2B894601006C495B /* AboutUsController.swift */; };
+		117448712B8952C8006C495B /* TermsAndConditionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117448702B8952C8006C495B /* TermsAndConditionsController.swift */; };
 		1179869E2B71872C001EF473 /* ImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1179869D2B71872C001EF473 /* ImageViewExtension.swift */; };
 		11844B8F2B7BEFB100E87898 /* MatchingResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11844B8E2B7BEFB100E87898 /* MatchingResultCell.swift */; };
 		11859BC92B8897B400E2675F /* ConfirmOTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BC82B8897B400E2675F /* ConfirmOTPResponseModel.swift */; };
@@ -268,6 +275,13 @@
 		11708D1F2B64710300C8DB60 /* RegisterOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterOTPResponseModel.swift; sourceTree = "<group>"; };
 		1173B4862B630DDA005ED1C5 /* TarotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailViewController.swift; sourceTree = "<group>"; };
 		1173B4892B631038005ED1C5 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		117448612B892B62006C495B /* LogoutEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutEndpoint.swift; sourceTree = "<group>"; };
+		117448632B892B9F006C495B /* LogoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutManager.swift; sourceTree = "<group>"; };
+		117448652B892BBB006C495B /* LogoutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUseCase.swift; sourceTree = "<group>"; };
+		117448682B892C2C006C495B /* LogoutSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutSuccessModel.swift; sourceTree = "<group>"; };
+		1174486A2B8940FC006C495B /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		1174486C2B894601006C495B /* AboutUsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsController.swift; sourceTree = "<group>"; };
+		117448702B8952C8006C495B /* TermsAndConditionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsController.swift; sourceTree = "<group>"; };
 		1179869D2B71872C001EF473 /* ImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtension.swift; sourceTree = "<group>"; };
 		11844B8E2B7BEFB100E87898 /* MatchingResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingResultCell.swift; sourceTree = "<group>"; };
 		11859BC82B8897B400E2675F /* ConfirmOTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPResponseModel.swift; sourceTree = "<group>"; };
@@ -479,6 +493,7 @@
 				11859BD12B889A4D00E2675F /* SendOTPForPasswordEndpoint.swift */,
 				11859BD32B889FD600E2675F /* VerifyOTPEndpoint.swift */,
 				11859BDF2B88B43900E2675F /* ResetPasswordEndpoint.swift */,
+				117448612B892B62006C495B /* LogoutEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -504,6 +519,7 @@
 				11859BCF2B8899ED00E2675F /* OTPForPasswordManager.swift */,
 				11859BDD2B88A13900E2675F /* VerifyOTPManager.swift */,
 				11859BE82B88B66D00E2675F /* ResetPasswordManager.swift */,
+				117448632B892B9F006C495B /* LogoutManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -530,6 +546,8 @@
 				1150C5892B801C4400241CC5 /* News Detail screen */,
 				119E368E2B87D72200938677 /* Reset Password flow */,
 				119E36962B87E99F00938677 /* Settings screen */,
+				117448742B89560D006C495B /* Terms and conditions screen */,
+				1174486E2B894606006C495B /* About us screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -932,6 +950,7 @@
 				11859BCD2B8898FB00E2675F /* OTPForPasswordUseCase.swift */,
 				11859BDB2B88A0E700E2675F /* VerifyOTPUseCase.swift */,
 				11859BE62B88B5EE00E2675F /* ResetPasswordUseCase.swift */,
+				117448652B892BBB006C495B /* LogoutUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -969,6 +988,46 @@
 				11A95BE52B729F5F008BD9FF /* Model */,
 			);
 			path = "Tarot Detail screen";
+			sourceTree = "<group>";
+		};
+		117448672B892C08006C495B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				117448682B892C2C006C495B /* LogoutSuccessModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1174486E2B894606006C495B /* About us screen */ = {
+			isa = PBXGroup;
+			children = (
+				1174486F2B894623006C495B /* View */,
+			);
+			path = "About us screen";
+			sourceTree = "<group>";
+		};
+		1174486F2B894623006C495B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1174486C2B894601006C495B /* AboutUsController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		117448742B89560D006C495B /* Terms and conditions screen */ = {
+			isa = PBXGroup;
+			children = (
+				117448752B895622006C495B /* View */,
+			);
+			path = "Terms and conditions screen";
+			sourceTree = "<group>";
+		};
+		117448752B895622006C495B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				117448702B8952C8006C495B /* TermsAndConditionsController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1179869C2B7186F2001EF473 /* Image */ = {
@@ -1192,6 +1251,7 @@
 		119E36962B87E99F00938677 /* Settings screen */ = {
 			isa = PBXGroup;
 			children = (
+				117448672B892C08006C495B /* Model */,
 				119E36982B87EB6100938677 /* View Model */,
 				119E36972B87E9A900938677 /* View */,
 			);
@@ -1414,6 +1474,7 @@
 			isa = PBXGroup;
 			children = (
 				11DE7FB42B853BCE0053D9CA /* UserdefaultsManager.swift */,
+				1174486A2B8940FC006C495B /* UserDefaultsExtension.swift */,
 			);
 			path = UserDefaults;
 			sourceTree = "<group>";
@@ -1584,8 +1645,10 @@
 				11708D1A2B646B4700C8DB60 /* RegisterUserModel.swift in Sources */,
 				11A95BEB2B72A045008BD9FF /* TarotDetailEndpoint.swift in Sources */,
 				11708D042B63CB7900C8DB60 /* RegisterEndpoint.swift in Sources */,
+				117448712B8952C8006C495B /* TermsAndConditionsController.swift in Sources */,
 				113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */,
 				11D7F1722B6D0E71007ABDB0 /* CountriesManager.swift in Sources */,
+				117448642B892B9F006C495B /* LogoutManager.swift in Sources */,
 				11A95BD72B7264AC008BD9FF /* RefreshTokenEndpoint.swift in Sources */,
 				1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */,
 				119E368D2B87D71A00938677 /* ConfirmOTPController.swift in Sources */,
@@ -1597,11 +1660,13 @@
 				11A571732B73F726001B2BF9 /* ZodiacsAndYearsViewModel.swift in Sources */,
 				114956F42B715E41003E41D4 /* HomeViewModel.swift in Sources */,
 				11931DE82B79544000CAA64B /* MatchingResultSuccessModel.swift in Sources */,
+				117448692B892C2C006C495B /* LogoutSuccessModel.swift in Sources */,
 				1150C5822B80113100241CC5 /* NewsViewModel.swift in Sources */,
 				11859BDC2B88A0E700E2675F /* VerifyOTPUseCase.swift in Sources */,
 				11931DE62B7953CB00CAA64B /* MatchingResultViewModel.swift in Sources */,
 				11859BE32B88B49800E2675F /* ResetPasswordResponseModel.swift in Sources */,
 				11D6D5562B76D5280041B577 /* ProfileUseCase.swift in Sources */,
+				117448622B892B62006C495B /* LogoutEndpoint.swift in Sources */,
 				11D6D5542B76CD960041B577 /* SectionSpaceFooter.swift in Sources */,
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				11859BD02B8899ED00E2675F /* OTPForPasswordManager.swift in Sources */,
@@ -1621,6 +1686,7 @@
 				113C31822B75570E006570C8 /* ZodiacsAndYearsDetailResponseModel.swift in Sources */,
 				11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */,
 				111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */,
+				1174486D2B894601006C495B /* AboutUsController.swift in Sources */,
 				113C31842B755A03006570C8 /* ZodiacsAndYearsDetailEndpoint.swift in Sources */,
 				110E835E2B5146A70000D6D9 /* AppDelegate.swift in Sources */,
 				11859BE92B88B66D00E2675F /* ResetPasswordManager.swift in Sources */,
@@ -1638,6 +1704,7 @@
 				1173B4872B630DDA005ED1C5 /* TarotDetailViewController.swift in Sources */,
 				11A5716F2B73F6F1001B2BF9 /* YearsController.swift in Sources */,
 				11DA41AD2B69601100E07C63 /* LoginSuccessModel.swift in Sources */,
+				117448662B892BBB006C495B /* LogoutUseCase.swift in Sources */,
 				114956F02B715D33003E41D4 /* HomeManager.swift in Sources */,
 				11DE7FB52B853BCE0053D9CA /* UserdefaultsManager.swift in Sources */,
 				1173B48A2B631038005ED1C5 /* DetailCell.swift in Sources */,
@@ -1665,6 +1732,7 @@
 				1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */,
 				11A8ACA12B6D0220008930A4 /* UploadUserSuccessModel.swift in Sources */,
 				11A95BE92B729F81008BD9FF /* TarotDetailViewModel.swift in Sources */,
+				1174486B2B8940FC006C495B /* UserDefaultsExtension.swift in Sources */,
 				11931DEA2B79548E00CAA64B /* MatchingResultEndpoint.swift in Sources */,
 				1102AE7B2B72C08100948EC3 /* TarotDetailResponseModel.swift in Sources */,
 				11859BE02B88B43900E2675F /* ResetPasswordEndpoint.swift in Sources */,

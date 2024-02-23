@@ -73,14 +73,14 @@ class SettingsController: UIViewController {
                     icon: UIImage(systemName: "info.circle"),
                     iconBackgroundColor: .systemGreen,
                     handler: {
-            
+            self.aboutUsAction()
         }),
     
     SettingsOptions(title: "Terms and Conditions",
                     icon: UIImage(systemName: "book"),
                     iconBackgroundColor: .systemBlue,
                     handler: {
-            
+            self.termsAndConditionsAction()
         })]))
         
         self.model.append(Sections(title: "General",
@@ -97,8 +97,26 @@ class SettingsController: UIViewController {
                     icon: UIImage(systemName: "power"),
                     iconBackgroundColor: .systemRed,
                     handler: {
-            print("Logout tapped")
+            self.logoutUser()
         })]))
+    }
+    
+    private func logoutUser() {
+        self.viewModel.logoutUser()
+        
+        self.viewModel.success = {
+            UserDefaults.standard.set(false, forKey: "loggedIn")
+        }
+    }
+    
+    private func aboutUsAction() {
+        let vc = AboutUsController()
+        navigationController?.present(vc, animated: true)
+    }
+    
+    private func termsAndConditionsAction() {
+        let vc = TermsAndConditionsController()
+        navigationController?.present(vc, animated: true)
     }
 }
 

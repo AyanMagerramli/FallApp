@@ -12,13 +12,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var mainCoordinator: MainCoordinator?
     
+    // Observe UserDefaults changes, usage of KEY-VALUE OBSERVATION (KVO) design pattern
+       private var userDefaultsObservation: NSKeyValueObservation?
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        
+        window?.windowScene = windowScene
         mainCoordinator = MainCoordinator(navigationController: UINavigationController())
         mainCoordinator?.window = window
-        if UserDefaults.standard.bool(forKey: "Logged in") {
+        
+        // Observe changes to the "loggedIn" key in UserDefaults
+        userDefaultsObservation = UserDefaults.standard.observe(\.loggedIn, options: [.initial, .new], changeHandler: { [weak self] (_, change) in
+            if let loggedIn = change.newValue {
+                if loggedIn {
+                    self?.mainCoordinator?.start()
+                } else {
+                    self?.setLoginAsRootController(windowScene: windowScene)
+                }
+            }
+        })
+        
+        let status = UserDefaults.standard.bool(forKey: "loggedIn")
+        if status == true {
             mainCoordinator?.start()
         } else {
             setLoginAsRootController(windowScene: windowScene)
