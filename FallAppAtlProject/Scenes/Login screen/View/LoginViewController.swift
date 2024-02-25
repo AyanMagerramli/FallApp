@@ -106,6 +106,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         setupUI()
         buttonActions()
+        viewModelSetup()
         self.viewModel?.clearTokensFromKeychain()
     }
     
@@ -240,8 +241,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func viewModelSetup() {
-        viewModel?.success = { [weak self] in
+        viewModel?.registerSuccess = { [weak self] in
             print(self?.viewModel?.response?.message ?? "no message")
+            UserdefaultsManager.shared.setValue(value: self?.viewModel?.registerResponse?.data?.message ?? "", for: "otp")
+            self?.viewModel?.coordinator.navigate(to: .otp)
           //  self?.viewModel?.coordinator.navigate(to: .birtDate) //This should change according to hasData field
         }
     }

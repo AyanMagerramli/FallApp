@@ -77,7 +77,7 @@ class SettingsCell: UITableViewCell {
     
      func configureCell(data: SettingsOptions) {
         optionLabel.text = data.title
-        iconImageView.image = data.icon
-        iconContainer.backgroundColor = data.iconBackgroundColor
+         iconImageView.image = data.icon.icon
+         iconContainer.backgroundColor = data.iconBackgroundColor.color
     }
 }

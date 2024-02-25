@@ -18,6 +18,7 @@ final class LoginViewModel {
     var response: LoginSuccessModel?
     var errorResponse: ErrorModel?
     var success: (() -> Void)?
+    var registerSuccess: (() -> Void)?
     var error: ((ErrorModel) -> Void)?
     var coordinator: MainCoordinator
     
@@ -77,10 +78,9 @@ final class LoginViewModel {
             } else if let data {
                 print(" Register DATA is \(data)")
                 self.registerResponse = data
-                self.success?()
-                UserdefaultsManager.shared.setValue(value: data.data?.message, for: "otp")
-               // UserDefaults.standard.setValue(data.data?.message, forKey: "otp")
-                self.coordinator.navigate(to: .otp)
+                self.registerSuccess?()
+//                UserdefaultsManager.shared.setValue(value: data.data?.message, for: "otp")
+//                self.coordinator.navigate(to: .otp)
             }
         }
     }

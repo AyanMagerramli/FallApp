@@ -107,7 +107,7 @@ class HomeViewController: UIViewController {
     @objc
     private func rightButtonTapped() {
         // Handle left button tap -> go to Settings screen
-        self.viewModel.coordinator?.goToSettingsScreen()
+      //  self.viewModel.coordinator?.goToSettingsScreen()
     }
 }
 
@@ -135,26 +135,28 @@ extension HomeViewController: UICollectionViewDataSource {
         switch indexPath.section {
             
         case 0:
+            let matchingCell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
+            cell = matchingCell
+            matchingCell.setupMatchingPicture()
+            
+        case 1:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.today {
                 leftImageRightLabelCell.configureCell(title: title, data: data)
             }
             
-        case 1:
+        case 2:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.monthly {
                 leftImageRightLabelCell.configureCell(title: title, data: data)
             }
             
-        case 2:
+        case 3:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.yearly {
                 leftImageRightLabelCell.configureCell(title: title, data: data)
             }
-        case 3:
-            let matchingCell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
-            cell = matchingCell
-            matchingCell.setupMatchingPicture()
+            
         default:
            break
         }
@@ -168,7 +170,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedTag = indexPath.section
-        if indexPath.section == 3 {
+        if indexPath.section == 0 {
             self.viewModel.coordinator?.navigate(to: .matchingList) // Go to matching signs list screen
         } else {
             viewModel.coordinator?.goToHomeDetailScreen(tag: selectedTag) // Go to prediction detail page

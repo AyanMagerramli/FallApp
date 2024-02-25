@@ -50,7 +50,7 @@ class NewsController: UIViewController {
     private func setupUI() {
         customizeBackButton()
     
-        title = "Horoscope News"
+        navigationItem.title = "Horoscope News"
         
         view.sendSubviewToBack(backgroundImage)
         

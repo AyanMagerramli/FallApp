@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var mainCoordinator: MainCoordinator?
     
     // Observe UserDefaults changes, usage of KEY-VALUE OBSERVATION (KVO) design pattern
-       private var userDefaultsObservation: NSKeyValueObservation?
+    private var userDefaultsObservation: NSKeyValueObservation?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }

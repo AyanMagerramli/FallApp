@@ -461,8 +461,8 @@
             filePath = "FallAppAtlProject/Scenes/Login screen/View/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "buttonActions()"
             landmarkType = "7">
             <Locations>
@@ -539,8 +539,8 @@
             filePath = "FallAppAtlProject/Scenes/Login screen/View/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "buttonActions()"
             landmarkType = "7">
             <Locations>
@@ -946,22 +946,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8B323B2F-01DB-4F4E-BFBB-A2100DD6BE25"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/News screen/View/NewsController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "885456E6-57BC-4A21-9949-EF57EA7FA7A8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -978,190 +962,126 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E0CE34D3-FBB7-4408-B3E7-67795A0EC616"
-            shouldBeEnabled = "Yes"
+            uuid = "8319FEA9-522E-4501-A337-57B485C67B35"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/Reset Password flow/Confirm OTP screen/View Model/ConfirmOTPViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "verifyOTP(body:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E0CE34D3-FBB7-4408-B3E7-67795A0EC616 - 16362afa8b456c6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.VerifyOTPSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ConfirmOTPViewModel.verifyOTP(body: FallAppAtlProject.VerifyOTPResponseModel) -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Confirm%20OTP%20screen/View%20Model/ConfirmOTPViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "E0CE34D3-FBB7-4408-B3E7-67795A0EC616 - 16362afa8b456c6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.VerifyOTPSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ConfirmOTPViewModel.verifyOTP(body: FallAppAtlProject.VerifyOTPResponseModel) -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Confirm%20OTP%20screen/View%20Model/ConfirmOTPViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "236">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FB1EF0CC-CDD2-4496-A925-F0027DC1D022"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/Reset Password flow/Confirm OTP screen/View Model/ConfirmOTPViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "verifyOTP(body:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FB1EF0CC-CDD2-4496-A925-F0027DC1D022 - 16362afa8b45698"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.VerifyOTPSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ConfirmOTPViewModel.verifyOTP(body: FallAppAtlProject.VerifyOTPResponseModel) -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Confirm%20OTP%20screen/View%20Model/ConfirmOTPViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  uuid = "FB1EF0CC-CDD2-4496-A925-F0027DC1D022 - 16362afa8b45698"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.VerifyOTPSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ConfirmOTPViewModel.verifyOTP(body: FallAppAtlProject.VerifyOTPResponseModel) -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Confirm%20OTP%20screen/View%20Model/ConfirmOTPViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
-                  offsetFromSymbolStart = "368">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2637DEEB-807B-4F83-B248-44853E49FE1B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/Reset Password flow/Reset Password screen/View Model/ResetPasswordViewModel.swift"
+            filePath = "FallAppAtlProject/NetworkManager/Core/Network Helper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "resetPassword(body:)"
+            landmarkName = "getHeader()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2637DEEB-807B-4F83-B248-44853E49FE1B - 5f2e30e2e51220fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.ResetPasswordSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ResetPasswordViewModel.resetPassword(body: FallAppAtlProject.ResetPasswordResponseModel) -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Reset%20Password%20screen/View%20Model/ResetPasswordViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "2637DEEB-807B-4F83-B248-44853E49FE1B - 5f2e30e2e51220fc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.ResetPasswordSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ResetPasswordViewModel.resetPassword(body: FallAppAtlProject.ResetPasswordResponseModel) -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Reset%20Password%20screen/View%20Model/ResetPasswordViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "236">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0854567A-8A07-42D4-AD1E-B53AEDF9A147"
+            uuid = "9A0989A1-A522-4EA6-A503-58446FF87379"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/Reset Password flow/Reset Password screen/View Model/ResetPasswordViewModel.swift"
+            filePath = "FallAppAtlProject/Scenes/Settings screen/View/SettingsController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "resetPassword(body:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "logoutUser()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4E309F2-42AA-4AF4-8C0F-D632FF424723"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "scene(_:willConnectTo:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F8961DEA-0EB8-4F50-9B46-1B62886CCB0C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "scene(_:willConnectTo:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6561C9F4-7A6A-4128-9CD9-87D7B7732AEF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/SceneDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "scene(_:willConnectTo:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A1437AA3-7D52-45FC-8314-A06372966804"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/Settings screen/View Model/SettingsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "logoutUser()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0854567A-8A07-42D4-AD1E-B53AEDF9A147 - 5f2e30e2e512213a"
+                  uuid = "A1437AA3-7D52-45FC-8314-A06372966804 - d6a82913d409e95f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.ResetPasswordSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ResetPasswordViewModel.resetPassword(body: FallAppAtlProject.ResetPasswordResponseModel) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.LogoutSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.SettingsViewModel.logoutUser() -&gt; ()"
                   moduleName = "FallAppAtlProject"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Reset%20Password%20screen/View%20Model/ResetPasswordViewModel.swift"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Settings%20screen/View%20Model/SettingsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
                   offsetFromSymbolStart = "168">
                </Location>
                <Location
-                  uuid = "0854567A-8A07-42D4-AD1E-B53AEDF9A147 - 5f2e30e2e512213a"
+                  uuid = "A1437AA3-7D52-45FC-8314-A06372966804 - d6a82913d409e95f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.ResetPasswordSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.ResetPasswordViewModel.resetPassword(body: FallAppAtlProject.ResetPasswordResponseModel) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.LogoutSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.SettingsViewModel.logoutUser() -&gt; ()"
                   moduleName = "FallAppAtlProject"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Reset%20Password%20flow/Reset%20Password%20screen/View%20Model/ResetPasswordViewModel.swift"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Settings%20screen/View%20Model/SettingsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
                   offsetFromSymbolStart = "368">
                </Location>
             </Locations>
@@ -1170,20 +1090,20 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "139AB7E8-15F7-4C5E-9E09-9F4AB7961FDA"
+            uuid = "C2DA8F9D-0EBF-4D1B-9B27-EB20A7E1A95B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FallAppAtlProject/Scenes/Settings screen/View Model/SettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "logoutUser()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "139AB7E8-15F7-4C5E-9E09-9F4AB7961FDA - d6a82913d409eb4f"
+                  uuid = "C2DA8F9D-0EBF-4D1B-9B27-EB20A7E1A95B - d6a82913d409e89d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1193,12 +1113,12 @@
                   urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Settings%20screen/View%20Model/SettingsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
                   offsetFromSymbolStart = "120">
                </Location>
                <Location
-                  uuid = "139AB7E8-15F7-4C5E-9E09-9F4AB7961FDA - d6a82913d409eb4f"
+                  uuid = "C2DA8F9D-0EBF-4D1B-9B27-EB20A7E1A95B - d6a82913d409e89d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1208,57 +1128,9 @@
                   urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Settings%20screen/View%20Model/SettingsViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
                   offsetFromSymbolStart = "236">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "257BB01F-C2C3-4C10-878D-78F18C181364"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/Settings screen/View Model/SettingsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "logoutUser()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "257BB01F-C2C3-4C10-878D-78F18C181364 - d6a82913d409eb09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.LogoutSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.SettingsViewModel.logoutUser() -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Settings%20screen/View%20Model/SettingsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  uuid = "257BB01F-C2C3-4C10-878D-78F18C181364 - d6a82913d409eb09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.LogoutSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.SettingsViewModel.logoutUser() -&gt; ()"
-                  moduleName = "FallAppAtlProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Settings%20screen/View%20Model/SettingsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "368">
                </Location>
             </Locations>
          </BreakpointContent>

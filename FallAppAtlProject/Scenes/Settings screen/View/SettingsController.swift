@@ -7,35 +7,11 @@
 
 import UIKit
 
-struct Sections {
-    let title: String
-    let options: [SettingsOptions]
-}
-
-struct SettingsOptions {
-    let title: String
-    let icon: UIImage?
-    let iconBackgroundColor: UIColor
-    let handler: (() -> Void)
-}
-
 class SettingsController: UIViewController {
     
     // MARK: Properties
     
-    private var viewModel: SettingsViewModel
-    var model = [Sections]()
-    
-    // MARK: - Init
-    
-    init(viewModel: SettingsViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    let viewModel = SettingsViewModel()
     
     // MARK: - UI Elements
     
@@ -52,53 +28,19 @@ class SettingsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        setupSettingsOptions()
+        self.viewModel.setupSettingsOptions()
     }
     
     // MARK: - Setup UI
     
     private func setupUI() {
+        customizeBackButton()
+        
         navigationItem.title = "Settings"
         
         view.backgroundColor = .background
         
         view.addSubview(tableView)
-    }
-    
-    private func setupSettingsOptions() {
-        self.model.append(Sections(title: "Information",
-                                   options:
-[
-    SettingsOptions(title: "About us",
-                    icon: UIImage(systemName: "info.circle"),
-                    iconBackgroundColor: .systemGreen,
-                    handler: {
-            self.aboutUsAction()
-        }),
-    
-    SettingsOptions(title: "Terms and Conditions",
-                    icon: UIImage(systemName: "book"),
-                    iconBackgroundColor: .systemBlue,
-                    handler: {
-            self.termsAndConditionsAction()
-        })]))
-        
-        self.model.append(Sections(title: "General",
-                                   options:
-[
-    SettingsOptions(title: "Reset password",
-                    icon: UIImage(systemName: "lock"),
-                    iconBackgroundColor: .systemCyan,
-                    handler: {
-            self.viewModel.coordinator.goToConfirmOTPScreen()
-        }),
-    
-    SettingsOptions(title: "Logout",
-                    icon: UIImage(systemName: "power"),
-                    iconBackgroundColor: .systemRed,
-                    handler: {
-            self.logoutUser()
-        })]))
     }
     
     private func logoutUser() {
@@ -108,32 +50,22 @@ class SettingsController: UIViewController {
             UserDefaults.standard.set(false, forKey: "loggedIn")
         }
     }
-    
-    private func aboutUsAction() {
-        let vc = AboutUsController()
-        navigationController?.present(vc, animated: true)
-    }
-    
-    private func termsAndConditionsAction() {
-        let vc = TermsAndConditionsController()
-        navigationController?.present(vc, animated: true)
-    }
 }
 
 // MARK: - Table view Data Soruce
 
 extension SettingsController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        model.count
+        self.viewModel.model.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        model[section].options.count
+        self.viewModel.model[section].options.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier, for: indexPath) as! SettingsCell
-        cell.configureCell(data: model[indexPath.section].options[indexPath.row])
+        cell.configureCell(data: self.viewModel.model[indexPath.section].options[indexPath.row])
         cell.selectionStyle = .none
         cell.backgroundColor = UIColor(named: "darkGray")
         return cell
@@ -144,12 +76,12 @@ extension SettingsController: UITableViewDataSource {
 
 extension SettingsController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = model[indexPath.section].options[indexPath.row]
+        let model = self.viewModel.model[indexPath.section].options[indexPath.row]
         model.handler()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let section = model[section]
+        let section = self.viewModel.model[section]
         return section.title
     }
 }

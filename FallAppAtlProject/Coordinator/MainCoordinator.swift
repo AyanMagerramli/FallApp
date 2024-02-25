@@ -129,10 +129,11 @@ class MainCoordinator: CoordinatorProtocol {
         navigationController.show(vc, sender: nil)
     }
     
-    func goToSettingsScreen() {
-        let vc = SettingsController(viewModel: .init(coordinator: self))
-        navigationController.show(vc, sender: nil)
-    }
+//    func goToSettingsScreen() {
+//        let vc = SettingsController(viewModel: .init(coordinator: self))
+//        vc.hidesBottomBarWhenPushed = true
+//        navigationController.show(vc, sender: nil)
+//    }
     
     func goToConfirmOTPScreen() {
         let vc = ConfirmOTPController(viewModel: .init(coordinator: self))
@@ -146,7 +147,20 @@ class MainCoordinator: CoordinatorProtocol {
     
     func goToSuccessScreen() {
         let vc = SuccessController(viewModel: .init(coordinator: self))
-        navigationController.show(vc, sender: nil)
+        vc.modalPresentationStyle = .overFullScreen
+        navigationController.present(vc, animated: true)
+    }
+    
+    func goToAboutUsScreen() {
+        let vc = AboutUsController()
+        vc.modalPresentationStyle = .overFullScreen
+        navigationController.present(vc, animated: true)
+    }
+    
+    func goToTermsAndConditionsScreen() {
+        let vc = TermsAndConditionsController()
+        vc.modalPresentationStyle = .overFullScreen
+        navigationController.present(vc, animated: true)
     }
 }
 

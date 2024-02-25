@@ -66,9 +66,18 @@ class SuccessController: UIViewController {
         buttonAction()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     // MARK: - Setup UI
     
     private func setupUI() {
+    
         view.backgroundColor = .background
         
         [titleLabel,
@@ -109,7 +118,11 @@ class SuccessController: UIViewController {
     
     private func buttonAction() {
         doneButton.buttonTappedHandler = {
-            self.viewModel.coordinator.goToSettingsScreen()
+//            self.viewModel.coordinator.goToSettingsScreen()
+            self.dismiss(animated: true) {
+//                self.navigationController?.popToViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+            //    self.viewModel.coordinator.goToSettingsScreen()
+            }
         }
     }
 }
