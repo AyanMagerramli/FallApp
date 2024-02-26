@@ -93,6 +93,8 @@ class OTPViewController: UIViewController {
     //    messageLabel.text = UserDefaults.standard.string(forKey: "otp")
         messageLabel.text = UserdefaultsManager.shared.getValue(for: "otp")
         
+        otpField.becomeFirstResponder()
+        
         view.backgroundColor = UIColor.theme(named: .background)
         
         resendButton.backgroundColor = .clear

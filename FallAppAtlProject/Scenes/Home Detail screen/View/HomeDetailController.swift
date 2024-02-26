@@ -51,6 +51,7 @@ class HomeDetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupUI()
         setupViewModel()
         guard let tag = tag else {

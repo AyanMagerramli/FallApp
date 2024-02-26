@@ -31,14 +31,21 @@ class GenderViewController: UIViewController {
     private lazy var completeButton = ReusableButton(title: "Complete")
     
     private func completeButtonAction() {
-        completeButton.buttonTappedHandler = {
+        completeButton.buttonTappedHandler = { [weak self] in
+            // First set the selected gender
+            self?.buttonActions()
+            
+            // Then setup builder data
+            self?.setupBuilderData()
+            print("Gender in complete button is \(String(describing: self?.selectedGender))")
+            
+            // After that, upload user data
+            self?.viewModel.uploadUserData(userData: self?.viewModel.userDataModel ?? UploadUserDataModel())
+            
+            // Finally, call viewModelSetup()
+            self?.viewModelSetup()
+            
             ProgressManager.shared.progress += 0.25
-            //send all user datas from builder to api
-            self.setupBuilderData()
-            print("USER MODEL IS \(String(describing: self.viewModel.userDataModel))")
-            print("Gender in complete button is \(String(describing: self.selectedGender))")
-            self.viewModel.uploadUserData(userData: self.viewModel.userDataModel )
-            self.viewModel.coordinator?.navigate(to: .zodiacInfo)
         }
     }
     
@@ -74,7 +81,8 @@ class GenderViewController: UIViewController {
         updateProgress()
         buttonActions()
         completeButtonAction()
-        viewModelSetup()
+        
+        print("ACCESS TOKEN IS \(KeychainManager.shared.getValue(key: KeychainValues.accessToken.rawValue) ?? "")")
     }
     
     // MARK: - Setup UI
@@ -89,7 +97,6 @@ class GenderViewController: UIViewController {
          stackView].forEach(view.addSubview(_:))
         
         makeConstraints()
-        completeButtonAction()
         setupButtonsUI()
     }
     
@@ -110,29 +117,29 @@ class GenderViewController: UIViewController {
     }
     
     private func buttonActions() {
-        maleButton.buttonTappedHandler = {
-            self.selectedGender = "Male"
-            self.maleButton.isSelected = true
-            self.femaleButton.isSelected = false
+        maleButton.buttonTappedHandler = { [weak self] in
+            self?.selectedGender = "Male"
+            self?.maleButton.isSelected = true
+            self?.femaleButton.isSelected = false
         }
         
-        femaleButton.buttonTappedHandler = {
-            self.selectedGender = "Female"
-            self.maleButton.isSelected = false
-            self.femaleButton.isSelected = true
+        femaleButton.buttonTappedHandler = { [weak self] in
+            self?.selectedGender = "Female"
+            self?.maleButton.isSelected = false
+            self?.femaleButton.isSelected = true
         }
         
         print("Gender is \(String(describing: self.selectedGender))")
+        UserInfoBuilder.shared.gender = self.selectedGender
     }
     
     private func setupBuilderData() {
-        UserInfoBuilder.shared.gender = self.selectedGender
-        self.viewModel.userDataModel.name = UserInfoBuilder.shared.name
-        self.viewModel.userDataModel.city = UserInfoBuilder.shared.birthCity
-        self.viewModel.userDataModel.gender = UserInfoBuilder.shared.gender
+        self.viewModel.userDataModel.name = UserInfoBuilder.shared.name ?? ""
+        self.viewModel.userDataModel.city = UserInfoBuilder.shared.birthCity ?? ""
+        self.viewModel.userDataModel.gender = UserInfoBuilder.shared.gender ?? ""
         if let birthDate = UserInfoBuilder.shared.birthDate,
            let birthTime = UserInfoBuilder.shared.birthTime {
-            self.viewModel.userDataModel.birthdate = "\(birthDate) \(birthTime)"
+            self.viewModel.userDataModel.birthDate = "\(birthDate) \(birthTime)"
         }
     }
     
@@ -166,6 +173,7 @@ class GenderViewController: UIViewController {
     private func viewModelSetup() {
         viewModel.success = { [weak self] in
             UserdefaultsManager.shared.setValue(value: self?.viewModel.successModel?.data?.zodiacSign, for: "zodiacSign")
+            self?.viewModel.coordinator?.navigate(to: .zodiacInfo)
           //  UserDefaults.standard.setValue(self?.viewModel.successModel?.data?.zodiacSign, forKey: "zodiacSign")
         }
     }

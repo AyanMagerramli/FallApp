@@ -75,8 +75,13 @@ class ZodiacSignInfoController: UIViewController {
     
     private func buttonAction() {
         completeButton.buttonTappedHandler = { [weak self] in
-            self?.viewModel.coordinator.start()
+            self?.didUserLogin()
+           // self?.viewModel.coordinator.start()
         }
+    }
+    
+    private func didUserLogin() {
+        UserDefaults.standard.setValue(true, forKey: "loggedIn")
     }
     
     // MARK: - Setup Constraints

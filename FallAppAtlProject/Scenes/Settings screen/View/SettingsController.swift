@@ -35,20 +35,9 @@ class SettingsController: UIViewController {
     
     private func setupUI() {
         customizeBackButton()
-        
         navigationItem.title = "Settings"
-        
         view.backgroundColor = .background
-        
         view.addSubview(tableView)
-    }
-    
-    private func logoutUser() {
-        self.viewModel.logoutUser()
-        
-        self.viewModel.success = {
-            UserDefaults.standard.set(false, forKey: "loggedIn")
-        }
     }
 }
 

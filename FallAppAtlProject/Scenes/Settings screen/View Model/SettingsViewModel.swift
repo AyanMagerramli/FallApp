@@ -68,10 +68,6 @@ final class SettingsViewModel {
     var error: ((ErrorModel) -> Void)?
     var model = [Sections]()
     
-//    init(coordinator: MainCoordinator) {
-//        self.coordinator = coordinator
-//    }
-    
     func logoutUser() {
         manager.logoutUser { data, error in
             if let error {
@@ -115,6 +111,9 @@ final class SettingsViewModel {
                                                         iconBackgroundColor: .systemRed,
                                                         handler: {
                                                             self.logoutUser()
+                                                            self.success = {
+                                                                UserDefaults.standard.set(false, forKey: "loggedIn")
+                                                            }
                                                         })]))
     }
 }

@@ -50,17 +50,15 @@ final class LoginViewModel {
                 
                 else {
                     self.coordinator.start()
-                  //  self.coordinator.goToHomeScreen()
-                   // self.coordinator.goToTarotListScreen()
-                    
-//                    if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//                        let sceneDelegate = scene.delegate as? SceneDelegate {
-//                        sceneDelegate.setTabBarAsRootController(windowScene: scene)                        
-//                    }
+                    self.didUserLogin()
                 }
                 self.success?()
             }
         }
+    }
+    
+    private func didUserLogin() {
+        UserDefaults.standard.setValue(true, forKey: "loggedIn")
     }
     
     func registerUser(userData: RegisterUserModel) {
@@ -79,14 +77,12 @@ final class LoginViewModel {
                 print(" Register DATA is \(data)")
                 self.registerResponse = data
                 self.registerSuccess?()
-//                UserdefaultsManager.shared.setValue(value: data.data?.message, for: "otp")
-//                self.coordinator.navigate(to: .otp)
             }
         }
     }
     
     // Function to store tokens in Keychain
-    private func storeTokensInKeychain(accessToken: String, refreshToken: String) {
+     func storeTokensInKeychain(accessToken: String, refreshToken: String) {
         KeychainManager.shared.setValue(value: accessToken, for: KeychainValues.accessToken.rawValue)
         KeychainManager.shared.setValue(value: refreshToken, for: KeychainValues.refreshToken.rawValue)
     }

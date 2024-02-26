@@ -12,14 +12,14 @@ struct UploadUserDataModel: Codable {
     var name: String?
     var city: String?
     var gender: String?
-    var birthdate: String?
+    var birthDate: String?
     
     var dictionary: [String: Any] {
         return [
             "name" : name ?? "",
             "city" : city ?? "",
             "gender" : gender ?? "",
-            "birthDate" : birthdate ?? ""
+            "birthDate" : birthDate ?? ""
         ]
     }
 }

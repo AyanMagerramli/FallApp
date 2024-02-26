@@ -49,8 +49,8 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-        setupTabBarController()
-    }
+            setupTabBarController()
+        }
     
     private func setupTabBarController() {
         let tabBarController = TabBarController()

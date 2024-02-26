@@ -116,12 +116,19 @@ class SuccessController: UIViewController {
     
     // button action
     
+    func popBack(_ nb: Int) {
+            if let viewControllers: [UIViewController] = self.navigationController?.viewControllers {
+                guard viewControllers.count < nb else {
+                    self.navigationController?.popToViewController(viewControllers[viewControllers.count - nb], animated: true)
+                    return
+                }
+            }
+        }
+    
     private func buttonAction() {
         doneButton.buttonTappedHandler = {
-//            self.viewModel.coordinator.goToSettingsScreen()
-            self.dismiss(animated: true) {
-//                self.navigationController?.popToViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
-            //    self.viewModel.coordinator.goToSettingsScreen()
+            self.dismiss(animated: true) { [weak self] in
+                self?.viewModel.coordinator.start()
             }
         }
     }

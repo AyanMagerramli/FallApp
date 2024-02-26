@@ -106,7 +106,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         setupUI()
         buttonActions()
-        viewModelSetup()
         self.viewModel?.clearTokensFromKeychain()
     }
     
@@ -118,10 +117,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
-    
-    private func didUserLogin() {
-          UserDefaults.standard.setValue(true, forKey: "loggedIn")
     }
     
     private func saveUserData() {
@@ -219,7 +214,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
             self?.viewModel?.success = { [weak self] in
                 DispatchQueue.main.async {
-                    self?.didUserLogin()
                     self?.saveUserData()
                 }
             }
@@ -229,6 +223,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self?.errorLabel.text = error.detail
                 }
             }
+            
+            self?.viewModelSetup()
         }
     }
     
@@ -242,10 +238,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private func viewModelSetup() {
         viewModel?.registerSuccess = { [weak self] in
-            print(self?.viewModel?.response?.message ?? "no message")
-            UserdefaultsManager.shared.setValue(value: self?.viewModel?.registerResponse?.data?.message ?? "", for: "otp")
-            self?.viewModel?.coordinator.navigate(to: .otp)
-          //  self?.viewModel?.coordinator.navigate(to: .birtDate) //This should change according to hasData field
+            DispatchQueue.main.async {
+                print(self?.viewModel?.response?.message ?? "no message")
+                UserdefaultsManager.shared.setValue(value: self?.viewModel?.registerResponse?.data?.message ?? "", for: "otp")
+                self?.saveUserData()
+                self?.viewModel?.coordinator.goToOtpScreen()
+            }
         }
     }
 }

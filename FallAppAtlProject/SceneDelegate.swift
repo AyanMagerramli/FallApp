@@ -35,9 +35,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let status = UserDefaults.standard.bool(forKey: "loggedIn")
         if status == true {
-            mainCoordinator?.start()
+            self.mainCoordinator?.start()
         } else {
-            setLoginAsRootController(windowScene: windowScene)
+            self.setLoginAsRootController(windowScene: windowScene)
         }
     }
     
@@ -51,7 +51,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func setLoginAsRootController(windowScene: UIWindowScene) {
         let controller = LoginViewController()
         let navigationController = UINavigationController(rootViewController: controller)
-        controller.viewModel = .init(coordinator: mainCoordinator!)
+        let coordinator = MainCoordinator(navigationController: navigationController)
+        controller.viewModel = .init(coordinator: coordinator)
+        mainCoordinator = coordinator
+        mainCoordinator?.window = window
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
