@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SafariServices
 
 class HomeViewController: UIViewController {
     
@@ -46,6 +47,16 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         setupViewModel()
+    }
+    
+    func showTutorial() {
+        if let url = URL(string: "https://github.com/AyanMagerramli/FallApp/blob/0e5f789cead448a4218942fba7fc83fbfcef08d8/FallAppAtlProject/Scenes/Terms%20and%20conditions%20screen/View/TermsAndConditionsController.swift#L35") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
     }
     
     // MARK: - Setup UI
@@ -106,6 +117,7 @@ class HomeViewController: UIViewController {
     
     @objc
     private func rightButtonTapped() {
+        showTutorial()
         // Handle left button tap -> go to Settings screen
       //  self.viewModel.coordinator?.goToSettingsScreen()
     }
