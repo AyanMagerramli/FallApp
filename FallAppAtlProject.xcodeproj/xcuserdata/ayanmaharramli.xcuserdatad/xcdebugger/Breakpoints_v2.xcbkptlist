@@ -430,8 +430,8 @@
             filePath = "FallAppAtlProject/Scenes/Settings screen/View Model/SettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "logoutUser()"
             landmarkType = "7">
             <Locations>
@@ -493,8 +493,8 @@
             filePath = "FallAppAtlProject/Scenes/Settings screen/View Model/SettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "logoutUser()"
             landmarkType = "7">
             <Locations>
@@ -541,8 +541,8 @@
             filePath = "FallAppAtlProject/Coordinator/MainCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "setupTabBarController()"
             landmarkType = "7">
             <Locations>
@@ -604,8 +604,8 @@
             filePath = "FallAppAtlProject/Coordinator/MainCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "setupTabBarController()"
             landmarkType = "7">
             <Locations>
@@ -999,8 +999,8 @@
             filePath = "FallAppAtlProject/Scenes/Settings screen/View Model/SettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "setupSettingsOptions()"
             landmarkType = "7">
             <Locations>
@@ -1047,8 +1047,8 @@
             filePath = "FallAppAtlProject/Scenes/Settings screen/View Model/SettingsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "setupSettingsOptions()"
             landmarkType = "7">
          </BreakpointContent>

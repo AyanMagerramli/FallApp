@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 enum NavigationDestination {
     case otp
@@ -49,8 +50,8 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func start() {
-            setupTabBarController()
-        }
+        setupTabBarController()
+    }
     
     private func setupTabBarController() {
         let tabBarController = TabBarController()
@@ -129,11 +130,11 @@ class MainCoordinator: CoordinatorProtocol {
         navigationController.show(vc, sender: nil)
     }
     
-//    func goToSettingsScreen() {
-//        let vc = SettingsController(viewModel: .init(coordinator: self))
-//        vc.hidesBottomBarWhenPushed = true
-//        navigationController.show(vc, sender: nil)
-//    }
+    //    func goToSettingsScreen() {
+    //        let vc = SettingsController(viewModel: .init(coordinator: self))
+    //        vc.hidesBottomBarWhenPushed = true
+    //        navigationController.show(vc, sender: nil)
+    //    }
     
     func goToConfirmOTPScreen() {
         let vc = ConfirmOTPController(viewModel: .init(coordinator: self))
@@ -152,15 +153,22 @@ class MainCoordinator: CoordinatorProtocol {
     }
     
     func goToAboutUsScreen() {
-        let vc = AboutUsController()
-        vc.modalPresentationStyle = .overFullScreen
-        navigationController.present(vc, animated: true)
+        if let url = URL(string: "https://gist.githubusercontent.com/AyanMagerramli/56a58b0f44768b165fa45707fd6cb940/raw/08addea098ff64b1011b921688f15857aaa4c410/gistfile1.txt") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            vc.modalPresentationStyle = .overFullScreen
+            navigationController.present(vc, animated: true)
+        }
     }
     
     func goToTermsAndConditionsScreen() {
-        let vc = TermsAndConditionsController()
-        vc.modalPresentationStyle = .overFullScreen
-        navigationController.present(vc, animated: true)
+        if let url = URL(string: "https://gist.githubusercontent.com/AyanMagerramli/9fe6ad92ac2685f37d252719af37ce07/raw/e7d1283eb7a24d4bafd45453f9f5e2f94b47baf5/gistfile1.txt") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            vc.modalPresentationStyle = .overFullScreen
+            navigationController.present(vc, animated: true)
+        }
     }
 }
-
