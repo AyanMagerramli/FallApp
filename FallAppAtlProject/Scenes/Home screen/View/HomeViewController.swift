@@ -50,7 +50,7 @@ class HomeViewController: UIViewController {
     }
     
     func showTutorial() {
-        if let url = URL(string: "https://github.com/AyanMagerramli/FallApp/blob/0e5f789cead448a4218942fba7fc83fbfcef08d8/FallAppAtlProject/Scenes/Terms%20and%20conditions%20screen/View/TermsAndConditionsController.swift#L35") {
+        if let url = URL(string: "https://github.com/AyanMagerramli/FallApp/blob/e5ee65375abeedd363ec44cbb2228988e3492b92/FallAppAtlProject/TermsAndConditions.strings#L1") {
             let config = SFSafariViewController.Configuration()
             config.entersReaderIfAvailable = true
 
