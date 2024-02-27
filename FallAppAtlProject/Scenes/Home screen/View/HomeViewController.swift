@@ -107,6 +107,7 @@ class HomeViewController: UIViewController {
     
     @objc
     private func rightButtonTapped() {
+        self.viewModel.coordinator?.goToTarotSelectionScreen()
         // Handle left button tap -> go to Settings screen
       //  self.viewModel.coordinator?.goToSettingsScreen()
     }

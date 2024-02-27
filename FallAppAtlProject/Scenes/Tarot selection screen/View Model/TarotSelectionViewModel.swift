@@ -1,0 +1,31 @@
+//
+//  TarotSelectionViewModel.swift
+//  FallAppAtlProject
+//
+//  Created by Ayan on 27.02.24.
+//
+
+import Foundation
+
+final class TarotSelectionViewModel {
+    var coordinator: MainCoordinator
+    private let manager = TarotListManager()
+    var tarotList: TarotDataModel?
+    var success: (() -> Void)?
+    var error: ((ErrorModel) -> Void)?
+    
+    init(coordinator: MainCoordinator) {
+        self.coordinator = coordinator
+    }
+    
+    func getAllTarots() {
+        manager.loadTarotList { data, error in
+            if let error {
+                self.error?(error)
+            } else if let data {
+                self.tarotList = data
+                self.success?()
+            }
+        }
+    }
+}

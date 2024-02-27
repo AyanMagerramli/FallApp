@@ -80,6 +80,10 @@
 		1156FF342B65143F00452019 /* ProgressBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1156FF332B65143F00452019 /* ProgressBarManager.swift */; };
 		11570B1F2B76BF0C00131D90 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11570B1E2B76BF0C00131D90 /* ProfileViewModel.swift */; };
 		11570B222B76C01000131D90 /* UserInfoHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11570B212B76C01000131D90 /* UserInfoHeader.swift */; };
+		115D1FF02B8E630800A4BA99 /* TarotSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D1FEF2B8E630800A4BA99 /* TarotSelectionController.swift */; };
+		115D1FF52B8E633E00A4BA99 /* TarotSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D1FF42B8E633E00A4BA99 /* TarotSelectionViewModel.swift */; };
+		115D1FF72B8E70D000A4BA99 /* TarotSelectionEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D1FF62B8E70D000A4BA99 /* TarotSelectionEndpoint.swift */; };
+		115D1FFA2B8E71A500A4BA99 /* TarotSelectionRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D1FF92B8E71A500A4BA99 /* TarotSelectionRequestModel.swift */; };
 		115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D95A12B66B01F00BB80DE /* OTPViewModel.swift */; };
 		115D95A62B66B3EA00BB80DE /* OTPResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D95A52B66B3EA00BB80DE /* OTPResponseModel.swift */; };
 		116582A92B6AB22700EF7268 /* UploadEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116582A82B6AB22700EF7268 /* UploadEndpoint.swift */; };
@@ -259,6 +263,10 @@
 		1156FF332B65143F00452019 /* ProgressBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarManager.swift; sourceTree = "<group>"; };
 		11570B1E2B76BF0C00131D90 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		11570B212B76C01000131D90 /* UserInfoHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeader.swift; sourceTree = "<group>"; };
+		115D1FEF2B8E630800A4BA99 /* TarotSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSelectionController.swift; sourceTree = "<group>"; };
+		115D1FF42B8E633E00A4BA99 /* TarotSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSelectionViewModel.swift; sourceTree = "<group>"; };
+		115D1FF62B8E70D000A4BA99 /* TarotSelectionEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSelectionEndpoint.swift; sourceTree = "<group>"; };
+		115D1FF92B8E71A500A4BA99 /* TarotSelectionRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotSelectionRequestModel.swift; sourceTree = "<group>"; };
 		115D95A12B66B01F00BB80DE /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		115D95A52B66B3EA00BB80DE /* OTPResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPResponseModel.swift; sourceTree = "<group>"; };
 		116582A82B6AB22700EF7268 /* UploadEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadEndpoint.swift; sourceTree = "<group>"; };
@@ -494,6 +502,7 @@
 				11859BD32B889FD600E2675F /* VerifyOTPEndpoint.swift */,
 				11859BDF2B88B43900E2675F /* ResetPasswordEndpoint.swift */,
 				117448612B892B62006C495B /* LogoutEndpoint.swift */,
+				115D1FF62B8E70D000A4BA99 /* TarotSelectionEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -548,6 +557,7 @@
 				119E36962B87E99F00938677 /* Settings screen */,
 				117448742B89560D006C495B /* Terms and conditions screen */,
 				1174486E2B894606006C495B /* About us screen */,
+				115D1FF12B8E630D00A4BA99 /* Tarot selection screen */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -863,6 +873,40 @@
 				11570B1E2B76BF0C00131D90 /* ProfileViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		115D1FF12B8E630D00A4BA99 /* Tarot selection screen */ = {
+			isa = PBXGroup;
+			children = (
+				115D1FF82B8E718500A4BA99 /* Model */,
+				115D1FF32B8E632400A4BA99 /* View Model */,
+				115D1FF22B8E631D00A4BA99 /* View */,
+			);
+			path = "Tarot selection screen";
+			sourceTree = "<group>";
+		};
+		115D1FF22B8E631D00A4BA99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				115D1FEF2B8E630800A4BA99 /* TarotSelectionController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		115D1FF32B8E632400A4BA99 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				115D1FF42B8E633E00A4BA99 /* TarotSelectionViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		115D1FF82B8E718500A4BA99 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				115D1FF92B8E71A500A4BA99 /* TarotSelectionRequestModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		115D95A32B66B3CB00BB80DE /* View */ = {
@@ -1678,12 +1722,14 @@
 				113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */,
 				11A5716B2B73F6BB001B2BF9 /* ZodiacsController.swift in Sources */,
 				1150C57C2B80100C00241CC5 /* NewsResponseModel.swift in Sources */,
+				115D1FF72B8E70D000A4BA99 /* TarotSelectionEndpoint.swift in Sources */,
 				113E4E372B68356B0033375D /* OTPResetModel.swift in Sources */,
 				110E83902B5151110000D6D9 /* RegisterViewController.swift in Sources */,
 				11F6D0E32B6FA94A006837C5 /* NameViewModel.swift in Sources */,
 				11A95BDB2B728B4A008BD9FF /* TarotEndpoint.swift in Sources */,
 				11931DD12B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift in Sources */,
 				113C31822B75570E006570C8 /* ZodiacsAndYearsDetailResponseModel.swift in Sources */,
+				115D1FFA2B8E71A500A4BA99 /* TarotSelectionRequestModel.swift in Sources */,
 				11708D012B63CA7600C8DB60 /* YearSignDetailViewController.swift in Sources */,
 				111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */,
 				1174486D2B894601006C495B /* AboutUsController.swift in Sources */,
@@ -1745,7 +1791,9 @@
 				11859BCC2B88987900E2675F /* ConfirmOTPSuccessModel.swift in Sources */,
 				11931DD62B7932C400CAA64B /* ZodiacSignsMatchingListHeader.swift in Sources */,
 				113932C92B5EFA5000D402BA /* OnlyImageCell.swift in Sources */,
+				115D1FF02B8E630800A4BA99 /* TarotSelectionController.swift in Sources */,
 				115D95A22B66B01F00BB80DE /* OTPViewModel.swift in Sources */,
+				115D1FF52B8E633E00A4BA99 /* TarotSelectionViewModel.swift in Sources */,
 				118B9F852B722C880012AFD7 /* HomeDetailViewModel.swift in Sources */,
 				113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */,
 				113C318A2B755B24006570C8 /* ZodiacsAndYearsDetailManager.swift in Sources */,

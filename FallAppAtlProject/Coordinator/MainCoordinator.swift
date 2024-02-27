@@ -171,4 +171,9 @@ class MainCoordinator: CoordinatorProtocol {
             navigationController.present(vc, animated: true)
         }
     }
+    
+    func goToTarotSelectionScreen() {
+        let vc = TarotSelectionController(viewModel: .init(coordinator: self))
+        navigationController.show(vc, sender: nil)
+    }
 }
