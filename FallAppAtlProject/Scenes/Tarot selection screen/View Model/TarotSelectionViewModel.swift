@@ -9,7 +9,7 @@ import Foundation
 
 final class TarotSelectionViewModel {
     var coordinator: MainCoordinator
-    private let manager = TarotListManager()
+    private let tarotListManager = TarotListManager()
     var tarotList: TarotDataModel?
     var success: (() -> Void)?
     var error: ((ErrorModel) -> Void)?
@@ -19,7 +19,7 @@ final class TarotSelectionViewModel {
     }
     
     func getAllTarots() {
-        manager.loadTarotList { data, error in
+        tarotListManager.loadTarotList { data, error in
             if let error {
                 self.error?(error)
             } else if let data {

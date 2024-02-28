@@ -14,7 +14,3 @@ struct TarotSelectionRequestModel: Codable {
         return [ "id" : id ?? ""]
     }
 }
-
-/*
- "id": "0676a071-7d11-4089-8c90-0780fff00959"
- */

@@ -132,9 +132,8 @@ extension TarotSelectionController: UICollectionViewDataSource {
 
 extension TarotSelectionController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // 1. take card id
         if let id = viewModel.tarotList?.data?.cards?[indexPath.row].id {
-            // 2. tarot card selection post api
+            self.viewModel.coordinator.goToSelectedTarotDetailScreen(tarotId: id)
         }
     }
 }
