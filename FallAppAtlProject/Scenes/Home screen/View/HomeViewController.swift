@@ -117,7 +117,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        4 // Three sections for today, monthly, and yearly and for matching and news banner
+        5 // Three sections for today, monthly, and yearly and for matching and news banner
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -142,18 +142,23 @@ extension HomeViewController: UICollectionViewDataSource {
             matchingCell.setupMatchingPicture()
             
         case 1:
+            let tarotCell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
+            cell = tarotCell
+            tarotCell.setupTarotCell()
+            
+        case 2:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.today {
                 leftImageRightLabelCell.configureCell(title: title, data: data)
             }
             
-        case 2:
+        case 3:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.monthly {
                 leftImageRightLabelCell.configureCell(title: title, data: data)
             }
             
-        case 3:
+        case 4:
             if let title = self.viewModel.userPredictions?.data,
                let data = self.viewModel.userPredictions?.data?.yearly {
                 leftImageRightLabelCell.configureCell(title: title, data: data)
@@ -174,7 +179,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
         let selectedTag = indexPath.section
         if indexPath.section == 0 {
             self.viewModel.coordinator?.navigate(to: .matchingList) // Go to matching signs list screen
-        } else {
+        } else if indexPath.section == 1 {
+            self.viewModel.coordinator?.goToTarotSelectionScreen()
+        }else {
             viewModel.coordinator?.goToHomeDetailScreen(tag: selectedTag) // Go to prediction detail page
         }
     }

@@ -54,7 +54,6 @@ class TarotSelectionController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: (view.frame.size.width)/2, height: (view.frame.size.height)/2-30)
-     //   layout.minimumLineSpacing = 24
         layout.minimumInteritemSpacing = 16
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collection.backgroundColor = .clear
@@ -62,6 +61,14 @@ class TarotSelectionController: UIViewController {
         collection.delegate = self
         collection.register(OnlyImageCell.self, forCellWithReuseIdentifier: OnlyImageCell.identifier)
         return collection
+    }()
+    
+    private lazy var backgroundImage: UIImageView = {
+        let image = UIImageView()
+        image.frame = view.bounds
+        image.contentMode = .scaleAspectFill
+        image.image = UIImage(named: "zodiacDetailBackground")
+        return image
     }()
     
     // MARK: - Life cycle
@@ -75,9 +82,11 @@ class TarotSelectionController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
+        view.sendSubviewToBack(backgroundImage)
         view.backgroundColor = .background
         
-        [titleLabel,
+        [backgroundImage,
+         titleLabel,
          subtitleLabel,
          collectionView].forEach(view.addSubview)
         
@@ -124,6 +133,7 @@ extension TarotSelectionController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnlyImageCell.identifier, for: indexPath) as! OnlyImageCell
+        cell.setupTarotSelectionCell()
         return cell
     }
 }

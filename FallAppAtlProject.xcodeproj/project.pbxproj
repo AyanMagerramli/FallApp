@@ -57,6 +57,7 @@
 		113F9CA52B5D39ED0069CCC2 /* UserInfoBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */; };
 		113F9CA92B5D3F430069CCC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */; };
 		113F9CAB2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */; };
+		1144099C2B90F9A900550455 /* StoredSelectedTarotInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1144099B2B90F9A900550455 /* StoredSelectedTarotInfo.swift */; };
 		114956E92B715B1C003E41D4 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956E82B715B1C003E41D4 /* HomeUseCase.swift */; };
 		114956EE2B715B97003E41D4 /* HomeSuccessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956ED2B715B97003E41D4 /* HomeSuccessModel.swift */; };
 		114956F02B715D33003E41D4 /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114956EF2B715D33003E41D4 /* HomeManager.swift */; };
@@ -245,6 +246,7 @@
 		113F9CA42B5D39ED0069CCC2 /* UserInfoBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilder.swift; sourceTree = "<group>"; };
 		113F9CA82B5D3F430069CCC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		113F9CAA2B5D4AFE0069CCC2 /* LeftImageRightLabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftImageRightLabelCell.swift; sourceTree = "<group>"; };
+		1144099B2B90F9A900550455 /* StoredSelectedTarotInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredSelectedTarotInfo.swift; sourceTree = "<group>"; };
 		114956E82B715B1C003E41D4 /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		114956ED2B715B97003E41D4 /* HomeSuccessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSuccessModel.swift; sourceTree = "<group>"; };
 		114956EF2B715D33003E41D4 /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
@@ -634,6 +636,7 @@
 			isa = PBXGroup;
 			children = (
 				11342BEC2B8FC51A00570C2B /* SelectedTarotDetailViewModel.swift */,
+				1144099B2B90F9A900550455 /* StoredSelectedTarotInfo.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -1733,6 +1736,7 @@
 				117448712B8952C8006C495B /* TermsAndConditionsController.swift in Sources */,
 				113F9CA22B5D2E690069CCC2 /* OTPViewController.swift in Sources */,
 				11D7F1722B6D0E71007ABDB0 /* CountriesManager.swift in Sources */,
+				1144099C2B90F9A900550455 /* StoredSelectedTarotInfo.swift in Sources */,
 				117448642B892B9F006C495B /* LogoutManager.swift in Sources */,
 				11A95BD72B7264AC008BD9FF /* RefreshTokenEndpoint.swift in Sources */,
 				1169DA482B60459700AB32AE /* CustomHeaderView.swift in Sources */,

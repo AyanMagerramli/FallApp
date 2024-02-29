@@ -61,9 +61,21 @@ class OnlyImageCell: UICollectionViewCell {
         image.image = UIImage(named: "matchingResult")
     }
     
+    // for Home Screen Tarot selection banner
+    
+    func setupTarotCell() {
+        image.image = UIImage(named: "tarotSelection")
+    }
+    
     // for matching selection
     
     func changeCellImage() {
         image.image = UIImage(named: "matchingSelectionImage")
+    }
+    
+    // for tarot selection screen
+    
+    func setupTarotSelectionCell () {
+        image.image = UIImage(named: "tarotTheSame")
     }
 }

@@ -31,7 +31,7 @@ class SelectedTarotDetailController: UIViewController {
         let image = UIImageView()
         image.frame = view.bounds
         image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "tarotDetailBackground")
+        image.image = UIImage(named: "selectedTarotBackground")
         return image
     }()
     
@@ -76,6 +76,11 @@ class SelectedTarotDetailController: UIViewController {
         
         viewModel.success = { [weak self] in
             self?.tableView.reloadData()
+            StoredSelectedTarotInfo.shared.tarotImage = self?.viewModel.selectedTarot?.backImage
+            if let info = self?.viewModel.selectedTarot?.generalInfo,
+               let forecast = self?.viewModel.selectedTarot?.forecast {
+                StoredSelectedTarotInfo.shared.tarotInf0 = "\(info) \(forecast)"
+            }
         }
     }
 }
