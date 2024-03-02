@@ -63,6 +63,12 @@ class MainCoordinator: CoordinatorProtocol {
         destination.navigate(from: self)
     }
     
+    func presentLoginScreen() {
+        let vc = LoginViewController()
+        vc.modalPresentationStyle = .fullScreen
+        navigationController.present(vc, animated: true)
+    }
+    
     func goToOtpScreen() {
         let vc = OTPViewController()
         vc.coordinator = self
@@ -129,12 +135,6 @@ class MainCoordinator: CoordinatorProtocol {
         let vc = NewsDetailController(newsDetailViewModel: .init(coordinator: self, selectedItem: selectedItem))
         navigationController.show(vc, sender: nil)
     }
-    
-    //    func goToSettingsScreen() {
-    //        let vc = SettingsController(viewModel: .init(coordinator: self))
-    //        vc.hidesBottomBarWhenPushed = true
-    //        navigationController.show(vc, sender: nil)
-    //    }
     
     func goToConfirmOTPScreen() {
         let vc = ConfirmOTPController(viewModel: .init(coordinator: self))

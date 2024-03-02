@@ -41,13 +41,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
     }
     
-//    func setTabBarAsRootController(windowScene: UIWindowScene) {
-//        window = UIWindow(windowScene: windowScene)
-//        mainCoordinator = MainCoordinator(navigationController: UINavigationController())
-//        mainCoordinator?.window = window
-//        mainCoordinator?.start()
-//    }
-    
     func setLoginAsRootController(windowScene: UIWindowScene) {
         let controller = LoginViewController()
         let navigationController = UINavigationController(rootViewController: controller)

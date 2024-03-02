@@ -53,14 +53,22 @@ class TarotSelectionController: UIViewController {
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: (view.frame.size.width)/2, height: (view.frame.size.height)/2-30)
-        layout.minimumInteritemSpacing = 16
+        layout.itemSize = CGSize(width: (view.frame.size.width), height: (view.frame.size.height)/2+100)
+        layout.minimumInteritemSpacing = 12
         let collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         collection.backgroundColor = .clear
         collection.dataSource = self
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
         collection.delegate = self
         collection.register(OnlyImageCell.self, forCellWithReuseIdentifier: OnlyImageCell.identifier)
         return collection
+    }()
+    
+    private let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.currentPageIndicatorTintColor = .main
+        pageControl.pageIndicatorTintColor = .white
+        return pageControl
     }()
     
     private lazy var backgroundImage: UIImageView = {
@@ -82,13 +90,15 @@ class TarotSelectionController: UIViewController {
     // MARK: - Setup UI
     
     private func setupUI() {
+        tabBarController?.tabBar.isHidden = true
         view.sendSubviewToBack(backgroundImage)
         view.backgroundColor = .background
         
         [backgroundImage,
          titleLabel,
          subtitleLabel,
-         collectionView].forEach(view.addSubview)
+         collectionView,
+         pageControl].forEach(view.addSubview)
         
         makeConstraints()
     }
@@ -107,9 +117,15 @@ class TarotSelectionController: UIViewController {
         }
         
         collectionView.snp.makeConstraints { make in
-            make.horizontalEdges.equalToSuperview().inset(24)
+            make.horizontalEdges.equalToSuperview()/*.inset(24)*/
             make.bottom.equalToSuperview()
             make.top.equalTo(subtitleLabel.snp.bottom).offset(12)
+        }
+        
+        pageControl.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(collectionView.snp.bottom).offset(12)
+            make.bottom.equalToSuperview().inset(36)
         }
     }
     
@@ -120,8 +136,16 @@ class TarotSelectionController: UIViewController {
         
         viewModel.success = { [weak self] in
             self?.collectionView.reloadData()
+            self?.updatePageControl()
         }
     }
+    
+    private func updatePageControl() {
+           guard let count = viewModel.tarotList?.data?.cards?.count else {
+               return
+           }
+           pageControl.numberOfPages = count
+       }
 }
 
     //MARK: - Collection view Data source
@@ -145,5 +169,10 @@ extension TarotSelectionController: UICollectionViewDelegate {
         if let id = viewModel.tarotList?.data?.cards?[indexPath.row].id {
             self.viewModel.coordinator.goToSelectedTarotDetailScreen(tarotId: id)
         }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let currentPage = Int(scrollView.contentOffset.x / scrollView.frame.width)
+        pageControl.currentPage = currentPage
     }
 }

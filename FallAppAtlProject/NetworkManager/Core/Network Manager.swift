@@ -44,13 +44,18 @@ class NetworkManager {
                             }
                         }
                     } else if let error {
-                        print(error)
+                        print("REFRESH ERROR IS \(error)")
                     }
                 }
                 
             } else {
                 self.handleResponse(model: ErrorModel.self,
                                     data: response.data ?? Data()) { model in
+                    print("Error is \(String(describing: model))")
+                    UserDefaults.standard.setValue(false, forKey: "loggedIn")
+                    KeychainManager.shared.deleteValue(key: KeychainValues.accessToken.rawValue)
+                    KeychainManager.shared.deleteValue(key: KeychainValues.refreshToken.rawValue)
+               //     UserDefaults.standard.setValue(true, forKey: "refreshHasExpired")
                     completion(nil, model)
                 }
             }
