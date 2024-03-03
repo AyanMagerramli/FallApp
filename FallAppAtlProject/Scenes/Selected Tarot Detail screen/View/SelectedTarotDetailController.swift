@@ -79,7 +79,7 @@ class SelectedTarotDetailController: UIViewController {
             StoredSelectedTarotInfo.shared.tarotImage = self?.viewModel.selectedTarot?.backImage
             if let info = self?.viewModel.selectedTarot?.generalInfo,
                let forecast = self?.viewModel.selectedTarot?.forecast {
-                StoredSelectedTarotInfo.shared.tarotInf0 = "\(info) \(forecast)"
+                StoredSelectedTarotInfo.shared.tarotInfo = "\(info) \(forecast)"
             }
         }
     }

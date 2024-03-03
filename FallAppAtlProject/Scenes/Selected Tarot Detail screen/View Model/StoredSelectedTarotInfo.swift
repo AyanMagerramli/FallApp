@@ -14,5 +14,5 @@ class StoredSelectedTarotInfo {
     static let shared = StoredSelectedTarotInfo()
     
     var tarotImage: String?
-    var tarotInf0: String?
+    var tarotInfo: String?
 }

@@ -1161,22 +1161,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7663C737-B5FF-44AE-91AB-33AC16843A0B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FallAppAtlProject/Scenes/Tarot selection screen/View/TarotSelectionController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "92071A69-2395-4923-AE9C-3989AB5AF711"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1473,6 +1457,21 @@
                   startingLineNumber = "55"
                   endingLineNumber = "55"
                   offsetFromSymbolStart = "832">
+               </Location>
+               <Location
+                  uuid = "696F4807-DFCD-47B2-8127-A1D81F4EFCB1 - b51e5be3fd2550fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in closure #1 (Alamofire.DataResponse&lt;Foundation.Data, Alamofire.AFError&gt;) -&gt; () in static FallAppAtlProject.NetworkManager.request&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(model: &#x3c4;_0_0.Type, endpoint: Swift.Optional&lt;Swift.String&gt;, parameters: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;, method: Alamofire.HTTPMethod, encoding: Alamofire.ParameterEncoding, completion: (Swift.Optional&lt;&#x3c4;_0_0&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/NetworkManager/Core/Network%20Manager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "824">
                </Location>
             </Locations>
          </BreakpointContent>
