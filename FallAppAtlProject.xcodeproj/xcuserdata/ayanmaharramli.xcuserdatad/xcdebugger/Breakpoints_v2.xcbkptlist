@@ -1651,5 +1651,116 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3B12C4EB-A7F7-490D-B895-A1B381B691AE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/Home Detail screen/View Model/HomeDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "loadUserZodiacSignPredictions()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3B12C4EB-A7F7-490D-B895-A1B381B691AE - e22619cb8eb49a08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.HomeSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.HomeDetailViewModel.loadUserZodiacSignPredictions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Home%20Detail%20screen/View%20Model/HomeDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "3B12C4EB-A7F7-490D-B895-A1B381B691AE - e22619cb8eb49a08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.HomeSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.HomeDetailViewModel.loadUserZodiacSignPredictions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Home%20Detail%20screen/View%20Model/HomeDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "200">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97596943-CD2A-4949-A37E-5CA230F68C27"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FallAppAtlProject/Scenes/Home Detail screen/View Model/HomeDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "loadUserZodiacSignPredictions()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "97596943-CD2A-4949-A37E-5CA230F68C27 - e22619cb8eb49aad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.HomeSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.HomeDetailViewModel.loadUserZodiacSignPredictions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Home%20Detail%20screen/View%20Model/HomeDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "97596943-CD2A-4949-A37E-5CA230F68C27 - e22619cb8eb49aad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.HomeSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.HomeDetailViewModel.loadUserZodiacSignPredictions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Home%20Detail%20screen/View%20Model/HomeDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "608">
+               </Location>
+               <Location
+                  uuid = "97596943-CD2A-4949-A37E-5CA230F68C27 - e22619cb8eb49aad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;FallAppAtlProject.HomeSuccessModel&gt;, Swift.Optional&lt;FallAppAtlProject.ErrorModel&gt;) -&gt; () in FallAppAtlProject.HomeDetailViewModel.loadUserZodiacSignPredictions() -&gt; ()"
+                  moduleName = "FallAppAtlProject"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayanmaharramli/Documents/Github/FallApp/FallAppAtlProject/Scenes/Home%20Detail%20screen/View%20Model/HomeDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "624">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

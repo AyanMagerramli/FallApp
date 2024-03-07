@@ -32,7 +32,7 @@ struct PredictioDataModel: Codable, DetailCellProtocol, LeftImageRightLabelCellP
     let forecast: String?
     
     //DetailCellProtocol stubs
-    var titleText: String {
+    var titleTextForDetail: String {
         title ?? ""
     }
     

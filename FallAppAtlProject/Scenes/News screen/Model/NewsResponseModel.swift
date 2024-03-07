@@ -20,13 +20,15 @@ struct NewsArray: Codable {
 
 // MARK: - News
 struct News: Codable, LeftImageRightTitleCellProtocol, DetailCellProtocol {
+    var titleText: String
+    
     
     let title, text: String?
     let image: String?
     let sortingRank: Int?
     
     // LeftImageRightTitleCellProtocol stubs
-    var titleText: String {
+    var titleTextForDetail: String {
         title ?? ""
     }
     

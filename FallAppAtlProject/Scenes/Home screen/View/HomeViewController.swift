@@ -181,7 +181,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
             self.viewModel.coordinator?.navigate(to: .matchingList) // Go to matching signs list screen
         } else if indexPath.section == 1 {
             self.viewModel.coordinator?.goToTarotSelectionScreen()
-        }else {
+        } else {
             viewModel.coordinator?.goToHomeDetailScreen(tag: selectedTag) // Go to prediction detail page
         }
     }

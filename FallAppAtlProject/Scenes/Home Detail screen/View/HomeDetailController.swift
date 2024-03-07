@@ -96,17 +96,17 @@ extension HomeDetailController: UITableViewDataSource {
         
         switch self.tag {
             
-        case 0:
+        case 2:
             if let data = self.viewModel.userPredictions?.data?.today {
                 cell.configureCell(data: data)
             }
             
-        case 1:
+        case 3:
             if let data = self.viewModel.userPredictions?.data?.monthly {
                 cell.configureCell(data: data)
             }
             
-        case 2:
+        case 4:
             if let data = self.viewModel.userPredictions?.data?.yearly {
                 cell.configureCell(data: data)
             }

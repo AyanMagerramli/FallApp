@@ -150,7 +150,7 @@ class LeftImageRightLabelCell: UICollectionViewCell {
     
     func configureCell (title: LeftImageRightLabelCellTitleProtocol, data: LeftImageRightLabelCellProtocol) {
         self.titleLabel.text = title.titleText
-        self.subtitleLabel.text = data.subtitleTextt
+        self.titleLabel.text = data.subtitleTextt
         self.forecastLabel.text = data.infoTextt
         leftImage.loadImage(url: data.astroImagee)
     }

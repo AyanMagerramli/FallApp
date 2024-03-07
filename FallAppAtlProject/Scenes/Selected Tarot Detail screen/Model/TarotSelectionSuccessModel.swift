@@ -26,7 +26,7 @@ struct TarotCardDetailModel: Codable, DetailCellProtocol {
     let generalInfo, forecast: String?
  
     
-    var titleText: String {
+    var titleTextForDetail: String {
         ""
     }
     

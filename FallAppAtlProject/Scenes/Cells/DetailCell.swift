@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 protocol DetailCellProtocol {
-    var titleText: String { get }
+    var titleTextForDetail: String { get }
     var infoText: String { get }
     var astroImage: String { get }
 }
@@ -105,7 +105,7 @@ class DetailCell: UITableViewCell {
     // MARK: - Configure cell method
     
     func configureCell (data: DetailCellProtocol) {
-        self.titleLabel.text = data.titleText
+        self.titleLabel.text = data.titleTextForDetail
         self.infoDetailLabel.text = data.infoText
         self.image.loadImage(url: data.astroImage)
     }

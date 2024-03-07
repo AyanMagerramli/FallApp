@@ -26,7 +26,7 @@ struct Card: Codable, DetailCellProtocol {
     let generalInfo, forecast: String?
     
    // DetailCellProtocol stubs
-    var titleText: String {
+    var titleTextForDetail: String {
         "Interesting... What does this card mean?"
     }
     

@@ -23,7 +23,7 @@ struct Info: Codable, DetailCellProtocol {
     
     // DetailCellProtocol stubs
     
-    var titleText: String {
+    var titleTextForDetail: String {
         ""
     }
     
