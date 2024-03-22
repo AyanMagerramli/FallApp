@@ -130,7 +130,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         image.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.horizontalEdges.equalToSuperview()
-            make.bottom.equalToSuperview().inset(462)
         }
         
         emailField.snp.makeConstraints { make in

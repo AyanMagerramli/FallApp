@@ -17,7 +17,7 @@ extension UINavigationController {
         
         // Adjust frame to fit the navigation bar
         let navBarBounds = self.navigationBar.bounds
-        let progressBarWidth: CGFloat = 200 // Adjust as needed
+        let progressBarWidth: CGFloat = 200 
         let xPosition = (navBarBounds.size.width - progressBarWidth) / 2
         progressBar.tintColor = .main
         progressBar.frame = CGRect(x: xPosition, y: 20, width: progressBarWidth, height: progressBar.frame.size.height)
