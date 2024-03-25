@@ -27,8 +27,6 @@ final class SelectedTarotDetailViewModel {
                 self.error?(error)
             } else if let data {
                 self.selectedTarot = data.data?.card
-                print("ALREADY SELECTED Bool is \(data.data?.alreadySelected ?? false)")
-                UserDefaults.standard.setValue(data.data?.alreadySelected ?? false, forKey: "didUserSelectCard")
                 self.success?()
             }
         }

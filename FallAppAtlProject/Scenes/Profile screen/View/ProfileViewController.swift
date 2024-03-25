@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController {
         let image = UIImageView()
         image.frame = view.bounds
         image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "HomeDetailBackground")
+        image.image = UIImage(named: "yearSignsBackground")
         return image
     }()
     
@@ -75,7 +75,7 @@ class ProfileViewController: UIViewController {
     }
     
     private func setupHeader () {
-        headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 120)
+        headerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 190)
         tableView.tableHeaderView = headerView
     }
     
@@ -95,7 +95,7 @@ class ProfileViewController: UIViewController {
             DispatchQueue.main.async {
                 if let profile = self?.viewModel.profileModel?.data?.profile {
                     self?.headerView.configureHeader(data: profile)
-                    self?.navigationItem.title = "Hey \(profile.title ?? ""), here your astro-signs are:"
+                    self?.navigationItem.title = "My Profile"
                 }
             }
         }
@@ -124,11 +124,14 @@ extension ProfileViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ZodiacAndYearSignAboutCell.identifier, for: indexPath) as! ZodiacAndYearSignAboutCell
         switch indexPath.section {
         case 0:
-            cell.configureCell(data: self.viewModel.profileModel?.data?.generalInfo?.items?[0], title: "Your Zodiac Sign")
+            cell.configureCell(data: self.viewModel.profileModel?.data?.generalInfo?.items?[0],
+                               title: "Your Zodiac Sign")
         case 1:
-            cell.configureCell(data: self.viewModel.profileModel?.data?.generalInfo?.items?[1], title: "Your Year Sign")
+            cell.configureCell(data: self.viewModel.profileModel?.data?.generalInfo?.items?[1],
+                               title: "Your Year Sign")
         case 2:
-            cell.configureCell(data: self.viewModel.profileModel?.data?.generalInfo?.items?[2], title: "Your Ascendant Sign")
+            cell.configureCell(data: self.viewModel.profileModel?.data?.generalInfo?.items?[2],
+                               title: "Your Ascendant Sign")
         default:
             break
         }

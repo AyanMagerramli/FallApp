@@ -29,7 +29,7 @@ class HomeDetailController: UIViewController {
     
     private lazy var backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = UIImage(named: "HomeDetailBackground")
+        image.image = UIImage(named: "yearSignsBackground")
         image.contentMode = .scaleAspectFill
         image.frame = view.bounds
         return image

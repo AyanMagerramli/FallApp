@@ -216,6 +216,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self?.saveUserData()
                 }
             }
+            
             self?.viewModel?.error = { [weak self] error in
                 DispatchQueue.main.async {
                     self?.errorLabel.isHidden = false

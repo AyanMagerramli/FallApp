@@ -128,7 +128,10 @@ class SuccessController: UIViewController {
     private func buttonAction() {
         doneButton.buttonTappedHandler = {
             self.dismiss(animated: true) { [weak self] in
-                self?.viewModel.coordinator.start()
+               // self?.viewModel.coordinator.start()
+                self?.navigationController?.isNavigationBarHidden = true
+                self?.viewModel.coordinator.goToSettingsScreen()
+             //   self?.viewModel.coordinator.goToProfileScreen()
             }
         }
     }

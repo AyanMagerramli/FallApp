@@ -21,6 +21,9 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         image.clipsToBounds = true
         image.backgroundColor = .clear
         image.image = UIImage(named: "profileAvatar")
+        image.layer.borderColor = UIColor.main.cgColor
+        image.layer.cornerRadius = 50
+        image.layer.borderWidth = 2.0
         return image
     }()
     
@@ -30,8 +33,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .bold, size: 16)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = .main
-       // label.text = "October 25 2001 01:45"
+        label.textColor = .white
+        label.layer.borderWidth = 1.0
+        label.layer.borderColor = UIColor.main.cgColor
+        label.layer.cornerRadius = 10
         return label
     }()
 
@@ -41,8 +46,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .light, size: 16)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = .main
-       // label.text = "Scorpio"
+        label.textColor = .white
+        label.layer.borderWidth = 1.0
+        label.layer.borderColor = UIColor.main.cgColor
+        label.layer.cornerRadius = 10
         return label
     }()
     
@@ -52,8 +59,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .light, size: 16)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = .main
-      //  label.text = "Rabbit"
+        label.textColor = .white
+        label.layer.borderWidth = 1.0
+        label.layer.borderColor = UIColor.main.cgColor
+        label.layer.cornerRadius = 10
         return label
     }()
     
@@ -63,8 +72,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .light, size: 16)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = .main
-       // label.text = "Libra"
+        label.textColor = .white
+        label.layer.borderWidth = 1.0
+        label.layer.borderColor = UIColor.main.cgColor
+        label.layer.cornerRadius = 10
         return label
     }()
     
@@ -74,7 +85,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         label.numberOfLines = 0
         label.font = UIFont.robotoFont(ofType: .light, size: 16)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = .main
+        label.textColor = .white
+        label.layer.borderWidth = 1.0
+        label.layer.borderColor = UIColor.main.cgColor
+        label.layer.cornerRadius = 10
         return label
     }()
     
@@ -106,31 +120,31 @@ class UserInfoHeader: UITableViewHeaderFooterView {
     // MARK: - Setup constraints
     
     private func makeConstraints() {
+        birthdayLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(10)
+            make.centerX.equalToSuperview()
+        }
+        
         image.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalToSuperview().inset(24)
+            make.top.equalTo(birthdayLabel.snp.bottom).offset(12)
+            make.centerX.equalToSuperview()
             make.height.equalTo(100)
             make.width.equalTo(100)
         }
         
-        birthdayLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.equalTo(image.snp.trailing).offset(24)
-        }
-        
         zodiacSignLabel.snp.makeConstraints { make in
-            make.top.equalTo(birthdayLabel.snp.bottom).offset(10)
-            make.leading.equalTo(image.snp.trailing).offset(24)
+            make.top.equalTo(image.snp.top).offset(50)
+            make.leading.equalToSuperview().inset(6)
         }
         
         ascendingSign.snp.makeConstraints { make in
-            make.top.equalTo(zodiacSignLabel.snp.bottom).offset(10)
-            make.leading.equalTo(image.snp.trailing).offset(24)
+            make.top.equalTo(image.snp.top).offset(50)
+            make.trailing.equalToSuperview().inset(6)
         }
         
         yearSignLabel.snp.makeConstraints { make in
-            make.top.equalTo(ascendingSign.snp.bottom).offset(10)
-            make.leading.equalTo(image.snp.trailing).offset(24)
+            make.top.equalTo(image.snp.bottom).offset(12)
+            make.centerX.equalToSuperview()
         }
     }
     
@@ -138,8 +152,8 @@ class UserInfoHeader: UITableViewHeaderFooterView {
     
     func configureHeader(data: Profile) {
         self.birthdayLabel.text = data.birthDate
-        self.zodiacSignLabel.text = "Zodiac sign - \(data.zodiacSign ?? "")"
-        self.ascendingSign.text = "Ascendant sign - \(data.ascendingSign ?? "")"
-        self.yearSignLabel.text = "Year sign - \(data.animalYear ?? "")"
+        self.zodiacSignLabel.text = "Zodiac: \(data.zodiacSign ?? "")"
+        self.ascendingSign.text = "Ascn: \(data.ascendingSign ?? "")"
+        self.yearSignLabel.text = "Year: \(data.animalYear ?? "")"
     }
 }

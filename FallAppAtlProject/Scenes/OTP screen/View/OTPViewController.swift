@@ -58,6 +58,16 @@ class OTPViewController: UIViewController {
         return label
     }()
     
+    private let errorLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont.robotoFont(ofType: .bold, size: 12)
+        label.lineBreakMode = .byWordWrapping
+        label.textColor = .red
+        return label
+    }()
+    
     private lazy var resendButton = ReusableButton(title: "Resend")
     
     private func buttonActions () {
@@ -65,7 +75,6 @@ class OTPViewController: UIViewController {
             self?.setupUserData()
             guard let otp = self?.otpModel else {return}
             self?.viewModel.confirmOTP(otpData: otp)
-            print(otp)
             self?.viewModelSetup()
         }
         
@@ -90,7 +99,7 @@ class OTPViewController: UIViewController {
     private func setupUI() {
         customizeBackButton()
         
-    //    messageLabel.text = UserDefaults.standard.string(forKey: "otp")
+        errorLabel.isHidden = true
         messageLabel.text = UserdefaultsManager.shared.getValue(for: "otp")
         
         otpField.becomeFirstResponder()
@@ -104,8 +113,9 @@ class OTPViewController: UIViewController {
          otpField,
          strokeView,
          messageLabel,
+         errorLabel,
          resendButton,
-         approveButton].forEach(view.addSubview(_:))
+         approveButton].forEach(view.addSubview)
         
         makeConstraints()
         
@@ -139,8 +149,13 @@ class OTPViewController: UIViewController {
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
-        resendButton.snp.makeConstraints { make in
+        errorLabel.snp.makeConstraints { make in
             make.top.equalTo(messageLabel.snp.bottom).offset(20)
+            make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
+        resendButton.snp.makeConstraints { make in
+            make.top.equalTo(errorLabel.snp.bottom).offset(10)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
@@ -174,6 +189,8 @@ class OTPViewController: UIViewController {
         
         self.viewModel.error = { [weak self] error in
             //error alert
+            self?.errorLabel.isHidden = false
+            self?.errorLabel.text = self?.viewModel.errorResponse?.detail
             print(error)
         }
     }

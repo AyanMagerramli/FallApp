@@ -27,7 +27,7 @@ struct TarotCardDetailModel: Codable, DetailCellProtocol {
  
     
     var titleTextForDetail: String {
-        ""
+        "You have already drawn your Tarot"
     }
     
     var infoText: String {
@@ -40,6 +40,21 @@ struct TarotCardDetailModel: Codable, DetailCellProtocol {
 }
 
 
+
+/*
+ {
+     "data": {
+         "card": {
+             "id": "0676a071-7d11-4089-8c90-0780fff00959",
+             "backImage": "https://cdn-lkbff.nitrocdn.com/sTnyCEOWfGiIpLjCvEilsTGqVqpXJmFP/assets/images/optimized/rev-3b3f5c3/www.alittlesparkofjoy.com/wp-content/uploads/2020/07/the-fool-tarot-card.jpg",
+             "generalInfo": "The Fool tarot card is the number 0 of the Major Arcana, which stands for unlimited potential. To see the Fool card generally indicates that you’re on the verge of an unexpected and exciting new adventure in your daily life. This may require you to take a blind leap of faith.\n\nThere will be a rewarding experience that will contribute to your growth as a human being. The new adventure could be literal and may involve traveling to a new land or territories you’ve never visited.\n\nUpright: New beginnings, new ideas, innocence, and adventure\nReversed: Recklesness, fearlessness, and risk\nYes or No: Yes",
+             "forecast": "test"
+         },
+         "alreadySelected": true
+     },
+     "message": "SUCCESS"
+ }
+ */
 
 /*
  {

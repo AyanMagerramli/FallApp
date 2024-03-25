@@ -186,4 +186,11 @@ class MainCoordinator: CoordinatorProtocol {
         let vc = SelectedTarotDetailController(viewModel: .init(coordinator: self, id: tarotId))
         navigationController.present(vc, animated: true)
     }
+    
+    func goToSettingsScreen() {
+        let vc = SettingsController()
+        vc.viewModel.coordinator = self
+        navigationController.isNavigationBarHidden = true
+        navigationController.show(vc, sender: nil)
+    }
 }

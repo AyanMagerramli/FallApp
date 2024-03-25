@@ -9,6 +9,10 @@ import UIKit
 
 class UserSelectedTarotController: UIViewController {
     
+    // MARK: Properties
+    
+    private let viewModel = UserSelectedTarotViewModel()
+    
     // MARK: - UI Elements
     
     private lazy var backgroundImage: UIImageView = {
@@ -32,10 +36,11 @@ class UserSelectedTarotController: UIViewController {
     }()
     
     // MARK: - Life Cycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupViewModel()
     }
     
     // MARK: - Setup UI
@@ -47,7 +52,14 @@ class UserSelectedTarotController: UIViewController {
         [backgroundImage,
          tableView].forEach(view.addSubview)
         
-       
+    }
+    
+    private func setupViewModel() {
+        self.viewModel.getSelectedTarotInfo()
+        
+        self.viewModel.success = { [weak self] in
+            self?.tableView.reloadData()
+        }
     }
 }
 
@@ -62,7 +74,9 @@ extension UserSelectedTarotController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as! DetailCell
         cell.backgroundColor = .clear
         cell.selectionStyle = .none
-        cell.configureSelectedTarot(data: StoredSelectedTarotInfo.shared)
+        if let tarot = self.viewModel.selectedTarot?.card {
+            cell.configureCell(data: tarot)
+        }
         return cell
     }
 }

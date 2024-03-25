@@ -48,7 +48,7 @@ class NetworkManager {
                     }
                 }
                 
-            } else {
+            } else if response.response?.statusCode != 404 {
                 self.handleResponse(model: ErrorModel.self,
                                     data: response.data ?? Data()) { model in
                     print("Error is \(String(describing: model))")

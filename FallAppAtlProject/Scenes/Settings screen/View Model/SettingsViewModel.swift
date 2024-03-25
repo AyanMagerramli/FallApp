@@ -114,6 +114,8 @@ final class SettingsViewModel {
                                                             self.logoutUser()
                                                             self.success = {
                                                                 UserDefaults.standard.set(false, forKey: "loggedIn")
+                                                                KeychainManager.shared.deleteValue(key: KeychainValues.accessToken.rawValue)
+                                                                KeychainManager.shared.deleteValue(key: KeychainValues.refreshToken.rawValue)
                                                             }
                                                         })]))
     }

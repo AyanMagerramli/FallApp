@@ -38,9 +38,9 @@ class DetailCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.font = UIFont.robotoFont(ofType: .bold, size: 20)
+        label.font = UIFont.robotoFont(ofType: .bold, size: 24)
         label.lineBreakMode = .byWordWrapping
-        label.textColor = UIColor.theme(named: .main)
+        label.textColor = .white
         return label
     }()
     
@@ -60,7 +60,7 @@ class DetailCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .justified
         label.numberOfLines = 0
-        label.font = UIFont.robotoFont(ofType: .light, size: 14)
+        label.font = UIFont.robotoFont(ofType: .medium, size: 16)
         label.lineBreakMode = .byWordWrapping
         label.textColor = .white
         return label
@@ -142,14 +142,6 @@ class DetailCell: UITableViewCell {
         self.titleLabel.text = data.titleTextForDetail
         self.infoDetailLabel.text = data.infoText
         self.image.loadImage(url: data.astroImage)
-    }
-    
-    // MARK: Configure already selected tarot screen
-    
-    func configureSelectedTarot (data:  StoredSelectedTarotInfo) {
-        self.titleLabel.text = "You have already selected your daily Tarot!"
-        self.infoDetailLabel.text = data.tarotInfo
-        self.image.loadImage(url: data.tarotImage ?? "")
     }
 }
 

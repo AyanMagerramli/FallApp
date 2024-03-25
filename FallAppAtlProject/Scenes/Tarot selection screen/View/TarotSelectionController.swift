@@ -13,6 +13,7 @@ class TarotSelectionController: UIViewController {
     // MARK: - Properties
     
     var viewModel: TarotSelectionViewModel
+    var didUserSelectTarot: Bool?
     
     // MARK: - Init
     
@@ -175,8 +176,13 @@ extension TarotSelectionController: UICollectionViewDataSource {
 
 extension TarotSelectionController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let id = viewModel.tarotList?.data?.cards?[indexPath.row].id {
-            self.viewModel.coordinator.goToSelectedTarotDetailScreen(tarotId: id)
+        if didUserSelectTarot == false {
+            if let id = viewModel.tarotList?.data?.cards?[indexPath.row].id {
+                self.viewModel.coordinator.goToSelectedTarotDetailScreen(tarotId: id)
+                didUserSelectTarot = true
+            }
+        } else {
+            collectionView.deselectItem(at: indexPath, animated: false)
         }
     }
     
