@@ -33,6 +33,7 @@
 		111EA1382B6D08DC002ACF7A /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EA1372B6D08DC002ACF7A /* CountryModel.swift */; };
 		111EA13A2B6D0AC5002ACF7A /* CountryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EA1392B6D0AC5002ACF7A /* CountryEndpoint.swift */; };
 		111EA13C2B6D0AF7002ACF7A /* CityEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111EA13B2B6D0AF7002ACF7A /* CityEndpoint.swift */; };
+		112691B02BB0A019004E5B3B /* UserSelectedTarotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112691AF2BB0A019004E5B3B /* UserSelectedTarotController.swift */; };
 		113014662B66EACD0089E5D6 /* OTPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113014652B66EACD0089E5D6 /* OTPManager.swift */; };
 		113014682B66EAEA0089E5D6 /* OTPUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113014672B66EAEA0089E5D6 /* OTPUseCase.swift */; };
 		11342BE72B8FC4DB00570C2B /* SelectedTarotDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11342BE62B8FC4DB00570C2B /* SelectedTarotDetailController.swift */; };
@@ -222,6 +223,7 @@
 		111EA1372B6D08DC002ACF7A /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
 		111EA1392B6D0AC5002ACF7A /* CountryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryEndpoint.swift; sourceTree = "<group>"; };
 		111EA13B2B6D0AF7002ACF7A /* CityEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityEndpoint.swift; sourceTree = "<group>"; };
+		112691AF2BB0A019004E5B3B /* UserSelectedTarotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSelectedTarotController.swift; sourceTree = "<group>"; };
 		113014652B66EACD0089E5D6 /* OTPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPManager.swift; sourceTree = "<group>"; };
 		113014672B66EAEA0089E5D6 /* OTPUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPUseCase.swift; sourceTree = "<group>"; };
 		11342BE62B8FC4DB00570C2B /* SelectedTarotDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedTarotDetailController.swift; sourceTree = "<group>"; };
@@ -628,6 +630,7 @@
 			isa = PBXGroup;
 			children = (
 				11342BE62B8FC4DB00570C2B /* SelectedTarotDetailController.swift */,
+				112691AF2BB0A019004E5B3B /* UserSelectedTarotController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1698,6 +1701,7 @@
 				113C31742B75434A006570C8 /* ZodiacsAndYearsListEndpoint.swift in Sources */,
 				110E83922B5151300000D6D9 /* RegisterViewModel.swift in Sources */,
 				1156FF2E2B64F7BB00452019 /* ErrorModel.swift in Sources */,
+				112691B02BB0A019004E5B3B /* UserSelectedTarotController.swift in Sources */,
 				110E83742B514D9E0000D6D9 /* Network Manager.swift in Sources */,
 				111EA13C2B6D0AF7002ACF7A /* CityEndpoint.swift in Sources */,
 				119BB3082B53DC9D006445FD /* MainCoordinator.swift in Sources */,

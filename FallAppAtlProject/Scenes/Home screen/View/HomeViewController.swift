@@ -180,6 +180,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDelegate
         if indexPath.section == 0 {
             self.viewModel.coordinator?.navigate(to: .matchingList) // Go to matching signs list screen
         } else if indexPath.section == 1 {
+//            if UserDefaults.standard.bool(forKey: "didUserSelectTarot") {
+//                self.viewModel.coordinator?.goToUserSelectedCardScreen()
+//            } else {
+//                self.viewModel.coordinator?.goToTarotSelectionScreen()
+//            }
             self.viewModel.coordinator?.goToTarotSelectionScreen()
         } else {
             viewModel.coordinator?.goToHomeDetailScreen(tag: selectedTag) // Go to prediction detail page

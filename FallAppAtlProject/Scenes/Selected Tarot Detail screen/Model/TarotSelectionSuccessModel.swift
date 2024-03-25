@@ -31,9 +31,7 @@ struct TarotCardDetailModel: Codable, DetailCellProtocol {
     }
     
     var infoText: String {
-        guard let info = generalInfo,
-           let forecast = forecast  else { return "" }
-        return info + " " + forecast
+        return "\(generalInfo ?? "")" + " " + "\(forecast ?? "testtt")"
     }
     
     var astroImage: String {

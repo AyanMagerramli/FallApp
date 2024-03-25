@@ -19,8 +19,8 @@ final class NewsViewModel {
             if let error {
                 self.error?(error)
             } else if let data {
-                self.success?()
                 self.newsList = data
+                self.success?()
             }
         }
     }

@@ -48,6 +48,13 @@ class SelectedTarotDetailController: UIViewController {
     }()
     
     // MARK: - Life cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserDefaults.standard.bool(forKey: "didUserSelectCard") {
+            self.viewModel.coordinator.goToUserSelectedCardScreen()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,10 +83,13 @@ class SelectedTarotDetailController: UIViewController {
         
         viewModel.success = { [weak self] in
             self?.tableView.reloadData()
+//            UserDefaults.standard.setValue(true, forKey: "didUserSelectTarot")
             StoredSelectedTarotInfo.shared.tarotImage = self?.viewModel.selectedTarot?.backImage
-            if let info = self?.viewModel.selectedTarot?.generalInfo,
-               let forecast = self?.viewModel.selectedTarot?.forecast {
-                StoredSelectedTarotInfo.shared.tarotInfo = "\(info) \(forecast)"
+            if let info = self?.viewModel.selectedTarot?.generalInfo
+              /* let forecast = self?.viewModel.selectedTarot?.forecast*/ {
+                StoredSelectedTarotInfo.shared.tarotInfo = info
+                print("Tarot image is \(StoredSelectedTarotInfo.shared.tarotImage!) ")
+                print("Tarot info is \(StoredSelectedTarotInfo.shared.tarotInfo!) ")
             }
         }
     }

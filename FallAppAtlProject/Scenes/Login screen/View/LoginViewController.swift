@@ -63,7 +63,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return field
     }()
     
-    private lazy var loginButton = ReusableButton(title: "Login")
+    private lazy var loginButton = ReusableButton(title: "Enter")
     
     private let errorLabel: UILabel = {
         let label = UILabel()

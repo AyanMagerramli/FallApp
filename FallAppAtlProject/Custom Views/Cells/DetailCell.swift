@@ -27,7 +27,9 @@ class DetailCell: UITableViewCell {
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         image.backgroundColor = .clear
-        image.layer.cornerRadius = 12
+        image.layer.cornerRadius = 130
+        image.layer.borderWidth = 3.0
+        image.layer.borderColor = UIColor.main.cgColor
         image.frame = contentView.bounds
         return image
     }()
@@ -40,6 +42,18 @@ class DetailCell: UITableViewCell {
         label.lineBreakMode = .byWordWrapping
         label.textColor = UIColor.theme(named: .main)
         return label
+    }()
+    
+    private lazy var containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    private lazy var blurEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        return blurEffectView
     }()
 
     private lazy var infoDetailLabel: UILabel = {
@@ -75,7 +89,17 @@ class DetailCell: UITableViewCell {
         
         [image,
          titleLabel,
-         infoDetailLabel].forEach(contentView.addSubview(_:))
+         containerView].forEach(contentView.addSubview)
+        
+        [blurEffectView,
+         infoDetailLabel].forEach(containerView.addSubview)
+        
+        containerView.layer.cornerRadius = 16
+        containerView.layer.masksToBounds = true
+        
+        // Add white border to containerView
+        containerView.layer.borderWidth = 1.0
+        containerView.layer.borderColor = UIColor.theme(named: .main).cgColor
         
         makeConstraints()
     }
@@ -89,16 +113,26 @@ class DetailCell: UITableViewCell {
         }
         
         image.snp.makeConstraints { make in
-            make.height.equalTo(310)
-            make.width.equalTo(200)
+            make.height.equalTo(260)
+            make.width.equalTo(260)
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.centerX.equalToSuperview()
         }
         
-        infoDetailLabel.snp.makeConstraints { make in
+        containerView.snp.makeConstraints { make in
             make.top.equalTo(image.snp.bottom).offset(16)
             make.bottom.equalToSuperview()
             make.horizontalEdges.equalToSuperview().inset(24)
+        }
+        
+        blurEffectView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        infoDetailLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview().inset(12)
+            make.top.equalToSuperview().inset(12)
         }
     }
     
@@ -108,6 +142,14 @@ class DetailCell: UITableViewCell {
         self.titleLabel.text = data.titleTextForDetail
         self.infoDetailLabel.text = data.infoText
         self.image.loadImage(url: data.astroImage)
+    }
+    
+    // MARK: Configure already selected tarot screen
+    
+    func configureSelectedTarot (data:  StoredSelectedTarotInfo) {
+        self.titleLabel.text = "You have already selected your daily Tarot!"
+        self.infoDetailLabel.text = data.tarotInfo
+        self.image.loadImage(url: data.tarotImage ?? "")
     }
 }
 

@@ -99,7 +99,7 @@ class LeftImageRightLabelCell: UICollectionViewCell {
          leftImage,
          titleLabel,
          subtitleLabel,
-         forecastLabel].forEach(containerView.addSubview(_:))
+         forecastLabel].forEach(containerView.addSubview)
         
         containerView.layer.cornerRadius = 16
         containerView.layer.masksToBounds = true

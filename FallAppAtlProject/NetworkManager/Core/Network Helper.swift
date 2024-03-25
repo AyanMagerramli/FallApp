@@ -25,7 +25,6 @@ class NetworkHelper {
             header["Authorization"] = "Bearer \(accessToken)"
         }
         
-//        return header.isEmpty ? nil : header
         return header
     }
 }
