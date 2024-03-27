@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Used to load a match data</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Used to take a match photo</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Used to load a match photo</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Roboto-Bold.ttf</string>

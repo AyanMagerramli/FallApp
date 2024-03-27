@@ -11,7 +11,7 @@ import SnapKit
 class ProfileViewController: UIViewController {
     
     // MARK: Properties
-    
+
     var viewModel: ProfileViewModel
     let headerView = UserInfoHeader()
     

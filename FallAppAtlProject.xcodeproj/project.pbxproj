@@ -138,6 +138,7 @@
 		11859BF02B88BD7400E2675F /* SuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11859BEF2B88BD7400E2675F /* SuccessController.swift */; };
 		118B9F812B722A5B0012AFD7 /* HomeDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */; };
 		118B9F852B722C880012AFD7 /* HomeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */; };
+		11901E662BB4A50A003AB2FB /* ChildZodiacSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11901E652BB4A50A003AB2FB /* ChildZodiacSignViewController.swift */; };
 		11931DCE2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DCD2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift */; };
 		11931DD12B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DD02B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift */; };
 		11931DD42B79122400CAA64B /* ZodiacSignsMatchingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11931DD32B79122400CAA64B /* ZodiacSignsMatchingListModel.swift */; };
@@ -331,6 +332,7 @@
 		11859BEF2B88BD7400E2675F /* SuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessController.swift; sourceTree = "<group>"; };
 		118B9F802B722A5B0012AFD7 /* HomeDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailController.swift; sourceTree = "<group>"; };
 		118B9F842B722C880012AFD7 /* HomeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewModel.swift; sourceTree = "<group>"; };
+		11901E652BB4A50A003AB2FB /* ChildZodiacSignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildZodiacSignViewController.swift; sourceTree = "<group>"; };
 		11931DCD2B7911D500CAA64B /* ZodiacSignsMatchingListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListController.swift; sourceTree = "<group>"; };
 		11931DD02B7911FD00CAA64B /* ZodiacSignsMatchingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListViewModel.swift; sourceTree = "<group>"; };
 		11931DD32B79122400CAA64B /* ZodiacSignsMatchingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSignsMatchingListModel.swift; sourceTree = "<group>"; };
@@ -1246,6 +1248,22 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		11901E632BB4A4D7003AB2FB /* Paren View */ = {
+			isa = PBXGroup;
+			children = (
+				11708D082B63CDA700C8DB60 /* ProfileViewController.swift */,
+			);
+			path = "Paren View";
+			sourceTree = "<group>";
+		};
+		11901E642BB4A4E0003AB2FB /* Child Views */ = {
+			isa = PBXGroup;
+			children = (
+				11901E652BB4A50A003AB2FB /* ChildZodiacSignViewController.swift */,
+			);
+			path = "Child Views";
+			sourceTree = "<group>";
+		};
 		11931DCB2B79117A00CAA64B /* Zodiac Signs Matching screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -1534,7 +1552,8 @@
 		11D6D5592B76D59A0041B577 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				11708D082B63CDA700C8DB60 /* ProfileViewController.swift */,
+				11901E642BB4A4E0003AB2FB /* Child Views */,
+				11901E632BB4A4D7003AB2FB /* Paren View */,
 				11570B212B76C01000131D90 /* UserInfoHeader.swift */,
 				11708D0F2B63D77900C8DB60 /* ZodiacAndYearSignAboutCell.swift */,
 				11D6D5532B76CD960041B577 /* SectionSpaceFooter.swift */,
@@ -1846,6 +1865,7 @@
 				11A95BE42B728D30008BD9FF /* TarotListManager.swift in Sources */,
 				11A95BE02B728C6F008BD9FF /* TarotViewModel.swift in Sources */,
 				11859BDA2B88A0A500E2675F /* VerifyOTPSuccessModel.swift in Sources */,
+				11901E662BB4A50A003AB2FB /* ChildZodiacSignViewController.swift in Sources */,
 				11D6D5582B76D5430041B577 /* ProfileEndpoint.swift in Sources */,
 				113E4E392B6836280033375D /* OTPResetSuccessResponseModel.swift in Sources */,
 				11DA41B12B6965D200E07C63 /* LoginUserModel.swift in Sources */,

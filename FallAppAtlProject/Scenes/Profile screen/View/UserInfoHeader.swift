@@ -13,9 +13,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
     
     static let identifier = "UserInfoHeader"
     
+    
     // MARK: - UI Elements
     
-    private lazy var image: UIImageView = {
+     lazy var image: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
@@ -24,6 +25,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         image.layer.borderColor = UIColor.main.cgColor
         image.layer.cornerRadius = 50
         image.layer.borderWidth = 2.0
+        // Add tap gesture recognizer
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(tapGestureRecognizer)
         return image
     }()
     
@@ -103,6 +108,14 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    @objc
+    private func imageViewTapped() {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        self.window?.rootViewController?.present(imagePicker, animated: true, completion: nil)
+    }
+    
     // MARK: - UI setup
     
     private func setupUI() {
@@ -155,5 +168,20 @@ class UserInfoHeader: UITableViewHeaderFooterView {
         self.zodiacSignLabel.text = "Zodiac: \(data.zodiacSign ?? "")"
         self.ascendingSign.text = "Ascn: \(data.ascendingSign ?? "")"
         self.yearSignLabel.text = "Year: \(data.animalYear ?? "")"
+    }
+}
+
+extension UserInfoHeader: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[.originalImage] as? UIImage {
+            DispatchQueue.main.async {
+                self.image.image = pickedImage
+            }
+        }
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }

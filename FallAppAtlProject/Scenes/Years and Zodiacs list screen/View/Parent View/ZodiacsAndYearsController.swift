@@ -50,7 +50,7 @@ class ZodiacsAndYearsController: UIViewController {
         // Create UISegmentedControl
         let segmentedControl = UISegmentedControl(items: ["Zoadiacs", "Yeers"])
         segmentedControl.selectedSegmentIndex = 0 // Select the first segment initially
-        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
         // Set tint color for the selected segment tab
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: .selected)
         segmentedControl.backgroundColor = .clear
