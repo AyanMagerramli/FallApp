@@ -18,7 +18,7 @@ class OTPManager: OTPUseCase {
                                completion: completion)
     }
     
-    func confirmOTP(otpData: OTPResponseModel, completion: @escaping ( (RegisterOTPResponseModel?, ErrorModel?) -> Void) ) {
+    func confirmOTP(otpData: OTPResponseModel, completion: @escaping ((RegisterOTPResponseModel?, ErrorModel?) -> Void)) {
         NetworkManager.request(model: RegisterOTPResponseModel.self,
                                endpoint: RegisterEndpoint.confirmation.rawValue,
                                parameters: otpData.dictionary,

@@ -95,15 +95,7 @@ class HomeViewController: UIViewController {
                                          target: self,
                                          action: #selector(leftButtonTapped))
         
-//        let rightButton = UIBarButtonItem(image: UIImage(systemName: "gear"),
-//                                         style: .plain,
-//                                         target: self,
-//                                         action: #selector(rightButtonTapped))
-        
-        // Assign the left button to the navigation item
         self.navigationItem.leftBarButtonItem = leftButton
-      //  self.navigationItem.rightBarButtonItem = rightButton
-        
     }
     
     @objc
@@ -111,24 +103,17 @@ class HomeViewController: UIViewController {
         // Handle left button tap -> go to Profile screen
         self.viewModel.coordinator?.navigate(to: .profile)
     }
-    
-    @objc
-    private func rightButtonTapped() {
-       // self.viewModel.coordinator?.goToTarotSelectionScreen()
-        // Handle left button tap -> go to Settings screen
-      //  self.viewModel.coordinator?.goToSettingsScreen()
-    }
 }
 
     // MARK: - Colelction View Data Source methods
 
 extension HomeViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        5 // Three sections for today, monthly, and yearly and for matching and news banner
+        5
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1  // One prediction row for each section
+        1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

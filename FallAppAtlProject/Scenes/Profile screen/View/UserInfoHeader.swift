@@ -12,6 +12,7 @@ class UserInfoHeader: UITableViewHeaderFooterView {
     // MARK: Properties
     
     static let identifier = "UserInfoHeader"
+    private var viewModel: ProfileViewModel?
     
     
     // MARK: - UI Elements
@@ -112,6 +113,7 @@ class UserInfoHeader: UITableViewHeaderFooterView {
     private func imageViewTapped() {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
         imagePicker.delegate = self
         self.window?.rootViewController?.present(imagePicker, animated: true, completion: nil)
     }
@@ -171,7 +173,10 @@ class UserInfoHeader: UITableViewHeaderFooterView {
     }
 }
 
+// MARK: - UI Image picker methods
+
 extension UserInfoHeader: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[.originalImage] as? UIImage {
             DispatchQueue.main.async {

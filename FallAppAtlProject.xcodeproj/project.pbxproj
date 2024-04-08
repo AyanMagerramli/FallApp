@@ -181,6 +181,7 @@
 		11A95BE42B728D30008BD9FF /* TarotListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A95BE32B728D30008BD9FF /* TarotListManager.swift */; };
 		11A95BE92B729F81008BD9FF /* TarotDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A95BE82B729F81008BD9FF /* TarotDetailViewModel.swift */; };
 		11A95BEB2B72A045008BD9FF /* TarotDetailEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A95BEA2B72A045008BD9FF /* TarotDetailEndpoint.swift */; };
+		11C9A96F2BC0AD8200F6756F /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C9A96E2BC0AD8200F6756F /* CustomLabel.swift */; };
 		11D6D5542B76CD960041B577 /* SectionSpaceFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6D5532B76CD960041B577 /* SectionSpaceFooter.swift */; };
 		11D6D5562B76D5280041B577 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6D5552B76D5280041B577 /* ProfileUseCase.swift */; };
 		11D6D5582B76D5430041B577 /* ProfileEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D6D5572B76D5430041B577 /* ProfileEndpoint.swift */; };
@@ -375,6 +376,7 @@
 		11A95BE32B728D30008BD9FF /* TarotListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotListManager.swift; sourceTree = "<group>"; };
 		11A95BE82B729F81008BD9FF /* TarotDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailViewModel.swift; sourceTree = "<group>"; };
 		11A95BEA2B72A045008BD9FF /* TarotDetailEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotDetailEndpoint.swift; sourceTree = "<group>"; };
+		11C9A96E2BC0AD8200F6756F /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		11D6D5532B76CD960041B577 /* SectionSpaceFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSpaceFooter.swift; sourceTree = "<group>"; };
 		11D6D5552B76D5280041B577 /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
 		11D6D5572B76D5430041B577 /* ProfileEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEndpoint.swift; sourceTree = "<group>"; };
@@ -427,9 +429,10 @@
 		1106A5932B59CA7C00DF7450 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				11C9A96D2BC0AD6B00F6756F /* Label */,
 				1169DA462B6044D000AB32AE /* Header */,
 				113F9CAC2B5D4B0F0069CCC2 /* Cells */,
-				1106A5942B59CA9C00DF7450 /* ReusableButton.swift */,
+				11C9A96C2BC0AD5800F6756F /* Button */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -1549,6 +1552,22 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		11C9A96C2BC0AD5800F6756F /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				1106A5942B59CA9C00DF7450 /* ReusableButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		11C9A96D2BC0AD6B00F6756F /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				11C9A96E2BC0AD8200F6756F /* CustomLabel.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
 		11D6D5592B76D59A0041B577 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1819,6 +1838,7 @@
 				1106A5952B59CA9C00DF7450 /* ReusableButton.swift in Sources */,
 				11859BD02B8899ED00E2675F /* OTPForPasswordManager.swift in Sources */,
 				114956EE2B715B97003E41D4 /* HomeSuccessModel.swift in Sources */,
+				11C9A96F2BC0AD8200F6756F /* CustomLabel.swift in Sources */,
 				1150C57E2B80107600241CC5 /* NewsUseCase.swift in Sources */,
 				110E83942B51514E0000D6D9 /* LoginViewController.swift in Sources */,
 				11F9BF4A2B5D931D00F913F7 /* NavigationBackButton.swift in Sources */,

@@ -39,6 +39,7 @@ class OTPViewController: UIViewController {
         field.borderStyle = .roundedRect
         field.backgroundColor = .clear
         field.textColor = UIColor.theme(named: .main)
+        field.keyboardType = .numberPad
         return field
     }()
     
@@ -65,39 +66,60 @@ class OTPViewController: UIViewController {
         label.font = UIFont.robotoFont(ofType: .bold, size: 12)
         label.lineBreakMode = .byWordWrapping
         label.textColor = .red
+        label.backgroundColor = .clear
         return label
     }()
     
     private lazy var resendButton = ReusableButton(title: "Resend")
-    
-    private func buttonActions () {
+        
+    private func buttonActions() {
         approveButton.buttonTappedHandler = { [weak self] in
-            self?.setupUserData()
-            guard let otp = self?.otpModel else {return}
-            self?.viewModel.confirmOTP(otpData: otp)
-            self?.viewModelSetup()
+            guard let self = self else { return }
+            self.viewModel.success = { [weak self] in
+                guard let self = self else { return }
+                print(self.viewModel.successResponse?.message ?? "No message")
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
+            self.viewModel.error = { [weak self] error in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    self.errorLabel.isHidden = false
+                    self.errorLabel.text = self.viewModel.errorResponse?.detail
+                    print("OTP ERROR: \(error)")
+                }
+            }
+            
+            self.setupUserData()
+            let otp = self.otpModel
+            self.viewModel.confirmOTP(otpData: otp)
         }
+        
         
         resendButton.buttonTappedHandler = { [weak self] in
             self?.setupResetOTPData()
-            guard let otp = self?.otpResetModel else {return}
+            guard let otp = self?.otpResetModel else { return }
             print("OTPMODEL is \(otp)")
             self?.viewModel.resetOTP(otpData: otp)
         }
     }
-    
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        buttonActions()
     }
     
     // MARK: - Setup UI
     
     private func setupUI() {
         customizeBackButton()
+        
+        otpField.delegate = self
         
         errorLabel.isHidden = true
         messageLabel.text = UserdefaultsManager.shared.getValue(for: "otp")
@@ -118,8 +140,6 @@ class OTPViewController: UIViewController {
          approveButton].forEach(view.addSubview)
         
         makeConstraints()
-        
-        buttonActions()
     }
     
     // MARK: - Setup Constraints
@@ -155,7 +175,7 @@ class OTPViewController: UIViewController {
         }
         
         resendButton.snp.makeConstraints { make in
-            make.top.equalTo(errorLabel.snp.bottom).offset(10)
+            make.top.equalTo(errorLabel.snp.bottom).offset(50)
             make.horizontalEdges.equalToSuperview().inset(24)
         }
         
@@ -166,32 +186,31 @@ class OTPViewController: UIViewController {
     }
     
     private func setupUserData() {
-       // let email = UserDefaults.standard.string(forKey: "email")
         let email = UserdefaultsManager.shared.getValue(for: "email") ?? ""
         self.otpModel.email = email
         self.otpModel.pin = otpField.text ?? "no otp"
     }
     
     private func setupResetOTPData() {
-      //  let email = UserDefaults.standard.string(forKey: "email")
         let email = UserdefaultsManager.shared.getValue(for: "email") ?? ""
         self.otpResetModel.email = email
-       // self.otpResetModel.password = keychain.get("password")
         self.otpResetModel.password = KeychainManager.shared.getValue(key: KeychainValues.password.rawValue)
     }
-    
-    private func viewModelSetup() {
-        self.viewModel.success = { [weak self] in
-            print(self?.viewModel.successResponse?.message ?? "no message")
-            self?.navigationController?.popViewController(animated: true)
-         //   self?.coordinator?.navigate(to: .login)
+}
+
+// MARK: - UITextFieldDelegate methods
+// set the maximum length of decimal characters in text field
+extension OTPViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        if !allowedCharacters.isSuperset(of: characterSet) {
+            return false
         }
         
-        self.viewModel.error = { [weak self] error in
-            //error alert
-            self?.errorLabel.isHidden = false
-            self?.errorLabel.text = self?.viewModel.errorResponse?.detail
-            print(error)
-        }
+        let currentText = textField.text ?? ""
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        let maxLength = 6
+        return newText.count <= maxLength
     }
 }

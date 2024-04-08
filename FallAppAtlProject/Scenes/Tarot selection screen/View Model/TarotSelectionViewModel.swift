@@ -13,6 +13,7 @@ final class TarotSelectionViewModel {
     var tarotList: TarotDataModel?
     var success: (() -> Void)?
     var error: ((ErrorModel) -> Void)?
+    var didUserSelectTarot: Bool?
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
@@ -24,6 +25,7 @@ final class TarotSelectionViewModel {
                 self.error?(error)
             } else if let data {
                 self.tarotList = data
+                self.didUserSelectTarot = false
                 self.success?()
             }
         }

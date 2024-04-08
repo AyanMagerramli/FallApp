@@ -24,7 +24,7 @@ class DetailCell: UITableViewCell {
     
     private lazy var image: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleToFill
         image.clipsToBounds = true
         image.backgroundColor = .clear
         image.layer.cornerRadius = 130

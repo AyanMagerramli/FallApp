@@ -13,7 +13,6 @@ class TarotSelectionController: UIViewController {
     // MARK: - Properties
     
     var viewModel: TarotSelectionViewModel
-    var didUserSelectTarot: Bool?
     
     // MARK: - Init
     
@@ -103,7 +102,7 @@ class TarotSelectionController: UIViewController {
     private func setupUI() {
         view.sendSubviewToBack(backgroundImage)
         view.backgroundColor = .background
-        
+
         [backgroundImage,
          titleLabel,
          subtitleLabel,
@@ -176,10 +175,10 @@ extension TarotSelectionController: UICollectionViewDataSource {
 
 extension TarotSelectionController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if didUserSelectTarot == false {
+        if self.viewModel.didUserSelectTarot == false {
             if let id = viewModel.tarotList?.data?.cards?[indexPath.row].id {
                 self.viewModel.coordinator.goToSelectedTarotDetailScreen(tarotId: id)
-                didUserSelectTarot = true
+                self.viewModel.didUserSelectTarot = true
             }
         } else {
             collectionView.deselectItem(at: indexPath, animated: false)

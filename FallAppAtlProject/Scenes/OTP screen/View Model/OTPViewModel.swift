@@ -19,13 +19,11 @@ class OTPViewModel {
     func confirmOTP (otpData: OTPResponseModel) {
         manager.confirmOTP(otpData: otpData) { data, error in
             if let error {
-                self.error?(error)
-                print(error)
                 self.errorResponse = error
+                self.error?(error)
             } else if let data {
                 self.successResponse = data
                 self.success?()
-                print(data)
             }
         }
     }
@@ -33,13 +31,11 @@ class OTPViewModel {
     func resetOTP (otpData: OTPResetModel) {
         manager.resetOTP(otpData: otpData) { data, error in
             if let error {
-                self.error?(error)
-                print(error)
                 self.errorResponse = error
+                self.error?(error)
             } else if let data {
                 self.resetOTPSuccessResponse = data
                 self.success?()
-                print(data)
             }
         }
     }

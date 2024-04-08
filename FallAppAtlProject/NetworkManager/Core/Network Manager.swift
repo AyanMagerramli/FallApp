@@ -31,7 +31,7 @@ class NetworkManager {
                         completion(model, nil)
                     }
                 }
-
+                
             } else if response.response?.statusCode == 401 {
                 refreshToken { data, error in
                     if let data {
@@ -48,14 +48,26 @@ class NetworkManager {
                     }
                 }
                 
-            } else if response.response?.statusCode != 404 {
+            } else if response.response?.statusCode == 499 {
                 self.handleResponse(model: ErrorModel.self,
                                     data: response.data ?? Data()) { model in
                     print("Error is \(String(describing: model))")
                     UserDefaults.standard.setValue(false, forKey: "loggedIn")
                     KeychainManager.shared.deleteValue(key: KeychainValues.accessToken.rawValue)
                     KeychainManager.shared.deleteValue(key: KeychainValues.refreshToken.rawValue)
-               //     UserDefaults.standard.setValue(true, forKey: "refreshHasExpired")
+                    completion(nil, model)
+                }
+                
+            } else if response.response?.statusCode == 404 {
+                self.handleResponse(model: ErrorModel.self,
+                                    data: response.data ?? Data()) { model in
+                    print("Error is \(String(describing: model))")
+                    completion(nil, model)
+                }
+            } else {
+                self.handleResponse(model: ErrorModel.self,
+                                    data: response.data ?? Data()) { model in
+                    print("Error is \(String(describing: model))")
                     completion(nil, model)
                 }
             }

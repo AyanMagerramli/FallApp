@@ -67,6 +67,14 @@ class ResetPasswordController: UIViewController {
         resetPasswordButtonAction()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: - Setup UI
     
     private func setupUI() {

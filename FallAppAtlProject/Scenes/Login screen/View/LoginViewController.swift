@@ -100,10 +100,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Set the delegate of the email text field
         emailField.delegate = self
-        
         setupUI()
         buttonActions()
         self.viewModel?.clearTokensFromKeychain()

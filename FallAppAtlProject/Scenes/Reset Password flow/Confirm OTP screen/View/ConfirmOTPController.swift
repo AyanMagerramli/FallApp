@@ -56,6 +56,17 @@ class ConfirmOTPController: UIViewController {
         return field
     }()
     
+    private let errorLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.font = UIFont.robotoFont(ofType: .bold, size: 12)
+        label.lineBreakMode = .byWordWrapping
+        label.textColor = .red
+        label.backgroundColor = .clear
+        return label
+    }()
+    
     private lazy var continueButton = ReusableButton(title: "Continue")
     
     // MARK: - Life cycle
@@ -67,10 +78,22 @@ class ConfirmOTPController: UIViewController {
         setupViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     // MARK: - Setup UI
     
     private func setupUI() {
         navigationItem.title = "Verify OTP"
+        
+        otpField.delegate = self
+        
+        errorLabel.isHidden = true
         
         view.backgroundColor = .background
         
@@ -78,7 +101,8 @@ class ConfirmOTPController: UIViewController {
         
         [titleLabel,
          otpField,
-         continueButton].forEach(view.addSubview)
+         continueButton,
+         errorLabel].forEach(view.addSubview)
         
         makeConstraints()
     }
@@ -95,6 +119,11 @@ class ConfirmOTPController: UIViewController {
             make.top.equalTo(titleLabel.snp.bottom).offset(40)
             make.horizontalEdges.equalToSuperview().inset(24)
             make.height.equalTo(48)
+        }
+        
+        errorLabel.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview().inset(24)
+            make.top.equalTo(otpField.snp.bottom).offset(40)
         }
         
         continueButton.snp.makeConstraints { make in
@@ -128,15 +157,37 @@ class ConfirmOTPController: UIViewController {
                 otp: enteredOTP)
             
             // Make the API call to verify OTP
-            self.viewModel.verifyOTP(body: otpVerifyBody)
+            viewModel.verifyOTP(body: otpVerifyBody)
             
             // Handle success in viewModel
-            self.viewModel.success = { [weak self] in
-                
+            viewModel.success = { [weak self] in
                 print("BODY ISSS \(otpVerifyBody)")
                 // Navigate to reset password screen upon successful OTP verification
                 self?.viewModel.coordinator.goToResetPasswordScreen(code: self?.viewModel.verifyOTPData?.data ?? "")
             }
+            
+            viewModel.error = { [weak self] error in
+                print("ERRORRR OTPPPPP is \(self?.viewModel.errorModel?.detail ?? "")")
+                    self?.errorLabel.isHidden = false
+                    self?.errorLabel.text = error.detail
+            }
         }
+    }
+}
+
+// MARK: - UITextFieldDelegate methods
+// set the maximum length of decimal characters in text field
+extension ConfirmOTPController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        if !allowedCharacters.isSuperset(of: characterSet) {
+            return false
+        }
+        
+        let currentText = textField.text ?? ""
+        let newText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        let maxLength = 6
+        return newText.count <= maxLength
     }
 }

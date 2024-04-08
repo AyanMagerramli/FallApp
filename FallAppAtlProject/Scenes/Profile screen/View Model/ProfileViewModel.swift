@@ -5,7 +5,7 @@
 //  Created by Ayan on 10.02.24.
 //
 
-import Foundation
+import UIKit
 
 final class ProfileViewModel {
     private let manager = ProfileManager()

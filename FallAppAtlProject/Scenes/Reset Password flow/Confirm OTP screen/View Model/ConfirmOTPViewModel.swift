@@ -14,6 +14,7 @@ final class ConfirmOTPViewModel {
     private let verifyOTPManager = VerifyOTPManager()
     var error: ((ErrorModel) -> Void)?
     var success: (() -> Void)?
+    var errorModel: ErrorModel?
     var sendOTPData: SendOTPSuccessModel?
     var body = SendOTPResponseModel(mail: UserdefaultsManager.shared.getValue(for: "email"))
     var otpVerifyBody: VerifyOTPResponseModel?
@@ -37,6 +38,7 @@ final class ConfirmOTPViewModel {
     func verifyOTP(body: VerifyOTPResponseModel) {
         verifyOTPManager.verifyOTP(body: body) { data, error in
             if let error {
+                self.errorModel = error
                 self.error?(error)
             } else if let data {
                 self.verifyOTPData = data
